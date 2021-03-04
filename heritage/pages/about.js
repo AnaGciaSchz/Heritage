@@ -1,5 +1,5 @@
 function About(){
-    return (<p>¿Qué es Heritage?</p>);
+    return (<body><p>¿Qué es Heritage?</p></body>);
 
 }
 

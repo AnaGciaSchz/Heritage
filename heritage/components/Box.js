@@ -1,7 +1,7 @@
 function Box(props){
     return(
         
-           <button className="caja" ></button>
+           <div className="caja" ></div>
     )
 }
 export default Box;

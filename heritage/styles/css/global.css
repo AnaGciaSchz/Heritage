@@ -10,7 +10,7 @@ body {
   border-radius: 3em;
   height: 5em;
   width: 6em;
-  font-family: 'Roboto',sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 15px;
   color: black;
@@ -54,6 +54,33 @@ p {
   -ms-flex-line-pack: center;
       align-content: center;
   z-index: -100;
+}
+
+.title1 {
+  position: absolute;
+  left: 5%;
+  top: 15%;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(-45deg, #27b2e9 25%, #1cda35 25%, #1cda35 50%, #27b2e9 50%, #27b2e9 75%, #1cda35 75%, #1cda35);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 20px 20px;
+  background-position: 0 0;
+  -webkit-animation: stripes 3s linear infinite;
+          animation: stripes 3s linear infinite;
+}
+
+@-webkit-keyframes stripes {
+  100% {
+    background-position: 20px 0, 20px 0, 20px 0;
+  }
+}
+
+@keyframes stripes {
+  100% {
+    background-position: 20px 0, 20px 0, 20px 0;
+  }
 }
 
 .menuButton:hover, .menuButton__right:hover, .menuButton__left:hover {

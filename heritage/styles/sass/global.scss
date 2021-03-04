@@ -6,6 +6,10 @@ $font-weights:(
     "medium": 500,
     "bold": 700
 );
+$font-family : 'Roboto',sans-serif;
+$green: rgb(28, 218, 53);
+$blue: rgb(39, 178, 233);
+$background-size : 20px;
 
 body{
     background-image: url("/8.jpg");
@@ -21,7 +25,7 @@ body{
     border-radius:3em;
     height: 5em;
     width: 6em;
-    font-family:'Roboto',sans-serif;
+    font-family:$font-family;
     font-weight:map-get($font-weights,regular);
     font-size: 15px;
     color: $color-texto;
@@ -63,6 +67,33 @@ p{
     align-content: center;
     z-index: -100;
     
+}
+.title1{
+    position: absolute;
+    left: 5%;
+    top:15%;
+    font-family:$font-family;
+    background: linear-gradient(
+		-45deg, 
+		$blue 25%, 
+		$green 25%, 
+		$green 50%, 
+        $blue 50%, 
+		$blue 75%, 
+		$green 75%, 
+		$green);
+        background-clip : text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-size: $background-size $background-size;
+	background-position: 0 0;
+	animation: stripes 3s linear infinite;
+}	
+
+@keyframes stripes {
+	100% { 
+		background-position: $background-size 0, $background-size 0, $background-size 0;
+	}
 }
 
 .menuButton:hover{

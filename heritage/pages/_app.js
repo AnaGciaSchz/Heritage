@@ -1,5 +1,5 @@
 import '../styles/sass/global.scss'
-import Header from 'components/Header'
+import Header from 'components/Header/Header.js'
 import Box from "components/Box/Box.js"
 
 function MyApp({ Component, pageProps }) {

@@ -1,5 +1,4 @@
-//import styles from '../styles/Home.module.css'
-import Slider from "components/Slider.js"
+import Slider from "components/Slider/Slider.js"
 
 export default function Home() {
   return (

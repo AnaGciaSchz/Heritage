@@ -1,5 +1,5 @@
-import MenuButton from './MenuButton.js'
-import ImageWithLink from './ImageWithLink.js'
+import MenuButton from '../MenuButton/MenuButton.js'
+import ImageWithLink from '../ImageWithLink.js'
 import style from './header.module.scss'
 
 function Header(){
@@ -19,10 +19,11 @@ function Header(){
 
             <div className={style.spacer}></div>
 
-            <MenuButton nombre="Contacto" referencia= "/about"/>
-            <MenuButton nombre="Últimas altas" referencia= "/about"/>
-            <MenuButton nombre="¿Qué es Heritage?" referencia= "/about"/>
             <MenuButton nombre="CRUD" referencia= "/about"/>
+            <MenuButton nombre="¿Qué es Heritage?" referencia= "/about"/>
+            <MenuButton nombre="Últimas altas" referencia= "/about"/>
+            <MenuButton nombre="Contacto" referencia= "/about"/>
+            
 
         </header>
     )

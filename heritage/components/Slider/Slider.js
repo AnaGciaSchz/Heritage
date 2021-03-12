@@ -1,4 +1,3 @@
-//import 'logic/slider.js'
 import React from 'react'
 import styles from './slider.module.scss'
 
@@ -21,7 +20,7 @@ class Slider extends React.Component {
         setTimeout(() => {
             this.goNext();
             this.scheduleNext()
-         }, 5000);
+         }, 8000);
     }
 
     goNext() {

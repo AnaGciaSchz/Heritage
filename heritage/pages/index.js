@@ -7,9 +7,6 @@ export default function Home() {
       <h1 className = "title1">Página principal</h1>
       <Slider></Slider>
       <p>Lorem Ipsum</p>
-
-      </div>
+    </div>
   )
   }
-
-

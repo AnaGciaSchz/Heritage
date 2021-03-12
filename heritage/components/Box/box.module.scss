@@ -1,0 +1,16 @@
+@import '../../styles/sass/variables';
+
+.caja {
+  width: 95%;
+  background: $color-fondo-contenido;
+  margin: auto;
+  position: relative;
+  margin-bottom: 5em;
+  margin-top: 2em;
+  border-radius:3em;
+  border-width: 0em;
+  box-shadow: 0px 0px 0px transparent;
+  text-shadow: 0px 0px 0px transparent;
+
+  padding: 1.5em 10px;
+}

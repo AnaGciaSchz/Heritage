@@ -1,7 +1,6 @@
-import '../styles/css/global.css'
-import '../styles/css/slider.css'
+import '../styles/sass/global.scss'
 import Header from 'components/Header'
-import Box from "components/Box"
+import Box from "components/Box/Box.js"
 
 function MyApp({ Component, pageProps }) {
 
@@ -10,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   <Header />
   <Box>
   <Component {...pageProps} />
-  </Box> 
+  </Box>
   </>
   )
 }

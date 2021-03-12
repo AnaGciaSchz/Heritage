@@ -3,18 +3,14 @@ import Link from 'next/link'
 
 function ImageWithLink(props){
     return(
-
-        <Link href={props.referencia}>
-      <a>
+      <Link href={props.referencia}>
           <Image
-          className={props.clase}
             src={props.img}
             alt={props.alt}
             width="150"
             height="74"
           />
-    </a>
-  </Link>
+      </Link>
     )
 }
 export default ImageWithLink;

@@ -1,0 +1,13 @@
+
+.header {
+  display: flex;
+
+  .logo {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .spacer {
+    flex: 1 0 auto;
+  }
+}

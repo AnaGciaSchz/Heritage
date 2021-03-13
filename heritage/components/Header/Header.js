@@ -13,16 +13,16 @@ function Header(){
             </span>
 
             <MenuButton nombre="Historia de la EII" referencia= "/HistoriaEII"/>
-            <MenuButton nombre="Zona Exalumnado" referencia= "/about"/>
-            <MenuButton nombre="Zona Profesorado" referencia= "/about"/>
-            <MenuButton nombre="Zona Delegación" referencia= "/about"/>
+            <MenuButton nombre="Zona Exalumnado" referencia= "/BusquedaGenerica"/>
+            <MenuButton nombre="Zona Profesorado" referencia= "/BusquedaGenerica"/>
+            <MenuButton nombre="Zona Delegación" referencia= "/BusquedaGenerica"/>
 
             <div className={style.spacer}></div>
 
             { /*<MenuButton nombre="CRUD" referencia= "/about"/>*/}
             <MenuButton nombre="¿Qué es Heritage?" referencia= "/about"/>
-            <MenuButton nombre="Últimas altas" referencia= "/about"/>
-            <MenuButton nombre="Contacto" referencia= "/about"/>
+            <MenuButton nombre="Últimas altas" referencia= "/UltimasAltas"/>
+            <MenuButton nombre="Contacto" referencia= "/Contacto"/>
             
 
         </header>

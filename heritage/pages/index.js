@@ -5,6 +5,7 @@ import ImageWithLink from "components/ImageWithLink/ImageWithLink.js"
 export default function Home() {
   return (
     <div>
+      <p><b>Español</b>/Asturianu/English</p>
       <h1 className = "title1">Página principal</h1>
       <Slider></Slider>
       <h2 className = "title1">Noticias</h2>

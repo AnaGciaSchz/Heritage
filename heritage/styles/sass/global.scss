@@ -1,4 +1,5 @@
 @import './_variables';
+@import './mixins';
 
 body{
     background-image: url("/8.jpg");
@@ -33,5 +34,53 @@ p{
 @keyframes stripes {
 	100% {
 		background-position: $background-size 0, $background-size 0, $background-size 0;
+	}
+}
+
+.noticefeed{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin-top: -5%;
+	margin-left: 10%;
+	margin-right: 10%;
+	grid-gap: 5%;
+}
+
+.socialTitle{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin-top: -2%;
+	margin-left: 10%;
+	margin-right: 10%;
+	grid-gap: 5%;
+}
+
+.socialFeed{
+	display: grid;
+	grid-template-columns: 0 0 0 0 1 0 0 0 0;
+	grid-auto-flow: column;
+	margin-top: 1%;
+	grid-gap: -10%;
+	margin-left: 10%;
+	margin-right: 10%;
+	align-self: center;
+	grid-auto-columns: 10%
+}
+
+.icono{
+	width: 30%;
+	border-radius: 100%;
+}
+
+@include tablet {
+	.icono {
+		width: 50%;
+		}
+}
+
+
+@include mobile {
+	.icono {
+		width: 50%;
 	}
 }

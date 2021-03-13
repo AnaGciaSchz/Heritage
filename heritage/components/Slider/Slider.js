@@ -28,6 +28,12 @@ class Slider extends React.Component {
         this.updateSlide()
     }
 
+    goAfter() {
+        (this.currentSlide==0)?this.currentSlide=this.slides.length-1:this.currentSlide--;
+        this.updateSlide()
+    }
+
+
     updateSlide() {
         this.currentSlide = this.currentSlide % this.slides.length
         const slide = this.slides[this.currentSlide].ref.current
@@ -40,7 +46,7 @@ class Slider extends React.Component {
         return(
             <div className={styles['container-slider']}>
                 <button className={[styles.sliderBtn, styles.sliderBtn_right].join(' ')} onClick={() => this.goNext()}>&#62;</button>
-                <button className={styles.sliderBtn} onClick={() => this.goNext()}>&#60;</button>
+                <button className={styles.sliderBtn} onClick={() => this.goAfter()}>&#60;</button>
                 <div className={styles.slider} id= "slider">
                     { this.slides.map(slide => (
                         <div ref={slide.ref} key={slide.id} className={styles['slider-section']}>

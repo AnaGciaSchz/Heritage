@@ -8,6 +8,8 @@
     border-radius:3em;
     height: 5em;
     width: 6em;
+   margin-top: 3%;
+   margin-bottom: 1%;
     font-family:$font-family;
     font-weight:map-get($font-weights,regular);
     font-size: 15px;
@@ -26,7 +28,6 @@
 
         @include tablet {
             .menuButton {
-                  background: green;
                   height: 4.5em;
                   width: 5.4em;
                   font-size: 12px;
@@ -36,6 +37,8 @@
         
         @include mobile {
             .menuButton {
-                    background: purple;
+                    height: 4em;
+                    width: 5em;
+                    font-size: 10px;
             }
         }

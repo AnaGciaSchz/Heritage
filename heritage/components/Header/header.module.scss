@@ -1,14 +1,35 @@
+@import '../../styles/sass/mixins';
 
 .header {
   display: flex;
 
   .logo {
+    //display: flex;
+    //background: blue;
+    margin-top: -4%;
+    margin-bottom: -5%;
     margin-right: 20px;
-    cursor: pointer;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.05);
+    //box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.05);
+    height: 15%;
+    width: 15%;
   }
 
   .spacer {
     flex: 1 0 auto;
+  }
+}
+
+@include tablet {
+  .logo {
+        height: 4.5em;
+        width: 5.4em;
+      }
+}
+
+
+@include mobile {
+  .logo {
+          height: 4em;
+          width: 5em;
   }
 }

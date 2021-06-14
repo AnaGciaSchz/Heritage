@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "former_professor_cards",
+  "info": {
+    "name": "FormerProfessorCard"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "IdFormerProfessor": {
+      "type": "uid",
+      "required": true
+    },
+    "IdCard": {
+      "model": "card"
+    },
+    "FormerProfessorYears": {
+      "type": "string",
+      "required": true,
+      "minLength": 5
+    },
+    "FormerProfessorArea": {
+      "type": "string",
+      "required": true,
+      "maxLength": 80,
+      "minLength": 10
+    },
+    "FormerProfessorDescription": {
+      "type": "richtext",
+      "maxLength": 160,
+      "minLength": 10
+    },
+    "FormerProfessorArchievements": {
+      "type": "richtext",
+      "maxLength": 160,
+      "minLength": 10
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "former_delegate_cards",
+  "info": {
+    "name": "FormerDelegateCard"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "IdFormerDelegate": {
+      "type": "uid",
+      "required": true
+    },
+    "IdCard": {
+      "model": "card"
+    },
+    "FormerDelegatePromotion": {
+      "type": "string",
+      "minLength": 5,
+      "required": true
+    },
+    "FormerDelegatePosition": {
+      "type": "string",
+      "required": true,
+      "maxLength": 80,
+      "minLength": 10
+    },
+    "FormerDelegateDescription": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 160,
+      "minLength": 10
+    },
+    "FormerDelegatePositionHistory": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 160,
+      "minLength": 10
+    }
+  }
+}

@@ -34,9 +34,9 @@ export default function Home() {
         <h2 className = "title1">Redes Sociales</h2>
 
       <div className= "socialTitle">
-        <h3 className = "title1">Redes Sociales EII</h3>
+        <h3 className = "title2">Redes Sociales EII</h3>
         <span></span>
-        <h3 className = "title1">Redes Sociales DEII</h3>
+        <h3 className = "title2">Redes Sociales DEII</h3>
       </div>
 
       <div className = "socialFeed">

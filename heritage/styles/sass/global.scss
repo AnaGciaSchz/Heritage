@@ -2,8 +2,14 @@
 @import './mixins';
 
 body{
-    background-image: url("/8.jpg");
+    background: url("/8.svg") center center no-repeat;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     //background: $color-fondo-contenido;
+	background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
     color: $color-texto;
     font-weight: map-get($font-weights,regular);
 }
@@ -11,32 +17,44 @@ p{
     z-index: 10;
 }
 .title1{
-    left: 5%;
-    top:15%;
-    font-family:$font-family;
-    background: linear-gradient(
-		-45deg,
-		$blue 25%,
-		$green 25%,
-		$green 50%,
-        $blue 50%,
-		$blue 75%,
-		$green 75%,
-		$green);
-        background-clip : text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-size: $background-size $background-size;
-	background-position: 0 0;
-	animation: stripes 3s linear infinite;
+    cursor: pointer;
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  background: rgb(8, 102, 39);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: 0.2s ease-out;
 }
 
-@keyframes stripes {
-	100% {
-		background-position: $background-size 0, $background-size 0, $background-size 0;
-	}
+.title1:hover:before {
+	transform: translateY(10px)
 }
 
+.title1:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 3px;
+	background: rgb(8, 102, 39);
+	bottom: 2px;
+	transition: all 0.2s ease-out;
+}
+
+.title2{
+    cursor: pointer;
+  position: relative;
+  display: inline-block;
+  font-size: 1.2rem;
+  background: rgb(9, 55, 139);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: 0.2s ease-out;
+  text-align: center;
+}
 .noticefeed{
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);

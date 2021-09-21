@@ -1,5 +1,5 @@
-@import '../../styles/sass/variables';
-@import '../../styles/sass/mixins';
+@import "../../styles/sass/variables";
+@import "../../styles/sass/mixins";
 
 .caja {
   width: 95%;
@@ -8,11 +8,11 @@
   position: relative;
   margin-bottom: 5em;
   margin-top: 0.6em;
-  border-radius:3em;
+  border-radius: 3em;
   border-width: 0em;
   box-shadow: 0px 0px 0px transparent;
   text-shadow: 0px 0px 0px transparent;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   padding: 1.5em 1em;
 }
@@ -20,9 +20,8 @@
 @include tablet {
   .caja {
     margin-top: 0.4em;
-      }
+  }
 }
-
 
 @include mobile {
   .caja {

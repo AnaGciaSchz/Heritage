@@ -1,4 +1,4 @@
-function UltimasAltas(){
+function UltimasAltas() {
     return (<p>Últimas Altas: 0</p>);
 
 }

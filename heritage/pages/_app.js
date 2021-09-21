@@ -5,14 +5,14 @@ import Footer from "components/Footer/Footer.js"
 
 function MyApp({ Component, pageProps }) {
 
-  return(
-  <>
-  <Header />
-  <Box>
-  <Component {...pageProps} />
-  </Box>
-  <Footer/>
-  </>
+  return (
+    <>
+      <Header />
+      <Box>
+        <Component {...pageProps} />
+      </Box>
+      <Footer />
+    </>
   )
 }
 

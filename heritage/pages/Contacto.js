@@ -1,4 +1,4 @@
-function Contacto(){
+function Contacto() {
     return (<p>Contacto: Mandarme un correo</p>);
 
 }

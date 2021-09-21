@@ -1,4 +1,4 @@
-function About(){
+function About() {
     return (<p>¿Qué es Heritage?</p>);
 
 }

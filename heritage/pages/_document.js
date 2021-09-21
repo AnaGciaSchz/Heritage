@@ -10,9 +10,9 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-        <title>Heritage</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+          <title>Heritage</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
         <body>
           <Main />
           <NextScript />

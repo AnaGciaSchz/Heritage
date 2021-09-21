@@ -5,21 +5,21 @@ import styles from './imageWithLink.module.scss'
 
 
 class ImageWithLink extends React.Component {
-  constructor(props)  {
-      super(props)
+  constructor(props) {
+    super(props)
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <Link href={this.props.referencia}>
-          <Image className={styles.image}
-            src={this.props.img}
-            alt={this.props.alt}
-            layout= 'responsive'
-            width = "0"
-            height="0"
-            objectFit="contain"
-          />
+        <Image className={styles.image}
+          src={this.props.img}
+          alt={this.props.alt}
+          layout='responsive'
+          width="0"
+          height="0"
+          objectFit="contain"
+        />
       </Link>
     )
   }

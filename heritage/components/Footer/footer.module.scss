@@ -1,30 +1,29 @@
-@import '../../styles/sass/mixins';
+@import "../../styles/sass/mixins";
 
-.footer{
+.footer {
     position: relative;
     display: flex;
-    background:black;
+    background: black;
     color: white;
     margin-top: -3%;
     margin-left: 2%;
     margin-right: 2%;
 }
 
-#copyright{
+#copyright {
     margin-right: 10%;
     margin-left: 2%;
 }
 
-.word{
+.word {
     margin-right: 1%;
 }
 
 @include tablet {
     .footer {
         margin-top: -6%;
-        }
+    }
 }
-
 
 @include mobile {
     .footer {

@@ -1,4 +1,4 @@
-@import '../../styles/sass/mixins';
+@import "../../styles/sass/mixins";
 
 .header {
   display: flex;
@@ -21,15 +21,14 @@
 
 @include tablet {
   .logo {
-        height: 4.5em;
-        width: 5.4em;
-      }
+    height: 4.5em;
+    width: 5.4em;
+  }
 }
-
 
 @include mobile {
   .logo {
-          height: 4em;
-          width: 5em;
+    height: 4em;
+    width: 5em;
   }
 }

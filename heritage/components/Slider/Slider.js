@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './slider.module.scss'
 
 class Slider extends React.Component {
-    constructor(props)  {
+    constructor(props) {
         super(props)
 
         this.currentSlide = 0;
@@ -11,7 +11,7 @@ class Slider extends React.Component {
             { id: 2, image: '/slider/2.png' },
             { id: 3, image: '/slider/3.png' },
             { id: 4, image: '/slider/4.png' },
-        ].map(slide => ({...slide, ref: React.createRef()}))
+        ].map(slide => ({ ...slide, ref: React.createRef() }))
 
         this.scheduleNext()
     }
@@ -20,7 +20,7 @@ class Slider extends React.Component {
         setTimeout(() => {
             this.goNext();
             this.scheduleNext()
-         }, 8000);
+        }, 8000);
     }
 
     goNext() {
@@ -29,7 +29,7 @@ class Slider extends React.Component {
     }
 
     goAfter() {
-        (this.currentSlide==0)?this.currentSlide=this.slides.length-1:this.currentSlide--;
+        (this.currentSlide == 0) ? this.currentSlide = this.slides.length - 1 : this.currentSlide--;
         this.updateSlide()
     }
 
@@ -38,21 +38,21 @@ class Slider extends React.Component {
         this.currentSlide = this.currentSlide % this.slides.length
         const slide = this.slides[this.currentSlide].ref.current
         if (slide) {
-            slide.scrollIntoView({behavior: 'smooth', block: 'start'})
+            slide.scrollIntoView({ behavior: 'smooth', block: 'start' })
         }
     }
 
     render() {
-        return(
+        return (
             <div className={styles['container-slider']}>
                 <button className={[styles.sliderBtn, styles.sliderBtn_right].join(' ')} onClick={() => this.goNext()}>&#62;</button>
                 <button className={styles.sliderBtn} onClick={() => this.goAfter()}>&#60;</button>
-                <div className={styles.slider} id= "slider">
-                    { this.slides.map(slide => (
+                <div className={styles.slider} id="slider">
+                    {this.slides.map(slide => (
                         <div ref={slide.ref} key={slide.id} className={styles['slider-section']}>
-                                <img src = {slide.image} className="slider-img" />
-                            </div>
-                        ))}
+                            <img src={slide.image} className="slider-img" />
+                        </div>
+                    ))}
                 </div>
             </div>
         )

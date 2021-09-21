@@ -1,8 +1,7 @@
-@import '../../styles/sass/variables';
-@import '../../styles/sass/mixins';
+@import "../../styles/sass/variables";
+@import "../../styles/sass/mixins";
 
-
-.card{
+.card {
   display: block;
   min-width: 15em;
   max-width: 15em;
@@ -10,62 +9,61 @@
   max-height: 24em;
   background: $color-fondo-contenido;
   position: relative;
-  border-radius:1em;
-  box-shadow: 0 5px 2px 0 rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.19);
+  border-radius: 1em;
+  box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
   padding: 1.5em 1em;
   margin: 0.5em;
 }
 
 .quitCard {
   @extend .card;
-  -webkit-animation: flip-out-ver-left 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-	        animation: flip-out-ver-left 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-  
+  -webkit-animation: flip-out-ver-left 0.45s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: flip-out-ver-left 0.45s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 .showCard {
   @extend .card;
-  -webkit-animation: flip-in-ver-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: flip-in-ver-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: flip-in-ver-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: flip-in-ver-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-.name{
-    margin-top: -5%;
-    font-family: 'Enriqueta', arial, serif; 
-    line-height: 1.25; 
-    margin: 0 0 10px; 
-    font-size: 16px; 
-    font-weight: bold;
-    text-align: center;
+.name {
+  margin-top: -5%;
+  font-family: "Enriqueta", arial, serif;
+  line-height: 1.25;
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
 }
 
-.firtsLine{
-    font-family: 'Enriqueta', arial, serif; 
-    line-height: 1.25; 
-    font-size: 14px; 
-    font-weight: bold;
+.firtsLine {
+  font-family: "Enriqueta", arial, serif;
+  line-height: 1.25;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-.text{
-    font-family: 'Enriqueta', arial, serif; 
-    line-height: 1.25; 
-    font-size: 14px; 
+.text {
+  font-family: "Enriqueta", arial, serif;
+  line-height: 1.25;
+  font-size: 14px;
 }
 
-.date{
-  font-family: 'Enriqueta', arial, serif; 
-  line-height: 0.8; 
+.date {
+  font-family: "Enriqueta", arial, serif;
+  line-height: 0.8;
   font-size: 12px;
 }
 
-.social{
+.social {
   position: relative;
-  font-family: 'Enriqueta', arial, serif; 
-  line-height: 0.8; 
+  font-family: "Enriqueta", arial, serif;
+  line-height: 0.8;
   font-size: 12px;
 }
 
-.flipIcon{
+.flipIcon {
   position: relative;
   margin-left: 16em;
   margin-bottom: -2.5em;
@@ -78,16 +76,15 @@
 }
 
 @include tablet {
-	.flipIconHidden {
-		visibility: visible;
-		}
+  .flipIconHidden {
+    visibility: visible;
+  }
 }
 
-
 @include mobile {
-	.flipIconHidden {
-		visibility: visible;
-	}
+  .flipIconHidden {
+    visibility: visible;
+  }
 }
 
 /**
@@ -95,27 +92,27 @@
  * animation flip-out-ver-left
  * ----------------------------------------
  */
- @-webkit-keyframes flip-out-ver-left {
+@-webkit-keyframes flip-out-ver-left {
   0% {
     -webkit-transform: rotateY(0);
-            transform: rotateY(0);
+    transform: rotateY(0);
     opacity: 1;
   }
   100% {
     -webkit-transform: rotateY(-70deg);
-            transform: rotateY(-70deg);
+    transform: rotateY(-70deg);
     opacity: 0;
   }
 }
 @keyframes flip-out-ver-left {
   0% {
     -webkit-transform: rotateY(0);
-            transform: rotateY(0);
+    transform: rotateY(0);
     opacity: 1;
   }
   100% {
     -webkit-transform: rotateY(-70deg);
-            transform: rotateY(-70deg);
+    transform: rotateY(-70deg);
     opacity: 0;
   }
 }
@@ -124,29 +121,27 @@
  * animation flip-in-ver-left
  * ----------------------------------------
  */
- @-webkit-keyframes flip-in-ver-left {
+@-webkit-keyframes flip-in-ver-left {
   0% {
     -webkit-transform: rotateY(80deg);
-            transform: rotateY(80deg);
+    transform: rotateY(80deg);
     opacity: 0;
   }
   100% {
     -webkit-transform: rotateY(0);
-            transform: rotateY(0);
+    transform: rotateY(0);
     opacity: 1;
   }
 }
 @keyframes flip-in-ver-left {
   0% {
     -webkit-transform: rotateY(80deg);
-            transform: rotateY(80deg);
+    transform: rotateY(80deg);
     opacity: 0;
   }
   100% {
     -webkit-transform: rotateY(0);
-            transform: rotateY(0);
+    transform: rotateY(0);
     opacity: 1;
   }
 }
-
-

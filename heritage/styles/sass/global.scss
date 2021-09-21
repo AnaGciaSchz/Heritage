@@ -1,35 +1,35 @@
-@import './_variables';
-@import './mixins';
+@import "./_variables";
+@import "./mixins";
 
-body{
-    background: url("/8.svg") center center no-repeat;
+body {
+	background: url("/8.svg") center center no-repeat;
 	-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    //background: $color-fondo-contenido;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	//background: $color-fondo-contenido;
 	background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    color: $color-texto;
-    font-weight: map-get($font-weights,regular);
+	background-repeat: no-repeat;
+	min-height: 100vh;
+	color: $color-texto;
+	font-weight: map-get($font-weights, regular);
 }
-p{
-    z-index: 10;
+p {
+	z-index: 10;
 }
-.title1{
-    cursor: pointer;
-  position: relative;
-  display: inline-block;
-  font-size: 2rem;
-  background: rgb(8, 102, 39);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  transition: 0.2s ease-out;
+.title1 {
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	font-size: 2rem;
+	background: rgb(8, 102, 39);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	transition: 0.2s ease-out;
 }
 
 .title1:hover:before {
-	transform: translateY(10px)
+	transform: translateY(10px);
 }
 
 .title1:before {
@@ -43,19 +43,19 @@ p{
 	transition: all 0.2s ease-out;
 }
 
-.title2{
-    cursor: pointer;
-  position: relative;
-  display: inline-block;
-  font-size: 1.2rem;
-  background: rgb(9, 55, 139);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  transition: 0.2s ease-out;
-  text-align: center;
+.title2 {
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	font-size: 1.2rem;
+	background: rgb(9, 55, 139);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	transition: 0.2s ease-out;
+	text-align: center;
 }
-.noticefeed{
+.noticefeed {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	margin-top: -5%;
@@ -64,7 +64,7 @@ p{
 	grid-gap: 5%;
 }
 
-.socialTitle{
+.socialTitle {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	margin-top: -2%;
@@ -73,7 +73,7 @@ p{
 	grid-gap: 5%;
 }
 
-.socialFeed{
+.socialFeed {
 	display: grid;
 	grid-template-columns: 0 0 0 0 1 0 0 0 0;
 	grid-auto-flow: column;
@@ -82,15 +82,15 @@ p{
 	margin-left: 10%;
 	margin-right: 10%;
 	align-self: center;
-	grid-auto-columns: 10%
+	grid-auto-columns: 10%;
 }
 
-.searchFeed{
-	display: flex; 
+.searchFeed {
+	display: flex;
 	flex-wrap: wrap;
 }
 
-.icono{
+.icono {
 	width: 30%;
 	border-radius: 100%;
 }
@@ -98,9 +98,8 @@ p{
 @include tablet {
 	.icono {
 		width: 50%;
-		}
+	}
 }
-
 
 @include mobile {
 	.icono {

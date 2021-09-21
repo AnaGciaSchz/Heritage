@@ -13,6 +13,7 @@
   border-radius:1em;
   box-shadow: 0 5px 2px 0 rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.19);
   padding: 1.5em 1em;
+  margin: 0.5em;
 }
 
 .quitCard {
@@ -48,7 +49,7 @@
 .text{
     font-family: 'Enriqueta', arial, serif; 
     line-height: 1.25; 
-    font-size: 14px;  
+    font-size: 14px; 
 }
 
 .date{
@@ -62,6 +63,31 @@
   font-family: 'Enriqueta', arial, serif; 
   line-height: 0.8; 
   font-size: 12px;
+}
+
+.flipIcon{
+  position: relative;
+  margin-left: 16em;
+  margin-bottom: -2.5em;
+  z-index: 10;
+}
+
+.flipIconHidden {
+  @extend .flipIcon;
+  visibility: hidden;
+}
+
+@include tablet {
+	.flipIconHidden {
+		visibility: visible;
+		}
+}
+
+
+@include mobile {
+	.flipIconHidden {
+		visibility: visible;
+	}
 }
 
 /**

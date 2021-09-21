@@ -6,12 +6,16 @@ function SearchCard(props){
   const [isRotated, setIsRotated] = React.useState(false);
   const [isNotBeenRotated, setIsNotBeenRotated] = React.useState(true);
   const onRotate = (boolean) => {setIsNotBeenRotated(false), setIsRotated(boolean);}
+  const [showRotate, setShowRotate] = React.useState(false);
     return(
       <div>
+            <img className={showRotate? styles.flipIcon : styles.flipIconHidden} src="/flip.svg" alt="Flip icon to show that the card can be clicked and it changes."/>
         {isRotated? null:
       <div
       className={isNotBeenRotated? styles.card : isRotated ? styles.quitCard : styles.showCard} 
-        onClick={() => onRotate(!isRotated)}>
+        onClick={() => onRotate(!isRotated)}
+        onMouseEnter= {() => setShowRotate(true)}
+        onMouseLeave = {() => setShowRotate(false)}>
     <p className={styles.name}>{props.name}</p>
     <p className={styles.date}>Registro: {props.date}</p>
     <Image className={styles.image}
@@ -28,14 +32,16 @@ function SearchCard(props){
     {!isRotated? null:
     <div
       className={isRotated ? styles.showCard : styles.quitCard} 
-        onClick={() => onRotate(!isRotated)}>
+        onClick={() => onRotate(!isRotated)}
+        onMouseEnter= {() => setShowRotate(true)}
+        onMouseLeave = {() => setShowRotate(false)}>
     <p className={styles.name}>{props.name}</p>
     <p className={styles.date}>Registro: {props.date}</p>
-    <p className={styles.firtsLine}>Descripción</p>
+    <p className={styles.firtsLine}>{props.descriptionTitle}</p>
     <p className={styles.text}>{props.description}</p>
-    <p className={styles.firtsLine}>Ha estado en</p>
+    <p className={styles.firtsLine}>{props.beenTitle}</p>
     <p className={styles.text}>{props.been}</p>
-    <p className={styles.social}>Redes: Red Red Linkedin</p>
+    <p className={styles.social}>Red Red Linkedin</p>
     </div>}
     </div>
     )

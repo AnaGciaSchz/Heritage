@@ -13,8 +13,8 @@ function Header(){
             </span>
 
             <MenuButton nombre="Historia de la EII" referencia= "/HistoriaEII"/>
-            <MenuButton nombre="Zona Exalumnado" referencia= "/BusquedaGenerica"/>
-            <MenuButton nombre="Zona Profesorado" referencia= "/BusquedaGenerica"/>
+            <MenuButton nombre="Zona Exalumnado" referencia= "/ZonaExalumnado"/>
+            <MenuButton nombre="Zona Profesorado" referencia= "/ZonaProfesorado"/>
             <MenuButton nombre="Zona Delegación" referencia= "/BusquedaGenerica"/>
 
             <div className={style.spacer}></div>

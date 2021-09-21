@@ -1,9 +1,9 @@
 import SearchCard from "components/SearchCard/SearchCard.js"
-function BusquedaGenerica(){
+function ZonaExalumnado(){
     return (
         <div>
             <p><b>Español</b>/Asturianu/English</p>
-      <h1 className = "title1">Página de fichas genérica</h1>
+      <h1 className = "title1">Zona de exalumnado</h1>
       <div className="searchFeed">
       <SearchCard
         name = "Ana María García Sánchez"
@@ -16,6 +16,11 @@ function BusquedaGenerica(){
         description = "Carta de prueba para ver cómo quedarían las cartas. Este texto tiene 120 caracteres, que sería lo mínimo que se pediría."
         beenTitle = "Ha estado en"
         been =  "Carta de prueba para ver cómo quedarían las cartas. Este texto tiene 120 caracteres, que sería lo mínimo que se pediría."
+        red1 = "Instagram"
+        red1Link = ""
+        red2 = "Telegram"
+        red2Link = ""
+        red3Link = ""
         />
         <SearchCard
         name = "Ana María García Sánchez"
@@ -83,4 +88,4 @@ function BusquedaGenerica(){
 
 }
 
-export default BusquedaGenerica;
+export default ZonaExalumnado;

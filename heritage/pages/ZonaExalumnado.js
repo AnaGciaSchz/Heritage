@@ -17,9 +17,10 @@ function ZonaExalumnado() {
                     beenTitle="Ha estado en"
                     been="Carta de prueba para ver cómo quedarían las cartas. Este texto tiene 120 caracteres, que sería lo mínimo que se pediría."
                     red1="Instagram"
-                    red1Link=""
+                    red1Link="https://es.reactjs.org/docs/conditional-rendering.html"
                     red2="Telegram"
-                    red2Link=""
+                    red2Link="https://www.w3schools.com/css/css_link.asp"
+                    red3=""
                     red3Link=""
                 />
                 <SearchCard
@@ -33,6 +34,13 @@ function ZonaExalumnado() {
                     description="Carta de prueba para ver cómo quedarían las cartas. Este texto tiene 120 caracteres, que sería lo mínimo que se pediría."
                     beenTitle="Ha estado en"
                     been="Carta de prueba para ver cómo quedarían las cartas y así comprobar cómo se podrían ver y hacer algunos ajustes. Este texto tiene 180 caracteres, que sería lo máximo que se pediría."
+                    red1="Whatsapp"
+                    red1Link="https://es.reactjs.org/docs/conditional-rendering.html"
+                    red2="Twitter"
+                    red2Link="https://www.w3schools.com/css/css_link.asp"
+                    red3="Linkedin"
+                    red3Link="https://github.com/AnaGciaSchz/Heritage"
+                    star="true"
                 />
                 <SearchCard
                     name="Ana María García Sánchez"

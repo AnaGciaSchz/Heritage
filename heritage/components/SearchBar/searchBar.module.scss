@@ -58,6 +58,17 @@
     background-color: white;
   }
 
+  @include desktop {
+    .clearIcon {
+      position: absolute;
+      top: 9px;
+      right: 8px;
+      width: 12px;
+      left: 700px;
+      cursor: pointer;
+    }
+  }
+
   /**
  * ----------------------------------------
  * animation scale-up-hor-left

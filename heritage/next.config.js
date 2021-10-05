@@ -6,7 +6,11 @@ const path = require ('path')
  * a ellas. Mirar pages/_app.js para ver un ejemplo
  */
 module.exports = {
-
+    i18n: {
+        locales: ['en', 'es', 'as'],
+        defaultLocale: 'es',
+    
+    },
     webpack: config => {
         config.resolve.alias['components'] = path.join(__dirname,
             'components');

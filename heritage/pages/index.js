@@ -2,13 +2,22 @@ import Slider from "components/Slider/Slider.js"
 import Notice from "components/Notice/Notice.js"
 import ImageWithLink from "components/ImageWithLink/ImageWithLink.js"
 
+import { useRouter } from "next/router"
+import { useIntl } from "react-intl"
+
 export default function Home() {
+
+  const { formatMessage } = useIntl()
+  const f = id => formatMessage({ id })
+  const router = useRouter()
+  const { locale, locales, defaultLocale } = router
+
   return (
     <div>
       <p><b>Español</b>/Asturianu/English</p>
-      <h1 className="title1">Página principal</h1>
+      <h1 className="title1">{f("paginaPrincipal")}</h1>
       <Slider></Slider>
-      <h2 className="title1">Noticias</h2>
+      <h2 className="title1">{f("Noticias")}</h2>
       <div className="noticefeed">
         <Notice
           alt='Noticia 1 para hacer pruebas'
@@ -31,12 +40,12 @@ export default function Home() {
 
       </div>
 
-      <h2 className="title1">Redes Sociales</h2>
+      <h2 className="title1">{f("RedesSociales")}</h2>
 
       <div className="socialTitle">
-        <h3 className="title2">Redes Sociales EII</h3>
+        <h3 className="title2">{f("RedesSocialesEII")}</h3>
         <span></span>
-        <h3 className="title2">Redes Sociales DEII</h3>
+        <h3 className="title2">{f("RedesSocialesDEII")}</h3>
       </div>
 
       <div className="socialFeed">

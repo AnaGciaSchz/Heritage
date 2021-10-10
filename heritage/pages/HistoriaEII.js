@@ -2,11 +2,11 @@ import TextEditor from "components/TextEditor/TextEditor.js"
 
 
 function HistoriaEII() {
-    return ( 
-    <div> 
-    <TextEditor></TextEditor>
+  return (
+    <div>
+        <TextEditor></TextEditor>
     </div>
-    )
+  )
 
 }
 

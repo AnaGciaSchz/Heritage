@@ -6,10 +6,6 @@ const SunEditor = dynamic(() => import("suneditor-react"), {
     ssr: false,
   });
 
-  const font = dynamic(() => import("suneditor/src/plugins"), {
-    ssr: false,
-  });
-
 
 function TextEditor() {
   const editor = useRef();
@@ -18,38 +14,29 @@ function TextEditor() {
 };
     const [content, setContent] = useState('');
     const handleClick = () => setContent(editor.current.getContents());
+    const handleShow= () => console.log(editor.current.getContents());
 
     return ( 
     <div> 
-    <div dangerouslySetInnerHTML={{__html: content}} />
+    <div className = "sun-editor-editable" dangerouslySetInnerHTML={{__html: content}} />
     <SunEditor getSunEditorInstance={getSunEditorInstance} defaultValue={content}  lang="es"
     setOptions={{
         height: 500,
         buttonList: [
-          [
-            "formatBlock",
-            "font",
-            "fontSize",
-            "fontColor",
-            "align",
-            "paragraphStyle",
-            "blockquote"
-          ],
-          [
-            "bold",
-            "underline",
-            "italic",
-            "strike",
-            "subscript",
-            "superscript"
-          ],
+          ["undo","redo"],
+          ['font', 'fontSize', 'formatBlock'],
+          ['blockquote',"paragraphStyle"],
+            ['bold', 'underline', 'italic', 
+            'strike', 'subscript', 'superscript'],
+            ['fontColor', 'hiliteColor', 'textStyle'],
           ["removeFormat"],
           ["outdent", "indent"],
-          ["table", "list"],
-          ["link", "image", "video"]
+          ['align', 'horizontalRule', 'list', 'lineHeight'],
+          ['table', 'link', 'image', 'video', 'audio'],
+          ['fullScreen', 'showBlocks', 'codeView']
         ]
       }}/>
-<button onClick={handleClick}>Guardar</button>
+<button onClick={handleClick}>Añadir</button>
     </div>
     )
 

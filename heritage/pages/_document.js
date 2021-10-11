@@ -9,6 +9,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
+        <script type="module" src="suneditor/src/plugins.js"></script>
         <Head>
           <title>Heritage</title>
           <link rel="icon" href="/favicon.ico" />

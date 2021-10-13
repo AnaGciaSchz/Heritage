@@ -4,7 +4,7 @@ import React from 'react'
 import styles from './imageWithLink.module.scss'
 
 
-class ImageWithLink extends React.Component {
+export default class ImageWithLink extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -24,4 +24,3 @@ class ImageWithLink extends React.Component {
     )
   }
 }
-export default ImageWithLink;

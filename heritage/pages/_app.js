@@ -8,7 +8,7 @@ import { IntlProvider } from "react-intl"
 import * as locales from "../content/locale"
 import { useRouter } from "next/router"
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   
   const router = useRouter()
   const { locale, defaultLocale, pathname } = router
@@ -28,5 +28,3 @@ function MyApp({ Component, pageProps }) {
     </IntlProvider>
   )
 }
-
-export default MyApp

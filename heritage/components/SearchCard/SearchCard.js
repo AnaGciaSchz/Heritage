@@ -1,16 +1,20 @@
 import styles from './searchCard.module.scss'
 import Image from 'next/image'
 import React from 'react'
+import { useIntl } from "react-intl"
 
-function SearchCard(props){
+export default function SearchCard(props){
+  const {formatMessage} = useIntl();
+  const f = id => formatMessage({ id })
+
   const [isRotated, setIsRotated] = React.useState(false);
   const [isNotBeenRotated, setIsNotBeenRotated] = React.useState(true);
   const onRotate = (boolean) => {setIsNotBeenRotated(false), setIsRotated(boolean);}
   const [showRotate, setShowRotate] = React.useState(false);
     return(
       <div>
-            <img className={showRotate? styles.flipIcon : styles.flipIconHidden} src="/flip.svg" alt="Icono pque muestra que la carta se gira."/>
-            <img className={props.star=="true"? styles.star : styles.starHidden} src="/star.svg" alt="Icono de una estrella."/>
+            <img className={showRotate? styles.flipIcon : styles.flipIconHidden} src="/flip.svg" alt={f("IconoGirarCarta")}/>
+            <img className={props.star=="true"? styles.star : styles.starHidden} src="/star.svg" alt={f("IconoEstrella")}/>
         {isRotated? null:
       <div
       className={isNotBeenRotated? styles.card : isRotated ? styles.quitCard : styles.showCard} 
@@ -54,4 +58,3 @@ function SearchCard(props){
     )
     
 }
-export default SearchCard;

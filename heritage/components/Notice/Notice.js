@@ -1,7 +1,7 @@
 import ImageWithLink from '../ImageWithLink/ImageWithLink';
 import styles from './notice.module.scss'
 
-function Notice(props) {
+export default function Notice(props) {
     return (
         <div className={styles.notice}>
             <ImageWithLink className={styles.image}
@@ -14,4 +14,3 @@ function Notice(props) {
     )
 
 }
-export default Notice;

@@ -1,7 +1,7 @@
 import styles from './searchBar.module.scss'
 import React from 'react'
 
-function SearchBar(props){
+export default function SearchBar(props){
     const [isClicked, setClick] = React.useState(false);
     const [hasText, setHasText] = React.useState(false);
     const onChange = (event) => {{event.target.value==""? setHasText(false) : setHasText(true)}; console.log(event.target.value);}
@@ -36,4 +36,3 @@ function SearchBar(props){
         </div>
     )
 }
-export default SearchBar;

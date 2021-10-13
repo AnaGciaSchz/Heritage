@@ -1,32 +1,33 @@
 import MenuButton from '../MenuButton/MenuButton.js'
 import ImageWithLink from '../ImageWithLink/ImageWithLink.js'
 import style from './header.module.scss'
+import { useIntl } from "react-intl"
 
-function Header() {
+export default function Header() {
+const {formatMessage} = useIntl();
+  const f = id => formatMessage({ id })
     return (
         <header className={style.header} >
             <span className={style.logo}>
                 <ImageWithLink
-                    alt='Logo de Heritage, representa la plabra algo curvada, de color verde, con un remarcado que pone "EII" encima, en azul. Sobre las letras está la situeta de un oso mirando hacia abajo'
+                    alt={f("logo")}
                     referencia="/"
                     img="/HeritageLogo.png" />
             </span>
 
-            <MenuButton nombre="Historia de la EII" referencia="/HistoriaEII" />
-            <MenuButton nombre="Zona Exalumnado" referencia="/ZonaExalumnado" />
-            <MenuButton nombre="Zona Profesorado" referencia="/ZonaProfesorado" />
-            <MenuButton nombre="Zona Delegación" referencia="/ZonaDelegacion" />
+            <MenuButton nombre={f("historiaEII")} referencia="/HistoriaEII" />
+            <MenuButton nombre={f("ZExalumnado")} referencia="/ZonaExalumnado" />
+            <MenuButton nombre={f("ZProfesorado")} referencia="/ZonaProfesorado" />
+            <MenuButton nombre={f("ZDelegacion")} referencia="/ZonaDelegacion" />
 
             <div className={style.spacer}></div>
 
             { /*<MenuButton nombre="CRUD" referencia= "/about"/>*/}
-            <MenuButton nombre="¿Qué es Heritage?" referencia="/about" />
-            <MenuButton nombre="Últimas altas" referencia="/UltimasAltas" />
-            <MenuButton nombre="Contacto" referencia="/Contacto" />
+            <MenuButton nombre={f("QueEsHeritage")} referencia="/about" />
+            <MenuButton nombre={f("UltimasAltas")} referencia="/UltimasAltas" />
+            <MenuButton nombre={f("Contacto")} referencia="/Contacto" />
 
 
         </header>
     )
 }
-
-export default Header;

@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './slider.module.scss'
 
-class Slider extends React.Component {
+export default class Slider extends React.Component {
     constructor(props) {
         super(props)
 
@@ -59,5 +59,3 @@ class Slider extends React.Component {
 
     }
 }
-
-export default Slider;

@@ -1,18 +1,19 @@
 import styles from './footer.module.scss'
+import { useIntl } from "react-intl"
 
-function Footer() {
+export default function Footer() {
+  const {formatMessage} = useIntl();
+  const f = id => formatMessage({ id })
     return (
         <div className={styles.footer}>
-            <p id={styles.copyright}>Copyright Universidad de Oviedo</p>
+            <p id={styles.copyright}>{f("Copyright")}</p>
 
-            <p className={styles.word}>Aviso Legal |</p>
+            <p className={styles.word}>{f("AvisoLegal")} |</p>
 
-            <p className={styles.word}>Política de cookies |</p>
+            <p className={styles.word}>{f("PoliticaCookies")} |</p>
 
-            <p className={styles.word}>Política de seguridad</p>
+            <p className={styles.word}>{f("PoliticaPrivacidad")}</p>
 
         </div>
     )
 }
-
-export default Footer;

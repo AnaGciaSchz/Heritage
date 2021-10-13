@@ -1,25 +1,27 @@
 import React, {useRef, useState} from 'react';
 import dynamic from "next/dynamic";
 import 'suneditor/dist/css/suneditor.min.css';
+import { useIntl } from "react-intl"
 
 const SunEditor = dynamic(() => import("suneditor-react"), {
     ssr: false,
   });
 
 
-function TextEditor() {
+  export default function TextEditor() {
+  const {formatMessage} = useIntl();
+  const f = id => formatMessage({ id })
   const editor = useRef();
   const getSunEditorInstance = (sunEditor) => {
     editor.current = sunEditor;
 };
     const [content, setContent] = useState('');
     const handleClick = () => setContent(editor.current.getContents());
-    const handleShow= () => console.log(editor.current.getContents());
 
     return ( 
     <div> 
     <div className = "sun-editor-editable" dangerouslySetInnerHTML={{__html: content}} />
-    <SunEditor getSunEditorInstance={getSunEditorInstance} defaultValue={content}  lang="es"
+    <SunEditor getSunEditorInstance={getSunEditorInstance} defaultValue={content}  lang= {f("local")}
     setOptions={{
         height: 500,
         buttonList: [
@@ -41,5 +43,3 @@ function TextEditor() {
     )
 
 }
-
-export default TextEditor;

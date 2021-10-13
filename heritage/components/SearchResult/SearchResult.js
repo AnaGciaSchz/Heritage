@@ -1,7 +1,7 @@
 import styles from './searchResult.module.scss'
 import React from 'react'
 import SearchCard from "components/SearchCard/SearchCard.js"
-function SearchResult(props) {
+export default function SearchResult(props) {
     return (
         <div>
             <h2 className={styles.title2Search}>{props.promotion}</h2>
@@ -95,4 +95,3 @@ function SearchResult(props) {
         </div>
     )
 }
-export default SearchResult;

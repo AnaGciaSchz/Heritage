@@ -17,30 +17,10 @@ p {
 	z-index: 10;
 }
 .title1 {
-	cursor: pointer;
 	position: relative;
 	display: inline-block;
 	font-size: 2rem;
-	background: rgb(8, 102, 39);
-	background-clip: text;
-	-webkit-background-clip: text;
-	color: transparent;
-	transition: 0.2s ease-out;
-}
-
-.title1:hover:before {
-	transform: translateY(10px);
-}
-
-.title1:before {
-	content: "";
-	position: absolute;
-	left: 0;
-	right: 0;
-	height: 3px;
-	background: rgb(8, 102, 39);
-	bottom: 2px;
-	transition: all 0.2s ease-out;
+	color: $darkBlue;
 }
 
 .title2 {

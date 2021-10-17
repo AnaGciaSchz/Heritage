@@ -30,23 +30,26 @@ export default function Internacionalizator(props) {
         }
     }
     return (<>
-    <p><InternacionalizationOption
+    <p>
+    <b>|</b>
+        <InternacionalizationOption
         selected = {es}
         language = {() => setLanguage("es")}
         option = "Español"
     />
-    /
+    <b>|</b>
     <InternacionalizationOption
         selected = {ast}
         language = {() => setLanguage("ast")}
         option = "Asturianu"
     />
-    /
+    <b>|</b>
     <InternacionalizationOption
         selected = {en}
         language = {() => setLanguage("en")}
         option = "English"
     />
+    <b>|</b>
     </p>
     </>);
 }

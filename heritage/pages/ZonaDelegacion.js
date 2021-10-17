@@ -3,7 +3,6 @@ import SearchBar from "components/SearchBar/SearchBar.js"
 function ZonaDelegacion() {
     return (
         <div>
-            <p><b>Español</b>/Asturianu/English</p>
             <h1 className="title1">Zona de la Delegación</h1>
               <SearchBar/>          
             <SearchResult

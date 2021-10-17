@@ -14,7 +14,6 @@ export default function Home() {
 
   return (
     <div>
-      <p><b>Español</b>/Asturianu/English</p>
       <h1 className="title1">{f("paginaPrincipal")}</h1>
       <Slider></Slider>
       <h2 className="title1">{f("Noticias")}</h2>

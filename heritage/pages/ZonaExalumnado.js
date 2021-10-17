@@ -3,7 +3,6 @@ import SearchResult from "components/SearchResult/SearchResult.js"
 function ZonaExalumnado() {
     return (
         <div>
-            <p><b>Español</b>/Asturianu/English</p>
             <h1 className="title1">Zona de exalumnado</h1>
             <SearchBar/>            
             <SearchResult

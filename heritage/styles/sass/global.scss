@@ -2,7 +2,8 @@
 @import "./mixins";
 
 body {
-	background: url("/8.svg") center center no-repeat;
+	//background: url("/8.png") center center no-repeat;
+	background-color: rgb(26, 26, 26);
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -16,10 +17,11 @@ p {
 	z-index: 10;
 }
 .title1 {
+	font-family: 'Roboto', sans-serif;
 	position: relative;
 	display: inline-block;
 	font-size: 2rem;
-	color: $darkBlue;
+	color:  rgb(52, 110, 219);
 }
 
 .title2 {
@@ -27,12 +29,14 @@ p {
 	position: relative;
 	display: inline-block;
 	font-size: 1.2rem;
-	background: rgb(9, 55, 139);
+	background: rgb(52, 196, 16);
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;
 	transition: 0.2s ease-out;
 	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
 }
 .noticefeed {
 	display: grid;

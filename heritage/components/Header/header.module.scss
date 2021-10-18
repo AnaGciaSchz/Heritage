@@ -4,12 +4,9 @@
   display: flex;
 
   .logo {
-    //display: flex;
-    //background: blue;
-    margin-top: -4%;
+    margin-top: -3%;
     margin-bottom: -5%;
     margin-right: 20px;
-    //box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.05);
     height: 15%;
     width: 15%;
   }
@@ -21,6 +18,9 @@
 
 @include tablet {
   .logo {
+    margin-top: -1% !important;
+    margin-left: 2% !important;
+    margin-right: 2% !important;
     height: 4.5em;
     width: 5.4em;
   }
@@ -28,7 +28,10 @@
 
 @include mobile {
   .logo {
+    margin-top: -4% !important;
+    margin-left:2% !important;
+    margin-right: 1% !important;
     height: 4em;
-    width: 5em;
+    width: 6.4em !important;
   }
 }

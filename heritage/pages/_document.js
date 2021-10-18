@@ -12,7 +12,10 @@ class MyDocument extends Document {
         <script type="module" src="suneditor/src/plugins.js"></script>
         <Head>
           <title>Heritage</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.png" />
+          <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+          </style>
         </Head>
         <body>
           <Main />

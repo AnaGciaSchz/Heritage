@@ -8,6 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "dns": "^0.2.2",
+    "mongodb": "^3.5.9",
+    "net": "^1.0.2",
     "next": "^11.1.2",
     "nodemon": "^2.0.7",
     "react": "17.0.1",
@@ -16,6 +19,7 @@
     "sass": "^1.41.1",
     "sharp": "^0.29.1",
     "suneditor": "^2.41.3",
-    "suneditor-react": "^3.3.0"
+    "suneditor-react": "^3.3.0",
+    "tls": "0.0.1"
   }
 }

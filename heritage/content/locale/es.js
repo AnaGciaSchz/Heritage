@@ -11,7 +11,7 @@ export const es = {
       PoliticaPrivacidad: "Política de privacidad",
       logo: 'Logo de Heritage, representa la palabra algo curvada, de color verde, con un remarcado que pone "EII" encima, en azul. Sobre las letras está la silueta de un oso mirando hacia abajo.',
       historiaEII: "Historia de la EII",
-      ZExalumnado: "Zona Exalumnado",
+      ZExalumnado: "Zona de Egresados",
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué es Heritage?",

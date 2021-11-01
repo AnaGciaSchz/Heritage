@@ -116,7 +116,7 @@ export const ast = {
       PoliticaPrivacidad: "Política de privacidá",
       logo: "Logo de Heritage, representa la palabra daqué curvada, de color verde, con un remarcáu que pon 'EII' enriba, n'azul. Sobro les lletres ta la figura d'un osu mirando escontra baxo.",
       historiaEII: "Hestoria de la EII",
-      ZExalumnado: "Zona Exalumnado",
+      ZExalumnado: "Zona de Egresados",
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué ye Heritage?",

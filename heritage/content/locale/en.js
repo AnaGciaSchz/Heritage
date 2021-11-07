@@ -15,7 +15,7 @@ export const en = {
       ZProfesorado: "Fromer Teachers Area",
       ZDelegacion: "Former Delegates Area",
       QueEsHeritage: "¿What is Heritage?",
-      UltimasAltas: "Latest Registration",
+      SubidaDeCartas: "Upload Cards",
       Contacto: "Contact",
     },
     "/HistoriaEII": {
@@ -29,7 +29,7 @@ export const en = {
       ZProfesorado: "Fromer Teachers Area",
       ZDelegacion: "Former Delegates Area",
       QueEsHeritage: "¿What is Heritage?",
-      UltimasAltas: "Latest Registration",
+      SubidaDeCartas: "Upload Cards",
       Contacto: "Contact",
       local: "en"
     },
@@ -44,7 +44,7 @@ export const en = {
       ZProfesorado: "Fromer Teachers Area",
       ZDelegacion: "Former Delegates Area",
       QueEsHeritage: "¿What is Heritage?",
-      UltimasAltas: "Latest Registration",
+      SubidaDeCartas: "Upload Cards",
       Contacto: "Contact",
       IconoGirarCarta: "Icon showing that the card can be rotated.",
       IconoEstrella: "Star icon."
@@ -60,7 +60,7 @@ export const en = {
       ZProfesorado: "Fromer Teachers Area",
       ZDelegacion: "Former Delegates Area",
       QueEsHeritage: "¿What is Heritage?",
-      UltimasAltas: "Latest Registration",
+      SubidaDeCartas: "Upload Cards",
       Contacto: "Contact",
       IconoGirarCarta: "Icon showing that the card can be rotated.",
       IconoEstrella: "Star icon."
@@ -76,7 +76,7 @@ export const en = {
       ZProfesorado: "Fromer Teachers Area",
       ZDelegacion: "Former Delegates Area",
       QueEsHeritage: "¿What is Heritage?",
-      UltimasAltas: "Latest Registration",
+      SubidaDeCartas: "Upload Cards",
       Contacto: "Contact",
       IconoGirarCarta: "Icon showing that the card can be rotated.",
       IconoEstrella: "Star icon."
@@ -92,10 +92,10 @@ export const en = {
       ZProfesorado: "Fromer Teachers Area",
       ZDelegacion: "Former Delegates Area",
       QueEsHeritage: "¿What is Heritage?",
-      UltimasAltas: "Latest Registration",
+      SubidaDeCartas: "Upload Cards",
       Contacto: "Contact"
     },
-    "/UltimasAltas": {
+    "/SubidaDeCartas": {
       Copyright: "Copyright University of Oviedo",
       AvisoLegal: "Legal notice",
       PoliticaCookies: "Cookie Policy",
@@ -106,7 +106,7 @@ export const en = {
       ZProfesorado: "Fromer Teachers Area",
       ZDelegacion: "Former Delegates Area",
       QueEsHeritage: "¿What is Heritage?",
-      UltimasAltas: "Latest Registration",
+      SubidaDeCartas: "Upload Cards",
       Contacto: "Contact"
     },
     "/Contacto": {
@@ -120,7 +120,7 @@ export const en = {
       ZProfesorado: "Fromer Teachers Area",
       ZDelegacion: "Former Delegates Area",
       QueEsHeritage: "¿What is Heritage?",
-      UltimasAltas: "Latest Registration",
+      SubidaDeCartas: "Upload Cards",
       Contacto: "Contact"
     }
   }

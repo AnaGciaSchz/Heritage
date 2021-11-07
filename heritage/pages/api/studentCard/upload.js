@@ -11,7 +11,7 @@ const upload = multer({
 const uploadMiddleware = upload.single('image');
 
 const apiRoute = nextConnect({
-  // Handle any other HTTP method
+
   onNoMatch(req, res) {
     res.status(405).json({ error: `Method '${req.method}' Not Allowed` });
   },

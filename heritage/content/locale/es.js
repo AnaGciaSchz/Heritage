@@ -15,7 +15,7 @@ export const es = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué es Heritage?",
-      UltimasAltas: "Últimas Altas",
+      SubidaDeCartas: "Subida de cartas",
       Contacto: "Contacto",
     },
     "/HistoriaEII": {
@@ -29,7 +29,7 @@ export const es = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué es Heritage?",
-      UltimasAltas: "Últimas Altas",
+      SubidaDeCartas: "Subida de cartas",
       Contacto: "Contacto",
       local: "es"
     },
@@ -44,7 +44,7 @@ export const es = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué es Heritage?",
-      UltimasAltas: "Últimas Altas",
+      SubidaDeCartas: "Subida de cartas",
       Contacto: "Contacto",
       IconoGirarCarta: "Icono que muestra que la carta se gira.",
       IconoEstrella: "Icono de una estrella."
@@ -60,7 +60,7 @@ export const es = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué es Heritage?",
-      UltimasAltas: "Últimas Altas",
+      SubidaDeCartas: "Subida de cartas",
       Contacto: "Contacto",
       IconoGirarCarta: "Icono que muestra que la carta se gira.",
       IconoEstrella: "Icono de una estrella."
@@ -76,7 +76,7 @@ export const es = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué es Heritage?",
-      UltimasAltas: "Últimas Altas",
+      SubidaDeCartas: "Subida de cartas",
       Contacto: "Contacto",
       IconoGirarCarta: "Icono que muestra que la carta se gira.",
       IconoEstrella: "Icono de una estrella."
@@ -92,10 +92,10 @@ export const es = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué es Heritage?",
-      UltimasAltas: "Últimas Altas",
+      SubidaDeCartas: "Subida de cartas",
       Contacto: "Contacto"
     },
-    "/UltimasAltas": {
+    "/SubidaDeCartas": {
       Copyright: "Copyright Universidad de Oviedo",
       AvisoLegal: "Aviso Legal",
       PoliticaCookies: "Política de cookies",
@@ -106,7 +106,7 @@ export const es = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué es Heritage?",
-      UltimasAltas: "Últimas Altas",
+      SubidaDeCartas: "Subida de cartas",
       Contacto: "Contacto"
     },
     "/Contacto": {
@@ -120,7 +120,7 @@ export const es = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué es Heritage?",
-      UltimasAltas: "Últimas Altas",
+      SubidaDeCartas: "Subida de cartas",
       Contacto: "Contacto"
     }
   }

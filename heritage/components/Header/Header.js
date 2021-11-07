@@ -24,7 +24,7 @@ const {formatMessage} = useIntl();
 
             { /*<MenuButton nombre="CRUD" referencia= "/about"/>*/}
             <MenuButton nombre={f("QueEsHeritage")} referencia="/about" />
-            <MenuButton nombre={f("UltimasAltas")} referencia="/UltimasAltas" />
+            <MenuButton nombre={f("SubidaDeCartas")} referencia="/SubidaDeCartas" />
             <MenuButton nombre={f("Contacto")} referencia="/Contacto" />
 
 

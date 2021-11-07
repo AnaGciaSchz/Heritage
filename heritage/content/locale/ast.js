@@ -15,7 +15,7 @@ export const ast = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué ye Heritage?",
-      UltimasAltas: "Peracabes Altes",
+      SubidaDeCartas: "Xubida de cartes",
       Contacto: "Contactu"
     },
     "/HistoriaEII": {
@@ -29,7 +29,7 @@ export const ast = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué ye Heritage?",
-      UltimasAltas: "Peracabes Altes",
+      SubidaDeCartas: "Xubida de cartes",
       Contacto: "Contactu",
       local: "es"
     },
@@ -44,7 +44,7 @@ export const ast = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué ye Heritage?",
-      UltimasAltas: "Peracabes Altes",
+      SubidaDeCartas: "Xubida de cartes",
       Contacto: "Contactu",
       IconoGirarCarta: "Iconu qu'amuesa que la carta xírase.",
       IconoEstrella: "Iconu d'una estrella."
@@ -60,7 +60,7 @@ export const ast = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué ye Heritage?",
-      UltimasAltas: "Peracabes Altes",
+      SubidaDeCartas: "Xubida de cartes",
       Contacto: "Contactu",
       IconoGirarCarta: "Iconu qu'amuesa que la carta xírase.",
       IconoEstrella: "Iconu d'una estrella."
@@ -76,7 +76,7 @@ export const ast = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué ye Heritage?",
-      UltimasAltas: "Peracabes Altes",
+      SubidaDeCartas: "Xubida de cartes",
       Contacto: "Contactu",
       IconoGirarCarta: "Iconu qu'amuesa que la carta xírase.",
       IconoEstrella: "Iconu d'una estrella."
@@ -92,10 +92,10 @@ export const ast = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué ye Heritage?",
-      UltimasAltas: "Peracabes Altes",
+      SubidaDeCartas: "Xubida de cartes",
       Contacto: "Contactu"
     },
-    "/UltimasAltas": {
+    "/SubidaDeCartas": {
       Copyright: "Copyright Universidá d'Uviéu",
       AvisoLegal: "Avisu Llegal",
       PoliticaCookies: "Política de cookies",
@@ -106,7 +106,7 @@ export const ast = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué ye Heritage?",
-      UltimasAltas: "Peracabes Altes",
+      SubidaDeCartas: "Xubida de cartes",
       Contacto: "Contactu"
     },
     "/Contacto": {
@@ -120,7 +120,7 @@ export const ast = {
       ZProfesorado: "Zona Exprofesorado",
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué ye Heritage?",
-      UltimasAltas: "Peracabes Altes",
+      SubidaDeCartas: "Xubida de cartes",
       Contacto: "Contactu"
     }
   }

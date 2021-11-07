@@ -64,7 +64,7 @@ export default function SearchResult(props) {
             />
             <SearchCard
                 name="Ana María García Sánchez"
-                img="/Ana.jpg"
+                img="/cardImages/image.jpeg"
                 alt="Imagen"
                 firtsLine="Promoción 2020-2021"
                 text="Estudiante de cuarto curso, está intentando recordar cómo se programaba con React."

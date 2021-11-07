@@ -21,6 +21,7 @@ export default function MyApp({ Component, pageProps }) {
     locale={locale}
     defaultLocale={defaultLocale}
     messages={messages}
+    onError={(error) => error}
     >
       <Header />
       <Box>

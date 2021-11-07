@@ -8,8 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@elastic/elasticsearch": "^7.15.0",
     "dns": "^0.2.2",
     "mongodb": "^3.5.9",
+    "mongoose": "^6.0.12",
     "net": "^1.0.2",
     "next": "^11.1.2",
     "nodemon": "^2.0.7",

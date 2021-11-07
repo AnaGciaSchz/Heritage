@@ -1,43 +1,28 @@
 import TextEditor from "components/TextEditor/TextEditor.js"
 import TextDisplay from "components/TextDisplay/TextDisplay.js"
-import  clientPromise from "../lib/mongodb.js"
+import createStudentIndex from "./api/studentCard/create.js";
 
-
-export default function HistoriaEII({dbs}) {
+export default function HistoriaEII({ dbs }) {
+  //const Test = async (id) => { const res = await fetch('http://localhost:3000/api/test/' + id); return await res.json() }
+  //const onclick = () => {fetch('http://localhost:3000/api/studentCard/create');}
   return (
     <div>
-            <h1 className="title1">Historia de la EII</h1>
-      <TextDisplay/>
-      <TextEditor/>
-      {dbs}
+      <h1 className="title1">Historia de la EII</h1>
+      <TextDisplay />
+      <TextEditor />
     </div>
   )
 
 }
 
+/*
 export async function getServerSideProps(context) {
-  const client = await clientPromise
-
-  // client.db() will be the default database passed in the MONGODB_URI
-  // You can change the database by calling the client.db() function and specifying a database like:
-  // const db = client.db("myDatabase");
-  // Then you can execute queries against your database like so:
-  // db.find({}) or any of the MongoDB Node Driver commands
-
-  let databasesList =await client.db("Heritage").admin().listDatabases();
-  const dbs = [];
-    let cont = 0;
-
-    databasesList.databases.forEach(db => {
-      dbs[cont] = db.name;
-        cont++;
-    });
-
-    console.log(dbs)
-
+  const res = await fetch('http://localhost:3000/api/test')
+  const dbs = await res.json()
   return {
-    props:{
-      dbs: JSON.parse(JSON.stringify(dbs))
-    } 
+    props: {
+      dbs: dbs
+    }
   }
 }
+*/

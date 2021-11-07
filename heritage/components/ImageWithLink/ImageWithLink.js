@@ -11,7 +11,7 @@ export default class ImageWithLink extends React.Component {
 
   render() {
     return (
-      <Link href={this.props.referencia}>
+      <a href={this.props.referencia}>
         <Image className={styles.image}
           src={this.props.img}
           alt={this.props.alt}
@@ -20,7 +20,7 @@ export default class ImageWithLink extends React.Component {
           height="0"
           objectFit="contain"
         />
-      </Link>
+      </a>
     )
   }
 }

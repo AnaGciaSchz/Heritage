@@ -1,6 +1,5 @@
 import TextEditor from "components/TextEditor/TextEditor.js"
 import TextDisplay from "components/TextDisplay/TextDisplay.js"
-import createStudentIndex from "./api/studentCard/create.js";
 
 export default function HistoriaEII({ dbs }) {
   //const Test = async (id) => { const res = await fetch('http://localhost:3000/api/test/' + id); return await res.json() }

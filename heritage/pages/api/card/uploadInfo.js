@@ -13,6 +13,22 @@ if (typeof window === 'undefined') {
     })
 }
 
+function deleteTemporalData (){
+        var fs = require('fs');
+        var path = require('path');
+      var directory = './public/temporalImages';
+    
+    fs.readdir(directory, (err, files) => {
+      if (err) throw err;
+    
+      for (const file of files) {
+        fs.unlink(path.join(directory, file), err => {
+          if (err) throw err;
+        });
+      }
+    });
+}
+
   export default async (req, res) => {
       var dataMap = new Map(JSON.parse(req.body));
     esClient.index({
@@ -35,6 +51,7 @@ if (typeof window === 'undefined') {
     }).then(
         () => {
             console.log({result: "ok", message: "The card was added to elastic search"});
+            deleteTemporalData();
            res.status(200).json({result: "ok", message: "The card was added to elastic search"})
         },
         err => {

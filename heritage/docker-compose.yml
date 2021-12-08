@@ -1,16 +1,5 @@
 version: "3.8"
 services:
-  mongodb:
-    image : mongo
-    container_name: mongodb
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: heritage
-      MONGO_INITDB_ROOT_PASSWORD: 1234
-    volumes:
-    - C:\Users\Anuskuskus\Desktop\Heritage\HeritageCode\heritage\mongo:/data/db
-    ports:
-    - 27017:27017
-    restart: unless-stopped
   elastic:
       image: docker.elastic.co/elasticsearch/elasticsearch:7.9.1
       container_name: elastic

@@ -22,7 +22,7 @@ apiRoute.use(uploadMiddleware);
 
 // Process a POST request
 apiRoute.post((req, res) => {
-  res.status(200).json({ data: 'success' });
+  res.status(200).json({ result: "ok", message: "Image uploaded to server"});
 });
 
 export default apiRoute;

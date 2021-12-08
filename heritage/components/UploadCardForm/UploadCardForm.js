@@ -1,9 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import styles from './uploadCardForm.module.scss'
-import cardStyles from 'components/SearchCard/searchCard.module.scss'
 import SearchCard from "components/SearchCard/SearchCard.js"
-import Image from 'next/image'
 
 export default function UploadCardForm() {
   const [image, setImage] = useState(null);
@@ -16,7 +14,15 @@ export default function UploadCardForm() {
 
   const fillDataMap = () => {
     var type = document.querySelector("#type").value;
-    dataMap.set("type",type);
+    if(type== "option-1"){
+      dataMap.set("index","student-card");
+    }
+    else if (type == "option-2"){
+      dataMap.set("index","professor-card");
+    }
+    else if (type == "option-3"){
+      dataMap.set("index","delegate-card");
+    }
     var name = document.querySelector("#name").value;
     dataMap.set("name",name);
     var promotion = document.querySelector("#promotion").value;
@@ -29,6 +35,9 @@ export default function UploadCardForm() {
     dataMap.set("archievements",archievements);
     var check = document.querySelector("#check").checked;
     dataMap.set("check",check);
+    if(image !==null){
+      dataMap.set("image",image.name);
+    }
     if(socialMedia1){
     var social1 = document.querySelector("#social1").value;
     dataMap.set("social1",social1);
@@ -112,20 +121,23 @@ export default function UploadCardForm() {
   }
 
   const uploadToServer = async (event) => {
-    fillDataMap();
     const body = new FormData();
     body.append("image", image);
-    body.append(data,dataMap);
-    const response = await fetch("http://localhost:3000/api/card/upload", {
+    const response = await fetch("http://localhost:3000/api/card/uploadImage", {
       method: "POST",
       body
+    });
+    fillDataMap();
+    const response2 = await fetch("http://localhost:3000/api/card/uploadInfo", {
+      method: "POST",
+      body: JSON.stringify(Array.from(dataMap.entries()))
     });
   };
 
   const uploadTemporalImage = async () => {
     const body = new FormData();
     body.append("image", image);
-    const response = await fetch("http://localhost:3000/api/card/tempUpload", {
+    const response = await fetch("http://localhost:3000/api/card/tempUploadImage", {
       method: "POST",
       body
     });

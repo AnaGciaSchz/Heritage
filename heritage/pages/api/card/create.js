@@ -13,16 +13,41 @@ if (typeof window === 'undefined') {
 export default async (req, res) => {
     if (esClient != null) {
         await esClient.indices.create({
-            index: "student-card",
+            index:"student-card",
             body: mapping
         }).then(
             () => {
                 console.log({ result: "ok", message: "Elastic search index created.", status: 200 });
             },
             err => {
-                console.log({ result: "error", message: err.message + " on elastic search", status: 500 });
+                res.status(500).json({ result: "error", message: err.message + " on elastic search"});
             }
         );
+        await esClient.indices.create({
+            index: "professor-card",
+            body: mapping
+        }).then(
+            () => {
+                console.log({ result: "ok", message: "Elastic search index created.", status: 200 });
+            },
+            err => {
+                res.status(500).json({ result: "error", message: err.message + " on elastic search"});
+            }
+        );
+        await esClient.indices.create({
+            index: "delegate-card",
+            body: mapping
+        }).then(
+            () => {
+                console.log({ result: "ok", message: "Elastic search index created.", status: 200 });
+            },
+            err => {
+                res.status(500).json({ result: "error", message: err.message + " on elastic search"});
+            }
+        );
+        res.status(200).json({ result: "ok", message: "Index created"});
+    }else {
+        res.status(500).json({ result: "error", message: "No elasticsearch client"});
     }
 }
 
@@ -31,8 +56,8 @@ const mapping = {
         "properties": {
             "name": {
                 "type": "text",
-                "search_analyzer": "student_search_analyzer",
-                "analyzer": "student_analyzer",
+                "search_analyzer": "card_search_analyzer",
+                "analyzer": "card_analyzer",
                 "fields": {
                     "keyword": {
                         "type": "keyword",
@@ -48,18 +73,18 @@ const mapping = {
             },
             "shortDescription": {
                 "type": "text",
-                "search_analyzer": "student_search_analyzer",
-                "analyzer": "student_analyzer"
+                "search_analyzer": "card_search_analyzer",
+                "analyzer": "card_analyzer"
             },
             "longDescription": {
                 "type": "text",
-                "search_analyzer": "student_search_analyzer",
-                "analyzer": "student_analyzer"
+                "search_analyzer": "card_search_analyzer",
+                "analyzer": "card_analyzer"
             },
             "professionalArchievements": {
                 "type": "text",
-                "search_analyzer": "student_search_analyzer",
-                "analyzer": "student_analyzer"
+                "search_analyzer": "card_search_analyzer",
+                "analyzer": "card_analyzer"
             },
             "image": {
                 "type": "text"
@@ -103,7 +128,7 @@ const mapping = {
                 }
             },
             "analyzer": {
-                "student_search_analyzer": {
+                "card_search_analyzer": {
                     "type": "custom",
                     "tokenizer": "whitespace",
                     "char_filter": [
@@ -115,7 +140,7 @@ const mapping = {
                         "my_custom_word_delimiter_graph_filter"
                     ]
                 },
-                "student_analyzer": {
+                "card_analyzer": {
                     "type": "custom",
                     "tokenizer": "whitespace",
                     "char_filter": [

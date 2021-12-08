@@ -1,9 +1,10 @@
 import '../styles/sass/global.scss'
-
+import "../components/alert.css"
 import Header from 'components/Header/Header.js'
 import Box from "components/Box/Box.js"
 import Footer from "components/Footer/Footer.js"
 import Internacionalizator from "../components/Internacionalizator/Internacionalizator"
+import { Alert } from "components/Alert";
 
 import { IntlProvider } from "react-intl"
 import * as locales from "../content/locale"
@@ -26,6 +27,7 @@ export default function MyApp({ Component, pageProps }) {
       <Header />
       <Box>
       <Internacionalizator/>
+      <Alert />
         <Component {...pageProps} />
       </Box>
       <Footer />

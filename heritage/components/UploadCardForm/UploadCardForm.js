@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import styles from './uploadCardForm.module.scss'
 import SearchCard from "components/SearchCard/SearchCard.js"
+import { alertService } from "../../services/alert.service";
 
 export default function UploadCardForm() {
   const [image, setImage] = useState(null);
@@ -11,6 +12,11 @@ export default function UploadCardForm() {
   const [socialMedia2, setSocialMedia2] = useState(false);
   const [socialMedia3, setSocialMedia3] = useState(false);
   var dataMap = new Map();
+
+  const [options, setOptions] = useState({
+    autoClose: false,
+    keepAfterRouteChange: false
+  });
 
   const fillDataMap = () => {
     var type = document.querySelector("#type").value;
@@ -93,6 +99,7 @@ export default function UploadCardForm() {
     }else{
       setSocialMedia1(true);
     }
+    alertService.success('Success!!', options)
   };
   const createCard = () => {
     uploadTemporalImage();

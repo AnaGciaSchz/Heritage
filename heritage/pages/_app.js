@@ -1,10 +1,10 @@
 import '../styles/sass/global.scss'
-import "../components/alert.css"
+import "../components/Alert/alert.css"
 import Header from 'components/Header/Header.js'
 import Box from "components/Box/Box.js"
 import Footer from "components/Footer/Footer.js"
 import Internacionalizator from "../components/Internacionalizator/Internacionalizator"
-import { Alert } from "components/Alert";
+import { Alert } from "components/Alert/Alert";
 
 import { IntlProvider } from "react-intl"
 import * as locales from "../content/locale"

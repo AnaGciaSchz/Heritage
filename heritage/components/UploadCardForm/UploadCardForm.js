@@ -110,6 +110,7 @@ export default function UploadCardForm() {
 
       setImage(i);
       setCreateObjectURL(URL.createObjectURL(i));
+      uploadTemporalImage();
     }
   };
 

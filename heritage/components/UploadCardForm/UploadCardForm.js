@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import SearchCard from "components/SearchCard/SearchCard.js"
 import { alertService } from "../../services/alert.service";
-import {validateService} from "../../services/validate.service";
+import { validateService } from "../../services/validate.service";
 import styles from './uploadCardForm.module.scss'
 
 export default function UploadCardForm() {
@@ -34,27 +34,27 @@ export default function UploadCardForm() {
       throw "The card does not have a type"
     }
     var name = document.querySelector("#name").value;
-    if(!validateService.checkLength(name, 29)){
+    if (!validateService.checkLength(name, 25)) {
       throw "You have to write the name of the person in the card"
     }
     dataMap.set("name", name);
     var promotion = document.querySelector("#promotion").value;
-    if(!validateService.checkValidPromotion(promotion)){
+    if (!validateService.checkValidPromotion(promotion)) {
       throw "You have to write a correct promotion, like 2021-2022"
     }
     dataMap.set("promotion", promotion);
     var shortDescription = document.querySelector("#shortDescription").value;
-    if(!validateService.checkLength(shortDescription, 150)){
+    if (!validateService.checkLength(shortDescription, 150)) {
       throw "You have to write the short description"
     }
     dataMap.set("shortDescription", shortDescription);
     var longDescription = document.querySelector("#longDescription").value;
-    if(!validateService.checkLength(longDescription, 230)){
+    if (!validateService.checkLength(longDescription, 230)) {
       throw "You have to write the long description"
     }
     dataMap.set("longDescription", longDescription);
     var archievements = document.querySelector("#archievements").value;
-    if(!validateService.checkLength(archievements, 230)){
+    if (!validateService.checkLength(archievements, 230)) {
       throw "You have to write the long archievements"
     }
     dataMap.set("archievements", archievements);
@@ -63,41 +63,41 @@ export default function UploadCardForm() {
     if (image !== null) {
       dataMap.set("image", image.name);
     }
-    else{
-        throw "We need an image for the card"
+    else {
+      throw "We need an image for the card"
     }
     if (socialMedia1) {
       var social1 = document.querySelector("#social1").value;
-      if(validateService.checkEmpty(social1)){
+      if (validateService.checkEmpty(social1)) {
         throw "We need an url for the first social media"
       }
       dataMap.set("social1", social1);
       var social1Text = document.querySelector("#social1Text").value;
-      if(validateService.checkLength(social1Text, 20)){
+      if (!validateService.checkLength(social1Text, 20)) {
         throw "We need a text for the first social media"
       }
       dataMap.set("social1Text", social1Text);
     }
     if (socialMedia2) {
       var social2 = document.querySelector("#social2").value;
-      if(validateService.checkEmpty(social2)){
+      if (validateService.checkEmpty(social2)) {
         throw "We need an url for the secod social media"
       }
       dataMap.set("social2", social2);
       var social2Text = document.querySelector("#social2Text").value;
-      if(validateService.checkLength(social2Text, 20)){
+      if (!validateService.checkLength(social2Text, 20)) {
         throw "We need a text for the second social media"
       }
       dataMap.set("social2Text", social2Text);
     }
     if (socialMedia3) {
       var social3 = document.querySelector("#social3").value;
-      if(validateService.checkEmpty(social3)){
+      if (validateService.checkEmpty(social3)) {
         throw "We need an url for the third social media"
       }
       dataMap.set("social3", social3);
       var social3Text = document.querySelector("#social3Text").value;
-      if(validateService.checkLength(social3Text, 20)){
+      if (!validateService.checkLength(social3Text, 20)) {
         throw "We need a text for the third social media"
       }
       dataMap.set("social3Text", social3Text);
@@ -139,7 +139,6 @@ export default function UploadCardForm() {
     } else {
       setSocialMedia1(true);
     }
-    alertService.success('Success!!', options)
   };
   const createCard = () => {
     uploadTemporalImage();
@@ -186,6 +185,8 @@ export default function UploadCardForm() {
         });
         if (response2.status < 200 || response2.status > 299) {
           alertService.error("Couldn't upload the card: " + response2.text, options)
+        }else{
+          alertService.success('Success!!', options)
         }
       }
     }
@@ -208,85 +209,115 @@ export default function UploadCardForm() {
 
   return (
     <>
-      <h1 id="control-3841073">Formulario de subida de cartas</h1>
-      <div>
-        <label for="select-1636315256982" class="formbuilder-select-label">Tipo de Carta<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="Elige la sección en la que aparecerá la carta">?</span></label>
-        <select class="form-control" id="type" required="required" aria-required="true">
-          <option disabled="null" selected="null">Elige el tipo de carta</option>
-          <option value="egresado">Egresado</option>
-          <option value="profesor">Profesor</option>
-          <option value="delegado">Delegado</option>
-        </select>
-      </div>
-      <div>
-        <label for="text-1636315323565" class="formbuilder-text-label">Nombre<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="Introduce el nombre de la persona">?</span></label>
-        <input type="text" placeholder="Ana María García Sánchez" class="form-control" maxlength="29" id="name" title="Introduce el nombre de la persona" required="required" aria-required="true" />
-      </div>
-      <div>
-        <label for="text-1636315459181" class="formbuilder-text-label">Promoción<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="Introduce la promoción de la persona. Es el curso en el que se ha graduado">?</span></label>
-        <input type="text" pattern="[0-9]+-[0-9]+" placeholder="2021-2022" class="form-control" id="promotion" title="Introduce la promoción de la persona. Es el curso en el que se ha graduado" required="required" aria-required="true" />
-      </div>
-      <div>
-        <label for="textarea-1636315504032" class="formbuilder-textarea-label">Descripción corta<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="Descripción que se mostrará en la cara de la card">?</span></label>
-        <textarea type="textarea" placeholder="BLA BLA BLA" class="form-control" maxlength="150" rows="3" id="shortDescription" title="Descripción que se mostrará en la cara de la card" required="required" aria-required="true"></textarea>
-      </div>
-      <div>
-        <label for="textarea-1636315555229" class="formbuilder-textarea-label">Descripción larga<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="Descripción que se mostrará detrás de la card">?</span></label>
-        <textarea type="textarea" placeholder="BLA BLA BLA" class="form-control" maxlength="230" rows="5" id="longDescription" title="Descripción que se mostrará detrás de la card" required="required" aria-required="true"></textarea>
-      </div>
-      <div>
-        <label for="textarea-1636315592464" class="formbuilder-textarea-label">Logros profesionales<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="Descripción que se mostrará detrás de la card">?</span></label>
-        <textarea type="textarea" placeholder="BLA BLA BLA" class="form-control" maxlength="230" rows="5" id="archievements" title="Descripción que se mostrará detrás de la card" required="required" aria-required="true"></textarea>
-      </div>
-      {socialMedia1 ?
-        <div>
-          <label for="text-1636315323565" class="formbuilder-text-label">Red social 1<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="El nombre de tu primera red social">?</span></label>
-          <input type="text" placeholder="El nombre de tu primera red social" class="form-control" maxlength="20" id="social1Text" title="El nombre de tu primera red social" required="required" aria-required="true" />
-          <label for="text-1636315323565" class="formbuilder-text-label">Red social 1<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="Introduce el link de tu primera red social">?</span></label>
-          <input type="text" placeholder="Introduce el link de tu primera red social" class="form-control" id="social1" title="El nombre de tu primera red social" required="required" aria-required="true" />
+      <h1>Formulario de subida de cartas</h1>
+      <div className={styles.form}>
+        <h1>Introduce la información<span>de la persona cuya carta quieres crear</span></h1>
+        <div className={styles.section}><span>1</span>Type of card</div>
+        <div className={styles.field}>
+          <label className={styles.label}>Tipo de Carta*</label>
+          <select class="form-control" id="type" required="required" aria-required="true">
+            <option disabled="null" selected="null">Elige el tipo de carta</option>
+            <option value="egresado">Egresado</option>
+            <option value="profesor">Profesor</option>
+            <option value="delegado">Delegado</option>
+          </select>
+          <span className={styles.tooltip}>Select the type of the card depending of the section where it should appear</span>
         </div>
-        : null}
-      {socialMedia2 ?
-        <div>
-          <label for="text-1636315323565" class="formbuilder-text-label">Red social 2<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="El nombre de tu primera red social">?</span></label>
-          <input type="text" placeholder="El nombre de tu primera red social" class="form-control" maxlength="20" id="social2Text" title="El nombre de tu primera red social" required="required" aria-required="true" />
-          <label for="text-1636315323565" class="formbuilder-text-label">Red social 2<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="Introduce el link de tu primera red social">?</span></label>
-          <input type="text" placeholder="Introduce el link de tu primera red social" class="form-control" id="social2" title="El nombre de tu primera red social" required="required" aria-required="true" />
+        <div className={styles.section}><span>2</span>Front card information</div>
+        <div className={styles.field}>
+          <label className={styles.label}>Nombre*</label>
+          <input type="text" placeholder="Ana María García Sánchez" maxlength="25" id="name" />
+          <div>
+          </div>
+          <span className={styles.tooltip}>Write the full name of the person. Max characters: 25</span>
         </div>
-        : null}
-      {socialMedia3 ?
-        <div>
-          <label for="text-1636315323565" class="formbuilder-text-label">Red social 3<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="El nombre de tu primera red social">?</span></label>
-          <input type="text" placeholder="El nombre de tu primera red social" class="form-control" maxlength="20" id="social3Text" title="El nombre de tu primera red social" required="required" aria-required="true" />
-          <label for="text-1636315323565" class="formbuilder-text-label">Red social 3<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="Introduce el link de tu primera red social">?</span></label>
-          <input type="text" placeholder="Introduce el link de tu primera red social" class="form-control" id="social3" title="El nombre de tu primera red social" required="required" aria-required="true" />
+        <div className={styles.field}>
+          <label className={styles.label}>Promoción*</label>
+          <input type="text" placeholder="2021-2022" id="promotion" />
+          <span className={styles.tooltip}>Introduce la promoción de la persona. Es el curso en el que se ha graduado</span>
         </div>
-        : null}
-      <div>
-        {!socialMedia3 ?
-          <button type="button" class="btn-default btn" onClick={addSocialMedia} id="button-1636315630797">Añadir red social</button>
+        <div className={styles.field}>
+          <label className={styles.label}>Descripción corta*</label>
+          <textarea type="textarea" placeholder="This is a short description" maxlength="150" rows="3" id="shortDescription"></textarea>
+          <span className={styles.tooltip}>Descripción que se mostrará en la cara de la card. Max characters: 150</span>
+        </div>
+        <div className={styles.section}><span>3</span>Back card information</div>
+        <div className={styles.field}>
+          <label className={styles.label}>Descripción larga*</label>
+          <textarea type="textarea" placeholder="This is a long description" maxlength="230" rows="5" id="longDescription"></textarea>
+          <span className={styles.tooltip}>Descripción que se mostrará detrás de la card. Max characters: 230</span>
+        </div>
+        <div className={styles.field}>
+          <label className={styles.label}>Logros profesionales</label>
+          <textarea type="textarea" placeholder="Logros profesionales" maxlength="230" rows="5" id="archievements"></textarea>
+          <span className={styles.tooltip}>Logros profesionales de la persona. Max characters: 230</span>
+        </div>
+        {socialMedia1 ?
+          <div className={styles.mediaField}>
+            <div className={styles.lefthalf}>
+            <label className={styles.label}>Nombre Red social 1*</label>
+            <input type="text" placeholder="El nombre de tu primera red social" maxlength="20" id="social1Text" />
+            </div>
+            <div className={styles.righthalf}>
+            <label className={styles.label}>Red social 1* </label>
+            <input type="url" placeholder="Introduce el link de tu primera red social" id="social1" />
+            </div>
+          </div>
           : null}
-        {socialMedia1 | socialMedia2 | socialMedia3 ?
-          <button type="button" class="btn-default btn" onClick={deleteSocialMedia} id="button-1636315630797">Quitar red social</button>
+        {socialMedia2 ?
+          <div className={styles.mediaField}>
+            <div className={styles.lefthalf}>
+            <label className={styles.label}>Nombre Red social 2*</label>
+            <input type="text" placeholder="El nombre de tu primera red social" maxlength="20" id="social2Text" />
+            </div>
+            <div className={styles.righthalf}>
+            <label className={styles.label}>Red social 2*</label>
+            <input type="url" placeholder="Introduce el link de tu primera red social" id="social2" />
+            </div>
+          </div>
           : null}
-      </div>
-      <div>
-        <input type="checkbox" id="check" />
-        <label for="vehicle1"> Esta persona aparece en otro tipo de carta</label>
-      </div>
-      <div>
-        <label for="file-1636315659043" class="formbuilder-file-label">Subir imagen de perfil<span class="formbuilder-required">*</span><span class="tooltip-element" tooltip="Subir imagen de perfil">?</span></label>
-        <input type="file" class="form-control" name="image" multiple="false" onChange={uploadToClient} id="file-1636315659043" title="Subir imagen de perfil" required="required" aria-required="true" />
-        <button
-          type="submit"
-          onClick={uploadToServer}
-        >
-          Send to server
-        </button>
-      </div>
-      <div>
-        {card}
-        <button type="button" class="btn-default btn" onClick={createCard} id="button-1636315630797">{card == null ? "Vista previa  de card" : "Recargar card"}</button>
+        {socialMedia3 ?
+          <div className={styles.mediaField}>
+            <div className={styles.lefthalf}>
+            <label className={styles.label}>Nombre Red social 3*</label>
+            <input type="text" placeholder="El nombre de tu primera red social" maxlength="20" id="social3Text" />
+            </div>
+            <div className={styles.righthalf}>
+            <label className={styles.label}>Red social 3*</label>
+            <input type="url" placeholder="Introduce el link de tu primera red social" id="social3" />
+            </div>
+          </div>
+          : null}
+        <div>
+          {!socialMedia3 ?
+            <button className={styles.buttonSocialMedia} type="button" onClick={addSocialMedia}>Añadir red social</button>
+            : null}
+          {socialMedia1 | socialMedia2 | socialMedia3 ?
+            <button className={styles.buttonSocialMedia} type="button" onClick={deleteSocialMedia}>Quitar red social</button>
+            : null}
+        </div>
+        <div className={styles.section}><span>4</span>Extra information</div>
+        <div className={styles.check}>
+          <input type="checkbox" id="check" className={styles.checkBox} />
+          <label> Esta persona aparece en otro tipo de carta</label>
+        </div>
+        <div>
+          <label for="fileUpload" className={styles.fileUploadLabel}>Subir imagen de card</label>
+          <input type="file" id="fileUpload" className={styles.fileUpload} multiple="false" onChange={uploadToClient} title="Subir imagen de perfil" required="required" aria-required="true" />
+          <button
+            className={styles.send}
+            type="submit"
+            onClick = {() => {uploadToServer(); scroll(0,0);}}
+          >
+            Send to server
+          </button>
+        </div>
+        <div>
+          <button type="button" className={styles.preview} onClick={createCard}>{card == null ? "Vista previa  de card" : "Recargar card"}</button>
+          <div className={styles.card}>
+            {card}
+          </div>
+        </div>
       </div>
     </>
   )

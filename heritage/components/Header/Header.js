@@ -16,7 +16,7 @@ const {formatMessage} = useIntl();
             </span>
 
             <MenuButton nombre={f("historiaEII")} referencia="/HistoriaEII" />
-            <MenuButton nombre={f("ZExalumnado")} referencia="/ZonaExalumnado" />
+            <MenuButton nombre={f("ZExalumnado")} referencia="/ZonaEgresados" />
             <MenuButton nombre={f("ZProfesorado")} referencia="/ZonaProfesorado" />
             <MenuButton nombre={f("ZDelegacion")} referencia="/ZonaDelegacion" />
 

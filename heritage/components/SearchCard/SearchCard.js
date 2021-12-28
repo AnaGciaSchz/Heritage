@@ -22,7 +22,7 @@ export default function SearchCard(props){
         onMouseEnter= {() => setShowRotate(true)}
         onMouseLeave = {() => setShowRotate(false)}>
     <p className={styles.name}>{props.name}</p>
-    <p className={styles.date}>Registro: {props.date}</p>
+    <p className={styles.date}>{props.date}</p>
     <Image className={styles.image}
           src={props.img}
           alt={props.alt}
@@ -41,7 +41,7 @@ export default function SearchCard(props){
         onMouseEnter= {() => setShowRotate(true)}
         onMouseLeave = {() => setShowRotate(false)}>
     <p className={styles.name}>{props.name}</p>
-    <p className={styles.date}>Registro: {props.date}</p>
+    <p className={styles.date}>{props.date}</p>
     <p className={styles.firtsLine}>{props.descriptionTitle}</p>
     <p className={styles.text}>{props.description}</p>
     <p className={styles.firtsLine}>{props.beenTitle}</p>

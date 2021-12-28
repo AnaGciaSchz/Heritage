@@ -144,7 +144,7 @@ export const en = {
       PromocionTooltip: "Write the promotion of the person, It is the promotion when he/she/they graduated",
       DescripcionCorta: "Short Description",
       DescripcionCortaEjemplo: "This is a short description.",
-      DescripcionCortaTooltip: "Description that will appear at the front of the card. Max characters: 150",
+      DescripcionCortaTooltip: "Description that will appear at the front of the card. Max characters: 120",
       ReversoCartaInformacion: "Back card information",
       DescripcionLarga: "Long Description",
       DescripcionLargaEjemplo: "This is an example of a lon description so it is easier to understand what should be written here.",

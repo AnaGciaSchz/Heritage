@@ -47,7 +47,7 @@ export default function UploadCardForm() {
     }
     dataMap.set("promotion", promotion);
     var shortDescription = document.querySelector("#shortDescription").value;
-    if (!validateService.checkLength(shortDescription, 150)) {
+    if (!validateService.checkLength(shortDescription, 120)) {
       throw f("DescripcionCorta")
     }
     dataMap.set("shortDescription", shortDescription);
@@ -243,7 +243,7 @@ export default function UploadCardForm() {
         </div>
         <div className={styles.field}>
           <label className={styles.label}>{f("DescripcionCorta")}*</label>
-          <textarea type="textarea" placeholder={f("DescripcionCortaEjemplo")} maxlength="150" rows="3" id="shortDescription"></textarea>
+          <textarea type="textarea" placeholder={f("DescripcionCortaEjemplo")} maxlength="120" rows="3" id="shortDescription"></textarea>
           <span className={styles.tooltip}>{f("DescripcionCortaTooltip")}</span>
         </div>
         <div className={styles.section}><span>3</span>{f("ReversoCartaInformacion")}</div>

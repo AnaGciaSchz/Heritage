@@ -3,7 +3,7 @@ import SearchResult from "components/SearchResult/SearchResult.js"
 function ZonaExalumnado() {
     return (
         <div>
-            <h1 className="title1">Zona de exalumnado</h1>
+            <h1 className="title1">Zona Egresados</h1>
             <SearchBar/>            
             <SearchResult
             promotion = "Promoción 2021"

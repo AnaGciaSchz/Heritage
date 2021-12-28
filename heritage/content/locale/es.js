@@ -144,7 +144,7 @@ export const es = {
       PromocionTooltip: "Escribe la promoción de la persona, es el curso en el que se graduó",
       DescripcionCorta: "Descripción corta",
       DescripcionCortaEjemplo: "Esto es una descripción corta.",
-      DescripcionCortaTooltip: "Descripción que se mostrará en la cara de la card. Máximo 150 caracteres",
+      DescripcionCortaTooltip: "Descripción que se mostrará en la cara de la card. Máximo 120 caracteres",
       ReversoCartaInformacion: "Información del reverso de la carta",
       DescripcionLarga: "Descripción larga",
       DescripcionLargaEjemplo: "Esto es un ejemplo de una descripción larga, de esta forma se entiende mejor qué es lo que se debería escribir aquí.",

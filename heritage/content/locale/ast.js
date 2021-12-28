@@ -144,7 +144,7 @@ export const ast = {
       PromocionTooltip: "Escribe la promoción de la persona, ye'l cursu nel que se graduó",
       DescripcionCorta: "Descripción curtia",
       DescripcionCortaEjemplo: "Esto ye una descripción curtia.",
-      DescripcionCortaTooltip: "Descripción que se va amosar na cara de la card. Máximu 150 calteres",
+      DescripcionCortaTooltip: "Descripción que se va amosar na cara de la card. Máximu 120 calteres",
       ReversoCartaInformacion: "Información del aviesu de la carta",
       DescripcionLarga: "Descripción llarga",
       DescripcionLargaEjemplo: "Esto ye un exemplu d'una descripción llarga, d'esta forma entiéndese meyor qué ye lo que se debería escribir equí.",

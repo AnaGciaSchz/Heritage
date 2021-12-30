@@ -14,7 +14,7 @@ if (typeof window === 'undefined') {
 export default async (req, res) => {
     if (esClient != null) {
         let dataMap = new Map(JSON.parse(req.body));
-        let body = getBody(dataMap.get("query"));
+        let body = getBody(dataMap.get("query"), dataMap.get("filter"));
     await esClient.search({
         index: dataMap.get("index"),
         body: body
@@ -33,11 +33,11 @@ else {
 }
 }
 
-function getBody(query){
+function getBody(query, filter){
     let body = {
     "size": 1000,
     "query": 
-      getBool(query)
+      getBool(query, filter)
     ,
     "sort": [
       {
@@ -81,28 +81,23 @@ function getBody(query){
   return body;
 }
 
-function getBool(query){
-    /** 
+function getBool(query, filter){
     let filterQuery = getFilter(filter);
     if(filterQuery != null){
-        return {"bool": { "must": [ getQuery(query) ], "filter": [filterQuery]}}
-    }*/
+        return {"bool": { "must": [ getQuery(query) ], "filter": filterQuery}}
+    }
     return {"bool": { "must": [ getQuery(query) ]}
 }
 }
 
-/** 
 function getFilter(filter){
-    if(filter == undefined){
+    if(filter == undefined || filter == null){
         return null
     }
-    let array = filter.split(",");
     let filterQuery = "";
-    for(let i=0;i<array.length;i++){
-        filterQuery = filterQuery + JSON.stringify({"term": {"appCategories": array[i]}});
-          if(i!= array.length-1){
-            filterQuery = filterQuery + ",";
-          }
+    let filterMap = new Map(JSON.parse(filter));
+    if(filterMap.get("promotion") != undefined || filterMap.get("promotion")!=null){
+      filterQuery = getPromotionsFilter(filterMap.get("promotion"));
     }
     
     filterQuery = '{"bool": {"must": [ '+filterQuery+' ]}}';
@@ -110,7 +105,18 @@ function getFilter(filter){
     return JSON.parse(filterQuery);
 
 }
-*/
+
+function getPromotionsFilter(values){
+  let array = values.split(",");
+  let filterQuery = "";
+  for(let i=0;i<array.length;i++){
+      filterQuery = filterQuery + JSON.stringify({"term": { promotion : array[i]}});
+        if(i!= array.length-1){
+          filterQuery = filterQuery + ",";
+        }
+  }
+  return filterQuery;
+}
 
 function getQuery(query){
     if(query ==undefined || query == "" || query.replace(" ","") ==""){

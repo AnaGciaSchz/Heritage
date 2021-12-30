@@ -11,6 +11,7 @@ export default function SearchBar(props){
     const onChange = (event) => {{event.target.value==""? setHasText(false) : setHasText(true);}; props.setQuery(event.target.value);props.setChange(!change);setChange(!change);}
     const emptySearch = () => {document.getElementById('searchBar').value = ""; setHasText(false); props.setQuery("");props.setChange(!change);setChange(!change);}
     return(
+        <>
         <div className={styles.searchZone}>
         <img className={styles.searchIcon} src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjog
         QWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzI
@@ -38,5 +39,13 @@ export default function SearchBar(props){
         jA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cj
         xnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
         </div>
+        {props.promotions!=null?
+        <select class="form-control" onClick={(value)=>console.log(value)}>
+        <option disabled="null" selected="null">Promotion</option>
+        {props.promotions[0]!=null?<option value="1">{props.promotions[0].key}</option>:null}
+        {props.promotions[1]!=null?<option value="2">{props.promotions[1].key}</option>:null}
+        {props.promotions[2]!=null?<option value="3">{props.promotions[2].key}</option>:null}
+      </select>:null}
+        </>
     )
 }

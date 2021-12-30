@@ -7,13 +7,13 @@ export default function Result(props) {
     const search = async (event) => {
     var dataMap = new Map();
     dataMap.set("query", props.query);
+    dataMap.set("filter", props.filter);
     dataMap.set("index", props.index);
     const response = await fetch("http://localhost:3000/api/card/search", {
         method: "POST",
         body: JSON.stringify(Array.from(dataMap.entries()))
       });
       var r = await response.json();
-      console.log(r.message);
       return r.message;
     }
 
@@ -27,6 +27,7 @@ export default function Result(props) {
             values = {result.aggregation[i].by_top_hit.hits.hits}
             />
         }
+        props.setPromotions(result.aggregation);
         setResults(null);
         setResults(results);
     }

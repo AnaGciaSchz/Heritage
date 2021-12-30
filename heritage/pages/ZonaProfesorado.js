@@ -16,6 +16,7 @@ function ZonaProfesorado() {
             />    
             <Result
             query= {query}
+            filter= {null}
             index="professor-card"
             change = {change}
             />                         

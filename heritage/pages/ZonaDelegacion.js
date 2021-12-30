@@ -16,6 +16,7 @@ function ZonaDelegacion() {
             />    
             <Result
             query= {query}
+            filter= {null}
             index="delegate-card"
             change = {change}
             />                         

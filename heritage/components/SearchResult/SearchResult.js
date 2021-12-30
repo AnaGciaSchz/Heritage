@@ -10,6 +10,7 @@ export default function SearchResult(props) {
 
     const createResults = async () => {
         var data = props.values;
+        if(data != null){
         var r = new Array();
         var i;
 
@@ -33,6 +34,7 @@ export default function SearchResult(props) {
         />
         }
         setResults(r);
+    }
     }
 
     useEffect(() => {

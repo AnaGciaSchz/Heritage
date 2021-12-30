@@ -16,7 +16,7 @@ export const en = {
       ZDelegacion: "Former Delegates Area",
       QueEsHeritage: "¿What is Heritage?",
       SubidaDeCartas: "Upload Cards",
-      Contacto: "Contact",
+      Contacto: "Contact"
     },
     "/HistoriaEII": {
       Copyright: "Copyright University of Oviedo",
@@ -47,7 +47,13 @@ export const en = {
       SubidaDeCartas: "Upload Cards",
       Contacto: "Contact",
       IconoGirarCarta: "Icon showing that the card can be rotated.",
-      IconoEstrella: "Star icon."
+      IconoEstrella: "Star icon.",
+      CartaImagenAlt: "Photo of the person in the card",
+      CartaDescripcion: "Description",
+      CartaLogros: "Archievements",
+      CartaRegistro: "Registered",
+      Promocion: "Promotion",
+      Buscar: "Search"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright University of Oviedo",
@@ -63,7 +69,13 @@ export const en = {
       SubidaDeCartas: "Upload Cards",
       Contacto: "Contact",
       IconoGirarCarta: "Icon showing that the card can be rotated.",
-      IconoEstrella: "Star icon."
+      IconoEstrella: "Star icon.",
+      CartaImagenAlt: "Photo of the person in the card",
+      CartaDescripcion: "Description",
+      CartaLogros: "Archievements",
+      CartaRegistro: "Registered",
+      Promocion: "Promotion",
+      Buscar: "Search"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright University of Oviedo",
@@ -79,7 +91,13 @@ export const en = {
       SubidaDeCartas: "Upload Cards",
       Contacto: "Contact",
       IconoGirarCarta: "Icon showing that the card can be rotated.",
-      IconoEstrella: "Star icon."
+      IconoEstrella: "Star icon.",
+      CartaImagenAlt: "Photo of the person in the card",
+      CartaDescripcion: "Description",
+      CartaLogros: "Archievements",
+      CartaRegistro: "Registered",
+      Promocion: "Promotion",
+      Buscar: "Search"
     },
     "/about": {
       Copyright: "Copyright University of Oviedo",
@@ -165,7 +183,9 @@ export const en = {
       SubirCarta: "Upload card",
       VistaPrevia: "Card preview",
       RecargaCarta: "Update card",
-      FormularioTexto: "By filling in the following form you will be able to upload the information of the new card that you want to create to the server. If everything works correctly, a message will appear in green indicating that the upload was successful and the card will be uploaded to the required index and can be found in the specific search engine. If there is an error, a red alert will appear indicating what is happening and the card will not be uploaded."
+      FormularioTexto: "By filling in the following form you will be able to upload the information of the new card that you want to create to the server. If everything works correctly, a message will appear in green indicating that the upload was successful and the card will be uploaded to the required index and can be found in the specific search engine. If there is an error, a red alert will appear indicating what is happening and the card will not be uploaded.",
+      IconoGirarCarta: "Icon showing that the card can be rotated.",
+      IconoEstrella: "Star icon."
     },
     "/Contacto": {
       Copyright: "Copyright University of Oviedo",

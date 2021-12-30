@@ -47,7 +47,13 @@ export const ast = {
       SubidaDeCartas: "Xubida de cartes",
       Contacto: "Contactu",
       IconoGirarCarta: "Iconu qu'amuesa que la carta xírase.",
-      IconoEstrella: "Iconu d'una estrella."
+      IconoEstrella: "Iconu d'una estrella.",
+      CartaImagenAlt: "Semeya de la persona na carta",
+      CartaDescripcion: "Descripción",
+      CartaLogros: "Llogros destacables",
+      CartaRegistro: "Rexistru",
+      Promocion: "Promoción",
+      Buscar: "Buscar"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -63,7 +69,13 @@ export const ast = {
       SubidaDeCartas: "Xubida de cartes",
       Contacto: "Contactu",
       IconoGirarCarta: "Iconu qu'amuesa que la carta xírase.",
-      IconoEstrella: "Iconu d'una estrella."
+      IconoEstrella: "Iconu d'una estrella.",
+      CartaImagenAlt: "Semeya de la persona na carta",
+      CartaDescripcion: "Descripción",
+      CartaLogros: "Llogros destacables",
+      CartaRegistro: "Rexistru",
+      Promocion: "Promoción",
+      Buscar: "Buscar"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -79,7 +91,13 @@ export const ast = {
       SubidaDeCartas: "Xubida de cartes",
       Contacto: "Contactu",
       IconoGirarCarta: "Iconu qu'amuesa que la carta xírase.",
-      IconoEstrella: "Iconu d'una estrella."
+      IconoEstrella: "Iconu d'una estrella.",
+      CartaImagenAlt: "Semeya de la persona na carta",
+      CartaDescripcion: "Descripción",
+      CartaLogros: "Llogros destacables",
+      CartaRegistro: "Rexistru",
+      Promocion: "Promoción",
+      Buscar: "Buscar"
     },
     "/about": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -165,7 +183,9 @@ export const ast = {
       SubirCarta: "Xubir carta",
       VistaPrevia: "Vista previa de carta",
       RecargaCarta: "Recargar carta",
-      FormularioTexto: "Rellenando'l siguiente formulariu vas poder xubir la información de la nueva carta que quieras crear al servidor. Si tou funciona correchamente, va salir un mensaxe en verde indicando que la xubida realizóse correchamente y la carta va tar xubida al índiz riquíu pudiéndose atopar nel buscador específicu. Si hai dalgún erru, va apaecer una alerta en colloráu indicando qué asocede y la carta nun se va xubir."
+      FormularioTexto: "Rellenando'l siguiente formulariu vas poder xubir la información de la nueva carta que quieras crear al servidor. Si tou funciona correchamente, va salir un mensaxe en verde indicando que la xubida realizóse correchamente y la carta va tar xubida al índiz riquíu pudiéndose atopar nel buscador específicu. Si hai dalgún erru, va apaecer una alerta en colloráu indicando qué asocede y la carta nun se va xubir.",
+      IconoGirarCarta: "Iconu qu'amuesa que la carta xírase.",
+      IconoEstrella: "Iconu d'una estrella."
     },
     "/Contacto": {
       Copyright: "Copyright Universidá d'Uviéu",

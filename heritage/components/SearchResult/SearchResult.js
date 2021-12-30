@@ -1,8 +1,11 @@
 import styles from './searchResult.module.scss'
 import SearchCard from "components/SearchCard/SearchCard.js"
 import React, { useState, useEffect } from 'react';
+import { useIntl } from "react-intl"
 
 export default function SearchResult(props) {
+    const {formatMessage} = useIntl();
+    const f = id => formatMessage({ id })
     const [results, setResults] = useState(null);
 
     const createResults = async () => {
@@ -15,13 +18,10 @@ export default function SearchResult(props) {
             r[i]= <SearchCard
             name= {data[i]._source.name}
             img={data[i]._source.image}
-            alt="Imagen"
-            firtsLine={"Promoción "+data[i]._source.promotion}
+            firtsLine={data[i]._source.promotion}
             text={data[i]._source.shortDescription}
             date={data[i]._source.registry}
-            descriptionTitle="Descripción"
             description={data[i]._source.longDescription}
-            beenTitle="Logros profesionales más importantes:"
             been={data[i]._source.professionalArchievements}
             red1={data[i]._source.Red1}
             red1Link={data[i]._source.Red1Link}
@@ -40,7 +40,7 @@ export default function SearchResult(props) {
       }, []);
     return (
         <div>
-            <h2 className={styles.title2Search}>{props.promotion}</h2>
+            <h2 className={styles.title2Search}>{f("Promocion")+" "+props.promotion}</h2>
         <div className={styles.searchFeed}>
         {results}
             </div>

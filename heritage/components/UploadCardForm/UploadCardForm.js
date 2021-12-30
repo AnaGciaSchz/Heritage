@@ -153,13 +153,10 @@ export default function UploadCardForm() {
       <SearchCard
         name={document.querySelector("#name").value}
         img={image == null ? "/cardImages/notFound.jpg" : "/temporalImages/" + image.name}
-        alt={f("CartaImagenAlt")}
         firtsLine={document.querySelector("#promotion").value == null ? "" : document.querySelector("#promotion").value}
         text={document.querySelector("#shortDescription").value == null ? "" : document.querySelector("#shortDescription").value}
-        date={f("CartaRegistro")+": "+date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()}
-        descriptionTitle={f("CartaDescripcion")}
+        date={date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()}
         description={document.querySelector("#longDescription").value == null ? "" : document.querySelector("#longDescription").value}
-        beenTitle={f("CartaLogros")}
         been={document.querySelector("#archievements").value == null ? "" : document.querySelector("#archievements").value}
         red1={socialMedia1 ? document.querySelector("#social1Text").value : ""}
         red1Link={socialMedia1 ? document.querySelector("#social1").value : ""}

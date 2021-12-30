@@ -2,6 +2,7 @@ import styles from './searchCard.module.scss'
 import Image from 'next/image'
 import React from 'react'
 import { useIntl } from "react-intl"
+import { ProductNotSupportedError } from '@elastic/elasticsearch/lib/errors';
 
 export default function SearchCard(props){
   const {formatMessage} = useIntl();
@@ -22,16 +23,16 @@ export default function SearchCard(props){
         onMouseEnter= {() => setShowRotate(true)}
         onMouseLeave = {() => setShowRotate(false)}>
     <p className={styles.name}>{props.name}</p>
-    <p className={styles.date}>{props.date}</p>
+    <p className={styles.date}>{f("CartaRegistro")+": "+props.date}</p>
     <Image className={styles.image}
           src={props.img}
-          alt={props.alt}
+          alt={f("CartaImagenAlt")}
           layout= 'responsive'
           width = "0"
           height="0"
           objectFit="contain"
         />
-    <p className={styles.firtsLine}>{props.firtsLine}</p>
+    <p className={styles.firtsLine}>{f("Promocion")+": "+props.firtsLine}</p>
     <p className={styles.text}>{props.text}</p>
     </div>}
     {!isRotated? null:
@@ -41,10 +42,10 @@ export default function SearchCard(props){
         onMouseEnter= {() => setShowRotate(true)}
         onMouseLeave = {() => setShowRotate(false)}>
     <p className={styles.name}>{props.name}</p>
-    <p className={styles.date}>{props.date}</p>
-    <p className={styles.firtsLine}>{props.descriptionTitle}</p>
+    <p className={styles.date}>{f("CartaRegistro")+": "+props.date}</p>
+    <p className={styles.firtsLine}>{f("CartaDescripcion")}</p>
     <p className={styles.text}>{props.description}</p>
-    <p className={styles.firtsLine}>{props.beenTitle}</p>
+    <p className={styles.firtsLine}>{f("CartaLogros")}</p>
     <p className={styles.text}>{props.been}</p>
     <p className={styles.social}>
     <a href={props.red1Link}target="_blank">{props.red1}</a>

@@ -15,6 +15,7 @@
     padding: 2px 23px 2px 30px;
     outline: 0;
     background-color: #f5f5f5;
+    margin-top:30px;
   }
   .searchClicked{
     @extend .search;
@@ -33,6 +34,7 @@
     top: 8px;
     left: 8px;
     width: 14px;
+    margin-top:30px;
   }
   
   .clearIcon {
@@ -41,6 +43,7 @@
     right: 8px;
     width: 12px;
     cursor: pointer;
+    margin-top:30px;
   }
 
   .clearIconVisible {

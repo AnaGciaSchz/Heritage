@@ -16,7 +16,7 @@ export const es = {
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué es Heritage?",
       SubidaDeCartas: "Subida de cartas",
-      Contacto: "Contacto",
+      Contacto: "Contacto"
     },
     "/HistoriaEII": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -47,7 +47,13 @@ export const es = {
       SubidaDeCartas: "Subida de cartas",
       Contacto: "Contacto",
       IconoGirarCarta: "Icono que muestra que la carta se gira.",
-      IconoEstrella: "Icono de una estrella."
+      IconoEstrella: "Icono de una estrella.",
+      CartaImagenAlt: "Foto de la persona en la carta",
+      CartaDescripcion: "Descripción",
+      CartaLogros: "Logros destacables",
+      CartaRegistro: "Registro",
+      Promocion: "Promoción",
+      Buscar: "Buscar"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -63,7 +69,13 @@ export const es = {
       SubidaDeCartas: "Subida de cartas",
       Contacto: "Contacto",
       IconoGirarCarta: "Icono que muestra que la carta se gira.",
-      IconoEstrella: "Icono de una estrella."
+      IconoEstrella: "Icono de una estrella.",
+      CartaImagenAlt: "Foto de la persona en la carta",
+      CartaDescripcion: "Descripción",
+      CartaLogros: "Logros destacables",
+      CartaRegistro: "Registro",
+      Promocion: "Promoción",
+      Buscar: "Buscar"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -79,7 +91,13 @@ export const es = {
       SubidaDeCartas: "Subida de cartas",
       Contacto: "Contacto",
       IconoGirarCarta: "Icono que muestra que la carta se gira.",
-      IconoEstrella: "Icono de una estrella."
+      IconoEstrella: "Icono de una estrella.",
+      CartaImagenAlt: "Foto de la persona en la carta",
+      CartaDescripcion: "Descripción",
+      CartaLogros: "Logros destacables",
+      CartaRegistro: "Registro",
+      Promocion: "Promoción",
+      Buscar: "Buscar"
     },
     "/about": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -165,7 +183,9 @@ export const es = {
       SubirCarta: "Subir carta",
       VistaPrevia: "Vista previa de carta",
       RecargaCarta: "Recargar carta",
-      FormularioTexto: "Rellenando el siguiente formulario podrás subir la información de la nueva carta que quieras crear al servidor. Si todo funciona correctamente, saldrá un mensaje en verde indicando que la subida se ha realizado correctamente y la carta estará subida al índice requerido pudiéndose encontrar en el buscador específico. Si hay algún error, aparecerá una alerta en rojo indicando qué ocurre y la carta no se subirá."
+      FormularioTexto: "Rellenando el siguiente formulario podrás subir la información de la nueva carta que quieras crear al servidor. Si todo funciona correctamente, saldrá un mensaje en verde indicando que la subida se ha realizado correctamente y la carta estará subida al índice requerido pudiéndose encontrar en el buscador específico. Si hay algún error, aparecerá una alerta en rojo indicando qué ocurre y la carta no se subirá.",
+      IconoGirarCarta: "Icono que muestra que la carta se gira.",
+      IconoEstrella: "Icono de una estrella."
     },
     "/Contacto": {
       Copyright: "Copyright Universidad de Oviedo",

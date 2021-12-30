@@ -23,7 +23,7 @@ export default function Result(props) {
         var i;
         for(i=0;i<result.aggregation.length;i++){
             results[i]= <SearchResult
-            promotion = {"Promoción "+result.aggregation[i].key}
+            promotion = {result.aggregation[i].key}
             values = {result.aggregation[i].by_top_hit.hits.hits}
             />
         }

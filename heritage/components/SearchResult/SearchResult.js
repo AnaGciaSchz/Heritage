@@ -6,7 +6,6 @@ export default function SearchResult(props) {
     const [results, setResults] = useState(null);
 
     const createResults = async () => {
-        console.log("hola")
         var data = props.values;
         var r = new Array();
         var i;
@@ -33,7 +32,6 @@ export default function SearchResult(props) {
             star={data[i]._source.AppearsInAnotherCategory}
         />
         }
-        console.log(r)
         setResults(r);
     }
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import SearchResult from "components/SearchResult/SearchResult.js"
 
 export default function Result(props) {
@@ -13,6 +13,7 @@ export default function Result(props) {
         body: JSON.stringify(Array.from(dataMap.entries()))
       });
       var r = await response.json();
+      console.log(r.message);
       return r.message;
     }
 
@@ -26,9 +27,14 @@ export default function Result(props) {
             values = {result.aggregation[i].by_top_hit.hits.hits}
             />
         }
+        setResults(null);
         setResults(results);
     }
-    return (<><button onClick={createResults}>Click</button>
+
+    useEffect(() => {
+        createResults();
+      }, [props.change]);
+    return (<>
     {results!=null ?
           results
           : null}</>);

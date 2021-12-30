@@ -225,16 +225,6 @@
     margin-left: 10px;
 }
 
-.title1 {
-	font-family: 'Roboto', sans-serif;
-	position: relative;
-	display: inline-block;
-	font-size: 2rem;
-	color:  rgb(52, 110, 219);
-    margin-bottom: -5px;
-}
-
-
 
 @include tablet {
     .send {

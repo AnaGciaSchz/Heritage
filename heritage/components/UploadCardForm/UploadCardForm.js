@@ -213,8 +213,6 @@ export default function UploadCardForm() {
 
   return (
     <>
-      <h1  className={styles.title1}>{f("FormularioSubida")}</h1>
-      <p>{f("FormularioTexto")}</p>
       <div className={styles.form}>
         <h1>{f("TituloFormulario")}<span>{f("SpanFormulario")}</span></h1>
         <div className={styles.section}><span>1</span>{f("TipoCartaSeccion")}</div>

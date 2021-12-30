@@ -4,8 +4,9 @@ import React from 'react'
 export default function SearchBar(props){
     const [isClicked, setClick] = React.useState(false);
     const [hasText, setHasText] = React.useState(false);
-    const onChange = (event) => {{event.target.value==""? setHasText(false) : setHasText(true)}; console.log(event.target.value);}
-    const emptySearch = () => {document.getElementById('searchBar').value = ""; setHasText(false) }
+    const [change, setChange] = React.useState(false);
+    const onChange = (event) => {{event.target.value==""? setHasText(false) : setHasText(true);}; props.setQuery(event.target.value);props.setChange(!change);setChange(!change);}
+    const emptySearch = () => {document.getElementById('searchBar').value = ""; setHasText(false); props.setQuery("");props.setChange(!change);setChange(!change);}
     return(
         <div className={styles.searchZone}>
         <img className={styles.searchIcon} src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjog

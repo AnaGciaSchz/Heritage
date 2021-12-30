@@ -18,7 +18,7 @@ export default function SearchResult(props) {
             alt="Imagen"
             firtsLine={"Promoción "+data[i]._source.promotion}
             text={data[i]._source.shortDescription}
-            date="20/09/2021"
+            date={data[i]._source.registry}
             descriptionTitle="Descripción"
             description={data[i]._source.longDescription}
             beenTitle="Logros profesionales más importantes:"

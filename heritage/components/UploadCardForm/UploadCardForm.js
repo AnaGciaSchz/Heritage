@@ -23,6 +23,7 @@ export default function UploadCardForm() {
   });
 
   const fillDataMap = () => {
+    var date = new Date();
     var type = document.querySelector("#type").value;
     if (type == "egresado") {
       dataMap.set("index", "student-card");
@@ -51,6 +52,7 @@ export default function UploadCardForm() {
       throw f("DescripcionCorta")
     }
     dataMap.set("shortDescription", shortDescription);
+    dataMap.set("registry", date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear())
     var longDescription = document.querySelector("#longDescription").value;
     if (!validateService.checkLength(longDescription, 230)) {
       throw f("DescripcionLarga")

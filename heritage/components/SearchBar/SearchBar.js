@@ -1,18 +1,20 @@
 import styles from './searchBar.module.scss'
 import React from 'react'
 import { useIntl } from "react-intl"
+import MultiSelectFilter from "components/MultiSelectFilter/MultiSelectFilter.js"
 
-export default function SearchBar(props){
-    const {formatMessage} = useIntl();
-    const f = id => formatMessage({ id })
-    const [isClicked, setClick] = React.useState(false);
-    const [hasText, setHasText] = React.useState(false);
-    const [change, setChange] = React.useState(false);
-    const onChange = (event) => {{event.target.value==""? setHasText(false) : setHasText(true);}; props.setQuery(event.target.value);props.setChange(!change);setChange(!change);}
-    const emptySearch = () => {document.getElementById('searchBar').value = ""; setHasText(false); props.setQuery("");props.setChange(!change);setChange(!change);}
-    return(
-        <>
-        <div className={styles.searchZone}>
+export default function SearchBar(props) {
+  const { formatMessage } = useIntl();
+  const f = id => formatMessage({ id })
+  const [isClicked, setClick] = React.useState(false);
+  const [hasText, setHasText] = React.useState(false);
+  const [change, setChange] = React.useState(false);
+  const onChange = (event) => { { event.target.value == "" ? setHasText(false) : setHasText(true); }; props.setQuery(event.target.value); props.setChange(!change); setChange(!change); }
+  const emptySearch = () => { document.getElementById('searchBar').value = ""; setHasText(false); props.setQuery(""); props.setChange(!change); setChange(!change); }
+
+  return (
+    <>
+      <div className={styles.searchZone}>
         <img className={styles.searchIcon} src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjog
         QWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzI
         wMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk
@@ -22,13 +24,13 @@ export default function SearchBar(props){
         DEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNy
         wxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo
         8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
-        <input id = "searchBar" placeholder={f("Buscar")} type="text" 
-        className={isClicked? styles.searchClicked : styles.searchNoClicked} 
-        onChange={onChange} 
-        onClick={() => setClick(true)} 
-        onBlur={() => setClick(false)} />
-        <img className={hasText? styles.clearIconVisible : styles.clearIconNoVisible} onClick={emptySearch} 
-        src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBT
+        <input id="searchBar" placeholder={f("Buscar")} type="text"
+          className={isClicked ? styles.searchClicked : styles.searchNoClicked}
+          onChange={onChange}
+          onClick={() => setClick(true)}
+          onBlur={() => setClick(false)} />
+        <img className={hasText ? styles.clearIconVisible : styles.clearIconNoVisible} onClick={emptySearch}
+          src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBT
         VkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d
         3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxLjk3NiA1MS45NzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3
         VuZDpuZXcgMCAwIDUxLjk3NiA1MS45NzY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDQuMzczLDcuNjAzYy0xMC4xMzctMT
@@ -38,14 +40,10 @@ export default function SearchBar(props){
         LDIuMDQ3LTAuNzgxLDIuODI4LDBsNy40MjUsNy40MjVsNy4wNzEtNy4wNzFjMC43ODEtMC43ODEsMi4wNDctMC43ODEsMi44MjgsMGMwLjc4MSwwLjc4MSwwLjc4MSwyLjA0NywwLDIuODI4ICAgbC03L
         jA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cj
         xnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
-        </div>
-        {props.promotions!=null?
-        <select class="form-control" onClick={(value)=>console.log(value)}>
-        <option disabled="null" selected="null">Promotion</option>
-        {props.promotions[0]!=null?<option value="1">{props.promotions[0].key}</option>:null}
-        {props.promotions[1]!=null?<option value="2">{props.promotions[1].key}</option>:null}
-        {props.promotions[2]!=null?<option value="3">{props.promotions[2].key}</option>:null}
-      </select>:null}
-        </>
-    )
+      </div>
+      <MultiSelectFilter
+      promotions = {props.promotions}
+      />
+    </>
+  )
 }

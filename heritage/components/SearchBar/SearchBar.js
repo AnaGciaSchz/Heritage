@@ -1,7 +1,7 @@
 import styles from './searchBar.module.scss'
 import React from 'react'
 import { useIntl } from "react-intl"
-import MultiSelectFilter from "components/MultiSelectFilter/MultiSelectFilter.js"
+
 
 export default function SearchBar(props) {
   const { formatMessage } = useIntl();
@@ -41,9 +41,6 @@ export default function SearchBar(props) {
         jA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cj
         xnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
       </div>
-      <MultiSelectFilter
-      promotions = {props.promotions}
-      />
     </>
   )
 }

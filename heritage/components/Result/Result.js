@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SearchResult from "components/SearchResult/SearchResult.js"
+import styles from './result.module.scss'
 
 export default function Result(props) {
     const [results, setResults] = useState(null);
@@ -35,8 +36,8 @@ export default function Result(props) {
     useEffect(() => {
         createResults();
       }, [props.change]);
-    return (<>
+    return (<section className={styles.layout}>
     {results!=null ?
           results
-          : null}</>);
+          : null}</section>);
   }

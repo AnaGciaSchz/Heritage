@@ -1,7 +1,7 @@
 import SearchBar from "components/SearchBar/SearchBar.js"
-import Result from "components/Result/Result.js"
 import { useState } from "react";
 import { useIntl } from "react-intl"
+import SearchLayout from "../components/SearchLayout/SearchLayout";
 
 export default function ZonaEgresados() {
     const {formatMessage} = useIntl();
@@ -12,21 +12,21 @@ export default function ZonaEgresados() {
     var dataMap = new Map();
     dataMap.set("promotion", "2021-2022");
     return (
-        <div>
+        <>
             <h1 className="title1">{f("ZExalumnado")}</h1>
             <SearchBar
             setQuery = {setQuery}
             setChange={setChange}
+            />   
+            <SearchLayout
             promotions = {promotions}
-            />    
-            <Result
             query= {query}
             filter= {null}
             index="student-card"
             change = {change}
             setPromotions = {setPromotions}
-            />                         
-        </div>
+            />                    
+        </>
     );
 
 }

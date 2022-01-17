@@ -1,0 +1,6 @@
+.layout {
+    display: flex;
+    gap: 16px;
+  }
+  .layoutFilter { grid-area: filter; }
+  .layoutResult { grid-area: result; }

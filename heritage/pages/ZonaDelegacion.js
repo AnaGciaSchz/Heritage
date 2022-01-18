@@ -1,28 +1,26 @@
-import Result from "components/Result/Result.js"
+import SearchLayout from "../components/SearchLayout/SearchLayout";
 import { useState } from "react";
 import { useIntl } from "react-intl"
 import SearchBar from "components/SearchBar/SearchBar.js"
-function ZonaDelegacion() {
+
+export default function ZonaDelegacion() {
     const {formatMessage} = useIntl();
     const f = id => formatMessage({ id })
     const [query, setQuery] = useState("");
     const [change, setChange] = useState(false);
     return (
-        <div>
+        <>
             <h1 className="title1">{f("ZDelegacion")}</h1>
             <SearchBar
             setQuery = {setQuery}
             setChange={setChange}
             />    
-            <Result
-            query= {query}
-            filter= {null}
-            index="delegate-card"
-            change = {change}
-            />                         
-        </div>
+            <SearchLayout
+                query={query}
+                index="delegate-card"
+                change={change}
+            />                      
+        </>
     );
 
 }
-
-export default ZonaDelegacion;

@@ -147,19 +147,28 @@ function getBool(query, promotions, socials){
 }
 }
 
+function isEmpthyFilter(filter){
+  if(filter != undefined && filter != null && filter !=""){
+    return false;
+  }
+  return true;
+}
+
+
 function getFilter(promotions, socials){
+  if(isEmpthyFilter(promotions) && isEmpthyFilter(socials)){
+    return null;
+  }
   var filterPromotions = "";
   var filterSocials = "";
-  console.log("promotions")
-  console.log(promotions != undefined && promotions != null && promotions !="")
-    if(promotions != undefined && promotions != null && promotions !=""){
+    if(!isEmpthyFilter(promotions)){
       var promFilter = getPromotionsFilter(promotions);
       if(promFilter !=""){
       filterPromotions = '"must": [ '+promFilter+' ]'
       }
     }
 
-    if(socials != undefined && socials != null && socials !=""){
+    if(!isEmpthyFilter(socials)){
       var socFilter = getSocialsFilter(socials);
       if(socFilter != ""){
       filterSocials = '"should": [ '+socFilter+' ]'

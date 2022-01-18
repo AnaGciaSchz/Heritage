@@ -9,8 +9,6 @@ export default function ZonaEgresados() {
     const [query, setQuery] = useState("");
     const [change, setChange] = useState(false);
 
-    var dataMap = new Map();
-    dataMap.set("promotion", "2021-2022");
     return (
         <>
             <h1 className="title1">{f("ZExalumnado")}</h1>
@@ -20,7 +18,6 @@ export default function ZonaEgresados() {
             />   
             <SearchLayout
             query= {query}
-            filter= {null}
             index="student-card"
             change = {change}
             />                    

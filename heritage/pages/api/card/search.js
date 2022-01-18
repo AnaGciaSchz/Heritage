@@ -14,7 +14,7 @@ if (typeof window === 'undefined') {
 export default async (req, res) => {
     if (esClient != null) {
         let dataMap = new Map(JSON.parse(req.body));
-        let body = getBody(dataMap.get("query"), dataMap.get("filter"));
+        let body = getBody(dataMap.get("query"), dataMap.get("promotions"));
     await esClient.search({
         index: dataMap.get("index"),
         body: body
@@ -33,11 +33,11 @@ else {
 }
 }
 
-function getBody(query, filter){
+function getBody(query, promotions){
     let body = {
     "size": 1000,
     "query": 
-      getBool(query, filter)
+      getBool(query, promotions)
     ,
     "sort": [
       {
@@ -81,8 +81,8 @@ function getBody(query, filter){
   return body;
 }
 
-function getBool(query, filter){
-    let filterQuery = getFilter(filter);
+function getBool(query, promotions){
+    let filterQuery = getFilter(promotions);
     if(filterQuery != null){
         return {"bool": { "must": [ getQuery(query) ], "filter": filterQuery}}
     }
@@ -90,15 +90,12 @@ function getBool(query, filter){
 }
 }
 
-function getFilter(filter){
-    if(filter == undefined || filter == null){
+function getFilter(promotions){
+    if(promotions == undefined || promotions == null || promotions ==""){
         return null
     }
     let filterQuery = "";
-    let filterMap = new Map(JSON.parse(filter));
-    if(filterMap.get("promotion") != undefined || filterMap.get("promotion")!=null){
-      filterQuery = getPromotionsFilter(filterMap.get("promotion"));
-    }
+      filterQuery = getPromotionsFilter(promotions);
     
     filterQuery = '{"bool": {"must": [ '+filterQuery+' ]}}';
     
@@ -141,55 +138,49 @@ function getQuery(query){
       }
 }
 
+
 /**
- * {
-  "size": "10000",
-  "query": {
-    "bool": {
-      "must": [
-        {
-          "match_all": {}
-        }
-      ]
-    }
-  },
-  "sort": [
-    {
-      "_score": {
-        "order": "desc"
-      },
-      "name.keyword": {
-        "order": "asc"
-      }
-    }
-  ],
-  "aggs": {
-    "by_promotion": {
-      "terms": {
-        "field": "promotion",
-        "size": "1000",
-        "exclude": [
-          ""
-        ],
-        "order": [
-          {
-            "_key": "asc"
-          }
-        ]
-      },
-      "aggs": {
-        "by_top_hit": {
-          "top_hits": {
-            "size": "100"
-          }
+ *     "size": 1000,
+    "query": 
+     {"bool": { "must": [ {"match_all": {}} ], "filter": {"bool": {"must": [ {"term": { promotion : 2020-2021}} ]}}}}
+    ,
+    "sort": [
+      {
+        "_score": {
+          "order": "desc"
         },
-        "max_score": {
-          "max": {
-            "script": "_score"
+        "name.keyword": {
+          "order": "asc"
+        }
+      }
+    ],
+    "aggs": {
+      "by_promotion": {
+        "terms": {
+            "field": "promotion",
+            "size": "1000",
+            "exclude": [
+              ""
+            ],
+            "order": [
+                {
+                  "_key": "asc"
+                }
+              ]
+        },
+        "aggs": {
+          "by_top_hit": {
+            "top_hits": {
+              "size": "100"
+            }
+          },
+          "max_score": {
+            "max": {
+              "script": "_score"
+            }
           }
         }
       }
     }
   }
-}
  */

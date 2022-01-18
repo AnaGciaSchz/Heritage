@@ -8,7 +8,7 @@ export default function Result(props) {
     const search = async (event) => {
     var dataMap = new Map();
     dataMap.set("query", props.query);
-    dataMap.set("filter", props.filter);
+    dataMap.set("promotions", props.promotionsFilter);
     dataMap.set("index", props.index);
     const response = await fetch("http://localhost:3000/api/card/search", {
         method: "POST",
@@ -18,25 +18,25 @@ export default function Result(props) {
       return r.message;
     }
 
-    const createResults = async (event) => {
+    const createResults = async () => {
         var result = await search();
         var results = new Array();
         var i;
         for(i=0;i<result.aggregation.length;i++){
-            results[i]= <SearchResult
+            results[i]= <SearchResult key={i}
             promotion = {result.aggregation[i].key}
             values = {result.aggregation[i].by_top_hit.hits.hits}
             />
         }
         props.setPromotions(result.aggregation);
-        console.log(result.aggregation)
+        props.setPromotionsChange(!props.promotionsChange)
         setResults(null);
         setResults(results);
     }
-
+    
     useEffect(() => {
         createResults();
-      }, [props.change]);
+      }, [props.change, props.changePromotionsFilter]);
     return (<section className={styles.layout}>
     {results!=null ?
           results

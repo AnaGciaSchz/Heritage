@@ -17,6 +17,7 @@ export default function MyApp({ Component, pageProps }) {
   const localeCopy = locales[locale]
   const messages = localeCopy[pathname]
 
+
   return (
     <IntlProvider
     locale={locale}

@@ -8,7 +8,7 @@ export default function ZonaEgresados() {
     const f = id => formatMessage({ id })
     const [query, setQuery] = useState("");
     const [change, setChange] = useState(false);
-    const [promotions, setPromotions] = useState(null);
+
     var dataMap = new Map();
     dataMap.set("promotion", "2021-2022");
     return (
@@ -19,12 +19,10 @@ export default function ZonaEgresados() {
             setChange={setChange}
             />   
             <SearchLayout
-            promotions = {promotions}
             query= {query}
             filter= {null}
             index="student-card"
             change = {change}
-            setPromotions = {setPromotions}
             />                    
         </>
     );

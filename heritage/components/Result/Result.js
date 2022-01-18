@@ -29,6 +29,7 @@ export default function Result(props) {
             />
         }
         props.setPromotions(result.aggregation);
+        console.log(result.aggregation)
         setResults(null);
         setResults(results);
     }

@@ -53,7 +53,9 @@ export const es = {
       CartaLogros: "Logros destacables",
       CartaRegistro: "Registro",
       Promocion: "Promoción",
-      Buscar: "Buscar"
+      Buscar: "Buscar",
+      Filtros: "Filtros",
+      RedesSociales: "Redes Sociales"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -75,7 +77,9 @@ export const es = {
       CartaLogros: "Logros destacables",
       CartaRegistro: "Registro",
       Promocion: "Promoción",
-      Buscar: "Buscar"
+      Buscar: "Buscar",
+      Filtros: "Filtros",
+      RedesSociales: "Redes Sociales"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -97,7 +101,9 @@ export const es = {
       CartaLogros: "Logros destacables",
       CartaRegistro: "Registro",
       Promocion: "Promoción",
-      Buscar: "Buscar"
+      Buscar: "Buscar",
+      Filtros: "Filtros",
+      RedesSociales: "Redes Sociales"
     },
     "/about": {
       Copyright: "Copyright Universidad de Oviedo",

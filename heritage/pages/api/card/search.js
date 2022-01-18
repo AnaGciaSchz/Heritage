@@ -14,14 +14,32 @@ if (typeof window === 'undefined') {
 export default async (req, res) => {
     if (esClient != null) {
         let dataMap = new Map(JSON.parse(req.body));
-        let body = getBody(dataMap.get("query"), dataMap.get("promotions"));
+        let body = getBody(dataMap.get("query"), dataMap.get("promotions"), dataMap.get("socials"));
     await esClient.search({
         index: dataMap.get("index"),
         body: body
     })
         .then(
             response => {
-              res.status(200).json({result: "ok", message: {hits: response.body.hits.hits, aggregation: response.body.aggregations.by_promotion.buckets}})
+              var set = new Set();
+              var socials1 = response.body.aggregations.by_social1.buckets
+              var socials2 = response.body.aggregations.by_social2.buckets
+              var socials3 = response.body.aggregations.by_social3.buckets
+              var i;
+              for(i=0;i<socials1.length;i++){
+                set.add(socials1[i].key)
+              }
+              for(i=0;i<socials2.length;i++){
+                set.add(socials2[i].key)
+              }
+              for(i=0;i<socials3.length;i++){
+                set.add(socials3[i].key)
+              }
+              var s = [];
+              for(i=0;i<set.size;i++){
+                s[i] ={ key: [...set][i]};
+              }
+              res.status(200).json({result: "ok", message: {hits: response.body.hits.hits, promotion: response.body.aggregations.by_promotion.buckets, social: s}})
             },
             err => {
               res.status(404).json({result: "error", message: err.message + " on elastic search"})
@@ -33,19 +51,16 @@ else {
 }
 }
 
-function getBody(query, promotions){
+function getBody(query, promotions, socials){
     let body = {
     "size": 1000,
     "query": 
-      getBool(query, promotions)
+      getBool(query, promotions, socials)
     ,
     "sort": [
       {
         "_score": {
           "order": "desc"
-        },
-        "name.keyword": {
-          "order": "asc"
         }
       }
     ],
@@ -75,14 +90,56 @@ function getBody(query, promotions){
             }
           }
         }
+      },
+      "by_social1": {
+        "terms": {
+          "field": "Red1",
+          "size": "1000",
+          "exclude": [
+            ""
+          ],
+          "order": [
+            {
+              "_key": "asc"
+            }
+          ]
+        }
+      },
+      "by_social2": {
+        "terms": {
+          "field": "Red2",
+          "size": "1000",
+          "exclude": [
+            ""
+          ],
+          "order": [
+            {
+              "_key": "asc"
+            }
+          ]
+        }
+      },
+      "by_social3": {
+        "terms": {
+          "field": "Red3",
+          "size": "1000",
+          "exclude": [
+            ""
+          ],
+          "order": [
+            {
+              "_key": "asc"
+            }
+          ]
+        }
       }
     }
   }
   return body;
 }
 
-function getBool(query, promotions){
-    let filterQuery = getFilter(promotions);
+function getBool(query, promotions, socials){
+    let filterQuery = getFilter(promotions, socials);
     if(filterQuery != null){
         return {"bool": { "must": [ getQuery(query) ], "filter": filterQuery}}
     }
@@ -90,14 +147,28 @@ function getBool(query, promotions){
 }
 }
 
-function getFilter(promotions){
-    if(promotions == undefined || promotions == null || promotions ==""){
-        return null
+function getFilter(promotions, socials){
+  var filterPromotions = "";
+  var filterSocials = "";
+  console.log("promotions")
+  console.log(promotions != undefined && promotions != null && promotions !="")
+    if(promotions != undefined && promotions != null && promotions !=""){
+      var promFilter = getPromotionsFilter(promotions);
+      if(promFilter !=""){
+      filterPromotions = '"must": [ '+promFilter+' ]'
+      }
     }
-    let filterQuery = "";
-      filterQuery = getPromotionsFilter(promotions);
-    
-    filterQuery = '{"bool": {"must": [ '+filterQuery+' ]}}';
+
+    if(socials != undefined && socials != null && socials !=""){
+      var socFilter = getSocialsFilter(socials);
+      if(socFilter != ""){
+      filterSocials = '"should": [ '+socFilter+' ]'
+      }
+  }
+  if(filterPromotions != "" && filterSocials != ""){
+    filterPromotions+=',';
+  }
+    let filterQuery = '{"bool": {"minimum_should_match": "1",'+filterPromotions+filterSocials+'}}';
     
     return JSON.parse(filterQuery);
 
@@ -108,6 +179,20 @@ function getPromotionsFilter(values){
   let filterQuery = "";
   for(let i=0;i<array.length;i++){
       filterQuery = filterQuery + JSON.stringify({"term": { promotion : array[i]}});
+        if(i!= array.length-1){
+          filterQuery = filterQuery + ",";
+        }
+  }
+  return filterQuery;
+}
+
+function getSocialsFilter(values){
+  let array = values.split(",");
+  let filterQuery = "";
+  for(let i=0;i<array.length;i++){
+      filterQuery = filterQuery + JSON.stringify({"term": { Red1 : array[i]}})+",";
+      filterQuery = filterQuery + JSON.stringify({"term": { Red2 : array[i]}})+",";
+      filterQuery = filterQuery + JSON.stringify({"term": { Red3 : array[i]}});
         if(i!= array.length-1){
           filterQuery = filterQuery + ",";
         }
@@ -137,50 +222,3 @@ function getQuery(query){
         }
       }
 }
-
-
-/**
- *     "size": 1000,
-    "query": 
-     {"bool": { "must": [ {"match_all": {}} ], "filter": {"bool": {"must": [ {"term": { promotion : 2020-2021}} ]}}}}
-    ,
-    "sort": [
-      {
-        "_score": {
-          "order": "desc"
-        },
-        "name.keyword": {
-          "order": "asc"
-        }
-      }
-    ],
-    "aggs": {
-      "by_promotion": {
-        "terms": {
-            "field": "promotion",
-            "size": "1000",
-            "exclude": [
-              ""
-            ],
-            "order": [
-                {
-                  "_key": "asc"
-                }
-              ]
-        },
-        "aggs": {
-          "by_top_hit": {
-            "top_hits": {
-              "size": "100"
-            }
-          },
-          "max_score": {
-            "max": {
-              "script": "_score"
-            }
-          }
-        }
-      }
-    }
-  }
- */

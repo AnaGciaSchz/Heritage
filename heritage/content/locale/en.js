@@ -53,7 +53,9 @@ export const en = {
       CartaLogros: "Archievements",
       CartaRegistro: "Registered",
       Promocion: "Promotion",
-      Buscar: "Search"
+      Buscar: "Search",
+      Filtros: "Filters",
+      RedesSociales: "Social Media"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright University of Oviedo",
@@ -75,7 +77,9 @@ export const en = {
       CartaLogros: "Archievements",
       CartaRegistro: "Registered",
       Promocion: "Promotion",
-      Buscar: "Search"
+      Buscar: "Search",
+      Filtros: "Filters",
+      RedesSociales: "Social Media"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright University of Oviedo",
@@ -97,7 +101,9 @@ export const en = {
       CartaLogros: "Archievements",
       CartaRegistro: "Registered",
       Promocion: "Promotion",
-      Buscar: "Search"
+      Buscar: "Search",
+      Filtros: "Filters",
+      RedesSociales: "Social Media"
     },
     "/about": {
       Copyright: "Copyright University of Oviedo",

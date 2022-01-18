@@ -13,6 +13,11 @@ export default function SearchLayout(props) {
     const [promotionsFilter, setPromotionsFilter] =  useState("");
     const [changePromotionsFilter, setChangePromotionsFilter] = useState(false);
 
+    const [socials, setSocials] = useState(null);
+    const [socialsChange, setSocialsChange] = useState(false);
+    const [socialsFilter, setSocialsFilter] =  useState("");
+    const [changeSocialsFilter, setChangeSocialsFilter] = useState(false);
+
     const filtersMap = new Map();
 
     function updateFilters() {
@@ -23,7 +28,9 @@ export default function SearchLayout(props) {
       }, [changePromotionsFilter]);
     return (
         <section className={styles.layout}>
-             <MultiSelectFilter className={styles.layoutFilter}
+          <section className={styles.layoutFilter}>
+            <h2 className="title2">{f("Filtros")}</h2>
+             <MultiSelectFilter className={styles.expandable}
               name={f("Promocion")}
               content = {promotions}
               contentChangeBecauseOfSearch = {promotionsChange}
@@ -31,15 +38,29 @@ export default function SearchLayout(props) {
               setContentChangeBecauseOfUser = {setChangePromotionsFilter}
               stateOfChageBecauseOfUser = {changePromotionsFilter}
               /> 
+              <MultiSelectFilter className={styles.expandable}
+              name={f("RedesSociales")}
+              content = {socials}
+              contentChangeBecauseOfSearch = {socialsChange}
+              setFilterWithUserValues = {setSocialsFilter}
+              setContentChangeBecauseOfUser = {setChangeSocialsFilter}
+              stateOfChageBecauseOfUser = {changeSocialsFilter}
+              /> 
+              </section>
             <Result className={styles.layoutResult}
             query= {props.query}
             promotionsFilter= {promotionsFilter}
+            socialsFilter= {socialsFilter}
             index={props.index}
             change = {props.change}
             setPromotions = {setPromotions}
             promotionsChange = {promotionsChange}
             setPromotionsChange = {setPromotionsChange}
             changePromotionsFilter = {changePromotionsFilter}
+            setSocials = {setSocials}
+            socialsChange = {socialsChange}
+            setSocialsChange = {setSocialsChange}
+            changeSocialsFilter = {changeSocialsFilter}
             /> 
             </section>    
     )

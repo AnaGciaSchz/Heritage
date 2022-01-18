@@ -9,6 +9,7 @@ export default function Result(props) {
     var dataMap = new Map();
     dataMap.set("query", props.query);
     dataMap.set("promotions", props.promotionsFilter);
+    dataMap.set("socials", props.socialsFilter);
     dataMap.set("index", props.index);
     const response = await fetch("http://localhost:3000/api/card/search", {
         method: "POST",
@@ -22,21 +23,25 @@ export default function Result(props) {
         var result = await search();
         var results = new Array();
         var i;
-        for(i=0;i<result.aggregation.length;i++){
+        for(i=0;i<result.promotion.length;i++){
             results[i]= <SearchResult key={i}
-            promotion = {result.aggregation[i].key}
-            values = {result.aggregation[i].by_top_hit.hits.hits}
+            promotion = {result.promotion[i].key}
+            values = {result.promotion[i].by_top_hit.hits.hits}
             />
         }
-        props.setPromotions(result.aggregation);
+        props.setSocials(result.social);
+        props.setSocialsChange(!props.socialsChange)
+
+        props.setPromotions(result.promotion);
         props.setPromotionsChange(!props.promotionsChange)
+
         setResults(null);
         setResults(results);
     }
     
     useEffect(() => {
         createResults();
-      }, [props.change, props.changePromotionsFilter]);
+      }, [props.change, props.changePromotionsFilter, props.changeSocialsFilter]);
     return (<section className={styles.layout}>
     {results!=null ?
           results

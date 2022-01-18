@@ -53,7 +53,9 @@ export const ast = {
       CartaLogros: "Llogros destacables",
       CartaRegistro: "Rexistru",
       Promocion: "Promoción",
-      Buscar: "Buscar"
+      Buscar: "Buscar",
+      Filtros: "Filtros",
+      RedesSociales: "Redes Sociales"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -75,7 +77,9 @@ export const ast = {
       CartaLogros: "Llogros destacables",
       CartaRegistro: "Rexistru",
       Promocion: "Promoción",
-      Buscar: "Buscar"
+      Buscar: "Buscar",
+      Filtros: "Filtros",
+      RedesSociales: "Redes Sociales"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -97,7 +101,9 @@ export const ast = {
       CartaLogros: "Llogros destacables",
       CartaRegistro: "Rexistru",
       Promocion: "Promoción",
-      Buscar: "Buscar"
+      Buscar: "Buscar",
+      Filtros: "Filtros",
+      RedesSociales: "Redes Sociales"
     },
     "/about": {
       Copyright: "Copyright Universidá d'Uviéu",

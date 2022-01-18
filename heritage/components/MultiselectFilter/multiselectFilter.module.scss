@@ -3,22 +3,19 @@
 
 $details-padding: 1em;
 
-.expandable {
-	box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
-	width: 100%;
-	background: #ffffff;
-	border-radius: 8px;
-	position: relative;
-    width: 200px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    color:$darkGreen;
-    cursor: pointer;
-    font-size: 15px;
-    font-family: "Roboto", sans-serif;
-}
-
 	.s {
+    box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    background: #ffffff;
+    border-radius: 8px;
+    position: relative;
+      width: 200px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      color:$darkGreen;
+      cursor: pointer;
+      font-size: 15px;
+      font-family: "Roboto", sans-serif;
 		padding: $details-padding;
 
 		&:focus {

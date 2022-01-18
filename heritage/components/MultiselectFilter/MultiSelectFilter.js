@@ -1,38 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { useIntl } from "react-intl"
 import styles from './multiselectFilter.module.scss'
 
 
 export default function MultiSelectFilter(props) {
-
-    const { formatMessage } = useIntl();
-    const f = id => formatMessage({ id })
-    const [promotions, setPromotions] = useState(null);
+    const [content, setContent] = useState(null);
     const [lastFilter, setLastFilter] = useState("");
 
-    const showPromotions = async () => {
-      if(props.promotions!=null){
-      var p = new Array();
+    const showFilter = async () => {
+      if(props.content!=null){
+      var inputsAndLabels = new Array();
       var i;
-      for(i=0;i<props.promotions.length;i++){
-        if(lastFilter !== "" && lastFilter.split(",").includes(props.promotions[i].key)){
-          p[i]= <><input id={"promotion"+i} type="checkbox" value={props.promotions[i].key} checked/> <label htmlFor={i}>{props.promotions[i].key}</label></>;
+      for(i=0;i<props.content.length;i++){
+        if(lastFilter !== "" && lastFilter.split(",").includes(props.content[i].key)){
+          inputsAndLabels[i]= <><input id={props.name+i} type="checkbox" value={props.content[i].key} checked/> <label htmlFor={i}>{props.content[i].key}</label></>;
         }else{
-          p[i]= <><input id={"promotion"+i} type="checkbox" value={props.promotions[i].key}/> <label htmlFor={i}>{props.promotions[i].key}</label></>;
+          inputsAndLabels[i]= <><input id={props.name+i} type="checkbox" value={props.content[i].key}/> <label htmlFor={i}>{props.content[i].key}</label></>;
         }
         
         }
-      setPromotions(null);
-      setPromotions(p);
+        setContent(null);
+        setContent(inputsAndLabels);
     }
   }
 
-  const sendPromotions = async () => {
+  const sendChangesByUser = async () => {
     var filter = "";
     var element;
     var i;
-    for(i=0;i<promotions.length;i++){
-      element = document.querySelector("#promotion"+i);
+    for(i=0;i<content.length;i++){
+      element = document.querySelector("#"+props.name+i);
       element.checked ? filter+=element.value+"," : filter+="";
     }
     if(filter !==""){
@@ -40,21 +36,21 @@ export default function MultiSelectFilter(props) {
     }
     if(filter != lastFilter){
       setLastFilter(filter);
-      props.setPromotionsFilter(filter);
-      props.setChangePromotionsFilter(!props.changePromotionsFilter)
+      props.setFilterWithUserValues(filter);
+      props.setContentChangeBecauseOfUser(!props.stateOfChageBecauseOfUser)
 
     }
     
   }
 
   useEffect(() => {
-    showPromotions();
-  }, [props.promotionsChange]);
-return (<details onClick = {sendPromotions} className={styles.expandable}>
-  <summary className={styles.s}>{f("Promocion")}</summary>
+    showFilter();
+  }, [props.contentChangeBecauseOfSearch]);
+return (<details onClick = {sendChangesByUser} className={styles.expandable}>
+  <summary className={styles.s}>{props.name}</summary>
   <div id={styles.checklist}>
-{promotions!=null ?
-      promotions
+{content!=null ?
+      content
       : null}</div>
       </details>);
 }

@@ -2,8 +2,12 @@ import styles from './searchLayout.module.scss'
 import React, { useState, useEffect } from 'react';
 import Result from "components/Result/Result.js"
 import MultiSelectFilter from "components/MultiSelectFilter/MultiSelectFilter.js"
+import { useIntl } from "react-intl"
 
 export default function SearchLayout(props) {
+  const { formatMessage } = useIntl();
+    const f = id => formatMessage({ id })
+
     const [promotions, setPromotions] = useState(null);
     const [promotionsChange, setPromotionsChange] = useState(false);
     const [promotionsFilter, setPromotionsFilter] =  useState("");
@@ -20,11 +24,12 @@ export default function SearchLayout(props) {
     return (
         <section className={styles.layout}>
              <MultiSelectFilter className={styles.layoutFilter}
-              promotions = {promotions}
-              promotionsChange = {promotionsChange}
-              setPromotionsFilter = {setPromotionsFilter}
-              setChangePromotionsFilter = {setChangePromotionsFilter}
-              changePromotionsFilter = {changePromotionsFilter}
+              name={f("Promocion")}
+              content = {promotions}
+              contentChangeBecauseOfSearch = {promotionsChange}
+              setFilterWithUserValues = {setPromotionsFilter}
+              setContentChangeBecauseOfUser = {setChangePromotionsFilter}
+              stateOfChageBecauseOfUser = {changePromotionsFilter}
               /> 
             <Result className={styles.layoutResult}
             query= {props.query}

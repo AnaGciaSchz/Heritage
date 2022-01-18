@@ -141,6 +141,7 @@ function getBody(query, promotions, socials){
 function getBool(query, promotions, socials){
     let filterQuery = getFilter(promotions, socials);
     if(filterQuery != null){
+      console.log({"bool": { "must": [ JSON.stringify(getQuery(query)) ], "filter": JSON.stringify(filterQuery)}})
         return {"bool": { "must": [ getQuery(query) ], "filter": filterQuery}}
     }
     return {"bool": { "must": [ getQuery(query) ]}
@@ -163,7 +164,7 @@ function getFilter(promotions, socials){
   var filterSocials = "";
     if(!isEmpthyFilter(promotions)){
       var promFilter = getPromotionsFilter(promotions);
-      if(promFilter !=""){
+      if(promFilter !=""){ 
       filterPromotions = '"must": [ '+promFilter+' ]'
       }
     }
@@ -177,7 +178,14 @@ function getFilter(promotions, socials){
   if(filterPromotions != "" && filterSocials != ""){
     filterPromotions+=',';
   }
-    let filterQuery = '{"bool": {"minimum_should_match": "1",'+filterPromotions+filterSocials+'}}';
+  let filterQuery = "";
+  if(filterSocials != ""){
+    filterQuery = '{"bool": {"minimum_should_match": "1",'+filterPromotions+filterSocials+'}}';
+  }
+  else{
+    filterQuery = '{"bool": {'+filterPromotions+filterSocials+'}}';
+  }
+    
     
     return JSON.parse(filterQuery);
 

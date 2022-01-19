@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './multiselectFilter.module.scss'
 
-
 export default function MultiSelectFilter(props) {
   const [content, setContent] = useState(null);
   const [lastFilter, setLastFilter] = useState("");
@@ -38,7 +37,7 @@ export default function MultiSelectFilter(props) {
       if (filter != lastFilter) {
         setLastFilter(filter);
         props.setFilterWithUserValues(filter);
-        props.setContentChangeBecauseOfUser(!props.stateOfChageBecauseOfUser)
+        props.setContentChangeBecauseOfUser();
 
       }
     }

@@ -10,6 +10,9 @@ import { IntlProvider } from "react-intl"
 import * as locales from "../content/locale"
 import { useRouter } from "next/router"
 
+import { Provider } from 'react-redux';
+import { store } from '../services/redux/store.js';
+
 export default function MyApp({ Component, pageProps }) {
 
   const router = useRouter()
@@ -19,6 +22,7 @@ export default function MyApp({ Component, pageProps }) {
 
 
   return (
+    <Provider store={store}>
     <IntlProvider
     locale={locale}
     defaultLocale={defaultLocale}
@@ -33,5 +37,6 @@ export default function MyApp({ Component, pageProps }) {
       </Box>
       <Footer />
     </IntlProvider>
+    </Provider>
   )
 }

@@ -4,6 +4,18 @@ import Result from "components/Result/Result.js"
 import MultiSelectFilter from "components/MultiSelectFilter/MultiSelectFilter.js"
 import { useIntl } from "react-intl"
 
+import {useDispatch,useSelector,} from 'react-redux';
+
+import {
+  changeByUserPromotions,
+  selectPromotionsSlice
+} from '../../../services/redux/features/promotions/promotionsSlice.js';
+
+import {
+  changeByUserSocials,
+  selectSocialsSlice
+} from '../../../services/redux/features/socials/socialsSlice.js';
+
 export default function SearchLayout(props) {
   const { formatMessage } = useIntl();
     const f = id => formatMessage({ id })
@@ -11,21 +23,16 @@ export default function SearchLayout(props) {
     const [promotions, setPromotions] = useState(null);
     const [promotionsChange, setPromotionsChange] = useState(false);
     const [promotionsFilter, setPromotionsFilter] =  useState("");
-    const [changePromotionsFilter, setChangePromotionsFilter] = useState(false);
+    const p = useSelector(selectPromotionsSlice);
 
     const [socials, setSocials] = useState(null);
     const [socialsChange, setSocialsChange] = useState(false);
     const [socialsFilter, setSocialsFilter] =  useState("");
-    const [changeSocialsFilter, setChangeSocialsFilter] = useState(false);
+    const s = useSelector(selectSocialsSlice);
 
-    const filtersMap = new Map();
 
-    function updateFilters() {
-        filtersMap.set("promotion", promotionsFilter);
-      }
-    useEffect(() => {
-        updateFilters();
-      }, [changePromotionsFilter]);
+    const dispatch = useDispatch() 
+
     return (
         <section className={styles.layout}>
           <section className={styles.layoutFilter}>
@@ -35,16 +42,14 @@ export default function SearchLayout(props) {
               content = {promotions}
               contentChangeBecauseOfSearch = {promotionsChange}
               setFilterWithUserValues = {setPromotionsFilter}
-              setContentChangeBecauseOfUser = {setChangePromotionsFilter}
-              stateOfChageBecauseOfUser = {changePromotionsFilter}
+              setContentChangeBecauseOfUser ={() => dispatch(changeByUserPromotions())}
               /> 
               <MultiSelectFilter className={styles.expandable}
               name={f("RedesSociales")}
               content = {socials}
               contentChangeBecauseOfSearch = {socialsChange}
               setFilterWithUserValues = {setSocialsFilter}
-              setContentChangeBecauseOfUser = {setChangeSocialsFilter}
-              stateOfChageBecauseOfUser = {changeSocialsFilter}
+              setContentChangeBecauseOfUser = {() => dispatch(changeByUserSocials())}
               /> 
               </section>
             <Result className={styles.layoutResult}
@@ -56,11 +61,11 @@ export default function SearchLayout(props) {
             setPromotions = {setPromotions}
             promotionsChange = {promotionsChange}
             setPromotionsChange = {setPromotionsChange}
-            changePromotionsFilter = {changePromotionsFilter}
+            changePromotionsFilter = {p}
             setSocials = {setSocials}
             socialsChange = {socialsChange}
             setSocialsChange = {setSocialsChange}
-            changeSocialsFilter = {changeSocialsFilter}
+            changeSocialsFilter = {s}
             /> 
             </section>    
     )

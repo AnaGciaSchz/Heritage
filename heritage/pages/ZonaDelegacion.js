@@ -1,7 +1,7 @@
-import SearchLayout from "../components/SearchLayout/SearchLayout";
+import SearchLayout from "../components/SearchComponents/SearchLayout/SearchLayout";
 import { useState } from "react";
 import { useIntl } from "react-intl"
-import SearchBar from "components/SearchBar/SearchBar.js"
+import SearchBar from "components/SearchComponents/SearchBar/SearchBar.js"
 
 export default function ZonaDelegacion() {
     const {formatMessage} = useIntl();

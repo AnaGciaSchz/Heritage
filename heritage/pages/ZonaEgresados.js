@@ -1,7 +1,7 @@
-import SearchBar from "components/SearchBar/SearchBar.js"
+import SearchBar from "components/SearchComponents/SearchBar/SearchBar.js"
 import { useState } from "react";
 import { useIntl } from "react-intl"
-import SearchLayout from "../components/SearchLayout/SearchLayout";
+import SearchLayout from "../components/SearchComponents/SearchLayout/SearchLayout";
 
 export default function ZonaEgresados() {
   const { formatMessage } = useIntl();

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import SearchResult from "components/SearchResult/SearchResult.js"
+import SearchResult from "components/SearchComponents/SearchResult/SearchResult.js"
 import styles from './result.module.scss'
 
 export default function Result(props) {

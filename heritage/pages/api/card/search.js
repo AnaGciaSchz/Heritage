@@ -141,7 +141,6 @@ function getBody(query, promotions, socials){
 function getBool(query, promotions, socials){
     let filterQuery = getFilter(promotions, socials);
     if(filterQuery != null){
-      console.log({"bool": { "must": [ JSON.stringify(getQuery(query)) ], "filter": JSON.stringify(filterQuery)}})
         return {"bool": { "must": [ getQuery(query) ], "filter": filterQuery}}
     }
     return {"bool": { "must": [ getQuery(query) ]}

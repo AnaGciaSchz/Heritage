@@ -1,5 +1,5 @@
 import styles from './searchResult.module.scss'
-import SearchCard from "components/SearchCard/SearchCard.js"
+import SearchCard from "components/SearchComponents/SearchCard/SearchCard.js"
 import React, { useState, useEffect } from 'react';
 import { useIntl } from "react-intl"
 

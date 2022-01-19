@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import SearchCard from "components/SearchCard/SearchCard.js"
+import SearchCard from "components/SearchComponents/SearchCard/SearchCard.js"
 import { alertService } from "../../services/alert.service";
 import { validateService } from "../../services/validate.service";
 import styles from './uploadCardForm.module.scss'

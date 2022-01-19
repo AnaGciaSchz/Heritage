@@ -8,9 +8,8 @@ export default function SearchBar(props) {
   const f = id => formatMessage({ id })
   const [isClicked, setClick] = React.useState(false);
   const [hasText, setHasText] = React.useState(false);
-  const [change, setChange] = React.useState(false);
-  const onChange = (event) => { { event.target.value == "" ? setHasText(false) : setHasText(true); }; props.setQuery(event.target.value); props.setChange(!change); setChange(!change); }
-  const emptySearch = () => { document.getElementById('searchBar').value = ""; setHasText(false); props.setQuery(""); props.setChange(!change); setChange(!change); }
+  const onChange = (event) => { { event.target.value == "" ? setHasText(false) : setHasText(true); }; props.setQuery(event.target.value); props.setChange();}
+  const emptySearch = () => { document.getElementById('searchBar').value = ""; setHasText(false); props.setQuery(""); props.setChange();}
 
   return (
     <>

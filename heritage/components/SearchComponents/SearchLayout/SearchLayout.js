@@ -4,17 +4,11 @@ import Result from "components/Result/Result.js"
 import MultiSelectFilter from "components/MultiSelectFilter/MultiSelectFilter.js"
 import { useIntl } from "react-intl"
 
-import {useDispatch,useSelector,} from 'react-redux';
+import {useDispatch,} from 'react-redux';
 
-import {
-  changeByUserPromotions,
-  selectPromotionsSlice
-} from '../../../services/redux/features/promotions/promotionsSlice.js';
+import {changeByUserPromotions} from '../../../services/redux/features/promotions/promotionsSlice.js';
 
-import {
-  changeByUserSocials,
-  selectSocialsSlice
-} from '../../../services/redux/features/socials/socialsSlice.js';
+import {changeByUserSocials} from '../../../services/redux/features/socials/socialsSlice.js';
 
 export default function SearchLayout(props) {
   const { formatMessage } = useIntl();
@@ -23,12 +17,10 @@ export default function SearchLayout(props) {
     const [promotions, setPromotions] = useState(null);
     const [promotionsChange, setPromotionsChange] = useState(false);
     const [promotionsFilter, setPromotionsFilter] =  useState("");
-    const p = useSelector(selectPromotionsSlice);
 
     const [socials, setSocials] = useState(null);
     const [socialsChange, setSocialsChange] = useState(false);
     const [socialsFilter, setSocialsFilter] =  useState("");
-    const s = useSelector(selectSocialsSlice);
 
 
     const dispatch = useDispatch() 
@@ -54,18 +46,15 @@ export default function SearchLayout(props) {
               </section>
             <Result className={styles.layoutResult}
             query= {props.query}
+            index={props.index}
             promotionsFilter= {promotionsFilter}
             socialsFilter= {socialsFilter}
-            index={props.index}
-            change = {props.change}
             setPromotions = {setPromotions}
             promotionsChange = {promotionsChange}
             setPromotionsChange = {setPromotionsChange}
-            changePromotionsFilter = {p}
             setSocials = {setSocials}
             socialsChange = {socialsChange}
             setSocialsChange = {setSocialsChange}
-            changeSocialsFilter = {s}
             /> 
             </section>    
     )

@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
   
   const initialState= {
-    value: false
+    valueUser: false
   };
   
   export const promotionsSlice = createSlice({
@@ -9,7 +9,7 @@ import {createSlice} from '@reduxjs/toolkit';
     initialState,
     reducers: {
       changeByUserPromotions: state => {
-        state.value = !state.value;
+        state.valueUser = !state.valueUser;
       }
     },
   });
@@ -17,6 +17,6 @@ import {createSlice} from '@reduxjs/toolkit';
     changeByUserPromotions
   } = promotionsSlice.actions;
   
-  export const selectPromotionsSlice = (state) => state.promotions.value;
+  export const selectPromotionsUserSlice = (state) => state.promotions.valueUser;
   
   export default promotionsSlice.reducer;

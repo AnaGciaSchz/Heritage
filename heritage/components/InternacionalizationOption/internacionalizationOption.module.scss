@@ -27,7 +27,7 @@
     transform: translateY(calc(100% - 2px));
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(60deg,#71cc11 0%, #c2e59c 100%);
+    background-image: linear-gradient(60deg, $green 0%, #c2e59c 100%);
     transition: transform .25s ease-out;
  }
  

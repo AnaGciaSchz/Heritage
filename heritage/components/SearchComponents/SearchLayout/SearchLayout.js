@@ -1,5 +1,5 @@
 import styles from './searchLayout.module.scss'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Result from "components/Result/Result.js"
 import MultiSelectFilter from "components/MultiSelectFilter/MultiSelectFilter.js"
 import { useIntl } from "react-intl"
@@ -22,13 +22,15 @@ export default function SearchLayout(props) {
     const [socialsChange, setSocialsChange] = useState(false);
     const [socialsFilter, setSocialsFilter] =  useState("");
 
+    const sortOptions = [{key: "Promoción ascendente"},{key: "Promoción desdencente"}]
+
 
     const dispatch = useDispatch() 
 
     return (
         <section className={styles.layout}>
           <section className={styles.layoutFilter}>
-            <h2 className="title2">{f("Filtros")}</h2>
+            <h2 className={styles.titleSideFirst}>{f("Filtros")}</h2>
              <MultiSelectFilter className={styles.expandable}
               name={f("Promocion")}
               content = {promotions}
@@ -43,6 +45,8 @@ export default function SearchLayout(props) {
               setFilterWithUserValues = {setSocialsFilter}
               setContentChangeBecauseOfUser = {() => dispatch(changeByUserSocials())}
               /> 
+              <h2 className={styles.titleSideSecond}>Herramientas</h2>
+
               </section>
             <Result className={styles.layoutResult}
             query= {props.query}

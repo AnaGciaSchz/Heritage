@@ -43,7 +43,6 @@ export default function MultiSelectFilter(props) {
     }
 
   }
-
   useEffect(() => {
     showFilter();
   }, [props.contentChangeBecauseOfSearch]);

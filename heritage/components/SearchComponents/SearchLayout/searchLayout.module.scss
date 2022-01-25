@@ -21,9 +21,28 @@
     position: relative;
       width: 200px;
       margin-bottom: 20px;
-      margin-top: 20px;
       color:$darkGreen;
       cursor: pointer;
       font-size: 15px;
       font-family: "Roboto", sans-serif;
   }
+
+  .titleSideFirst{
+	position: relative;
+	display: inline-block;
+	font-size: 1.2rem;
+	background: $green;
+	background-clip: text;
+	color: transparent;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+  margin-top:10px;
+    
+  }
+
+  .titleSideSecond{
+    @extend .titleSideFirst;
+    margin-top:10%;
+      
+    }

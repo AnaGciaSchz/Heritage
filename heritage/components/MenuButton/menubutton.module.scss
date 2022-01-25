@@ -1,3 +1,4 @@
+
 @import "../../styles/sass/_variables";
 @import "../../styles/sass/mixins";
 
@@ -7,7 +8,7 @@
     border-width: 0em;
     border-radius: 3em;
     height: 5em;
-    width: 8.5em;
+    width: 10em;
     margin-top: 3%;
     margin-bottom: 1%;
     font-family: 'Roboto', sans-serif;
@@ -19,17 +20,77 @@
     transition: all 0.2s;
     cursor: pointer;
 }
+.image1{
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin-left: 45%;
+    margin-bottom:-10%;
+}
+
+.text{
+    margin-top: -495px;
+}
+
+.image2{
+    visibility: hidden;
+}
 
 .menuButton:hover {
+    width: 8em;
     background-color: $color-menuBoton-hover;
+    .image1{
+        visibility: hidden;
+    }
+    .image2{
+        visibility:visible;
+        width: 30px;
+        height: 30px;
+    }
+    .text{
+        margin-top: -10px;
+        -webkit-animation: scale-out-ver-bottom 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: scale-out-ver-bottom 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    }
+}
+
+@include desktop {
+
+    .menuButton:hover{
+        .image2{
+        -webkit-animation: slide-in-top 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-top 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+}
+
 }
 
 @include tablet {
     .menuButton {
         height: 4.5em;
-        width: 7.5em;
-        font-size: 12px;
+        width: 5.5em; 
     }
+
+    .text{
+        font-size: 10px;
+    }
+
+    .image1{
+        margin-top: 10px;
+        margin-bottom: -16px;
+        margin-left: 25px;
+    }
+
+    .menuButton:hover{
+        width: 6.5em;
+        .image2{
+        width: 25px;
+        height: 25px;
+
+        -webkit-animation: slide-in-top-tablet 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-top-tablet 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+}
 }
 
 @include mobile {
@@ -38,4 +99,113 @@
         width: 7.6em;
         font-size: 9px;
     }
+
+    .text{
+        visibility: hidden;
+    }
+
+    .image1{
+        margin-top: 10px;
+        margin-left: 18px;
+    }
+
+    .menuButton:hover{
+        width: 6em;
+        .image1{
+            visibility: visible;
+            margin-left: 12px;
+        }
+        .image2{
+            visibility:hidden;
+    }
 }
+}
+
+/**
+ * ----------------------------------------
+ * animation scale-out-ver-bottom
+ * ----------------------------------------
+ */
+ @-webkit-keyframes scale-out-ver-bottom {
+    0% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      -webkit-transform-origin: 0% 100%;
+              transform-origin: 0% 100%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleY(0);
+              transform: scaleY(0);
+      -webkit-transform-origin: 0% 100%;
+              transform-origin: 0% 100%;
+      opacity: 1;
+    }
+  }
+  @keyframes scale-out-ver-bottom {
+    0% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      -webkit-transform-origin: 0% 100%;
+              transform-origin: 0% 100%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleY(0);
+              transform: scaleY(0);
+      -webkit-transform-origin: 0% 100%;
+              transform-origin: 0% 100%;
+      opacity: 1;
+    }
+  }
+
+  /**
+ * ----------------------------------------
+ * animation slide-in-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-in-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(10px);
+              transform: translateY(10px);
+    }
+  }
+  @keyframes slide-in-top {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+  }
+
+  @-webkit-keyframes slide-in-top-tablet {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(1px);
+              transform: translateY(1px);
+    }
+  }
+  @keyframes slide-in-top-tablet {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(1px);
+        transform: translateY(1px);
+    }
+  }
+  
+  
+  
+

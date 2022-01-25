@@ -8,6 +8,11 @@ const {formatMessage} = useIntl();
   const f = id => formatMessage({ id })
     return (
         <header className={style.header} >
+            <MenuButton nombre={f("historiaEII")} src= "headerIcons/historiaEII.png" referencia="/HistoriaEII" />
+            <MenuButton nombre={f("ZExalumnado")} src= "headerIcons/egresados.png" referencia="/ZonaEgresados" />
+            <MenuButton nombre={f("ZProfesorado")} src= "headerIcons/profesorado.png" referencia="/ZonaProfesorado" />
+            <MenuButton nombre={f("ZDelegacion")} src= "headerIcons/delegados.png" referencia="/ZonaDelegacion" />
+
             <span className={style.logo}>
                 <ImageWithLink
                     alt={f("logo")}
@@ -15,17 +20,10 @@ const {formatMessage} = useIntl();
                     img="/HeritageLogo.png" />
             </span>
 
-            <MenuButton nombre={f("historiaEII")} referencia="/HistoriaEII" />
-            <MenuButton nombre={f("ZExalumnado")} referencia="/ZonaEgresados" />
-            <MenuButton nombre={f("ZProfesorado")} referencia="/ZonaProfesorado" />
-            <MenuButton nombre={f("ZDelegacion")} referencia="/ZonaDelegacion" />
-
-            <div className={style.spacer}></div>
-
-            { /*<MenuButton nombre="CRUD" referencia= "/about"/>*/}
-            <MenuButton nombre={f("QueEsHeritage")} referencia="/about" />
-            <MenuButton nombre={f("SubidaDeCartas")} referencia="/SubidaDeCartas" />
-            <MenuButton nombre={f("Contacto")} referencia="/Contacto" />
+            <MenuButton nombre="Zona Admin" src= "headerIcons/admin.png" referencia="/about" />
+            <MenuButton nombre={f("SubidaDeCartas")} src= "headerIcons/subidaCartas.png" referencia="/SubidaDeCartas" />
+            <MenuButton nombre={f("QueEsHeritage")} src= "headerIcons/queEsHeritage.png" referencia="/about" />
+            <MenuButton nombre={f("Contacto")} src= "headerIcons/contacto.png" referencia="/Contacto" />
 
 
         </header>

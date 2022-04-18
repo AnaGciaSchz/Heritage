@@ -1,0 +1,105 @@
+@import "../../styles/sass/variables";
+@import "../../styles/sass/mixins";
+
+.dropdown {
+    position: relative;
+    width: 300px;
+    filter: url(#goo);
+    margin-bottom: -150px;
+    margin-top: -20px;
+    z-index: 10;
+  
+    &__face,
+    &__items {
+      background-color: rgb(255, 255, 255);
+      border-radius: 1em;
+      box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+      padding: 20px;
+      z-index: 10;
+      border-radius: 25px;
+    }
+  
+    &__face {
+      display: block;
+      position: relative;
+      width: 25%;
+      z-index: 10;
+    }
+  
+    &__items {
+      margin: 0;
+      position: absolute;
+      right: 0;
+      top: calc(90% + 25px);
+        left: -2%;
+      width: 60%;
+      list-style: none;
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      visibility: hidden;
+      z-index: 100;
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.93, 0.88, 0.1, 0.8);
+  
+      &::before {
+        content: "";
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        bottom: 100%;
+        right: 50%;
+        height: 40px;
+        z-index: 10;
+        width: 20px;
+      }
+    }
+  
+    &__arrow {
+      border-bottom: 2px solid #000;
+      border-right: 2px solid #000;
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      width: 10px;
+      z-index: 10;
+      height: 10px;
+      transform: rotate(45deg) translateY(-50%);
+      transform-origin: right;
+    }
+  
+    input {
+      display: none;
+      z-index: 10;
+  
+      &:checked ~ .dropdown__items {
+        top: calc(90% + 25px);
+        left: -2%;
+        visibility: visible;
+        opacity: 1;
+        z-index: 10;
+      }
+    }
+  }
+
+  .button {
+    border-color: #ffffff;
+    cursor: pointer;
+    color: $darkBlue;
+    font-size: 10px;
+    width: 100%;
+    height: 30px;
+    background: white;
+    border-radius: 1em;
+  }
+
+  .buttonSelected {
+    border-color: #ffffff;
+    cursor: pointer;
+    color: white;
+    font-size: 10px;
+    width: 100%;
+    height: 30px;
+    background: $darkGreen;
+    border-radius: 1em;
+  }
+  

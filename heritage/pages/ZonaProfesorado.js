@@ -12,6 +12,7 @@ export default function ZonaProfesorado() {
     const f = id => formatMessage({ id })
 
     const [query, setQuery] = useState("");
+    const [sort,setSort] = useState("asc");
 
     const dispatch = useDispatch() 
     return (
@@ -19,10 +20,12 @@ export default function ZonaProfesorado() {
             <h1 className="title1">{f("ZProfesorado")}</h1>
             <SearchBar
                 setQuery={setQuery}
+                setSort = {setSort}
                 setChange={() => dispatch(changeInSearchBarByUser())}
             />
             <SearchLayout
                 query={query}
+                sort = {sort}
                 index="professor-card"
             />
         </>

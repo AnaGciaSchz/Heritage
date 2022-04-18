@@ -55,7 +55,8 @@ export const ast = {
       Promocion: "Promoción",
       Buscar: "Buscar",
       Filtros: "Filtros",
-      RedesSociales: "Redes Sociales"
+      RedesSociales: "Redes Sociales",
+      Ordenar: "Ordenar"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -79,7 +80,8 @@ export const ast = {
       Promocion: "Promoción",
       Buscar: "Buscar",
       Filtros: "Filtros",
-      RedesSociales: "Redes Sociales"
+      RedesSociales: "Redes Sociales",
+      Ordenar: "Ordenar"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -103,7 +105,8 @@ export const ast = {
       Promocion: "Promoción",
       Buscar: "Buscar",
       Filtros: "Filtros",
-      RedesSociales: "Redes Sociales"
+      RedesSociales: "Redes Sociales",
+      Ordenar: "Ordenar"
     },
     "/about": {
       Copyright: "Copyright Universidá d'Uviéu",

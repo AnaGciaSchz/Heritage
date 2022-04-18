@@ -22,8 +22,6 @@ export default function SearchLayout(props) {
     const [socialsChange, setSocialsChange] = useState(false);
     const [socialsFilter, setSocialsFilter] =  useState("");
 
-    const sortOptions = [{key: "Promoción ascendente"},{key: "Promoción desdencente"}]
-
 
     const dispatch = useDispatch() 
 
@@ -45,12 +43,12 @@ export default function SearchLayout(props) {
               setFilterWithUserValues = {setSocialsFilter}
               setContentChangeBecauseOfUser = {() => dispatch(changeByUserSocials())}
               /> 
-              <h2 className={styles.titleSideSecond}>Herramientas</h2>
 
               </section>
             <Result className={styles.layoutResult}
             query= {props.query}
             index={props.index}
+            sort = {props.sort}
             promotionsFilter= {promotionsFilter}
             socialsFilter= {socialsFilter}
             setPromotions = {setPromotions}

@@ -1,3 +1,5 @@
+import { getSortedRoutes } from 'next/dist/shared/lib/router/utils';
+
 var esClient = null;
 if (typeof window === 'undefined') {
     const { Client } = require('@elastic/elasticsearch')
@@ -14,7 +16,7 @@ if (typeof window === 'undefined') {
 export default async (req, res) => {
     if (esClient != null) {
         let dataMap = new Map(JSON.parse(req.body));
-        let body = getBody(dataMap.get("query"), dataMap.get("promotions"), dataMap.get("socials"));
+        let body = getBody(dataMap.get("query"), dataMap.get("promotions"), dataMap.get("socials"), dataMap.get("sort"));
     await esClient.search({
         index: dataMap.get("index"),
         body: body
@@ -51,19 +53,12 @@ else {
 }
 }
 
-function getBody(query, promotions, socials){
+function getBody(query, promotions, socials, sort){
+  var fixedSort = sort==""?"desc":sort;
     let body = {
     "size": 1000,
     "query": 
-      getBool(query, promotions, socials)
-    ,
-    "sort": [
-      {
-        "_score": {
-          "order": "desc"
-        }
-      }
-    ],
+      getBool(query, promotions, socials),
     "aggs": {
       "by_promotion": {
         "terms": {
@@ -74,7 +69,7 @@ function getBody(query, promotions, socials){
             ],
             "order": [
                 {
-                  "_key": "asc"
+                  "_key": fixedSort
                 }
               ]
         },
@@ -143,11 +138,10 @@ function getBool(query, promotions, socials){
     if(filterQuery != null){
         return {"bool": { "must": [ getQuery(query) ], "filter": filterQuery}}
     }
-    return {"bool": { "must": [ getQuery(query) ]}
-}
+    return {"bool": { "must": [ getQuery(query) ]}}
 }
 
-function isEmpthyFilter(filter){
+function isEmptyFilter(filter){
   if(filter != undefined && filter != null && filter !=""){
     return false;
   }
@@ -156,19 +150,19 @@ function isEmpthyFilter(filter){
 
 
 function getFilter(promotions, socials){
-  if(isEmpthyFilter(promotions) && isEmpthyFilter(socials)){
+  if(isEmptyFilter(promotions) && isEmptyFilter(socials)){
     return null;
   }
   var filterPromotions = "";
   var filterSocials = "";
-    if(!isEmpthyFilter(promotions)){
+    if(!isEmptyFilter(promotions)){
       var promFilter = getPromotionsFilter(promotions);
       if(promFilter !=""){ 
       filterPromotions = '"must": [ '+promFilter+' ]'
       }
     }
 
-    if(!isEmpthyFilter(socials)){
+    if(!isEmptyFilter(socials)){
       var socFilter = getSocialsFilter(socials);
       if(socFilter != ""){
       filterSocials = '"should": [ '+socFilter+' ]'

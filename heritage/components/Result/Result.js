@@ -16,6 +16,7 @@ export default function Result(props) {
     dataMap.set("promotions", props.promotionsFilter);
     dataMap.set("socials", props.socialsFilter);
     dataMap.set("index", props.index);
+    dataMap.set("sort",props.sort)
     const response = await fetch("http://localhost:3000/api/card/search", {
         method: "POST",
         body: JSON.stringify(Array.from(dataMap.entries()))
@@ -26,6 +27,7 @@ export default function Result(props) {
 
     const createResults = async () => {
         var result = await search();
+        console.log(result)
         var results = new Array();
         var i;
         for(i=0;i<result.promotion.length;i++){

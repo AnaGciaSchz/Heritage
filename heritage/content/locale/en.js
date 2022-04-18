@@ -55,7 +55,8 @@ export const en = {
       Promocion: "Promotion",
       Buscar: "Search",
       Filtros: "Filters",
-      RedesSociales: "Social Media"
+      RedesSociales: "Social Media",
+      Ordenar: "Sort"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright University of Oviedo",
@@ -79,7 +80,8 @@ export const en = {
       Promocion: "Promotion",
       Buscar: "Search",
       Filtros: "Filters",
-      RedesSociales: "Social Media"
+      RedesSociales: "Social Media",
+      Ordenar: "Sort"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright University of Oviedo",
@@ -103,7 +105,8 @@ export const en = {
       Promocion: "Promotion",
       Buscar: "Search",
       Filtros: "Filters",
-      RedesSociales: "Social Media"
+      RedesSociales: "Social Media",
+      Ordenar: "Sort"
     },
     "/about": {
       Copyright: "Copyright University of Oviedo",

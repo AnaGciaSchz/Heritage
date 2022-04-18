@@ -33,6 +33,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-#mongo
-/mongo
+#app
+public/temporalImages/*
 

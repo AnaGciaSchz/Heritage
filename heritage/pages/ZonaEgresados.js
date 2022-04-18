@@ -12,6 +12,7 @@ export default function ZonaEgresados() {
   const f = id => formatMessage({ id })
 
   const [query, setQuery] = useState("");
+  const [sort,setSort] = useState("asc");
 
   const dispatch = useDispatch() 
 
@@ -20,10 +21,12 @@ export default function ZonaEgresados() {
       <h1 className="title1">{f("ZExalumnado")}</h1>
       <SearchBar
         setQuery={setQuery}
+        setSort = {setSort}
         setChange={() => dispatch(changeInSearchBarByUser())}
       />
       <SearchLayout
         query={query}
+        sort = {sort}
         index="student-card"
       />
     </>

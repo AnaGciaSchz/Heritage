@@ -1,6 +1,7 @@
 import styles from './searchBar.module.scss'
 import React from 'react'
 import { useIntl } from "react-intl"
+import Sort from "components/Sort/Sort.js"
 
 
 export default function SearchBar(props) {
@@ -40,6 +41,9 @@ export default function SearchBar(props) {
         jA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cj
         xnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
       </div>
+      <Sort
+      setSort = {props.setSort}
+      change = {props.setChange}/>
     </>
   )
 }

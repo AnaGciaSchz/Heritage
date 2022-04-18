@@ -65,6 +65,9 @@ const mapping = {
                     }
                 }
             },
+            "sortingName": {
+                "type": "keyword"
+            },
             "promotion": {
                 "type": "keyword"
             },

@@ -1,5 +1,3 @@
-import nextConnect from 'next-connect';
-
 var esClient = null;
 if (typeof window === 'undefined') {
     const { Client } = require('@elastic/elasticsearch')
@@ -35,6 +33,7 @@ function deleteTemporalData (){
         index: dataMap.get("index"),
         body: {
             "name": dataMap.get("name"),
+            "sortingName": dataMap.get("name"),
             "promotion": dataMap.get("promotion"),
             "registry": dataMap.get("registry"),
             "shortDescription": dataMap.get("shortDescription"),

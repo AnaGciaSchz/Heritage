@@ -1,9 +1,10 @@
 import Slider from "components/Slider/Slider.js"
-import Notice from "components/Notice/Notice.js"
 import ImageWithLink from "components/ImageWithLink/ImageWithLink.js"
+import SearchCardWithTitle from "components/SearchComponents/SearchCardWithTitle/SearchCardWithTitle.js"
 
 import { useRouter } from "next/router"
 import { useIntl } from "react-intl"
+import React, { useState, useEffect } from 'react';
 
 export default function Home() {
 
@@ -11,31 +12,59 @@ export default function Home() {
   const f = id => formatMessage({ id })
   const router = useRouter()
   const { locale, locales, defaultLocale } = router
+  const [results, setResults] = useState(null);
 
+  const lastCard = async (index) => {
+    var dataMap = new Map();
+    dataMap.set("index", index);
+    const response = await fetch("http://localhost:3000/api/card/lastCard", {
+        method: "POST",
+        body: JSON.stringify(Array.from(dataMap.entries()))
+      });
+      var r = await response.json();
+      return r.message;
+    }
+
+    const createResults = async () => {
+      var lastStudent = await lastCard("student-card");
+      var lastProfessor = await lastCard("professor-card");
+      var lastDelegate = await lastCard("delegate-card");
+
+      var results = new Array();
+          results[0]= <SearchCardWithTitle 
+          key = {0}
+          title = {f("UltimoEgresado")}
+          last = {lastStudent}
+      />
+
+          results[1]= <SearchCardWithTitle 
+          key = {1}
+          title = {f("UltimoProfesor")}
+          last = {lastProfessor}
+      />
+
+          results[2]= <SearchCardWithTitle 
+          key = {2}
+          title = {f("UltimoDelegado")}
+          last = {lastDelegate}
+      />
+
+      setResults(null);
+      setResults(results);
+  }
+  
+  useEffect(() => {
+    createResults();
+  }, []);
   return (
     <div>
       <h1 className="title1">{f("paginaPrincipal")}</h1>
       <Slider></Slider>
-      <h2 className="title1">{f("Noticias")}</h2>
-      <div className="noticefeed">
-        <Notice
-          alt='Noticia 1 para hacer pruebas'
-          referencia="https://www.uniovi.es/"
-          img="/notices/Guarderia.png"
-          text="¡Extra extra! La Universidad de Oviedo reformará las salas de estudio de la EII. 'Ya era hora' dice un estudiante octogenario." />
-
-        <Notice
-          alt='Noticia 2 para hacer pruebas'
-          referencia="https://ingenieriainformatica.uniovi.es/"
-          img="/notices/Lofi software.png"
-          text="La Escuela de Ingeniería Informática crea su propia playlist LoFi en Spotify" />
-
-
-        <Notice
-          alt='Noticia 3 para hacer pruebas'
-          referencia="https://www.civinext.com/whale.aspx"
-          img="/notices/Love Whales.png"
-          text="Nunca creerías lo que persigue esta ballena" />
+      <h2 className="title1">{f("UltimasCartasSubidas")}</h2>
+      <div className="cardfeed">
+      {results!=null ?
+          results
+          : null}
 
       </div>
 

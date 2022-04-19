@@ -1,7 +1,7 @@
 export const ast = {
     "/": {
       paginaPrincipal: "Páxina principal",
-      Noticias: "Noticies",
+      UltimasCartasSubidas: "Últimes cartes xubíes",
       RedesSociales: "Redes Sociales",
       RedesSocialesEII: "Redes Sociales EII",
       RedesSocialesDEII: "Redes Sociales DEII",
@@ -16,7 +16,10 @@ export const ast = {
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué ye Heritage?",
       SubidaDeCartas: "Xubida de cartes",
-      Contacto: "Contactu"
+      Contacto: "Contactu",
+      UltimoEgresado: "Últimu Egresado",
+      UltimoProfesor: "Últimu Profesor",
+      UltimoDelegado: "Últimu Delegáu"
     },
     "/HistoriaEII": {
       Copyright: "Copyright Universidá d'Uviéu",

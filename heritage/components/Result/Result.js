@@ -27,7 +27,6 @@ export default function Result(props) {
 
     const createResults = async () => {
         var result = await search();
-        console.log(result)
         var results = new Array();
         var i;
         for(i=0;i<result.promotion.length;i++){

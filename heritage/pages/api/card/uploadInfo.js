@@ -35,6 +35,7 @@ function deleteTemporalData (){
             "name": dataMap.get("name"),
             "promotion": dataMap.get("promotion"),
             "registry": dataMap.get("registry"),
+            "timestamp": dataMap.get("timestamp"),
             "shortDescription": dataMap.get("shortDescription"),
             "longDescription": dataMap.get("longDescription"),
             "professionalArchievements": dataMap.get("archievements"),

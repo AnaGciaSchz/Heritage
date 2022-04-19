@@ -53,6 +53,7 @@ export default function UploadCardForm() {
     }
     dataMap.set("shortDescription", shortDescription);
     dataMap.set("registry", date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear())
+    dataMap.set("timestamp", date.getFullYear()+ "-" +(date.getMonth() + 1)+ "-" +date.getDate() + "T" + date.getHours()+ ":" + date.getMinutes()+ ":" + date.getSeconds()+ "Z")
     var longDescription = document.querySelector("#longDescription").value;
     if (!validateService.checkLength(longDescription, 230)) {
       throw f("DescripcionLarga")

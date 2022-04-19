@@ -71,6 +71,9 @@ const mapping = {
             "registry": {
                 "type": "text"
             },
+            "timestamp": {
+                "type": "keyword"
+            },
             "shortDescription": {
                 "type": "text",
                 "search_analyzer": "card_search_analyzer",

@@ -1,7 +1,7 @@
 export const es = {
     "/": {
       paginaPrincipal: "Página Principal",
-      Noticias: "Noticias",
+      UltimasCartasSubidas: "Últimas cartas subidas",
       RedesSociales: "Redes Sociales",
       RedesSocialesEII: "Redes Sociales EII",
       RedesSocialesDEII: "Redes Sociales DEII",
@@ -16,7 +16,10 @@ export const es = {
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué es Heritage?",
       SubidaDeCartas: "Subida de cartas",
-      Contacto: "Contacto"
+      Contacto: "Contacto",
+      UltimoEgresado: "Último Egresado",
+      UltimoProfesor: "Último Profesor",
+      UltimoDelegado: "Último Delegado"
     },
     "/HistoriaEII": {
       Copyright: "Copyright Universidad de Oviedo",

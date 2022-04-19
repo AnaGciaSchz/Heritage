@@ -33,7 +33,6 @@ function deleteTemporalData (){
         index: dataMap.get("index"),
         body: {
             "name": dataMap.get("name"),
-            "sortingName": dataMap.get("name"),
             "promotion": dataMap.get("promotion"),
             "registry": dataMap.get("registry"),
             "shortDescription": dataMap.get("shortDescription"),

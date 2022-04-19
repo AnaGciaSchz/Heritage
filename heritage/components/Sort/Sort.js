@@ -5,41 +5,22 @@ import React, { useState } from 'react';
 export default function Sort(props) {
   const {formatMessage} = useIntl();
   const f = id => formatMessage({ id })
-  const [selectedElement, setSelectedElement] = useState("");
   const [ascSort, setAscSort] = useState(true);
   const [descSort, setDescSort] = useState(false);
 
   const selectButton = (value) => {
-    if(value!=null && value !=undefined){
-      
-      if(selectedElement=="asc" && value=="asc"){
-        setSelectedElement("");
-        setAscSort(false);
-        props.setSort("");
-        props.change();
-        return true;
-      }
-      if(selectedElement=="desc" && value=="desc"){
-        setSelectedElement("");
-        setDescSort(false);
-        props.setSort("");
-        props.change();
-        return true;
-      }
+    if(value!=null && value !=undefined && (value=="desc" || value=="asc")){
       setAscSort(false);
       setDescSort(false);
       if(value=="asc"){
-        setSelectedElement("asc");
         setAscSort(true);
         props.setSort("asc");
         props.change();
       }else{
-        setSelectedElement("desc");
         setDescSort(true);
         props.setSort("desc");
         props.change();
       }
-      return true;
   }
 }
     return (

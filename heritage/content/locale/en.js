@@ -19,7 +19,13 @@ export const en = {
       Contacto: "Contact",
       UltimoEgresado: "Last Graduate",
       UltimoProfesor: "Last Teacher",
-      UltimoDelegado: "Last Delegate"
+      UltimoDelegado: "Last Delegate",
+      PaginaWeb: "Web page",
+      UniversidadOviedo: "University of Oviedo",
+      EscuelaIngenieria:"School of computer Engineering",
+      InformacionAcademica: "Academic information",
+      Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/heritage_admin_login": {
       paginaPrincipal: "Homepage",
@@ -47,7 +53,13 @@ export const en = {
       Login: "Login",
       Usuario: "Username",
       Contraseña:"Password",
-      Registro: "Register"
+      Registro: "Register",
+      PaginaWeb: "Web page",
+      UniversidadOviedo: "University of Oviedo",
+      EscuelaIngenieria:"School of computer Engineering",
+      InformacionAcademica: "Academic information",
+      Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/heritage_admin_register": {
       paginaPrincipal: "Homepage",
@@ -78,7 +90,13 @@ export const en = {
       Contraseña:"Password",
       RepetirContraseña: "Repeat Password",
       Cancelar: "Cancel",
-      Registrar: "Register"
+      Registrar: "Register",
+      PaginaWeb: "Web page",
+      UniversidadOviedo: "University of Oviedo",
+      EscuelaIngenieria:"School of computer Engineering",
+      InformacionAcademica: "Academic information",
+      Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/HistoriaEII": {
       Copyright: "Copyright University of Oviedo",
@@ -93,7 +111,13 @@ export const en = {
       QueEsHeritage: "¿What is Heritage?",
       SubidaDeCartas: "Upload Cards",
       Contacto: "Contact",
-      local: "en"
+      local: "en",
+      PaginaWeb: "Web page",
+      UniversidadOviedo: "University of Oviedo",
+      EscuelaIngenieria:"School of computer Engineering",
+      InformacionAcademica: "Academic information",
+      Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/ZonaEgresados": {
       Copyright: "Copyright University of Oviedo",
@@ -118,7 +142,13 @@ export const en = {
       Buscar: "Search",
       Filtros: "Filters",
       RedesSociales: "Social Media",
-      Ordenar: "Sort"
+      Ordenar: "Sort",
+      PaginaWeb: "Web page",
+      UniversidadOviedo: "University of Oviedo",
+      EscuelaIngenieria:"School of computer Engineering",
+      InformacionAcademica: "Academic information",
+      Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright University of Oviedo",
@@ -143,7 +173,13 @@ export const en = {
       Buscar: "Search",
       Filtros: "Filters",
       RedesSociales: "Social Media",
-      Ordenar: "Sort"
+      Ordenar: "Sort",
+      PaginaWeb: "Web page",
+      UniversidadOviedo: "University of Oviedo",
+      EscuelaIngenieria:"School of computer Engineering",
+      InformacionAcademica: "Academic information",
+      Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright University of Oviedo",
@@ -168,7 +204,13 @@ export const en = {
       Buscar: "Search",
       Filtros: "Filters",
       RedesSociales: "Social Media",
-      Ordenar: "Sort"
+      Ordenar: "Sort",
+      PaginaWeb: "Web page",
+      UniversidadOviedo: "University of Oviedo",
+      EscuelaIngenieria:"School of computer Engineering",
+      InformacionAcademica: "Academic information",
+      Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/about": {
       Copyright: "Copyright University of Oviedo",
@@ -182,7 +224,13 @@ export const en = {
       ZDelegacion: "Former Delegates Area",
       QueEsHeritage: "¿What is Heritage?",
       SubidaDeCartas: "Upload Cards",
-      Contacto: "Contact"
+      Contacto: "Contact",
+      PaginaWeb: "Web page",
+      UniversidadOviedo: "University of Oviedo",
+      EscuelaIngenieria:"School of computer Engineering",
+      InformacionAcademica: "Academic information",
+      Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/SubidaDeCartas": {
       Copyright: "Copyright University of Oviedo",
@@ -256,7 +304,13 @@ export const en = {
       RecargaCarta: "Update card",
       FormularioTexto: "By filling in the following form you will be able to upload the information of the new card that you want to create to the server. If everything works correctly, a message will appear in green indicating that the upload was successful and the card will be uploaded to the required index and can be found in the specific search engine. If there is an error, a red alert will appear indicating what is happening and the card will not be uploaded.",
       IconoGirarCarta: "Icon showing that the card can be rotated.",
-      IconoEstrella: "Star icon."
+      IconoEstrella: "Star icon.",
+      PaginaWeb: "Web page",
+      UniversidadOviedo: "University of Oviedo",
+      EscuelaIngenieria:"School of computer Engineering",
+      InformacionAcademica: "Academic information",
+      Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/Contacto": {
       Copyright: "Copyright University of Oviedo",
@@ -270,6 +324,12 @@ export const en = {
       ZDelegacion: "Former Delegates Area",
       QueEsHeritage: "¿What is Heritage?",
       SubidaDeCartas: "Upload Cards",
-      Contacto: "Contact"
+      Contacto: "Contact",
+      PaginaWeb: "Web page",
+      UniversidadOviedo: "University of Oviedo",
+      EscuelaIngenieria:"School of computer Engineering",
+      InformacionAcademica: "Academic information",
+      Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     }
   }

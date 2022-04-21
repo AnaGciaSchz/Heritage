@@ -19,7 +19,13 @@ export const ast = {
       Contacto: "Contactu",
       UltimoEgresado: "Últimu Egresado",
       UltimoProfesor: "Últimu Profesor",
-      UltimoDelegado: "Últimu Delegáu"
+      UltimoDelegado: "Últimu Delegáu",
+      PaginaWeb: "Páxina web",
+      UniversidadOviedo: "Universidá d'Uviéu",
+      EscuelaIngenieria:"Escuela d'Inxeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
+      Legal: "Llegal"
     },
     "/heritage_admin_login": {
       paginaPrincipal: "Páxina principal",
@@ -47,7 +53,13 @@ export const ast = {
       Login: "Entamu de sesión",
       Usuario: "Usuariu",
       Contraseña:"Contraseña",
-      Registro: "Rexistru"
+      Registro: "Rexistru",
+      PaginaWeb: "Páxina web",
+      UniversidadOviedo: "Universidá d'Uviéu",
+      EscuelaIngenieria:"Escuela d'Inxeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
+      Legal: "Llegal"
     },
     "/heritage_admin_register": {
       paginaPrincipal: "Páxina principal",
@@ -78,7 +90,13 @@ export const ast = {
       Contraseña:"Contraseña",
       RepetirContraseña: "Repetir Contraseña",
       Cancelar: "Atayar",
-      Registrar: "Rexistrar"
+      Registrar: "Rexistrar",
+      PaginaWeb: "Páxina web",
+      UniversidadOviedo: "Universidá d'Uviéu",
+      EscuelaIngenieria:"Escuela d'Inxeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
+      Legal: "Llegal"
     },
     "/HistoriaEII": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -93,7 +111,13 @@ export const ast = {
       QueEsHeritage: "¿Qué ye Heritage?",
       SubidaDeCartas: "Xubida de cartes",
       Contacto: "Contactu",
-      local: "es"
+      local: "es",
+      PaginaWeb: "Páxina web",
+      UniversidadOviedo: "Universidá d'Uviéu",
+      EscuelaIngenieria:"Escuela d'Inxeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
+      Legal: "Llegal"
     },
     "/ZonaEgresados": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -118,7 +142,13 @@ export const ast = {
       Buscar: "Buscar",
       Filtros: "Filtros",
       RedesSociales: "Redes Sociales",
-      Ordenar: "Ordenar"
+      Ordenar: "Ordenar",
+      PaginaWeb: "Páxina web",
+      UniversidadOviedo: "Universidá d'Uviéu",
+      EscuelaIngenieria:"Escuela d'Inxeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
+      Legal: "Llegal"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -143,7 +173,13 @@ export const ast = {
       Buscar: "Buscar",
       Filtros: "Filtros",
       RedesSociales: "Redes Sociales",
-      Ordenar: "Ordenar"
+      Ordenar: "Ordenar",
+      PaginaWeb: "Páxina web",
+      UniversidadOviedo: "Universidá d'Uviéu",
+      EscuelaIngenieria:"Escuela d'Inxeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
+      Legal: "Llegal"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -168,7 +204,13 @@ export const ast = {
       Buscar: "Buscar",
       Filtros: "Filtros",
       RedesSociales: "Redes Sociales",
-      Ordenar: "Ordenar"
+      Ordenar: "Ordenar",
+      PaginaWeb: "Páxina web",
+      UniversidadOviedo: "Universidá d'Uviéu",
+      EscuelaIngenieria:"Escuela d'Inxeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
+      Legal: "Llegal"
     },
     "/about": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -182,7 +224,13 @@ export const ast = {
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué ye Heritage?",
       SubidaDeCartas: "Xubida de cartes",
-      Contacto: "Contactu"
+      Contacto: "Contactu",
+      PaginaWeb: "Páxina web",
+      UniversidadOviedo: "Universidá d'Uviéu",
+      EscuelaIngenieria:"Escuela d'Inxeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
+      Legal: "Llegal"
     },
     "/SubidaDeCartas": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -256,7 +304,13 @@ export const ast = {
       RecargaCarta: "Recargar carta",
       FormularioTexto: "Rellenando'l siguiente formulariu vas poder xubir la información de la nueva carta que quieras crear al servidor. Si tou funciona correchamente, va salir un mensaxe en verde indicando que la xubida realizóse correchamente y la carta va tar xubida al índiz riquíu pudiéndose atopar nel buscador específicu. Si hai dalgún erru, va apaecer una alerta en colloráu indicando qué asocede y la carta nun se va xubir.",
       IconoGirarCarta: "Iconu qu'amuesa que la carta xírase.",
-      IconoEstrella: "Iconu d'una estrella."
+      IconoEstrella: "Iconu d'una estrella.",
+      PaginaWeb: "Páxina web",
+      UniversidadOviedo: "Universidá d'Uviéu",
+      EscuelaIngenieria:"Escuela d'Inxeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
+      Legal: "Llegal"
     },
     "/Contacto": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -270,6 +324,12 @@ export const ast = {
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué ye Heritage?",
       SubidaDeCartas: "Xubida de cartes",
-      Contacto: "Contactu"
+      Contacto: "Contactu",
+      PaginaWeb: "Páxina web",
+      UniversidadOviedo: "Universidá d'Uviéu",
+      EscuelaIngenieria:"Escuela d'Inxeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
+      Legal: "Llegal"
     }
   }

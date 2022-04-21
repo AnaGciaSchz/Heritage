@@ -19,7 +19,13 @@ export const es = {
       Contacto: "Contacto",
       UltimoEgresado: "Último Egresado",
       UltimoProfesor: "Último Profesor",
-      UltimoDelegado: "Último Delegado"
+      UltimoDelegado: "Último Delegado",
+      PaginaWeb: "Página web",
+      UniversidadOviedo: "Universidad de Oviedo",
+      EscuelaIngenieria:"Escuela de Ingeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/heritage_admin_login": {
       paginaPrincipal: "Página Principal",
@@ -47,7 +53,13 @@ export const es = {
       Login: "Login",
       Usuario: "Usuario",
       Contraseña:"Contraseña",
-      Registro: "Registro"
+      Registro: "Registro",
+      PaginaWeb: "Página web",
+      UniversidadOviedo: "Universidad de Oviedo",
+      EscuelaIngenieria:"Escuela de Ingeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/heritage_admin_register": {
       paginaPrincipal: "Página Principal",
@@ -78,7 +90,13 @@ export const es = {
       Contraseña:"Contraseña",
       RepetirContraseña: "Repetir Contraseña",
       Cancelar: "Cancelar",
-      Registrar: "Registrar"
+      Registrar: "Registrar",
+      PaginaWeb: "Página web",
+      UniversidadOviedo: "Universidad de Oviedo",
+      EscuelaIngenieria:"Escuela de Ingeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/HistoriaEII": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -93,7 +111,13 @@ export const es = {
       QueEsHeritage: "¿Qué es Heritage?",
       SubidaDeCartas: "Subida de cartas",
       Contacto: "Contacto",
-      local: "es"
+      local: "es",
+      PaginaWeb: "Página web",
+      UniversidadOviedo: "Universidad de Oviedo",
+      EscuelaIngenieria:"Escuela de Ingeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/ZonaEgresados": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -118,7 +142,13 @@ export const es = {
       Buscar: "Buscar",
       Filtros: "Filtros",
       RedesSociales: "Redes Sociales",
-      Ordenar: "Ordenar"
+      Ordenar: "Ordenar",
+      PaginaWeb: "Página web",
+      UniversidadOviedo: "Universidad de Oviedo",
+      EscuelaIngenieria:"Escuela de Ingeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -143,7 +173,13 @@ export const es = {
       Buscar: "Buscar",
       Filtros: "Filtros",
       RedesSociales: "Redes Sociales",
-      Ordenar: "Ordenar"
+      Ordenar: "Ordenar",
+      PaginaWeb: "Página web",
+      UniversidadOviedo: "Universidad de Oviedo",
+      EscuelaIngenieria:"Escuela de Ingeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -168,7 +204,13 @@ export const es = {
       Buscar: "Buscar",
       Filtros: "Filtros",
       RedesSociales: "Redes Sociales",
-      Ordenar: "Ordenar"
+      Ordenar: "Ordenar",
+      PaginaWeb: "Página web",
+      UniversidadOviedo: "Universidad de Oviedo",
+      EscuelaIngenieria:"Escuela de Ingeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/about": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -182,7 +224,13 @@ export const es = {
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué es Heritage?",
       SubidaDeCartas: "Subida de cartas",
-      Contacto: "Contacto"
+      Contacto: "Contacto",
+      PaginaWeb: "Página web",
+      UniversidadOviedo: "Universidad de Oviedo",
+      EscuelaIngenieria:"Escuela de Ingeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/SubidaDeCartas": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -256,7 +304,13 @@ export const es = {
       RecargaCarta: "Recargar carta",
       FormularioTexto: "Rellenando el siguiente formulario podrás subir la información de la nueva carta que quieras crear al servidor. Si todo funciona correctamente, saldrá un mensaje en verde indicando que la subida se ha realizado correctamente y la carta estará subida al índice requerido pudiéndose encontrar en el buscador específico. Si hay algún error, aparecerá una alerta en rojo indicando qué ocurre y la carta no se subirá.",
       IconoGirarCarta: "Icono que muestra que la carta se gira.",
-      IconoEstrella: "Icono de una estrella."
+      IconoEstrella: "Icono de una estrella.",
+      PaginaWeb: "Página web",
+      UniversidadOviedo: "Universidad de Oviedo",
+      EscuelaIngenieria:"Escuela de Ingeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     },
     "/Contacto": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -270,6 +324,12 @@ export const es = {
       ZDelegacion: "Zona Exdelegados",
       QueEsHeritage: "¿Qué es Heritage?",
       SubidaDeCartas: "Subida de cartas",
-      Contacto: "Contacto"
+      Contacto: "Contacto",
+      PaginaWeb: "Página web",
+      UniversidadOviedo: "Universidad de Oviedo",
+      EscuelaIngenieria:"Escuela de Ingeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal"
     }
   }

@@ -1,33 +1,153 @@
 @import "../../styles/sass/mixins";
-
-.footer {
-    position: relative;
-    display: flex;
-    background: black;
-    color: white;
-    margin-top: -3%;
-    margin-left: 2%;
-    margin-right: 2%;
-}
-
-#copyright {
-    margin-right: 10%;
-    margin-left: 2%;
-}
-
-.word {
-    margin-right: 1%;
-}
+@import "../../styles/sass/variables";
 
 @include tablet {
-    .footer {
+    .footer2 {
         margin-top: -6%;
     }
 }
 
 @include mobile {
-    .footer {
+    .footer2 {
         margin-top: -9%;
         font-size: 13px;
     }
 }
+  
+  .footer {
+    display: flex;
+    flex-flow: row wrap;
+    border-radius: 3em;
+    width: 95%;
+    margin: -4% auto 2%;
+    padding: 20px 20px 10px 20px;
+    color: $darkGreen;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .nav__title {
+    font-size: 15px;
+    margin-right: 10%;
+  }
+  
+  .footer address {
+    font-style: normal;
+    color: #2f2f2f;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .footer li {
+    line-height: 1.4em;
+  }
+  
+  .footer a {
+    text-decoration: none;
+  }
+  
+  .footer__nav {
+    display: flex;
+    margin-right: 5%;
+    margin-left: 15%;
+  }
+  .nav__ul a {
+    color: $darkBlue;
+  }
+  
+  .legal {
+    display: flex;
+    color: $darkGreen;
+    margin-top: 14%;
+    margin-right: -5%;
+    width: 300px;
+  }
+
+  .contact{
+    font-size: 13px;
+  }
+
+  .bigDiv{
+    width: 15%;
+    margin-top: -3%;
+    margin-left: 3%;
+    margin-right: -3%;
+  }
+
+  .direction{
+    width: 300px;
+  }
+
+  @include mobile{
+    .footer {
+      font-size: 12px;
+    }
+  
+    .direction{
+      font-size: 12px;
+    }
+
+    .legal{
+      margin-top:-0%;
+    }
+
+    .nav__title {
+      font-size: 12px;
+      margin-right: 10%;
+    }
+    .footer__nav {
+      display: flex;
+      margin-right: -10%;
+      margin-left: 2;
+    }
+
+    .bigDiv{
+      width: 15%;
+      margin-top: 0%;
+      margin-left: 4%;
+    }
+  }
+
+  @include tablet{
+    .footer {
+      font-size: 12px;
+    }
+  
+    .direction{
+      font-size: 12px;
+    }
+
+    .nav__title {
+      font-size: 12px;
+      margin-right: 10%;
+    }
+    .footer__nav {
+      display: flex;
+      margin-right: -10%;
+      margin-left: 2;
+    }
+
+    .bigDiv{
+      width: 15%;
+      margin-top: 0%;
+      margin-left: 4%;
+    }
+  }
+
+  @include bigDesktop{
+    .footer__nav {
+      display: flex;
+      margin-right: 10%;
+      margin-left: 20%;
+    }
+
+    .bigDiv{
+      width: 15%;
+      margin-top: -3%;
+      margin-left: 8%;
+      margin-right: -3%;
+    }
+  }

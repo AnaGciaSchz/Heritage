@@ -1,0 +1,27 @@
+@import "../../components/UploadCardForm/uploadCardForm.module.scss";
+
+.formLogin {
+@extend .form;
+width: 30%;
+margin-left: 5%;
+}
+
+.buttonLogin{
+    @extend .fileUploadLabel;
+    width: 20%;
+    margin-top: 10%;
+    margin-right: 5%;
+}
+
+.link {
+@extend .fileUploadLabel;
+text-decoration: none;
+background: $blue;
+}
+
+.link:hover{
+    background: $darkBlue;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}

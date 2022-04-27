@@ -17,10 +17,10 @@ export default class Slider extends React.Component {
     }
 
     scheduleNext() {
-        setTimeout(() => {
-            this.goNext();
-            this.scheduleNext()
-        }, 8000);
+       // setTimeout(() => {
+        //    this.goNext();
+        //    this.scheduleNext()
+        //}, 8000);
     }
 
     goNext() {

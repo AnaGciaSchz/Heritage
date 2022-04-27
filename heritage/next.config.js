@@ -7,8 +7,6 @@ const path = require('path')
  */
 module.exports = {
     env: {
-        MONGODB_URI: "mongodb://heritage:1234@localhost:27017",
-        MONGODB_DB: "Heritage",
         ELASCTIC_PASSWORD: "12345",
         ELASTICSEARCH_NODE: "http://localhost:9200",
         ELASTICSEARCH_USERNAME: "elastic"
@@ -18,7 +16,7 @@ module.exports = {
         defaultLocale: 'es',
 
     },
-    webpack: config => {
+    webpack: (config) => {
         config.resolve.alias['components'] = path.join(__dirname,
             'components');
         config.resolve.alias[`public`] = path.join(__dirname, 'public');

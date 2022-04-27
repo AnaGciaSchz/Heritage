@@ -1,5 +1,3 @@
-import { getSortedRoutes } from 'next/dist/shared/lib/router/utils';
-
 var esClient = null;
 if (typeof window === 'undefined') {
     const { Client } = require('@elastic/elasticsearch')

@@ -25,7 +25,14 @@ export const ast = {
       EscuelaIngenieria:"Escuela d'Inxeniería Informática",
       InformacionAcademica: "Información Académica",
       Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
-      Legal: "Llegal"
+      Legal: "Llegal",
+      IconoGirarCarta: "Iconu qu'amuesa que la carta xírase.",
+      IconoEstrella: "Iconu d'una estrella.",
+      CartaImagenAlt: "Semeya de la persona na carta",
+      CartaDescripcion: "Descripción",
+      CartaLogros: "Llogros destacables",
+      CartaRegistro: "Rexistru",
+      Promocion: "Promoción",
     },
     "/heritage_admin_login": {
       paginaPrincipal: "Páxina principal",

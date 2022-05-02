@@ -82,10 +82,17 @@ p {
 	.icono {
 		width: 50%;
 	}
+	.cardfeed {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 @include mobile {
 	.icono {
 		width: 50%;
+	}
+
+	.cardfeed {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }

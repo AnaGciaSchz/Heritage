@@ -1,82 +1,112 @@
 @import "../../styles/sass/mixins";
+@import "../../styles/sass/variables";
 
-.container-slider {
-    display: block;
-    max-width: 85%;
-    height: 30vw;
-    box-shadow: 0 0 0 4px rgba(55, 223, 238, 0.3), 0 7px 10px;
+.embla {
     position: relative;
-    margin: auto;
+    background-color: #ffffff;
+    max-width: 80%;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -50px;
+    margin-top:1%;
+  }
+  .embla__viewport {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 3em;
+  }
+  .embla__container {
+    display: flex;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    margin-left: -10px;
+  }
+  .embla__slide {
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+    padding-left: 10px;
+  }
 
-    .slider {
-        overflow-y: hidden;
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        display: flex;
-        width: 100%;
-        height: 100%;
+  .embla__slide__inner {
+    position: relative;
+    overflow: hidden;
+    height: 800px;
+  }
 
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
-    .slider-section {
-        flex-shrink: 0;
-        scroll-snap-align: start;
-        width: 100%;
-        height: 100%;
+  .embla__slide__img {
+    position: absolute;
+    display: block;
+    top: 38%;
+    left: 50%;
+    max-width: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 3em;
+  }
 
-        img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
+  .embla__button {
+    outline: 0;
+    cursor: pointer;
+    background-color: transparent;
+    touch-action: manipulation;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    fill: $darkBlue;
+    border-color: #ffffff;
+    padding: 0;
+  }
 
-    .sliderBtn {
-        position: absolute;
-        height: 19%;
-        width: 7%;
-        max-width: 70px;
-        max-height: 70px;
-        background: rgba(114, 114, 114, 0.6);
-        color: white;
-        border-radius: 50%;
-        border: 2px solid #858585;
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        font-size: 2em;
-        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-        text-align: center;
-        cursor: pointer;
-        top: calc(50% - 10%);
+  .embla__buttonprev {
+    @extend .embla__button;
+    left: 27px;
+  }
 
-        &_right {
-            right: 0;
-        }
-    }
-    .sliderBtn:hover,
-    .sliderBtn_right:hover {
-        background: rgba(255, 255, 255, 0.4);
-        color: gray;
-    }
-}
+  .embla__buttonnext {
+    @extend .embla__button;
+    right: 27px;
+  }
 
-@include tablet {
-    .container-slider {
-        .sliderBtn {
-            font-size: 1.5em;
-        }
-    }
-}
+  .embla__button__svg {
+    width: 100%;
+    height: 100%;
+  }
 
-@include mobile {
-    .container-slider {
-        .sliderBtn {
-            font-size: 1em;
-        }
-    }
-}
+  @include bigDesktop{
+    .embla__slide__img {
+        top: 53%;
+        left: 50%;
+      }
+
+      .embla {
+        margin-bottom: 100px
+      }
+  }
+
+  @include mobile{
+    .embla__slide__img {
+        top: 25%;
+        left: 50%;
+      }
+
+      .embla {
+        height: 500px;
+        margin-bottom: -100px;
+      }
+
+      .embla__button {
+          top:40%;
+      }
+  }
+  
+  
+  

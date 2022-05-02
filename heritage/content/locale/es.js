@@ -25,7 +25,14 @@ export const es = {
       EscuelaIngenieria:"Escuela de Ingeniería Informática",
       InformacionAcademica: "Información Académica",
       Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
-      Legal: "Legal"
+      Legal: "Legal",
+      IconoGirarCarta: "Icono que muestra que la carta se gira.",
+      IconoEstrella: "Icono de una estrella.",
+      CartaImagenAlt: "Foto de la persona en la carta",
+      CartaDescripcion: "Descripción",
+      CartaLogros: "Logros destacables",
+      CartaRegistro: "Registro",
+      Promocion: "Promoción",
     },
     "/heritage_admin_login": {
       paginaPrincipal: "Página Principal",

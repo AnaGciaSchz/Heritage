@@ -33,19 +33,19 @@ export default function Home() {
       var results = new Array();
           results[0]= <SearchCardWithTitle 
           key = {0}
-          title = {f("UltimoEgresado")}
+          title = "UltimoEgresado"
           last = {lastStudent}
       />
 
           results[1]= <SearchCardWithTitle 
           key = {1}
-          title = {f("UltimoProfesor")}
+          title = "UltimoProfesor"
           last = {lastProfessor}
       />
 
           results[2]= <SearchCardWithTitle 
           key = {2}
-          title = {f("UltimoDelegado")}
+          title = "UltimoDelegado"
           last = {lastDelegate}
       />
 

@@ -2,12 +2,16 @@
 
 import styles from './searchCardWithTitle.module.scss'
 import SearchCard from "components/SearchComponents/SearchCard/SearchCard.js"
+import { useIntl } from "react-intl"
 
 
 export default function SearchCardWithTitle(props) {
+
+    const { formatMessage } = useIntl()
+    const f = id => formatMessage({ id })
     return (
         <div>
-            <h3 className={styles.title}>{props.title}</h3>
+            <h3 className={styles.title}>{f(props.title)}</h3>
             <SearchCard key = {props.key}
           name= {props.last.hits[0]._source.name}
           img={props.last.hits[0]._source.image}

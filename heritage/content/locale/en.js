@@ -25,7 +25,14 @@ export const en = {
       EscuelaIngenieria:"School of computer Engineering",
       InformacionAcademica: "Academic information",
       Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
-      Legal: "Legal"
+      Legal: "Legal",
+      IconoGirarCarta: "Icon showing that the card can be rotated.",
+      IconoEstrella: "Star icon.",
+      CartaImagenAlt: "Photo of the person in the card",
+      CartaDescripcion: "Description",
+      CartaLogros: "Archievements",
+      CartaRegistro: "Registered",
+      Promocion: "Promotion",
     },
     "/heritage_admin_login": {
       paginaPrincipal: "Homepage",

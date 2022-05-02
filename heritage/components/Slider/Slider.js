@@ -1,61 +1,56 @@
-import React from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
+import { PrevButton, NextButton } from "./SliderButtons";
+import useEmblaCarousel from 'embla-carousel-react'
+import { mediaByIndex } from "public";
 import styles from './slider.module.scss'
+import Autoplay from 'embla-carousel-autoplay'
 
-export default class Slider extends React.Component {
-    constructor(props) {
-        super(props)
+export default function Slider() {
+    const [viewportRef, embla] = useEmblaCarousel({ loop: false });
+    const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+    const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+  
+    const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
+    const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
 
-        this.currentSlide = 0;
-        this.slides = [
-            { id: 1, image: '/slider/1.png' },
-            { id: 2, image: '/slider/2.png' },
-            { id: 3, image: '/slider/3.png' },
-            { id: 4, image: '/slider/4.png' },
-        ].map(slide => ({ ...slide, ref: React.createRef() }))
+    const slides = [
+         '/slider/1.png' ,
+        '/slider/2.png' ,
+        '/slider/3.png' ,
+         '/slider/4.png' ]
+    
+  const onSelect = useCallback(() => {
+    if (!embla) return;
+    setPrevBtnEnabled(embla.canScrollPrev());
+    setNextBtnEnabled(embla.canScrollNext());
+  }, [embla]);
 
-        this.scheduleNext()
-    }
-
-    scheduleNext() {
-       // setTimeout(() => {
-        //    this.goNext();
-        //    this.scheduleNext()
-        //}, 8000);
-    }
-
-    goNext() {
-        this.currentSlide++
-        this.updateSlide()
-    }
-
-    goAfter() {
-        (this.currentSlide == 0) ? this.currentSlide = this.slides.length - 1 : this.currentSlide--;
-        this.updateSlide()
-    }
+  useEffect(() => {
+    if (!embla) return;
+    embla.on("select", onSelect);
+    onSelect();
+  }, [embla, onSelect]);
 
 
-    updateSlide() {
-        this.currentSlide = this.currentSlide % this.slides.length
-        const slide = this.slides[this.currentSlide].ref.current
-        if (slide) {
-            slide.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }
-    }
-
-    render() {
-        return (
-            <div className={styles['container-slider']}>
-                <button className={[styles.sliderBtn, styles.sliderBtn_right].join(' ')} onClick={() => this.goNext()}>&#62;</button>
-                <button className={styles.sliderBtn} onClick={() => this.goAfter()}>&#60;</button>
-                <div className={styles.slider} id="slider">
-                    {this.slides.map(slide => (
-                        <div ref={slide.ref} key={slide.id} className={styles['slider-section']}>
-                            <img src={slide.image} className="slider-img" />
-                        </div>
-                    ))}
-                </div>
+  return (
+    <div className={styles.embla}>
+      <div className={styles.embla__viewport} ref={viewportRef}>
+        <div className={styles.embla__container}>
+          {slides.map((index) => (
+            <div className={styles.embla__slide} key={index}>
+              <div className={styles.embla__slide__inner}>
+                <img
+                  className={styles.embla__slide__img }
+                  src={index}
+                  alt="Promotion of heritage"
+                />
+              </div>
             </div>
-        )
-
-    }
+          ))}
+        </div>
+      </div>
+      <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
+      <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+    </div>
+  )
 }

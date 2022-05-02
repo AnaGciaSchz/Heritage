@@ -59,7 +59,12 @@ export const ast = {
       EscuelaIngenieria:"Escuela d'Inxeniería Informática",
       InformacionAcademica: "Información Académica",
       Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
-      Legal: "Llegal"
+      Legal: "Llegal",
+      EscribeUsername: "El nome d'usuariu ta vacíu.",
+      EscribeContrasena:  "La contraseña ta vacida.",
+      UsernameNoExiste:  "El nome d'usuariu nun esiste.",
+      ContrasenaNoCorrecta:  "La contraseña nun ye correcta.",
+      LoginCorrecto: "Logueado correchamente"
     },
     "/heritage_admin_register": {
       paginaPrincipal: "Páxina principal",
@@ -103,7 +108,8 @@ export const ast = {
       ContrasenaNoCoincide: "Escribe una contraseña y repitir correchamente.",
       InformacionInvalida: "Información inválida: ",
       RegistroCorrecto: "Usuariu rexistráu correchamente.",
-      HaOcurridoUnError: "Asocedió un erru: "
+      HaOcurridoUnError: "Asocedió un erru: ",
+      NombreDeUsuarioEnUso:"Ese nome d'usuariu yá esiste."
     },
     "/HistoriaEII": {
       Copyright: "Copyright Universidá d'Uviéu",

@@ -59,7 +59,12 @@ export const es = {
       EscuelaIngenieria:"Escuela de Ingeniería Informática",
       InformacionAcademica: "Información Académica",
       Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
-      Legal: "Legal"
+      Legal: "Legal",
+      EscribeUsername: "El username está vacío.",
+      EscribeContrasena: "La contraseña está vacía.",
+      UsernameNoExiste: "El nombre de usuario no existe.",
+      ContrasenaNoCorrecta: "La contraseña no es correcta",
+      LoginCorrecto: "Logueado correctamente."
     },
     "/heritage_admin_register": {
       paginaPrincipal: "Página Principal",
@@ -103,7 +108,8 @@ export const es = {
       ContrasenaNoCoincide: "Escribe una contraseña y repítela correctamente.",
       InformacionInvalida: "Información inválida: ",
       RegistroCorrecto: "Usuario registrado correctamente.",
-      HaOcurridoUnError: "Ha ocurrido un error: "
+      HaOcurridoUnError: "Ha ocurrido un error: ",
+      NombreDeUsuarioEnUso: "Ese nombre de usuario ya existe."
 
     },
     "/HistoriaEII": {

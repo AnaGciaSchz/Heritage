@@ -48,13 +48,13 @@ export default function Register() {
       });
       if (response.status < 200 || response.status > 299) {
         var json = await response.json();
-        alertService.error(f("InformacionInvalida")+json.message, options)
+        alertService.error(f("InformacionInvalida")+f(json.message), options)
     }else{
         alertService.success(f("RegistroCorrecto"), options)
       }
     }
     catch (error) {
-      alertService.error(f("HaOcurridoUnError") + error, options)
+      alertService.error(f("HaOcurridoUnError") + f(error), options)
     }
   };
 

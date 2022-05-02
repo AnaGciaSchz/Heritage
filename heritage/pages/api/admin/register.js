@@ -34,9 +34,24 @@ export default async (req, res) => {
         var repeatedUsername = validateService.checkRepeatedUsername(admins,dataMap.get("username"));
         var nameChecks = !validateService.checkLength(dataMap.get("name"), 35) && !validateService.checkEmpty(dataMap.get("name"));
         var passwordCheck = !validateService.checkSecurePassword(dataMap.get("password"));
+
+        if(usernameLength){
+            res.status(400).json({result: "error", message: "EscribeUsername"})
+            return true;
+        }
+
+        if(repeatedUsername){
+            res.status(400).json({result: "error", message: "NombreDeUsuarioEnUso"})
+            return true;
+        }
+
+        if(nameChecks){
+            res.status(400).json({result: "error", message: "EscribeNombre"})
+            return true;
+        }
         
-        if(usernameLength || repeatedUsername || nameChecks || passwordCheck){
-            res.status(400).json({result: "error", message: "Invalid information on server side. Try again."})
+        if(passwordCheck){
+            res.status(400).json({result: "error", message: "EscribeContrasena"})
             return true;
         }
     }

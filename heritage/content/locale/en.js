@@ -59,7 +59,12 @@ export const en = {
       EscuelaIngenieria:"School of computer Engineering",
       InformacionAcademica: "Academic information",
       Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
-      Legal: "Legal"
+      Legal: "Legal",
+      EscribeUsername: "Username is empty.",
+      EscribeContrasena: "Password is empty.",
+      UsernameNoExiste: "Username does not exist.",
+      ContrasenaNoCorrecta: "Password is not correct.",
+      LoginCorrecto: "Logged in."
     },
     "/heritage_admin_register": {
       paginaPrincipal: "Homepage",
@@ -103,7 +108,8 @@ export const en = {
       ContrasenaNoCoincide: "Write a password and repeat it correctly.",
       InformacionInvalida: "Invalid information: ",
       RegistroCorrecto: "User was registered correctly.",
-      HaOcurridoUnError: "An error has ocurred: "
+      HaOcurridoUnError: "An error has ocurred: ",
+      NombreDeUsuarioEnUso:"That username already exists."
     },
     "/HistoriaEII": {
       Copyright: "Copyright University of Oviedo",

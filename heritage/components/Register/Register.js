@@ -33,17 +33,15 @@ export default function Register() {
     if (!validateService.checkValidPasswords(password,repeatPassword)) {
       throw "Escribe bien el password"
     }
-        dataMap.set("password", hash);
+        dataMap.set("password", password);
   }
 
   const uploadToServer = async (event) => {
-      console.log("hola")
     try {
       fillDataMap();
-      const body = new FormData();
       const response = await fetch("http://localhost:3000/api/admin/register", {
         method: "POST",
-        body
+        body: JSON.stringify(Array.from(dataMap.entries()))
       });
       if (response.status < 200 || response.status > 299) {
         alertService.error("No se pudo subir " + response.text, options)

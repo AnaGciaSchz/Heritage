@@ -5,33 +5,49 @@ if (typeof window === 'undefined') {
     var fileS = require('fs');
     var crypt = require('bcrypt');
 }
-let admins = require('data/admin.json');
+
+import { validateService } from "../../../services/validate.service";
+
 const saltRounds = process.env['SALT_ROUNDS'];
+var admins = require('/data/admin.json');
 
 export default async (req, res) => {
     if(fileS != null && crypt != null){
-        let dataMap = new Map(JSON.parse(req.body));
-        id = admins.length ? Math.max(...admins.map(x => x.id)) + 1 : 1;
+        var dataMap = new Map(JSON.parse(req.body));
 
-        dateCreated = new Date().toISOString();
-        dateUpdated = new Date().toISOString();
-
-        crypt.hash(password, saltRounds, function(err, hash) {
-            dataMap.set("passwordHash", hash);
+        crypt.genSalt(parseInt(saltRounds), function(err, salt) {
+            crypt.hash(dataMap.get("password"), salt, function(err, hash) {
+                if(err) throw err;
+                dataMap.set("passwordHash", hash);
+                addNewAdmin(dataMap, hash)
+            });
         });
 
-        const content = ',\n{\n\t"username" : "'+dataMap.get("username")
-        +'",\n\t"password": "'+dataMap.get("passwordHash")
-        +'",\n\t"name": "'+dataMap.get("name")
-        +'"\n}';
+    function addNewAdmin(dataMap, hash){
+        var adminId = admins.length+1;
+        var date = new Date();
+        var dateCreated = date.getFullYear()+ "-" +(date.getMonth() + 1)+ "-" +date.getDate() + "T" + date.getHours()+ ":" + date.getMinutes()+ ":" + date.getSeconds()+ "Z"
+        var dateUpdated = date.getFullYear()+ "-" +(date.getMonth() + 1)+ "-" +date.getDate() + "T" + date.getHours()+ ":" + date.getMinutes()+ ":" + date.getSeconds()+ "Z"
 
-        console.log(content);
 
-        fileS.appendFile('/data/admin.json', content, err => {
+        let newAdmin = { 
+            id: adminId,
+            username: dataMap.get("username"),
+            name: dataMap.get("name"),
+            password: hash,
+            created: dateCreated,
+            updated: dateUpdated 
+        };
+        admins.push(newAdmin)
+
+        var writeAdmins = JSON.stringify(admins, null, 2);
+        fileS.writeFileSync('data/admin.json', writeAdmins, err => {
             if (err) {
                 res.status(404).json({result: "error", message: err.message + " on registration operation"})
             }
             res.status(200).json({result: "ok", message: "Everything ok"})
             });
         }
+    }
+
     }

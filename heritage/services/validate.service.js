@@ -1,7 +1,8 @@
 export const validateService = {
     checkEmpty,
     checkValidPromotion,
-    checkLength
+    checkLength,
+    checkValidPasswords
 };
 
 function checkEmpty(value) {
@@ -23,4 +24,8 @@ function checkLength(value, maxLength) {
         return true;
     }
     return false;
+}
+
+function checkValidPasswords (pass1, pass2){
+    return !checkEmpty(pass1) && !checkEmpty(pass2) && pass1 == pass2;
 }

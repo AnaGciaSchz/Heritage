@@ -13,17 +13,35 @@ var admins = require('/data/admin.json');
 
 export default async (req, res) => {
     if(fileS != null && crypt != null){
+
         var dataMap = new Map(JSON.parse(req.body));
+
+        if(checkInformation(admins, dataMap, res)) return;
 
         crypt.genSalt(parseInt(saltRounds), function(err, salt) {
             crypt.hash(dataMap.get("password"), salt, function(err, hash) {
                 if(err) throw err;
                 dataMap.set("passwordHash", hash);
-                addNewAdmin(dataMap, hash)
+                addNewAdmin(dataMap, hash, res)
             });
         });
+    }
 
-    function addNewAdmin(dataMap, hash){
+    }
+
+    function checkInformation (admins, dataMap, res){
+        var usernameLength = !validateService.checkLength(dataMap.get("username"), 20) && !validateService.checkEmpty(dataMap.get("username"))
+        var repeatedUsername = validateService.checkRepeatedUsername(admins,dataMap.get("username"));
+        var nameChecks = !validateService.checkLength(dataMap.get("name"), 35) && !validateService.checkEmpty(dataMap.get("name"));
+        var passwordCheck = !validateService.checkSecurePassword(dataMap.get("password"));
+        
+        if(usernameLength || repeatedUsername || nameChecks || passwordCheck){
+            res.status(400).json({result: "error", message: "Invalid information on server side. Try again."})
+            return true;
+        }
+    }
+
+    function addNewAdmin(dataMap, hash, res){
         var adminId = admins.length+1;
         var date = new Date();
         var dateCreated = date.getFullYear()+ "-" +(date.getMonth() + 1)+ "-" +date.getDate() + "T" + date.getHours()+ ":" + date.getMinutes()+ ":" + date.getSeconds()+ "Z"
@@ -41,13 +59,9 @@ export default async (req, res) => {
         admins.push(newAdmin)
 
         var writeAdmins = JSON.stringify(admins, null, 2);
-        fileS.writeFileSync('data/admin.json', writeAdmins, err => {
-            if (err) {
-                res.status(404).json({result: "error", message: err.message + " on registration operation"})
-            }
-            res.status(200).json({result: "ok", message: "Everything ok"})
-            });
-        }
-    }
 
-    }
+        fileS.writeFileSync('data/admin.json', writeAdmins, err => {
+            if(err) throw err;
+            });
+            res.status(200).json({result: "ok", message: "Everything ok"})
+        }

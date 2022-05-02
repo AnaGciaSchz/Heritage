@@ -96,7 +96,14 @@ export const en = {
       EscuelaIngenieria:"School of computer Engineering",
       InformacionAcademica: "Academic information",
       Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
-      Legal: "Legal"
+      Legal: "Legal",
+      EscribeNombre: "Write a name with, at least, 35 characters",
+      EscribeUsername: "Write a username with, at least, 20 characters",
+      EscribeContrasena: " The password must have a lengh of 8, a number, an uppercase and a lowercase letter and a special character.",
+      ContrasenaNoCoincide: "Write a password and repeat it correctly.",
+      InformacionInvalida: "Invalid information: ",
+      RegistroCorrecto: "User was registered correctly.",
+      HaOcurridoUnError: "An error has ocurred: "
     },
     "/HistoriaEII": {
       Copyright: "Copyright University of Oviedo",

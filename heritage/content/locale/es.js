@@ -96,7 +96,15 @@ export const es = {
       EscuelaIngenieria:"Escuela de Ingeniería Informática",
       InformacionAcademica: "Información Académica",
       Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
-      Legal: "Legal"
+      Legal: "Legal",
+      EscribeNombre: "Escribe un nombre con menos de 35 caracteres.",
+      EscribeUsername: "Escribe un username con menos de 20 caracteres.",
+      EscribeContrasena: "La contraseña debe tener un tamaño de mínimo 8 caracteres y contener al menos un número, una letra minúscula, una letra mayúscula y un caracter especial.",
+      ContrasenaNoCoincide: "Escribe una contraseña y repítela correctamente.",
+      InformacionInvalida: "Información inválida: ",
+      RegistroCorrecto: "Usuario registrado correctamente.",
+      HaOcurridoUnError: "Ha ocurrido un error: "
+
     },
     "/HistoriaEII": {
       Copyright: "Copyright Universidad de Oviedo",

@@ -17,21 +17,24 @@ export default function Register() {
 
   const fillDataMap = () => {
     var name = document.querySelector("#name").value;
-    if (!validateService.checkLength(name, 25)) {
+    if (!validateService.checkLength(name, 35) && !validateService.checkEmpty(name)) {
       throw f("EscribeNombre")
     }
     dataMap.set("name", name);
 
     var username = document.querySelector("#username").value;
     if (!validateService.checkLength(username, 20)) {
-        throw "Escribe username"
+        throw f("EscribeUsername")
       }
       dataMap.set("username", username);
 
     var password = document.querySelector("#password").value;
     var repeatPassword = document.querySelector("#repeatPassword").value;
     if (!validateService.checkValidPasswords(password,repeatPassword)) {
-      throw "Escribe bien el password"
+      throw f("ContrasenaNoCoincide")
+    }
+    if(!validateService.checkSecurePassword(password)){
+      throw f("EscribeContrasena")
     }
         dataMap.set("password", password);
   }
@@ -44,13 +47,14 @@ export default function Register() {
         body: JSON.stringify(Array.from(dataMap.entries()))
       });
       if (response.status < 200 || response.status > 299) {
-        alertService.error("No se pudo subir " + response.text, options)
+        var json = await response.json();
+        alertService.error(f("InformacionInvalida")+json.message, options)
     }else{
-        alertService.success("Se pudo subir", options)
+        alertService.success(f("RegistroCorrecto"), options)
       }
     }
     catch (error) {
-      alertService.error("No se pudo subir " + error, options)
+      alertService.error(f("HaOcurridoUnError") + error, options)
     }
   };
 

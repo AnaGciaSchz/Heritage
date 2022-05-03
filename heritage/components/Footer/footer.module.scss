@@ -1,18 +1,5 @@
 @import "../../styles/sass/mixins";
 @import "../../styles/sass/variables";
-
-@include tablet {
-    .footer2 {
-        margin-top: -6%;
-    }
-}
-
-@include mobile {
-    .footer2 {
-        margin-top: -9%;
-        font-size: 13px;
-    }
-}
   
   .footer {
     display: flex;
@@ -84,6 +71,7 @@
   @include mobile{
     .footer {
       font-size: 12px;
+      margin-top: -10%;
     }
   
     .direction{
@@ -114,6 +102,12 @@
   @include tablet{
     .footer {
       font-size: 12px;
+      margin-top: -8%;
+    }
+
+    .legal {
+      margin-top: 0%;
+      margin-left: 3.5%;
     }
   
     .direction{

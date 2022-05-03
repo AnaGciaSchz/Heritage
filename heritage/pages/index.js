@@ -1,6 +1,7 @@
 import Slider from "components/Slider/Slider.js"
 import ImageWithLink from "components/ImageWithLink/ImageWithLink.js"
 import SearchCardWithTitle from "components/SearchComponents/SearchCardWithTitle/SearchCardWithTitle.js"
+import SocialMedia from "components/SocialMedia/SocialMedia.js"
 
 import { useRouter } from "next/router"
 import { useIntl } from "react-intl"
@@ -70,71 +71,38 @@ export default function Home() {
 
       <h2 className="title1">{f("RedesSociales")}</h2>
 
-      <div className="socialTitle">
-        <h3 className="title2">{f("RedesSocialesEII")}</h3>
-        <span></span>
-        <h3 className="title2">{f("RedesSocialesDEII")}</h3>
-      </div>
+<div className="socialFeed">
+      <SocialMedia
+      socialMediaTitle= "RedesSocialesEII"
+      firstLink="https://www.instagram.com/computingoviedo/"
+      firstImage="/social/instaEII.png"
+      firstAlt="Icono para acceder al instagram de la EII"
+      secondLink="https://es-es.facebook.com/computingOviedo/"
+      secondImage="/social/facebook.png"
+      secondAlt="Icono para acceder al facebook de la EII"
+      thirdLink="https://www.youtube.com/channel/UCpv73ltAXuh1LRRJu8NWIvA"
+      thirdImage="/social/youEII.png"
+      thirdAlt="Icono para acceder al youtube de la EII"
+      fourthLink="https://twitter.com/computingoviedo"
+      fourthImage="/social/twEII.png"
+      fourthAlt="Icono para acceder al twitter de la EII"
+      />
 
-      <div className="socialFeed">
-        <span className="icono">
-          <ImageWithLink className="icono"
-            referencia="https://www.instagram.com/computingoviedo/"
-            img="/social/instaEII.png"
-            alt="Icono para acceder al instagram de la EII" />
-        </span>
-
-        <span className="icono">
-          <ImageWithLink className="icono"
-            referencia="https://es-es.facebook.com/computingOviedo/"
-            img="/social/facebook.png"
-            alt="Icono para acceder al facebook de la EII" />
-        </span>
-
-        <span className="icono">
-          <ImageWithLink className="icono"
-            referencia="https://www.youtube.com/channel/UCpv73ltAXuh1LRRJu8NWIvA"
-            img="/social/youEII.png"
-            alt="Icono para acceder al youtube de la EII" />
-        </span>
-
-        <span className="icono">
-          <ImageWithLink className="icono"
-            referencia="https://twitter.com/computingoviedo"
-            img="/social/twEII.png"
-            alt="Icono para acceder al twitter de la EII" />
-        </span>
-
-        <span></span>
-        <span></span>
-
-        <span className="icono">
-          <ImageWithLink className="icono"
-            referencia="https://www.instagram.com/delegacion_eii/"
-            img="/social/instaDEII.png"
-            alt="Icono para acceder al instagram de la DEII" />
-        </span>
-
-        <span className="icono">
-          <ImageWithLink className="icono"
-            referencia="https://discord.gg/bkR5Ye4"
-            img="/social/discord.png"
-            alt="Icono para acceder al discord de la DEII" />
-        </span>
-
-        <span className="icono">
-          <ImageWithLink className="icono"
-            referencia="https://www.youtube.com/channel/UCPGJQuCxNQ5JQtrzTE0NpJg"
-            img="/social/youDEII.png"
-            alt="Icono para acceder al youtube de la DEII" />
-        </span>
-
-        <span className="icono">
-          <ImageWithLink className="icono"
-            referencia="https://twitter.com/delegacion_eii"
-            img="/social/twDEII.png"
-            alt="Icono para acceder al twitter de la DEII" />
-        </span>
+      <SocialMedia
+      socialMediaTitle= "RedesSocialesDEII"
+      firstLink="https://www.instagram.com/delegacion_eii/"
+      firstImage="/social/instaDEII.png"
+      firstAlt="Icono para acceder al instagram de la DEII"
+      secondLink="https://discord.gg/bkR5Ye4"
+      secondImage="/social/discord.png"
+      secondAlt="Icono para acceder al discord de la DEII"
+      thirdLink="https://www.youtube.com/channel/UCPGJQuCxNQ5JQtrzTE0NpJg"
+      thirdImage="/social/youDEII.png"
+      thirdAlt="Icono para acceder al youtube de la DEII"
+      fourthLink="https://twitter.com/delegacion_eii"
+      fourthImage="/social/twDEII.png"
+      fourthAlt="Icono para acceder al twitter de la DEII"
+      />
       </div>
     </div>
   )

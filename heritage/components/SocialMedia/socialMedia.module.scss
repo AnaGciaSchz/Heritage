@@ -1,0 +1,49 @@
+@import "../../styles/sass/mixins";
+@import "../../styles/sass/variables";
+
+.container{
+    flex-basis: 100px;
+    height: 100px;
+    margin-left: 300px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.icono {
+	width: 300%;
+    margin-right: 10px;
+    margin-left: -25px;
+	border-radius: 100%;
+}
+
+.socialFeed {
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: 50%;
+	align-self: center;
+	grid-auto-columns: 10%;
+}
+
+.socialTitle {
+    width: 160%;
+}
+
+@include tablet {
+    .container{
+        margin-left: 200px;
+    }
+}
+
+@include mobile {
+    .container{
+        margin-left: 135px;
+    }
+}
+
+@include bigDesktop {
+
+    .container{
+        margin-left: 450px;
+    }
+}
+  

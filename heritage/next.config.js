@@ -11,6 +11,14 @@ module.exports = {
         ELASTICSEARCH_NODE: "http://localhost:9200",
         ELASTICSEARCH_USERNAME: "elastic"
     },
+    serverRuntimeConfig: {
+        secret: 'Petra'
+    },
+    publicRuntimeConfig: {
+        apiUrl: process.env.NODE_ENV === 'development'
+            ? 'http://localhost:3000/api' // development api
+            : 'http://localhost:3000/api' // production api
+    },
     i18n: {
         locales: ['en', 'es', 'ast'],
         defaultLocale: 'es',

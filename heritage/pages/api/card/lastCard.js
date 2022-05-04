@@ -13,7 +13,7 @@ if (typeof window === 'undefined') {
 
 export default async (req, res) => {
     if (esClient != null) {
-        let dataMap = new Map(JSON.parse(req.body));
+        let dataMap = new Map(req.body);
         let body = {"query": {"match_all": {}},"size": "1","sort": [{"timestamp": {"order": "desc"}}]}
     await esClient.search({
         index: dataMap.get("index"),

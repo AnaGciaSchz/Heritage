@@ -1,7 +1,8 @@
 import Slider from "components/Slider/Slider.js"
-import ImageWithLink from "components/ImageWithLink/ImageWithLink.js"
 import SearchCardWithTitle from "components/SearchComponents/SearchCardWithTitle/SearchCardWithTitle.js"
 import SocialMedia from "components/SocialMedia/SocialMedia.js"
+
+import { fetchWrapper } from "./api/handlers/fetchWrapper"
 
 import { useRouter } from "next/router"
 import { useIntl } from "react-intl"
@@ -18,10 +19,7 @@ export default function Home() {
   const lastCard = async (index) => {
     var dataMap = new Map();
     dataMap.set("index", index);
-    const response = await fetch("http://localhost:3000/api/card/lastCard", {
-        method: "POST",
-        body: JSON.stringify(Array.from(dataMap.entries()))
-      });
+    const response = await fetchWrapper.post("http://localhost:3000/api/card/lastCard", Array.from(dataMap.entries()));
       var r = await response.json();
       return r.message;
     }

@@ -14,7 +14,7 @@ var admins = require('/data/admin.json');
 export default async (req, res) => {
     if(fileS != null && crypt != null){
 
-        var dataMap = new Map(JSON.parse(req.body));
+        var dataMap = new Map(req.body);
 
         if(checkInformation(admins, dataMap, res)) return;
 

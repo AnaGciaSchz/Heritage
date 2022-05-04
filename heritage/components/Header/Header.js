@@ -20,7 +20,7 @@ const {formatMessage} = useIntl();
                     img="/HeritageLogo.png" />
             </span>
 
-            <MenuButton nombre="Zona Admin" src= "headerIcons/admin.png" referencia="/about" />
+            <MenuButton nombre="Zona Admin" src= "headerIcons/admin.png" referencia="/ZonaAdmin" />
             <MenuButton nombre={f("SubidaDeCartas")} src= "headerIcons/subidaCartas.png" referencia="/SubidaDeCartas" />
             <MenuButton nombre={f("QueEsHeritage")} src= "headerIcons/queEsHeritage.png" referencia="/about" />
             <MenuButton nombre={f("Contacto")} src= "headerIcons/contacto.png" referencia="/Contacto" />

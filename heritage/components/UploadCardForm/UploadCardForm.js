@@ -6,6 +6,8 @@ import { validateService } from "../../services/validate.service";
 import styles from './uploadCardForm.module.scss'
 import { useIntl } from "react-intl"
 
+import { fetchWrapper } from "../../pages/api/handlers/fetchWrapper";
+
 export default function UploadCardForm() {
   const {formatMessage} = useIntl();
   const f = id => formatMessage({ id })
@@ -183,10 +185,7 @@ export default function UploadCardForm() {
         alertService.error(f("NoSePudoSubirImagen") + response.text + ", the card hasn't been created", options)
       }
       else {
-        const response2 = await fetch("http://localhost:3000/api/card/uploadInfo", {
-          method: "POST",
-          body: JSON.stringify(Array.from(dataMap.entries()))
-        });
+        const response2 = await fetchWrapper.post("http://localhost:3000/api/card/uploadInfo", Array.from(dataMap.entries()));
         if (response2.status < 200 || response2.status > 299) {
           alertService.error(f("NoSePudoSubirCarta") + response2.text, options)
         }else{

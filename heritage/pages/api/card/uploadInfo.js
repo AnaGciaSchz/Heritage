@@ -28,7 +28,7 @@ function deleteTemporalData (){
 }
 
   export default async (req, res) => {
-      var dataMap = new Map(JSON.parse(req.body));
+      var dataMap = new Map(req.body);
     esClient.index({
         index: dataMap.get("index"),
         body: {

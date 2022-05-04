@@ -3,6 +3,7 @@ import { useIntl } from "react-intl"
 import { alertService } from "../../services/alert.service";
 import { validateService } from "../../services/validate.service";
 import { useState } from "react";
+import { fetchWrapper } from '../../pages/api/handlers/fetchWrapper';
 
 export default function Register() {
   const {formatMessage} = useIntl();
@@ -42,10 +43,7 @@ export default function Register() {
   const uploadToServer = async (event) => {
     try {
       fillDataMap();
-      const response = await fetch("http://localhost:3000/api/admin/register", {
-        method: "POST",
-        body: JSON.stringify(Array.from(dataMap.entries()))
-      });
+      const response = await fetchWrapper.post("http://localhost:3000/api/admin/register", Array.from(dataMap.entries()));
       if (response.status < 200 || response.status > 299) {
         var json = await response.json();
         alertService.error(f("InformacionInvalida")+f(json.message), options)

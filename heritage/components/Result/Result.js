@@ -7,6 +7,8 @@ import {selectPromotionsUserSlice} from '../../services/redux/features/promotion
 import {selectSocialsSlice} from '../../services/redux/features/socials/socialsSlice.js';
 import {selectSearchUserSlice} from '../../services/redux/features/search/searchSlice.js';
 
+import { fetchWrapper } from '../../pages/api/handlers/fetchWrapper';
+
 export default function Result(props) {
     const [results, setResults] = useState(null);
 
@@ -17,10 +19,7 @@ export default function Result(props) {
     dataMap.set("socials", props.socialsFilter);
     dataMap.set("index", props.index);
     dataMap.set("sort",props.sort)
-    const response = await fetch("http://localhost:3000/api/card/search", {
-        method: "POST",
-        body: JSON.stringify(Array.from(dataMap.entries()))
-      });
+    const response = await fetchWrapper.post("http://localhost:3000/api/card/search",Array.from(dataMap.entries()));
       var r = await response.json();
       return r.message;
     }

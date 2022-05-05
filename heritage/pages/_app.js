@@ -45,14 +45,14 @@ export default function MyApp({ Component, pageProps }) {
 }, []);
 
 function authCheck(url) {
-    // redirect to login page if accessing a private page and not logged in 
-    const publicPaths = ['/', '/HistoriaEII', '/heritage_admin_login','/ZonaEgresados', '/ZonaProfesorado', '/ZonaDelegacion','/about', '/Contacto'];
+    const privatePaths = ['/ZonaAdmin','/ast/ZonaAdmin','/en/ZonaAdmin','/es/ZonaAdmin',
+    '/heritage_admin_register','/ast/heritage_admin_register','/en/heritage_admin_register','/es/heritage_admin_register'];
     const path = url.split('?')[0];
-    if (!userService.userValue && !publicPaths.includes(path)) {
+    if (!userService.userValue && privatePaths.includes(path)) {
         setAuthorized(false);
         router.push({
-            pathname: '/',
-            query: { returnUrl: router.asPath }
+            pathname: "/",
+            locale: router.locale
         });
     } else {
         setAuthorized(true);

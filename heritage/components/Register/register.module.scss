@@ -7,3 +7,25 @@
     margin-right: 5%;
     padding: 8px 0px 8px 0px;
 }
+
+@include mobile {
+    .form {
+        width: 70%;
+        }
+
+    .buttonLogin{
+        width: 30%;
+    }
+    
+}
+
+@include tablet {
+    .form {
+        width: 60%;
+        }
+
+    .buttonLogin{
+        width: 15%;
+    }
+    
+}

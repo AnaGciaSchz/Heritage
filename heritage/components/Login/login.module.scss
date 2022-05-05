@@ -25,3 +25,27 @@ background: $blue;
     -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
     box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 }
+
+@include tablet {
+    .buttonLogin{
+        width: 22%;
+    }
+
+    .formLogin {
+        width: 45%;
+        }
+    
+}
+
+@include mobile {
+    .buttonLogin{
+        width: 30%;
+        margin-bottom: 10px;
+    }
+
+    .formLogin {
+        width: 60%;
+        }
+    
+}
+

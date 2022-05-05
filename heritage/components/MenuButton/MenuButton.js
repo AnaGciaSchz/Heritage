@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styles from './menubutton.module.scss'
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function MenuButton(props) {
 

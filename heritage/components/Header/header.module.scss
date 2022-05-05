@@ -19,11 +19,25 @@
   }
 }
 
+.headerLogged{
+  @extend .header;
+}
+
+.headerNotLogged{
+  @extend .header;
+  margin-left: 155px;
+  .logo {
+    width: 20%;
+    margin-top: -55px;
+    min-width: 20%;
+    min-height: 15%;
+  }
+}
+
 
 @include tablet {
-  .header{
+  .headerLogged{
     margin-left: 30px;
-  }
   .logo {
     margin-top: -1% !important;
     margin-left: 2% !important;
@@ -33,7 +47,17 @@
   }
 }
 
+.headerNotLogged{
+  margin-left: 115px;
+  .logo {
+    margin-top: -40px;
+  }
+}
+
+}
+
 @include mobile {
+  .headerLogged{
   .logo {
     margin-top: -4% !important;
     margin-left:2% !important;
@@ -43,10 +67,19 @@
   }
 }
 
+  .headerNotLogged{
+    margin-left: 70px;
+    .logo {
+      margin-top: -30px;
+      margin-bottom: -20px;
+    }
+  }
+}
+
 @include bigDesktop{
-  .header {
+  .headerLogged {
     display: flex;
-    margin-left: 140px;
+    margin-left: 100px;
     .logo {
       margin-top: -3%;
       margin-bottom: -25px;
@@ -55,10 +88,13 @@
       height: 15%;
       width: 15%;
     }
-  
-    .spacer {
-      width: 20px;
-      color:black;
+  }
+
+  .headerNotLogged {
+    margin-left: 220px;
+    .logo {
+      margin-top: -4%;
+      margin-bottom: -55px;
     }
   }
 }

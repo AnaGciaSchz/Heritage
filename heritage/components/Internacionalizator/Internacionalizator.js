@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import InternacionalizationOption from "../InternacionalizationOption/InternacionalizationOption"
 import { useRouter } from "next/router"
 
-export default function Internacionalizator(props) {
+export default function Internacionalizator() {
     const router = useRouter()
     const [es, setEs] = React.useState(true);
     const [en, setEn] = React.useState(false);
@@ -29,6 +29,10 @@ export default function Internacionalizator(props) {
             onChangeLocale("ast")
         }
     }
+
+    useEffect(() => {
+        setLanguage(router.locale)
+    }, [router.locale]);
     return (<>
     <p>
     <b>|</b>

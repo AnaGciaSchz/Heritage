@@ -13,7 +13,6 @@ export default function Home() {
   const { formatMessage } = useIntl()
   const f = id => formatMessage({ id })
   const router = useRouter()
-  const { locale, locales, defaultLocale } = router
   const [results, setResults] = useState(null);
 
   const lastCard = async (index) => {

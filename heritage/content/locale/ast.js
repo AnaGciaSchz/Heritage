@@ -118,6 +118,28 @@ export const ast = {
       HaOcurridoUnError: "Asocedió un erru: ",
       NombreDeUsuarioEnUso:"Ese nome d'usuariu yá esiste."
     },
+    "/ZonaAdmin": {
+      Copyright: "Copyright Universidá d'Uviéu",
+      AvisoLegal: "Avisu Llegal",
+      PoliticaCookies: "Política de cookies",
+      PoliticaPrivacidad: "Política de privacidá",
+      logo: "Logo de Heritage, representa la palabra daqué curvada, de color verde, con un remarcáu que pon 'EII' enriba, n'azul. Sobro les lletres ta la figura d'un osu mirando escontra baxo.",
+      historiaEII: "Hestoria de la EII",
+      ZExalumnado: "Zona Egresados",
+      ZProfesorado: "Zona Profesorado",
+      ZDelegacion: "Zona Exdelegados",
+      QueEsHeritage: "¿Qué ye Heritage?",
+      SubidaDeCartas: "Xubida de cartes",
+      Contacto: "Contactu",
+      local: "es",
+      PaginaWeb: "Páxina web",
+      UniversidadOviedo: "Universidá d'Uviéu",
+      EscuelaIngenieria:"Escuela d'Inxeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
+      Legal: "Llegal",
+      Guardar: "Guardar"
+    },
     "/HistoriaEII": {
       Copyright: "Copyright Universidá d'Uviéu",
       AvisoLegal: "Avisu Llegal",

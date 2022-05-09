@@ -118,6 +118,28 @@ export const en = {
       HaOcurridoUnError: "An error has ocurred: ",
       NombreDeUsuarioEnUso:"That username already exists."
     },
+    "/ZonaAdmin": {
+      Copyright: "Copyright University of Oviedo",
+      AvisoLegal: "Legal notice",
+      PoliticaCookies: "Cookie Policy",
+      PoliticaPrivacidad: "Privacy Policy",
+      logo: "Heritage's logo, represents the curved word in green, with a highlight that says 'EII' above it, in blue. Above the letters there is the silhouette of a bear looking down.",
+      historiaEII: "EII's History",
+      ZExalumnado: "Graduate Area",
+      ZProfesorado: "Teachers Area",
+      ZDelegacion: "Former Delegates Area",
+      QueEsHeritage: "¿What is Heritage?",
+      SubidaDeCartas: "Upload Cards",
+      Contacto: "Contact",
+      local: "en",
+      PaginaWeb: "Web page",
+      UniversidadOviedo: "University of Oviedo",
+      EscuelaIngenieria:"School of computer Engineering",
+      InformacionAcademica: "Academic information",
+      Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal",
+      Guardar: "Save"
+    },
     "/HistoriaEII": {
       Copyright: "Copyright University of Oviedo",
       AvisoLegal: "Legal notice",

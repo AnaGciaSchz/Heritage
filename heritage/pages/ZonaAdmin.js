@@ -1,6 +1,10 @@
 import { userService } from "../services/userService";
+import TextEditor from "../components/TextEditor/TextEditor"
 
 export default function ZonaAdmin() {
-    return (<a onClick={userService.logout} className="nav-item nav-link">Logout</a>);
+    return (<>
+    <button onClick={userService.logout} className="nav-item nav-link">Logout</button>
+    <TextEditor />
+    </>);
 
 }

@@ -119,6 +119,28 @@ export const es = {
       NombreDeUsuarioEnUso: "Ese nombre de usuario ya existe."
 
     },
+    "/ZonaAdmin":{
+      Copyright: "Copyright Universidad de Oviedo",
+      AvisoLegal: "Aviso Legal",
+      PoliticaCookies: "Política de cookies",
+      PoliticaPrivacidad: "Política de privacidad",
+      logo: 'Logo de Heritage, representa la palabra algo curvada, de color verde, con un remarcado que pone "EII" encima, en azul. Sobre las letras está la silueta de un oso mirando hacia abajo.',
+      historiaEII: "Historia de la EII",
+      ZExalumnado: "Zona Egresados",
+      ZProfesorado: "Zona Profesorado",
+      ZDelegacion: "Zona Exdelegados",
+      QueEsHeritage: "¿Qué es Heritage?",
+      SubidaDeCartas: "Subida de cartas",
+      Contacto: "Contacto",
+      local: "es",
+      PaginaWeb: "Página web",
+      UniversidadOviedo: "Universidad de Oviedo",
+      EscuelaIngenieria:"Escuela de Ingeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
+      Legal: "Legal",
+      Guardar: "Guardar"
+    },
     "/HistoriaEII": {
       Copyright: "Copyright Universidad de Oviedo",
       AvisoLegal: "Aviso Legal",

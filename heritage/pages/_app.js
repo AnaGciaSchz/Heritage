@@ -45,8 +45,9 @@ export default function MyApp({ Component, pageProps }) {
 }, []);
 
 function authCheck(url) {
-    const privatePaths = ['/ZonaAdmin','/ast/ZonaAdmin','/en/ZonaAdmin','/es/ZonaAdmin',
-    '/heritage_admin_register','/ast/heritage_admin_register','/en/heritage_admin_register','/es/heritage_admin_register'];
+    const privatePaths = ['/ZonaAdmin','/ast/ZonaAdmin','/en/ZonaAdmin','/es/ZonaAdmin','/api/admin/register','/api/card/tempUploadImage'
+    ,'/api/card/uploadImage','/api/card/uploadInfo','/api/create','/heritage_admin_register','/ast/heritage_admin_register'
+    ,'/en/heritage_admin_register','/es/heritage_admin_register'];
     const path = url.split('?')[0];
     if (!userService.userValue && privatePaths.includes(path)) {
         setAuthorized(false);

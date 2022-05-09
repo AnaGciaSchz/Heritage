@@ -3,7 +3,6 @@ import { useIntl } from "react-intl"
 import { alertService } from "../../services/alert.service";
 import { validateService } from "../../services/validate.service";
 import { useState } from "react";
-import { fetchWrapper } from '../../pages/api/handlers/fetchWrapper';
 import { userService } from '../../services/userService';
 
 export default function Login() {
@@ -36,7 +35,6 @@ export default function Login() {
     try {
       fillDataMap();
       const response= userService.login(dataMap);
-      //const response = await fetchWrapper.post("http://localhost:3000/api/admin/login", Array.from(dataMap.entries()));
       if (response.status < 200 || response.status > 299) {
         var json = await response.json();
         alertService.error("Información Inválida: "+f(json.message), options)

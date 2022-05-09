@@ -350,6 +350,26 @@ export const ast = {
       EscuelaIngenieria:"Escuela d'Inxeniería Informática",
       InformacionAcademica: "Información Académica",
       Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
-      Legal: "Llegal"
+      Legal: "Llegal",
+      Direccion: "Dirección",
+      TextoContacto: "Equí puedes atopar la información de contactu de la EII y la Delegación d'Estudiantes",
+      Localizacion: "Localización",
+      LocalizacionPrimeraLinea: "Cai Valdés Salas. Campus de los Catalanes",
+      LocalizacionSegundaLinea: "s/n 33007 Uviéu (Asturies) España",
+      DatosContacto: "Datos de contactu",
+      CorreoElectronico: "Corréu Electrónicu",
+      Telefono: "Teléfonu",
+      Telefonos: "Teléfonos",
+      Fax: "Fax",
+      Administration: "Alministración",
+      NumerosTelefonoYFax: "úmberos de teléfonu y fax",
+      AdministradorCentro: "Administrador del Centru",
+      UnidadAdministrativa: "Unidá alministrativa",
+      Conserjería: "Conserxería",
+      DEII: "Delegación d'Estudiantes",
+      MasInfo: "Más información del personal del centru, profesoráu y equipu de Dirección",
+      PaginasBlancas: "Páxines blanques de la Universidá d'Uviéu",
+      y: "y",
+      DireccionEII: "Dirección"
     }
   }

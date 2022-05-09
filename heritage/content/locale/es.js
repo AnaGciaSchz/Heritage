@@ -351,6 +351,26 @@ export const es = {
       EscuelaIngenieria:"Escuela de Ingeniería Informática",
       InformacionAcademica: "Información Académica",
       Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
-      Legal: "Legal"
+      Legal: "Legal",
+      Direccion: "Dirección",
+      TextoContacto: "Aquí puedes encontrar la información de contacto de la EII y la Delegación de Estudiantes",
+      Localizacion: "Localización",
+      LocalizacionPrimeraLinea: "Edificio Valdés Salas. Campus de los Catalanes",
+      LocalizacionSegundaLinea: "s/n 33007 Oviedo (Asturias) España",
+      DatosContacto: "Datos de contacto",
+      CorreoElectronico: "Correo Electrónico",
+      Telefono: "Teléfono",
+      Telefonos: "Teléfonos",
+      Fax: "Fax",
+      Administration: "Administración",
+      NumerosTelefonoYFax: "Números de teléfono y fax",
+      AdministradorCentro: "Administrador del Centro",
+      UnidadAdministrativa: "Unidad administrativa",
+      Conserjería: "Conserjería",
+      DEII: "Delegación de Estudiantes",
+      MasInfo: "Más información del personal del centro, profesorado y equipo de Dirección",
+      PaginasBlancas: "Páginas blancas de la Universidad de Oviedo",
+      y: "y",
+      DireccionEII: "Dirección"
     }
   }

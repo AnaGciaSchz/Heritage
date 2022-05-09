@@ -350,6 +350,26 @@ export const en = {
       EscuelaIngenieria:"School of computer Engineering",
       InformacionAcademica: "Academic information",
       Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
-      Legal: "Legal"
+      Legal: "Legal",
+      Direccion: "Direction",
+      TextoContacto: "Here you can find some information to contact the School of Computer Engineering and the Students Delegation",
+      Localizacion: "Location",
+      LocalizacionPrimeraLinea: "Valdés Salas Street. Campus of the Catalans",
+      LocalizacionSegundaLinea: "s/n 33007 Oviedo (Asturias) Spain",
+      DatosContacto: "Contact Information",
+      CorreoElectronico: "Email",
+      Telefono: "Telephone number",
+      Telefonos: "Telephone numbers",
+      Fax: "Fax",
+      Administration: "School administration",
+      NumerosTelefonoYFax: "Phone and Fax numbers",
+      AdministradorCentro: "Center Administrator",
+      UnidadAdministrativa: "Administrative Unit",
+      Conserjería: "Reception",
+      DEII: "Student delegation",
+      MasInfo: "Further information on the School's staff, teaching staff and Management team",
+      PaginasBlancas: "White pages of the University of Oviedo.",
+      y: "and",
+      DireccionEII: "Management"
     }
   }

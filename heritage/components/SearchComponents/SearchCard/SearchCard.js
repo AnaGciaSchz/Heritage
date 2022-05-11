@@ -1,17 +1,52 @@
 import styles from './searchCard.module.scss'
 import Image from 'next/image'
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { useIntl } from "react-intl"
-import { ProductNotSupportedError } from '@elastic/elasticsearch/lib/errors';
+import { useRouter } from "next/router"
+
+import { fetchWrapper } from "../../../pages/api/handlers/fetchWrapper";
 
 export default function SearchCard(props){
   const {formatMessage} = useIntl();
   const f = id => formatMessage({ id })
 
-  const [isRotated, setIsRotated] = React.useState(false);
-  const [isNotBeenRotated, setIsNotBeenRotated] = React.useState(true);
+  const [isRotated, setIsRotated] = useState(false);
+  const [isNotBeenRotated, setIsNotBeenRotated] = useState(true);
   const onRotate = (boolean) => {setIsNotBeenRotated(false), setIsRotated(boolean);}
-  const [showRotate, setShowRotate] = React.useState(false);
+  const [showRotate, setShowRotate] = useState(false);
+  const [deleteButton, setDeleteButton] = useState(null)
+  const [deletedMessage, setDeletedMessage] = useState(null)
+  const router = useRouter();
+  var dataMap = new Map();
+
+  function createDeleteButton(){
+    if(localStorage != null && localStorage.getItem('user') != null){
+      setDeleteButton(<button className= {styles.cardButton} onClick={deleteCard}>{f("Eliminar")}</button>)
+    }else{
+      setDeleteButton(null)
+    }
+  }
+  
+  const deleteCard = async (event) => {
+    try {
+      dataMap.set("index", props.index);
+      dataMap.set("id", props.id);
+      const response = await fetchWrapper.post("http://localhost:3000/api/card/delete", Array.from(dataMap.entries()));
+      if (response.status < 200 || response.status > 299) {
+        console.log(response)
+        setDeletedMessage(<p>{f("NoEliminado")}</p>)
+      }
+      else{
+        setDeletedMessage(<p>{f("Eliminado")}</p>)
+      }
+      }
+    catch (error) {
+    }
+  };
+
+  useEffect(() => {
+    createDeleteButton();
+  }, [router.locale]);
     return(
       <div>
             <img className={showRotate? styles.flipIcon : styles.flipIconHidden} src="/flip.svg" alt={f("IconoGirarCarta")}/>
@@ -22,6 +57,7 @@ export default function SearchCard(props){
         onClick={() => onRotate(!isRotated)}
         onMouseEnter= {() => setShowRotate(true)}
         onMouseLeave = {() => setShowRotate(false)}>
+    {deletedMessage}
     <p className={styles.name}>{props.name}</p>
     <p className={styles.date}>{f("CartaRegistro")+": "+props.date}</p>
     <Image className={styles.image}
@@ -54,6 +90,7 @@ export default function SearchCard(props){
     &nbsp;
     <a href={props.red3Link}target="_blank">{props.red3}</a>
     </p>
+    {deleteButton}
     </div>}
     </div>
     )

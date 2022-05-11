@@ -33,6 +33,9 @@ export const en = {
       CartaLogros: "Archievements",
       CartaRegistro: "Registered",
       Promocion: "Promotion",
+      Eliminar: "Delete",
+      Eliminado: "The card was deleted",
+      NoEliminado: "The card couldn't be deleted. Try again"
     },
     "/heritage_admin_login": {
       paginaPrincipal: "Homepage",
@@ -138,7 +141,10 @@ export const en = {
       InformacionAcademica: "Academic information",
       Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
       Legal: "Legal",
-      Guardar: "Save"
+      Guardar: "Save",
+      Eliminar: "Delete",
+      Eliminado: "The card was deleted",
+      NoEliminado: "The card couldn't be deleted. Try again"
     },
     "/HistoriaEII": {
       Copyright: "Copyright University of Oviedo",
@@ -190,7 +196,10 @@ export const en = {
       EscuelaIngenieria:"School of computer Engineering",
       InformacionAcademica: "Academic information",
       Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
-      Legal: "Legal"
+      Legal: "Legal",
+      Eliminar: "Delete",
+      Eliminado: "The card was deleted",
+      NoEliminado: "The card couldn't be deleted. Try again"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright University of Oviedo",
@@ -221,7 +230,10 @@ export const en = {
       EscuelaIngenieria:"School of computer Engineering",
       InformacionAcademica: "Academic information",
       Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
-      Legal: "Legal"
+      Legal: "Legal",
+      Eliminar: "Delete",
+      Eliminado: "The card was deleted",
+      NoEliminado: "The card couldn't be deleted. Try again"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright University of Oviedo",
@@ -252,7 +264,10 @@ export const en = {
       EscuelaIngenieria:"School of computer Engineering",
       InformacionAcademica: "Academic information",
       Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
-      Legal: "Legal"
+      Legal: "Legal",
+      Eliminar: "Delete",
+      Eliminado: "The card was deleted",
+      NoEliminado: "The card couldn't be deleted. Try again"
     },
     "/about": {
       Copyright: "Copyright University of Oviedo",

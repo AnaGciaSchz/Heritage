@@ -33,6 +33,9 @@ export const ast = {
       CartaLogros: "Llogros destacables",
       CartaRegistro: "Rexistru",
       Promocion: "Promoción",
+      Eliminar: "Esaniciar",
+      Eliminado: "Esanicióse la carta",
+      NoEliminado: "Nun se pudo esaniciar la carta"
     },
     "/heritage_admin_login": {
       paginaPrincipal: "Páxina principal",
@@ -138,7 +141,10 @@ export const ast = {
       InformacionAcademica: "Información Académica",
       Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
       Legal: "Llegal",
-      Guardar: "Guardar"
+      Guardar: "Guardar",
+      Eliminar: "Esaniciar",
+      Eliminado: "Esanicióse la carta",
+      NoEliminado: "Nun se pudo esaniciar la carta"
     },
     "/HistoriaEII": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -190,7 +196,10 @@ export const ast = {
       EscuelaIngenieria:"Escuela d'Inxeniería Informática",
       InformacionAcademica: "Información Académica",
       Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
-      Legal: "Llegal"
+      Legal: "Llegal",
+      Eliminar: "Esaniciar",
+      Eliminado: "Esanicióse la carta",
+      NoEliminado: "Nun se pudo esaniciar la carta"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -221,7 +230,10 @@ export const ast = {
       EscuelaIngenieria:"Escuela d'Inxeniería Informática",
       InformacionAcademica: "Información Académica",
       Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
-      Legal: "Llegal"
+      Legal: "Llegal",
+      Eliminar: "Esaniciar",
+      Eliminado: "Esanicióse la carta",
+      NoEliminado: "Nun se pudo esaniciar la carta"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -252,7 +264,10 @@ export const ast = {
       EscuelaIngenieria:"Escuela d'Inxeniería Informática",
       InformacionAcademica: "Información Académica",
       Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
-      Legal: "Llegal"
+      Legal: "Llegal",
+      Eliminar: "Esaniciar",
+      Eliminado: "Esanicióse la carta",
+      NoEliminado: "Nun se pudo esaniciar la carta"
     },
     "/about": {
       Copyright: "Copyright Universidá d'Uviéu",

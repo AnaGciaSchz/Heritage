@@ -33,6 +33,9 @@ export const es = {
       CartaLogros: "Logros destacables",
       CartaRegistro: "Registro",
       Promocion: "Promoción",
+      Eliminar: "Eliminar",
+      Eliminado: "Se ha eliminado la carta",
+      NoEliminado: "No se ha podido eliminar la carta"
     },
     "/heritage_admin_login": {
       paginaPrincipal: "Página Principal",
@@ -139,7 +142,10 @@ export const es = {
       InformacionAcademica: "Información Académica",
       Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
       Legal: "Legal",
-      Guardar: "Guardar"
+      Guardar: "Guardar",
+      Eliminar: "Eliminar",
+      Eliminado: "Se ha eliminado la carta",
+      NoEliminado: "No se ha podido eliminar la carta"
     },
     "/HistoriaEII": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -191,7 +197,10 @@ export const es = {
       EscuelaIngenieria:"Escuela de Ingeniería Informática",
       InformacionAcademica: "Información Académica",
       Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
-      Legal: "Legal"
+      Legal: "Legal",
+      Eliminar: "Eliminar",
+      Eliminado: "Se ha eliminado la carta",
+      NoEliminado: "No se ha podido eliminar la carta"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -222,7 +231,10 @@ export const es = {
       EscuelaIngenieria:"Escuela de Ingeniería Informática",
       InformacionAcademica: "Información Académica",
       Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
-      Legal: "Legal"
+      Legal: "Legal",
+      Eliminar: "Eliminar",
+      Eliminado: "Se ha eliminado la carta",
+      NoEliminado: "No se ha podido eliminar la carta"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -253,7 +265,10 @@ export const es = {
       EscuelaIngenieria:"Escuela de Ingeniería Informática",
       InformacionAcademica: "Información Académica",
       Direccion: "Calle Valdés Salas, 11, 33007 Oviedo, Asturias",
-      Legal: "Legal"
+      Legal: "Legal",
+      Eliminar: "Eliminar",
+      Eliminado: "Se ha eliminado la carta",
+      NoEliminado: "No se ha podido eliminar la carta"
     },
     "/about": {
       Copyright: "Copyright Universidad de Oviedo",

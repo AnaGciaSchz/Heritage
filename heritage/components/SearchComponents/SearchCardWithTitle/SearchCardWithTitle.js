@@ -13,6 +13,8 @@ export default function SearchCardWithTitle(props) {
         <div>
             <h3 className={styles.title}>{f(props.title)}</h3>
             <SearchCard key = {props.key}
+            id= {props.last.hits[0]._id}
+            index = {props.last.hits[0]._index}
           name= {props.last.hits[0]._source.name}
           img={props.last.hits[0]._source.image}
           firtsLine={props.last.hits[0]._source.promotion}

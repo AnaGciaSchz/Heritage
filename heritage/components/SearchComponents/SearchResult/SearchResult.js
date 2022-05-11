@@ -16,6 +16,8 @@ export default function SearchResult(props) {
 
         for(i=0;i<data.length;i++){
             r[i]= <SearchCard key = {i}
+            id= {data[i]._id}
+            index = {data[i]._index}
             name= {data[i]._source.name}
             img={data[i]._source.image}
             firtsLine={data[i]._source.promotion}

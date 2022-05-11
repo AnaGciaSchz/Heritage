@@ -15,6 +15,19 @@
   margin: 0.5em;
 }
 
+.cardButton{
+  color: $darkGreen;
+  background-color: white;
+  border-radius: 2em;
+  border-width: 0px;
+  box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
 .quitCard {
   @extend .card;
   -webkit-animation: flip-out-ver-left 0.45s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;

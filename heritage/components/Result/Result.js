@@ -28,6 +28,7 @@ export default function Result(props) {
         var result = await search();
         var results = new Array();
         var i;
+        console.log(result)
         for(i=0;i<result.promotion.length;i++){
             results[i]= <SearchResult key={i}
             promotion = {result.promotion[i].key}

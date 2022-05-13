@@ -182,7 +182,7 @@ export default function UploadCardForm() {
         body
       });
       if (response.status < 200 || response.status > 299) {
-        alertService.error(f("NoSePudoSubirImagen") + response.text + ", the card hasn't been created", options)
+        alertService.error(f("NoSePudoSubirImagen") + response.text + ", the card hasn't been created, check data.", options)
       }
       else {
         const response2 = await fetchWrapper.post("http://localhost:3000/api/card/uploadInfo", Array.from(dataMap.entries()));
@@ -304,6 +304,7 @@ export default function UploadCardForm() {
           <label> {f("CheckTexto")}</label>
         </div>
         <div>
+          <p className={styles.label}>La imagen debe ser de tipo png, jpg, jpeg o webp</p>
           <label for="fileUpload" className={styles.fileUploadLabel}>{f("SubirImagenCard")}</label>
           <input type="file" id="fileUpload" className={styles.fileUpload} multiple="false" onChange={uploadToClient} title={f("SubirImagenCard")} />
           <button

@@ -31,6 +31,7 @@ export default function SearchCard(props){
     try {
       dataMap.set("index", props.index);
       dataMap.set("id", props.id);
+      dataMap.set("image", props.img)
       const response = await fetchWrapper.post("http://localhost:3000/api/card/delete", Array.from(dataMap.entries()));
       if (response.status < 200 || response.status > 299) {
         console.log(response)

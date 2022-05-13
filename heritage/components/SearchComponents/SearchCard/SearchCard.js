@@ -21,11 +21,20 @@ export default function SearchCard(props){
 
   function createDeleteButton(){
     if(localStorage != null && localStorage.getItem('user') != null){
-      setDeleteButton(<button className= {styles.cardButton} onClick={deleteCard}>{f("Eliminar")}</button>)
+      setDeleteButton(<button className= {styles.cardButton} onClick={dialogWindow}>{f("Eliminar")}</button>)
     }else{
       setDeleteButton(null)
     }
   }
+
+  const dialogWindow= async (event) =>{
+    const confirmBox = window.confirm(
+      "Do you really want to delete this Crumb?"
+    )
+    if (confirmBox === true) {
+      deleteCard()
+  }
+}
   
   const deleteCard = async (event) => {
     try {

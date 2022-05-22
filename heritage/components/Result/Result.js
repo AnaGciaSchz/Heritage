@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchResult from "components/SearchComponents/SearchResult/SearchResult.js"
 import styles from './result.module.scss'
+import NoResult from '../NoResult/NoResult';
 
 import {useSelector,} from 'react-redux';
 import {selectPromotionsUserSlice} from '../../services/redux/features/promotions/promotionsSlice.js';
@@ -28,7 +29,6 @@ export default function Result(props) {
         var result = await search();
         var results = new Array();
         var i;
-        console.log(result)
         for(i=0;i<result.promotion.length;i++){
             results[i]= <SearchResult key={i}
             promotion = {result.promotion[i].key}
@@ -42,7 +42,10 @@ export default function Result(props) {
         props.setPromotionsChange(!props.promotionsChange)
 
         setResults(null);
-        setResults(results);
+        if(results.length==0){
+          setResults(<NoResult/>);
+        }else{
+        setResults(results);}
     }
     
     useEffect(() => {

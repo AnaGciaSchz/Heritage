@@ -1,0 +1,11 @@
+@import "../../styles/sass/variables";
+@import "../../styles/sass/mixins";
+
+.buttons{
+    display: flex;
+    margin: 5px auto;
+}
+
+.text{
+    width: 100%;
+}

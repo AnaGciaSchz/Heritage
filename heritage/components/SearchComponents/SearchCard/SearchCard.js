@@ -43,7 +43,6 @@ export default function SearchCard(props){
       dataMap.set("image", props.img)
       const response = await fetchWrapper.post("http://localhost:3000/api/card/delete", Array.from(dataMap.entries()));
       if (response.status < 200 || response.status > 299) {
-        console.log(response)
         setDeletedMessage(<p>{f("NoEliminado")}</p>)
       }
       else{

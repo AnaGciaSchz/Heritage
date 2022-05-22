@@ -11,9 +11,9 @@ export default function MultiSelectFilter(props) {
       var i;
       for (i = 0; i < props.content.length; i++) {
         if (lastFilter !== "" && lastFilter.split(",").includes(props.content[i].key)) {
-          inputsAndLabels[i] = <><input id={props.name.replace(" ","") + i} type="checkbox" value={props.content[i].key} checked /> <label htmlFor={i}>{props.content[i].key}</label></>;
+          inputsAndLabels[i] = <div key={i}><input  id={props.name.replace(" ","") + i} type="checkbox" value={props.content[i].key} checked /> <label htmlFor={i}>{props.content[i].key}</label></div>;
         } else {
-          inputsAndLabels[i] = <><input id={props.name.replace(" ","") + i} type="checkbox" value={props.content[i].key} /> <label htmlFor={i}>{props.content[i].key}</label></>;
+          inputsAndLabels[i] = <div key={i}><input  id={props.name.replace(" ","") + i} type="checkbox" value={props.content[i].key} /> <label htmlFor={i}>{props.content[i].key}</label></div>;
         }
 
       }

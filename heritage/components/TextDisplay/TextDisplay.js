@@ -14,7 +14,6 @@ export default function TextDisplay() {
             dataMap.set("locale", router.locale);
           const response = await fetchWrapper.post("http://localhost:3000/api/history/getInfo", Array.from(dataMap.entries()));
           var json = await response.json();
-          console.log(json.message);
           if (response.status < 200 || response.status > 299) {
             return "Error";
         }else{

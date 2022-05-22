@@ -21,8 +21,6 @@ function login(dataMap) {
         .then(user => {
             userSubject.next(user);
             localStorage.setItem('user', JSON.stringify(user));
-            console.log("user:")
-            console.log(user)
             localStorage.setItem('username', "Ña");
             Router.reload(window.location.pathname)
             return user;

@@ -217,8 +217,8 @@ export default function UploadCardForm() {
         <div className={styles.section}><span>1</span>{f("TipoCartaSeccion")}</div>
         <div className={styles.field}>
           <label className={styles.label}>{f("TipoCarta")}*</label>
-          <select class="form-control" id="type" required="required" aria-required="true">
-            <option disabled="null" selected="null">{f("TipoCartaSeccion")}</option>
+          <select className="form-control" defaultValue={"null"} id="type" required="required" aria-required="true">
+            <option disabled="null" value="null">{f("TipoCartaSeccion")}</option>
             <option value="egresado">{f("Egresado")}</option>
             <option value="profesor">{f("Profesor")}</option>
             <option value="delegado">{f("Delegado")}</option>
@@ -228,7 +228,7 @@ export default function UploadCardForm() {
         <div className={styles.section}><span>2</span>{f("CaraCartaInformacion")}</div>
         <div className={styles.field}>
           <label className={styles.label}>{f("Nombre")}*</label>
-          <input type="text" placeholder="Ana María García Sánchez" maxlength="25" id="name" />
+          <input type="text" placeholder="Ana María García Sánchez" maxLength="25" id="name" />
           <div>
           </div>
           <span className={styles.tooltip}>{f("NombreTooltip")}</span>
@@ -240,25 +240,25 @@ export default function UploadCardForm() {
         </div>
         <div className={styles.field}>
           <label className={styles.label}>{f("DescripcionCorta")}*</label>
-          <textarea type="textarea" placeholder={f("DescripcionCortaEjemplo")} maxlength="120" rows="3" id="shortDescription"></textarea>
+          <textarea type="textarea" placeholder={f("DescripcionCortaEjemplo")} maxLength="120" rows="3" id="shortDescription"></textarea>
           <span className={styles.tooltip}>{f("DescripcionCortaTooltip")}</span>
         </div>
         <div className={styles.section}><span>3</span>{f("ReversoCartaInformacion")}</div>
         <div className={styles.field}>
           <label className={styles.label}>{f("DescripcionLarga")}*</label>
-          <textarea type="textarea" placeholder={f("DescripcionLargaEjemplo")} maxlength="230" rows="5" id="longDescription"></textarea>
+          <textarea type="textarea" placeholder={f("DescripcionLargaEjemplo")} maxLength="230" rows="5" id="longDescription"></textarea>
           <span className={styles.tooltip}>{f("DescripcionLargaTooltip")}</span>
         </div>
         <div className={styles.field}>
           <label className={styles.label}>{f("CartaLogros")}</label>
-          <textarea type="textarea" placeholder={f("LogrosEjemplo")} maxlength="230" rows="5" id="archievements"></textarea>
+          <textarea type="textarea" placeholder={f("LogrosEjemplo")} maxLength="230" rows="5" id="archievements"></textarea>
           <span className={styles.tooltip}>{f("LogrosTooltip")}</span>
         </div>
         {socialMedia1 ?
           <div className={styles.mediaField}>
             <div className={styles.lefthalf}>
             <label className={styles.label}>{f("NombreRedSocial")} 1*</label>
-            <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxlength="20" id="social1Text" />
+            <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxLength="20" id="social1Text" />
             </div>
             <div className={styles.righthalf}>
             <label className={styles.label}>{f("RedSocialLink")} 1* </label>
@@ -270,7 +270,7 @@ export default function UploadCardForm() {
           <div className={styles.mediaField}>
             <div className={styles.lefthalf}>
             <label className={styles.label}>{f("NombreRedSocial")} 2*</label>
-            <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxlength="20" id="social2Text" />
+            <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxLength="20" id="social2Text" />
             </div>
             <div className={styles.righthalf}>
             <label className={styles.label}>{f("RedSocialLink")} 2*</label>
@@ -282,7 +282,7 @@ export default function UploadCardForm() {
           <div className={styles.mediaField}>
             <div className={styles.lefthalf}>
             <label className={styles.label}>{f("NombreRedSocial")} 3*</label>
-            <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxlength="20" id="social3Text" />
+            <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxLength="20" id="social3Text" />
             </div>
             <div className={styles.righthalf}>
             <label className={styles.label}>{f("RedSocialLink")} 3*</label>
@@ -305,8 +305,8 @@ export default function UploadCardForm() {
         </div>
         <div>
           <p className={styles.label}>La imagen debe ser de tipo png, jpg, jpeg o webp</p>
-          <label for="fileUpload" className={styles.fileUploadLabel}>{f("SubirImagenCard")}</label>
-          <input type="file" id="fileUpload" className={styles.fileUpload} multiple="false" onChange={uploadToClient} title={f("SubirImagenCard")} />
+          <label htmlFor="fileUpload" className={styles.fileUploadLabel}>{f("SubirImagenCard")}</label>
+          <input type="file" id="fileUpload" className={styles.fileUpload} multiple={false} onChange={uploadToClient} title={f("SubirImagenCard")} />
           <button
             className={styles.send}
             type="submit"

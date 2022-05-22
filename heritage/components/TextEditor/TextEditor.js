@@ -4,10 +4,12 @@ import 'suneditor/dist/css/suneditor.min.css';
 import { useIntl } from "react-intl"
 import { fetchWrapper } from '../../pages/api/handlers/fetchWrapper';
 import { useRouter } from "next/router"
+import { alertService } from "../../services/alert.service";
 
 const SunEditor = dynamic(() => import("suneditor-react"), {
     ssr: false,
   });
+
 
 
   export default function TextEditor() {
@@ -15,6 +17,11 @@ const SunEditor = dynamic(() => import("suneditor-react"), {
   const f = id => formatMessage({ id })
 
   const router = useRouter();
+
+  const [options, setOptions] = useState({
+    autoClose: false,
+    keepAfterRouteChange: false
+  });
 
   const [content, setContent] = useState('');
   const [sunEditor, setSunEditor] = useState(null);
@@ -75,12 +82,15 @@ const SunEditor = dynamic(() => import("suneditor-react"), {
       const response = await fetchWrapper.post("http://localhost:3000/api/history/saveInfo", Array.from(dataMap.entries()));
       var json = await response.json();
       if (response.status < 200 || response.status > 299) {
+        alertService.error("Error", options)
         return "Error";
     }else{
+      alertService.success(f("SubidaCorrecta"), options)
         return json.message;
       }
     }
     catch (error) {
+      alertService.error("Error", options)
       return ""+error;
     }
 

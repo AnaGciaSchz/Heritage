@@ -4,7 +4,6 @@ import SocialMedia from "components/SocialMedia/SocialMedia.js"
 
 import { fetchWrapper } from "./api/handlers/fetchWrapper"
 
-import { useRouter } from "next/router"
 import { useIntl } from "react-intl"
 import React, { useState, useEffect } from 'react';
 
@@ -12,7 +11,6 @@ export default function Home() {
 
   const { formatMessage } = useIntl()
   const f = id => formatMessage({ id })
-  const router = useRouter()
   const [results, setResults] = useState(null);
 
   const lastCard = async (index) => {
@@ -29,23 +27,22 @@ export default function Home() {
       var lastDelegate = await lastCard("delegate-card");
 
       var results = new Array();
-          results[0]= <SearchCardWithTitle 
-          key = {0}
+      
+          results[0]= <div key={0}><SearchCardWithTitle 
           title = "UltimoEgresado"
           last = {lastStudent}
-      />
+      /></div>
+      
 
-          results[1]= <SearchCardWithTitle 
-          key = {1}
+          results[1]= <div key={1}><SearchCardWithTitle 
           title = "UltimoProfesor"
           last = {lastProfessor}
-      />
+      /></div>
 
-          results[2]= <SearchCardWithTitle 
-          key = {2}
+          results[2]= <div key={2}><SearchCardWithTitle 
           title = "UltimoDelegado"
           last = {lastDelegate}
-      />
+      /></div>
 
       setResults(null);
       setResults(results);

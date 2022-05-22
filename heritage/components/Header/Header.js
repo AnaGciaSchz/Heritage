@@ -8,6 +8,7 @@ import { useRouter } from "next/router"
 export default function Header() {
 const {formatMessage} = useIntl();
 const f = id => formatMessage({ id })
+
 const [header, setHeader] = useState(null);
 const router = useRouter();
 

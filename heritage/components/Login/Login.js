@@ -9,7 +9,7 @@ export default function Login() {
   const {formatMessage} = useIntl();
   const f = id => formatMessage({ id })
 
-  const [options, setOptions] = useState({
+  const [options] = useState({
     autoClose: false,
     keepAfterRouteChange: false
   });

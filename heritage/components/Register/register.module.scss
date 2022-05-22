@@ -1,4 +1,6 @@
 @import "../../components/Login/login.module.scss";
+@import "../../styles/sass/variables";
+@import "../../styles/sass/mixins";
 
 .buttonLogin{
     @extend .fileUploadLabel;

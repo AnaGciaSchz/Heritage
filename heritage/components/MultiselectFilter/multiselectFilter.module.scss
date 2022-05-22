@@ -1,12 +1,10 @@
 @import "../../styles/sass/mixins";
 @import "../../styles/sass/variables";
 
-$details-padding: 1em;
-
 	.s {
     box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
     width: 100%;
-    background: #ffffff;
+    background: $color-fondo-contenido;
     border-radius: 8px;
     position: relative;
       width: 200px;
@@ -16,199 +14,26 @@ $details-padding: 1em;
       cursor: pointer;
       font-size: 15px;
       font-family: "Roboto", sans-serif;
-		padding: $details-padding;
-
-		&:focus {
-			outline: none;
-		}
-
-		&:hover svg {
-			opacity: 1;
-		}
+		padding: 1em;
 	}
 
-#checklist {
+  .selector{
+    display: grid;
+    grid-template-columns: auto;
+    position: relative;
+    padding: 30px 45px;
     font-family: "Roboto", sans-serif;
     font-size: 13px;
     margin-top: -15px;
     margin-bottom: -30px;
-    --text: #8a8d97;
-    --check: rgb(27, 143, 189);
-    --disabled: rgb(8, 114, 22);
-    --width: 100%;
-    --height: 70px;
-    --border-radius: 10px;
-    background: var(--background);
-    width: var(--width);
-    height: var(--height);
-    border-radius: var(--border-radius);
-    position: relative;
-    box-shadow: 0 10px 30px rgba(#414856, 0.05);
-    padding: 30px 45px;
-    display: grid;
-    grid-template-columns: 30px auto;
-    align-items: center;
-    label {
-      color: var(--text);
-      position: relative;
+  }
+
+    .label {
+      color: #636569;
       cursor: pointer;
-      display: grid;
-      align-items: center;
-      width: fit-content;
-      transition: color .3s ease;
-      &::before,
-      &::after {
-        content:"";
-        position: absolute;
-      }
-      &::before {
-        height: 2px;
-        width: 8px;
-        left: -27px;
-        background: var(--check);
-        border-radius: 2px;
-        transition: .3s ease; 
-      }
-      &:after {
-        height: 4px;
-        width: 4px;
-        top: 8px;
-        left: -25px;
-        border-radius: 50%;
-      }
     }
-    input[type="checkbox"] {
-        margin-top:-70px;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      position: relative;
+    .input {
       height: 15px;
       width: 15px;
-      outline: none;
-      border: 0;
-      margin: 0 15px 0 0;
       cursor: pointer;
-      background: var(--background);
-      display: grid;
-      align-items: center;
-      &::before,
-      &::after {
-        content:"";
-        position: absolute;
-        height: 2px;
-        top: auto;
-        background: var(--check);
-        border-radius: 2px;
-      }
-      &::before {
-        width: 0px;
-        right: 60%;
-        transform-origin: right bottom;
-      }
-      &::after {
-        width: 0px;
-        left: 40%;
-        transform-origin: left bottom;
-      }
-      &:checked {
-        &::before {
-          animation: check-01 .4s ease forwards;
-        }
-        &::after {
-          animation: check-02 .4s ease forwards;
-        }
-        + label {
-          color: var(--disabled);
-          animation: move .3s ease .1s forwards;
-          &::before {
-            background: var(--disabled);
-            animation: slice .4s ease forwards;
-          }
-          &::after {
-            animation: firework .5s ease forwards .1s;
-          }
-        }
-      }
     }
-  }
-  
-  @keyframes move {
-    50% {
-      padding-left: 8px;
-      padding-right: 0px;
-    }
-    100% {
-      padding-right: 4px;
-    }
-  }
-  @keyframes slice {
-    60% {
-      width: 100%;
-      left: 4px;
-      margin-top: 15px;
-    }
-    100% {
-      width: 100%;
-      left: -2px;
-      padding-left: 0;
-      margin-top: 15px;
-    }
-  }
-  @keyframes check-01 {
-    0% {
-      width: 4px;
-      top: auto;
-      transform: rotate(0);
-    }
-    50% {
-      width: 0px;
-      top: auto;
-      transform: rotate(0);
-    }
-    51% {
-      width: 0px;
-      top: 8px;
-      transform: rotate(45deg);
-    }
-    100% {
-      width: 5px;
-      top: 8px;
-      transform: rotate(45deg);
-    }
-  }
-  @keyframes check-02 {
-    0% {
-      width: 4px;
-      top: auto;
-      transform: rotate(0);
-    }
-    50% {
-      width: 0px;
-      top: auto;
-      transform: rotate(0);
-    }
-    51% {
-      width: 0px;
-      top: 8px;
-      transform: rotate(-45deg);
-    }
-    100% {
-      width: 10px;
-      top: 8px;
-      transform: rotate(-45deg);
-    }
-  }
-  @keyframes firework {
-    0% {
-      opacity: 1;
-      box-shadow: 0 0 0 -2px $darkBlue, 0 0 0 -2px $darkBlue, 0 0 0 -2px $darkBlue, 0 0 0 -2px $darkBlue, 0 0 0 -2px $darkBlue, 0 0 0 -2px $darkBlue;
-    }
-    30% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      box-shadow: 0 -15px 0 0px $darkBlue, 14px -8px 0 0px $darkBlue, 14px 8px 0 0px $darkBlue, 0 15px 0 0px $darkBlue, -14px 8px 0 0px $darkBlue, -14px -8px 0 0px $darkBlue;
-    }
-  }
-  

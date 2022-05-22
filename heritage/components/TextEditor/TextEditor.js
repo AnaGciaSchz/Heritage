@@ -1,5 +1,6 @@
 import React, {useRef, useState, useEffect} from 'react';
 import dynamic from "next/dynamic";
+import styles from "./textEditor.module.scss"
 import 'suneditor/dist/css/suneditor.min.css';
 import { useIntl } from "react-intl"
 import { fetchWrapper } from '../../pages/api/handlers/fetchWrapper';
@@ -100,7 +101,7 @@ const SunEditor = dynamic(() => import("suneditor-react"), {
       createText();
     }, [router.locale]);
     return ( 
-    <div> 
+    <div className={styles.editor}> 
     {sunEditor}
 <button onClick={handleClick}>{f("Guardar")}</button>
     </div>

@@ -1,8 +1,6 @@
 @import "../../styles/sass/variables";
 @import "../../styles/sass/mixins";
 
-.layout {
-    display: flex;
-    gap: 16px;
-    flex-direction: column;
-  }
+.editor{
+    caret-color: black;
+}

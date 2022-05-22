@@ -20,7 +20,7 @@ export default function SearchCard(props){
   var dataMap = new Map();
 
   function createDeleteButton(){
-    if(localStorage != null && localStorage.getItem('user') != null){
+    if(localStorage != null && localStorage.getItem('user') != null && props.index!= "SpecialCard"){
       setDeleteButton(<button className= {styles.cardButton} onClick={dialogWindow}>{f("Eliminar")}</button>)
     }else{
       setDeleteButton(null)

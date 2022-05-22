@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { PrevButton, NextButton } from "./SliderButtons";
 import useEmblaCarousel from 'embla-carousel-react'
-import { mediaByIndex } from "public";
 import styles from './slider.module.scss'
-import Autoplay from 'embla-carousel-autoplay'
 
 export default function Slider() {
     const [viewportRef, embla] = useEmblaCarousel({ loop: false });

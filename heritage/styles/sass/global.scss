@@ -139,6 +139,20 @@ p {
 	width: 120%;
 }
 
+.flexAbout{
+	display: flex;
+	max-width: 98%;
+}
+
+.textAbout{
+	max-width: 77%;
+}
+
+.specialCard{
+	margin-top: -100px;
+	height: 100px;
+}
+
 @include tablet {
 	.cardfeed {
 		grid-template-columns: repeat(2, 1fr);

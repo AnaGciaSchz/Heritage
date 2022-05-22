@@ -399,7 +399,7 @@ export const ast = {
       Telefonos: "Teléfonos",
       Fax: "Fax",
       Administration: "Alministración",
-      NumerosTelefonoYFax: "úmberos de teléfonu y fax",
+      NumerosTelefonoYFax: "Númberos de teléfonu y fax",
       AdministradorCentro: "Administrador del Centru",
       UnidadAdministrativa: "Unidá alministrativa",
       Conserjería: "Conserxería",

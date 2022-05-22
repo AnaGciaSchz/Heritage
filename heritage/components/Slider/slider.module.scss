@@ -77,8 +77,10 @@
   }
 
   .embla__button__svg {
-    width: 100%;
-    height: 100%;
+    width: 150%;
+    height: 90%;
+    background-color: rgba(255, 255, 255, 0.575);
+    border-radius: 50px;
   }
 
   @include bigDesktop{
@@ -89,6 +91,10 @@
 
       .embla {
         margin-bottom: 100px
+      }
+
+      .embla__button__svg {
+        height: 120%;
       }
   }
 

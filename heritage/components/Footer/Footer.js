@@ -8,14 +8,16 @@ export default function Footer() {
     return (
 <footer className={styles.footer}>
   <div className={styles.bigDiv}>
-  <Image className={styles.logo}
-          src="/HeritageLogo.png"
+    <div className={styles.favicon}>
+  <Image
+          src="/favicon.png"
           alt={f("logo")}
           layout='responsive'
           width="0"
           height="0"
           objectFit="contain"
         />
+        </div>
 
 
     <div className={styles.contact}>   

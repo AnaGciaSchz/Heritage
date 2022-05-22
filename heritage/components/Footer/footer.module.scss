@@ -12,6 +12,10 @@
     background-color: #fff;
     font-family: 'Roboto', sans-serif;
   }
+
+  .favicon{
+    margin-top: 20%;
+  }
   
   .nav__title {
     font-size: 15px;
@@ -79,7 +83,8 @@
     }
 
     .legal{
-      margin-top:-0%;
+      margin-top:-5%;
+      margin-left: 60%;
     }
 
     .nav__title {
@@ -102,11 +107,11 @@
   @include tablet{
     .footer {
       font-size: 12px;
-      margin-top: -8%;
+      margin-top: -5%;
     }
 
     .legal {
-      margin-top: 0%;
+      margin-top: 20%;
       margin-left: 3.5%;
     }
   

@@ -121,7 +121,7 @@ export const en = {
       HaOcurridoUnError: "An error has ocurred: ",
       NombreDeUsuarioEnUso:"That username already exists."
     },
-    "/ZonaAdmin": {
+    "/EditorHistoria": {
       Copyright: "Copyright University of Oviedo",
       AvisoLegal: "Legal notice",
       PoliticaCookies: "Cookie Policy",

@@ -122,7 +122,7 @@ export const es = {
       NombreDeUsuarioEnUso: "Ese nombre de usuario ya existe."
 
     },
-    "/ZonaAdmin":{
+    "/EditorHistoria":{
       Copyright: "Copyright Universidad de Oviedo",
       AvisoLegal: "Aviso Legal",
       PoliticaCookies: "Política de cookies",

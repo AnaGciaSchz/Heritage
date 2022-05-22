@@ -121,7 +121,7 @@ export const ast = {
       HaOcurridoUnError: "Asocedió un erru: ",
       NombreDeUsuarioEnUso:"Ese nome d'usuariu yá esiste."
     },
-    "/ZonaAdmin": {
+    "/EditorHistoria": {
       Copyright: "Copyright Universidá d'Uviéu",
       AvisoLegal: "Avisu Llegal",
       PoliticaCookies: "Política de cookies",

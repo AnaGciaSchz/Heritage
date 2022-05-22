@@ -4,6 +4,7 @@ import Header from 'components/Header/Header.js'
 import Box from "components/Box/Box.js"
 import Footer from "components/Footer/Footer.js"
 import Internacionalizator from "../components/Internacionalizator/Internacionalizator"
+import Logout from '../components/Logout/Logout'
 import { Alert } from "components/Alert/Alert";
 
 import { IntlProvider } from "react-intl"
@@ -45,7 +46,7 @@ export default function MyApp({ Component, pageProps }) {
 }, []);
 
 function authCheck(url) {
-    const privatePaths = ['/ZonaAdmin','/ast/ZonaAdmin','/en/ZonaAdmin','/es/ZonaAdmin','/api/admin/register','/api/card/tempUploadImage'
+    const privatePaths = ['/EditorHistoria','/ast/EditorHistoria','/en/EditorHistoria','/es/EditorHistoria','/api/admin/register','/api/card/tempUploadImage'
     ,'/api/card/uploadImage','/api/card/uploadInfo','/api/create','/heritage_admin_register','/ast/heritage_admin_register'
     ,'/en/heritage_admin_register','/es/heritage_admin_register'];
     const path = url.split('?')[0];
@@ -71,6 +72,7 @@ function authCheck(url) {
       <Header />
       <Box>
       <Internacionalizator/>
+      <Logout/>
       <Alert />
         <Component {...pageProps} />
       </Box>

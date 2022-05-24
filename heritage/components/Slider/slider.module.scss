@@ -52,6 +52,7 @@
     background-color: transparent;
     touch-action: manipulation;
     position: absolute;
+    -webkit-box-pack: center;
     z-index: 1;
     top: 50%;
     transform: translateY(-50%);
@@ -63,6 +64,7 @@
     fill: $darkBlue;
     border-color: #ffffff;
     padding: 0;
+    -webkit-box-align: center;
   }
 
   .embla__buttonprev {

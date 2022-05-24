@@ -7,6 +7,8 @@ import Internacionalizator from "../components/Internacionalizator/Internacional
 import Logout from '../components/Logout/Logout'
 import { Alert } from "components/Alert/Alert";
 
+import NextNProgress from 'nextjs-progressbar';
+
 import { IntlProvider } from "react-intl"
 import * as locales from "../content/locale"
 import { useRouter } from "next/router"
@@ -74,6 +76,7 @@ function authCheck(url) {
       <Internacionalizator/>
       <Logout/>
       <Alert />
+      <NextNProgress />
         <Component {...pageProps} />
       </Box>
       <Footer />

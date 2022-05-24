@@ -6,6 +6,9 @@ const path = require('path')
  * a ellas. Mirar pages/_app.js para ver un ejemplo
  */
 module.exports = {
+    devIndicators: {
+        buildActivity: false
+    },
     env: {
         ELASCTIC_PASSWORD: "12345",
         ELASTICSEARCH_NODE: "http://localhost:9200",

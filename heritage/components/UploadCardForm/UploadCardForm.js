@@ -217,7 +217,7 @@ export default function UploadCardForm() {
         <div className={styles.section}><span>1</span>{f("TipoCartaSeccion")}</div>
         <div className={styles.field}>
           <label className={styles.label}>{f("TipoCarta")}*</label>
-          <select className="form-control" defaultValue={"null"} id="type" required="required" aria-required="true">
+          <select aria-label={f("TipoCartaSeccion")} className="form-control" defaultValue={"null"} id="type" required="required" aria-required="true">
             <option disabled="null" value="null">{f("TipoCartaSeccion")}</option>
             <option value="egresado">{f("Egresado")}</option>
             <option value="profesor">{f("Profesor")}</option>

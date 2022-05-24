@@ -1,6 +1,14 @@
 @import "../../styles/sass/variables";
 @import "../../styles/sass/mixins";
+@import "../Logout//logout.module.scss";
 
 .editor{
     caret-color: black;
+}
+
+.buttonSave{
+    @extend .button;
+    position: relative; 
+    top: 8px;
+    left: 10px; 
 }

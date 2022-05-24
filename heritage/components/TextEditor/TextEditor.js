@@ -103,7 +103,7 @@ const SunEditor = dynamic(() => import("suneditor-react"), {
     return ( 
     <div className={styles.editor}> 
     {sunEditor}
-<button onClick={handleClick}>{f("Guardar")}</button>
+<button className={styles.buttonSave} onClick={handleClick}>{f("Guardar")}</button>
     </div>
     )
 

@@ -37,10 +37,10 @@ export default function SearchCardWithTitle(props) {
       name= "Ana María García Sánchez"
       img="/AnaGs.jpg"
       firtsLine="2022-2023"
-      text="Estudiante de la EII y autora de este TFG"
+      text={f("AnaDescripcion")}
       date="13/05/2022"
-      description="Ana es una estudiante del Grado de Ingeniería Informática del Software que espera entregar este TFG en 2022 y conseguir así su título."
-      been="Dentro de sus logros podemos encontrar el atreverse a diseñar Heritage desde 0, intentar que la página sea responsive o escribir esta carta especial con información de ella. "
+      description={f("AnaDescripcionLarga")}
+      been={f("AnaLogros")}
       red1="LinkedIn"
       red1Link="https://www.linkedin.com/in/anagciaschz/"
       red2="GitHub"

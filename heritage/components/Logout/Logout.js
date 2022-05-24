@@ -12,7 +12,7 @@ export default function Logout() {
 
     useEffect(() => {
         if(localStorage != null && localStorage.getItem('user') != null){
-           setLogout( <button onClick={userService.logout} className={styles.button}>Logout</button>)
+           setLogout( <button onClick={userService.logout} className={styles.button}>{f("Logout")}</button>)
         }else{
             setLogout(null)
         }

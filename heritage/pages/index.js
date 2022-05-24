@@ -64,38 +64,38 @@ export default function Home() {
       </div>
 
       <h2 className="title1">{f("RedesSociales")}</h2>
-
+     
 <div className="socialFeed">
       <SocialMedia
       socialMediaTitle= "RedesSocialesEII"
       firstLink="https://www.instagram.com/computingoviedo/"
       firstImage="/social/instaEII.png"
-      firstAlt="Icono para acceder al instagram de la EII"
+      firstAlt={f("InstaEii")}
       secondLink="https://es-es.facebook.com/computingOviedo/"
       secondImage="/social/facebook.png"
-      secondAlt="Icono para acceder al facebook de la EII"
+      secondAlt={f("FacebookEii")}
       thirdLink="https://www.youtube.com/channel/UCpv73ltAXuh1LRRJu8NWIvA"
       thirdImage="/social/youEII.png"
-      thirdAlt="Icono para acceder al youtube de la EII"
+      thirdAlt={f("YoutubeEii")}
       fourthLink="https://twitter.com/computingoviedo"
       fourthImage="/social/twEII.png"
-      fourthAlt="Icono para acceder al twitter de la EII"
+      fourthAlt={f("TwitterEii")}
       />
 
       <SocialMedia
       socialMediaTitle= "RedesSocialesDEII"
       firstLink="https://www.instagram.com/delegacion_eii/"
       firstImage="/social/instaDEII.png"
-      firstAlt="Icono para acceder al instagram de la DEII"
+      firstAlt={f("InstaDeii")}
       secondLink="https://discord.gg/bkR5Ye4"
       secondImage="/social/discord.png"
-      secondAlt="Icono para acceder al discord de la DEII"
+      secondAlt={f("DiscordDeii")}
       thirdLink="https://www.youtube.com/channel/UCPGJQuCxNQ5JQtrzTE0NpJg"
       thirdImage="/social/youDEII.png"
-      thirdAlt="Icono para acceder al youtube de la DEII"
+      thirdAlt={f("YoutubeDeii")}
       fourthLink="https://twitter.com/delegacion_eii"
       fourthImage="/social/twDEII.png"
-      fourthAlt="Icono para acceder al twitter de la DEII"
+      fourthAlt={f("TwitterDeii")}
       />
       </div>
     </div>

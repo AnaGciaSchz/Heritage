@@ -29,7 +29,7 @@ useEffect(() => {
                     img="/HeritageLogo.png" />
             </span>
 
-            <MenuButton nombre="EditorHistoria" src= "headerIcons/admin.png" referencia="/EditorHistoria" />
+            <MenuButton nombre={f("EditorHistoria")} src= "headerIcons/admin.png" referencia="/EditorHistoria" />
             <MenuButton nombre={f("SubidaDeCartas")} src= "headerIcons/subidaCartas.png" referencia="/SubidaDeCartas" />
             <MenuButton nombre={f("QueEsHeritage")} src= "headerIcons/queEsHeritage.png" referencia="/about" />
             <MenuButton nombre={f("Contacto")} src= "headerIcons/contacto.png" referencia="/Contacto" />

@@ -1,11 +1,13 @@
 import TextEditor from "../components/TextEditor/TextEditor"
+import { useIntl } from "react-intl"
 
 export default function EditorHistoria() {
+    const { formatMessage } = useIntl();
+    const f = id => formatMessage({ id })
+
     return (<>
-    <h1 className="title1">Editor de la historia de la EII</h1>
-    <p>Para editar un idioma concreto, cambia el idioma de la página con el selector de arriba. Cuidado al publicar fotografías, se recomienda hacer un borrador aparte y utilizar
-        esta caja sólo para pegar el nuevo contenido y publicarlo.
-    </p>
+    <h1 className="title1">{f("EditorHistoriaTitulo")}</h1>
+    <p>{f("EditorHistoriaTexto")}</p>
     <TextEditor />
     </>);
 

@@ -7,7 +7,6 @@ import {useDispatch,} from 'react-redux';
 import {changeInSearchBarByUser} from '../services/redux/features/search/searchSlice.js';
 
 export default function ZonaProfesorado() {
-
     const { formatMessage } = useIntl();
     const f = id => formatMessage({ id })
 

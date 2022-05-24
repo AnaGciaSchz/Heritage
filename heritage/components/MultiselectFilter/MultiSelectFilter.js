@@ -49,9 +49,7 @@ export default function MultiSelectFilter(props) {
   return (<details onClick={sendChangesByUser} open>
     <summary className={styles.s}>{props.name}</summary>
     <div className={styles.selector}>
-      {content != null ?
-        content
-        : null}</div>
+      {content}</div>
   </details>);
 }
 

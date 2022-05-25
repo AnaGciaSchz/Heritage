@@ -197,6 +197,13 @@ p {
 	.map{
 		margin-bottom: 20px;
 	}
+	
+	.ImagenError{
+		position: relative;
+		width: 200px;
+		margin-left: 0px;
+		margin-top: 30px;
+	}
 }
 
 @include bigDesktop {
@@ -213,5 +220,11 @@ p {
 	.EII_Image{
 		width: 170%;
 		margin-top: -60px;
+	}
+
+	.Error{
+		margin: auto;
+		width: 30%;
+		padding: 10px;
 	}
 }

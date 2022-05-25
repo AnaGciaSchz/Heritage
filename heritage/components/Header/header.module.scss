@@ -27,15 +27,26 @@
 
 .headerNotLogged{
   @extend .header;
-  margin-left: 155px;
+  margin-left: 110px;
   .logo {
     width: 20%;
     margin-top: -55px;
+    margin-bottom: -50px;
     min-width: 20%;
     min-height: 15%;
   }
 }
 
+@include desktop{
+  .headerNotLogged{
+    @extend .header;
+    margin-left: 80px;
+    .logo {
+      margin-top: -35px;
+    }
+  }
+  
+}
 
 @include tablet {
   .headerLogged{

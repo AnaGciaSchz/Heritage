@@ -43,7 +43,7 @@
   .footer__nav {
     display: flex;
     margin-right: 5%;
-    margin-left: 15%;
+    margin-left: 18%;
   }
   .nav__ul a {
     color: $darkBlue;
@@ -52,7 +52,6 @@
   .legal {
     display: flex;
     color: $darkGreen;
-    margin-top: 14%;
     margin-right: -5%;
     width: 300px;
   }
@@ -104,15 +103,23 @@
     }
   }
 
+  @include desktop{
+    .legal {
+      margin-top: -5%;
+      margin-left: 66.5%;
+    }
+  }
+
   @include tablet{
     .footer {
       font-size: 12px;
       margin-top: -5%;
+      height: 300px;
     }
 
     .legal {
-      margin-top: 20%;
-      margin-left: 3.5%;
+      margin-top: -5%;
+      margin-left: 66.5%;
     }
   
     .direction{

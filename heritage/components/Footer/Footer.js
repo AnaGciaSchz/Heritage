@@ -80,7 +80,7 @@ export default function Footer() {
         </li>
         
         <li>
-          <a href="https://www.uniovi.es/legal">{f("AvisoLegal")}</a>
+          <a href="https://ingenieriainformatica.uniovi.es/avisolegal">{f("AvisoLegal")}</a>
         </li>
       </ul>
     </li>

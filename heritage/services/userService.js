@@ -17,7 +17,7 @@ export const userService = {
 };
 
 function login(dataMap) {
-    return fetchWrapper.post(`${baseUrl}/api/admin/login`, Array.from(dataMap.entries()))
+    return fetchWrapper.post(`${baseUrl}/admin/login`, Array.from(dataMap.entries()))
         .then(user => {
             userSubject.next(user);
             localStorage.setItem('user', JSON.stringify(user));

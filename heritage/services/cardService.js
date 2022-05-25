@@ -4,7 +4,14 @@ export const cardService = {
     getCardInfo
 };
 
+import getConfig from 'next/config';
+
+
 function getCardInfo(dataMap) {
-    var response = fetchWrapper.post(`${baseUrl}/api/card/getCard`, Array.from(dataMap.entries()));
+    
+    const { publicRuntimeConfig } = getConfig();
+    const baseUrl = `${publicRuntimeConfig.apiUrl}`;
+
+    var response = fetchWrapper.post(`${baseUrl}/card/getCard`, Array.from(dataMap.entries()));
     return response;
 }

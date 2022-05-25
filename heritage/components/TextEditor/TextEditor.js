@@ -6,6 +6,8 @@ import { useIntl } from "react-intl"
 import { fetchWrapper } from '../../pages/api/handlers/fetchWrapper';
 import { useRouter } from "next/router"
 import { alertService } from "../../services/alert.service";
+import getConfig from 'next/config';
+
 
 const SunEditor = dynamic(() => import("suneditor-react"), {
     ssr: false,
@@ -17,14 +19,16 @@ const SunEditor = dynamic(() => import("suneditor-react"), {
   const {formatMessage} = useIntl();
   const f = id => formatMessage({ id })
 
+  const { publicRuntimeConfig } = getConfig();
+  const baseUrl = `${publicRuntimeConfig.apiUrl}`;
+  
   const router = useRouter();
 
-  const [options, setOptions] = useState({
+  const [options] = useState({
     autoClose: false,
     keepAfterRouteChange: false
   });
 
-  const [content, setContent] = useState('');
   const [sunEditor, setSunEditor] = useState(null);
 
   var dataMap = new Map();
@@ -34,12 +38,12 @@ const SunEditor = dynamic(() => import("suneditor-react"), {
     editor.current = sunEditor;
 };
 
-    const handleClick = () => {setContent(editor.current.getContents());save()};
+    const handleClick = () => {save()};
 
     const getText = async (event) => {
         try {
             dataMap.set("locale", router.locale);
-          const response = await fetchWrapper.post("http://localhost:3000/api/history/getInfo", Array.from(dataMap.entries()));
+          const response = await fetchWrapper.post(`${baseUrl}/history/getInfo`, Array.from(dataMap.entries()));
           var json = await response.json();
           if (response.status < 200 || response.status > 299) {
             return "Error";
@@ -54,9 +58,6 @@ const SunEditor = dynamic(() => import("suneditor-react"), {
 
       const createText = async () => {
         var content = await getText();
-        setContent(null);
-        setContent(content);
-        setSunEditor(null)
         setSunEditor(    <SunEditor getSunEditorInstance={getSunEditorInstance} defaultValue={content}  lang= {f("local")}
         setOptions={{
             height: 500,
@@ -80,7 +81,7 @@ const SunEditor = dynamic(() => import("suneditor-react"), {
       try {
         dataMap.set("data",editor.current.getContents());
         dataMap.set("locale",router.locale);
-      const response = await fetchWrapper.post("http://localhost:3000/api/history/saveInfo", Array.from(dataMap.entries()));
+      const response = await fetchWrapper.post(`${baseUrl}/history/saveInfo`, Array.from(dataMap.entries()));
       var json = await response.json();
       if (response.status < 200 || response.status > 299) {
         alertService.error("Error", options)

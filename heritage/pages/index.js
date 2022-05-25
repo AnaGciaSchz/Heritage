@@ -6,6 +6,8 @@ import { fetchWrapper } from "./api/handlers/fetchWrapper"
 
 import { useIntl } from "react-intl"
 import React, { useState, useEffect } from 'react';
+import getConfig from 'next/config';
+
 
 export default function Home() {
 
@@ -13,10 +15,13 @@ export default function Home() {
   const f = id => formatMessage({ id })
   const [results, setResults] = useState(null);
 
+  const { publicRuntimeConfig } = getConfig();
+  const baseUrl = `${publicRuntimeConfig.apiUrl}`;
+
   const lastCard = async (index) => {
     var dataMap = new Map();
     dataMap.set("index", index);
-    const response = await fetchWrapper.post("http://localhost:3000/api/card/lastCard", Array.from(dataMap.entries()));
+    const response = await fetchWrapper.post(`${baseUrl}/card/lastCard`, Array.from(dataMap.entries()));
       var r = await response.json();
       return r.message;
     }

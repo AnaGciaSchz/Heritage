@@ -4,12 +4,18 @@ import { alertService } from "../../services/alert.service";
 import { validateService } from "../../services/validate.service";
 import { useState } from "react";
 import { fetchWrapper } from '../../pages/api/handlers/fetchWrapper';
+import getConfig from 'next/config';
+
+
 
 export default function Register() {
   const {formatMessage} = useIntl();
   const f = id => formatMessage({ id })
+  
+  const { publicRuntimeConfig } = getConfig();
+  const baseUrl = `${publicRuntimeConfig.apiUrl}`;
 
-  const [options, setOptions] = useState({
+  const [options] = useState({
     autoClose: false,
     keepAfterRouteChange: false
   });
@@ -43,7 +49,7 @@ export default function Register() {
   const uploadToServer = async (event) => {
     try {
       fillDataMap();
-      const response = await fetchWrapper.post("http://localhost:3000/api/admin/register", Array.from(dataMap.entries()));
+      const response = await fetchWrapper.post(`${baseUrl}/admin/register`, Array.from(dataMap.entries()));
       if (response.status < 200 || response.status > 299) {
         var json = await response.json();
         alertService.error(f("InformacionInvalida")+f(json.message), options)

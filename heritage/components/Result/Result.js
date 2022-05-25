@@ -10,8 +10,16 @@ import {selectSearchUserSlice} from '../../services/redux/features/search/search
 
 import { fetchWrapper } from '../../pages/api/handlers/fetchWrapper';
 
+import getConfig from 'next/config';
+
+
+
 export default function Result(props) {
     const [results, setResults] = useState(null);
+    
+    const { publicRuntimeConfig } = getConfig();
+    const baseUrl = `${publicRuntimeConfig.apiUrl}`;
+    
 
     const search = async (event) => {
     var dataMap = new Map();
@@ -20,7 +28,7 @@ export default function Result(props) {
     dataMap.set("socials", props.socialsFilter);
     dataMap.set("index", props.index);
     dataMap.set("sort",props.sort)
-    const response = await fetchWrapper.post("http://localhost:3000/api/card/search",Array.from(dataMap.entries()));
+    const response = await fetchWrapper.post(`${baseUrl}/card/search`,Array.from(dataMap.entries()));
       var r = await response.json();
       return r.message;
     }

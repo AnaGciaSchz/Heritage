@@ -3,16 +3,22 @@ import{ useState, useEffect } from 'react';
 import { fetchWrapper } from '../../pages/api/handlers/fetchWrapper';
 import { useRouter } from "next/router"
 
+import getConfig from 'next/config';
+
+
 export default function TextDisplay() {
     const [content, setContent] = useState(null);
     const router = useRouter();
+    
+    const { publicRuntimeConfig } = getConfig();
+    const baseUrl = `${publicRuntimeConfig.apiUrl}`;
 
     var dataMap = new Map();
 
     const getText = async (event) => {
         try {
             dataMap.set("locale", router.locale);
-          const response = await fetchWrapper.post("http://localhost:3000/api/history/getInfo", Array.from(dataMap.entries()));
+          const response = await fetchWrapper.post(`${baseUrl}/history/getInfo`, Array.from(dataMap.entries()));
           var json = await response.json();
           if (response.status < 200 || response.status > 299) {
             return "Error";

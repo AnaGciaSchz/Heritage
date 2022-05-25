@@ -5,7 +5,6 @@ if (typeof window === 'undefined') {
     var fileS = require('fs');
     var crypt = require('bcrypt');
 }
-
 import { validateService } from "../../../services/validate.service";
 
 const saltRounds = process.env['SALT_ROUNDS'];
@@ -71,6 +70,7 @@ export default async (req, res) => {
             created: dateCreated,
             updated: dateUpdated 
         };
+        
         admins.push(newAdmin)
 
         var writeAdmins = JSON.stringify(admins, null, 2);

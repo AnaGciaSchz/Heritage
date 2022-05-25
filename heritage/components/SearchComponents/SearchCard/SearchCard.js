@@ -6,9 +6,16 @@ import { useRouter } from "next/router"
 
 import { fetchWrapper } from "../../../pages/api/handlers/fetchWrapper";
 
+import getConfig from 'next/config';
+
+
+
 export default function SearchCard(props){
   const {formatMessage} = useIntl();
   const f = id => formatMessage({ id })
+  
+  const { publicRuntimeConfig } = getConfig();
+  const baseUrl = `${publicRuntimeConfig.apiUrl}`;
 
   const [isRotated, setIsRotated] = useState(false);
   const [isNotBeenRotated, setIsNotBeenRotated] = useState(true);
@@ -41,7 +48,7 @@ export default function SearchCard(props){
       dataMap.set("index", props.index);
       dataMap.set("id", props.id);
       dataMap.set("image", props.img)
-      const response = await fetchWrapper.post("http://localhost:3000/api/card/delete", Array.from(dataMap.entries()));
+      const response = await fetchWrapper.post(`${baseUrl}/card/delete`, Array.from(dataMap.entries()));
       if (response.status < 200 || response.status > 299) {
         setDeletedMessage(<p>{f("NoEliminado")}</p>)
       }

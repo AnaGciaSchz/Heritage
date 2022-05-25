@@ -6,6 +6,9 @@ import { validateService } from "../../services/validate.service";
 import styles from './uploadCardForm.module.scss'
 import { useIntl } from "react-intl"
 
+import getConfig from 'next/config';
+
+
 import { fetchWrapper } from "../../pages/api/handlers/fetchWrapper";
 
 export default function UploadCardForm() {
@@ -17,6 +20,10 @@ export default function UploadCardForm() {
   const [socialMedia1, setSocialMedia1] = useState(false);
   const [socialMedia2, setSocialMedia2] = useState(false);
   const [socialMedia3, setSocialMedia3] = useState(false);
+  
+  const { publicRuntimeConfig } = getConfig();
+  const baseUrl = `${publicRuntimeConfig.apiUrl}`;
+  
   var dataMap = new Map();
 
   const [options, setOptions] = useState({
@@ -177,7 +184,7 @@ export default function UploadCardForm() {
       fillDataMap();
       const body = new FormData();
       body.append("image", image);
-      const response = await fetch("http://localhost:3000/api/card/uploadImage", {
+      const response = await fetch(`${baseUrl}/card/uploadImage`, {
         method: "POST",
         body
       });
@@ -185,7 +192,7 @@ export default function UploadCardForm() {
         alertService.error(f("NoSePudoSubirImagen") + response.text + ", the card hasn't been created, check data.", options)
       }
       else {
-        const response2 = await fetchWrapper.post("http://localhost:3000/api/card/uploadInfo", Array.from(dataMap.entries()));
+        const response2 = await fetchWrapper.post(`${baseUrl}/card/uploadInfo`, Array.from(dataMap.entries()));
         if (response2.status < 200 || response2.status > 299) {
           alertService.error(f("NoSePudoSubirCarta") + response2.text, options)
         }else{
@@ -201,7 +208,7 @@ export default function UploadCardForm() {
   const uploadTemporalImage = async () => {
     const body = new FormData();
     body.append("image", image);
-    const response = await fetch("http://localhost:3000/api/card/tempUploadImage", {
+    const response = await fetch(`${baseUrl}/card/tempUploadImage`, {
       method: "POST",
       body
     });

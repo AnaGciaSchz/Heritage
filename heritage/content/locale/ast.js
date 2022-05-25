@@ -509,5 +509,30 @@ export const ast = {
       Legal: "Llegal",
       Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
       ImagenError: "Imaxe error 500"
+    },
+    "/404":{
+      Error404: "Nun s'atopó un recursu",
+      Copyright: "Copyright Universidá d'Uviéu",
+      AvisoLegal: "Avisu Llegal",
+      PoliticaCookies: "Política de cookies",
+      PoliticaPrivacidad: "Política de privacidá",
+      Logout: "Cerrar sesión",
+      logo: "Logo de Heritage, representa la palabra daqué curvada, de color verde, con un remarcáu que pon 'EII' enriba, n'azul. Sobro les lletres ta la figura d'un osu mirando escontra baxo.",
+      historiaEII: "Hestoria de la EII",
+      ZExalumnado: "Zona de Egresados",
+      ZProfesorado: "Zona Profesorado",
+      ZDelegacion: "Zona Exdelegados",
+      QueEsHeritage: "¿Qué ye Heritage?",
+      SubidaDeCartas: "Xubida de cartes",
+      Contacto: "Contactu",
+      EditorHistoria: "Editor Hestoria",
+      PaginaWeb: "Páxina web",
+      UniversidadOviedo: "Universidá d'Uviéu",
+      EscuelaIngenieria:"Escuela d'Inxeniería Informática",
+      InformacionAcademica: "Información Académica",
+      Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
+      Legal: "Llegal",
+      Direccion: "Cai Valdés Salas, 11, 33007 Uviéu, Asturies",
+      ImagenError: "Imaxe error 404"
     }
   }

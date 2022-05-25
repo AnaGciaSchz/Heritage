@@ -45,6 +45,10 @@ function jwtMiddleware(req, res) {
             '/es/500',
             '/en/500',
             '/ast/500',
+            '/404',
+            '/es/404',
+            '/en/404',
+            '/ast/404'
         ]
     });
 

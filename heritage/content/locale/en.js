@@ -509,5 +509,30 @@ export const en = {
       Legal: "Legal",
       Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
       ImagenError: "Error 500 image"
+    },
+    "/404":{
+      Error404: "Couldn't find a resource",
+      Copyright: "Copyright University of Oviedo",
+      AvisoLegal: "Legal notice",
+      PoliticaCookies: "Cookie Policy",
+      PoliticaPrivacidad: "Privacy Policy",
+      logo: "Heritage's logo, represents the curved word in green, with a highlight that says 'SCE' above it, in blue. Above the letters there is the silhouette of a bear looking down.",
+      historiaEII: "SCE's History",
+      ZExalumnado: "Graduate Area",
+      ZProfesorado: "Teachers Area",
+      Logout: "Logout",
+      EditorHistoria: "History Editor",
+      ZDelegacion: "Former Delegates Area",
+      QueEsHeritage: "¿What is Heritage?",
+      SubidaDeCartas: "Upload Cards",
+      Contacto: "Contact",
+      InformacionAcademica: "Academic information",
+      PaginaWeb: "Web page",
+      UniversidadOviedo: "University of Oviedo",
+      EscuelaIngenieria:"School of computer Engineering",
+      Legal: "Legal",
+      Direccion: "Valdés Salas Street, 11, 33007 Oviedo, Asturias",
+      ImagenError: "Error 404 image"
     }
+    
   }

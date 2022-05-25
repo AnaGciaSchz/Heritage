@@ -37,13 +37,13 @@ export default function Login() {
       const response= userService.login(dataMap);
       if (response.status < 200 || response.status > 299) {
         var json = await response.json();
-        alertService.error("Información Inválida: "+f(json.message), options)
+        alertService.error(f("InformacionInvalida")+f(json.message), options)
     }else{
         alertService.success(f("LoginCorrecto"), options)
       }
     }
     catch (error) {
-      alertService.error("Ha ocurrido un error: " + f(error), options)
+      alertService.error(f("HaOcurridoError") + f(error), options)
     }
   };
 

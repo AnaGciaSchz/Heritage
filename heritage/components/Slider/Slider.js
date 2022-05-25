@@ -2,11 +2,15 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { PrevButton, NextButton } from "./SliderButtons";
 import useEmblaCarousel from 'embla-carousel-react'
 import styles from './slider.module.scss'
+import { useIntl } from "react-intl"
 
 export default function Slider() {
     const [viewportRef, embla] = useEmblaCarousel({ loop: false });
     const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
     const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+
+    const {formatMessage} = useIntl();
+    const f = id => formatMessage({ id })
   
     const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
     const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
@@ -40,7 +44,7 @@ export default function Slider() {
                 <img
                   className={styles.embla__slide__img }
                   src={index}
-                  alt="Promotion of heritage"
+                  alt={f("PromocionHeritage")}
                 />
               </div>
             </div>

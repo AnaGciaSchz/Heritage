@@ -46,7 +46,8 @@ export const ast = {
       InstaDeii:"Iconu para aportar al al instagram de la DEII",
       DiscordDeii:"Iconu para aportaral al discord de la DEII",
       YoutubeDeii:"Iconu para aportaral al youtube de la DEII",
-      TwitterDeii:"Iconu para aportaral al twitter de la DEII"
+      TwitterDeii:"Iconu para aportaral al twitter de la DEII",
+      PromocionHeritage: "Promoción de Heritage"
     },
     "/heritage_admin_login": {
       paginaPrincipal: "Páxina principal",
@@ -88,7 +89,9 @@ export const ast = {
       UsernameNoExiste:  "El nome d'usuariu nun esiste.",
       ContrasenaNoCorrecta:  "La contraseña nun ye correcta.",
       LoginCorrecto: "Logueado correchamente",
-      TituloButton: "Iconu del menú"
+      TituloButton: "Iconu del menú",
+      InformacionInvalida: "Información Inválida: ",
+      HaOcurridoError: "Asocedió un erru: "
     },
     "/heritage_admin_register": {
       paginaPrincipal: "Páxina principal",

@@ -46,7 +46,8 @@ export const es = {
       DiscordDeii:"Icono para acceder al discord de la DEII",
       YoutubeDeii:"Icono para acceder al youtube de la DEII",
       TwitterDeii:"Icono para acceder al twitter de la DEII",
-      Logout: "Cerrar sesión"
+      Logout: "Cerrar sesión",
+      PromocionHeritage: "Promoción de Heritage"
     },
     "/heritage_admin_login": {
       paginaPrincipal: "Página Principal",
@@ -88,7 +89,9 @@ export const es = {
       ContrasenaNoCorrecta: "La contraseña no es correcta",
       LoginCorrecto: "Logueado correctamente.",
       TituloButton: "Icono del menú",
-      Logout: "Cerrar sesión"
+      Logout: "Cerrar sesión",
+      InformacionInvalida: "Información Inválida: ",
+      HaOcurridoError: "Ha ocurrido un error: "
     },
     "/heritage_admin_register": {
       paginaPrincipal: "Página Principal",

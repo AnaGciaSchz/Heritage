@@ -46,7 +46,8 @@ export const en = {
       InstaDeii:"Icon to access the Student Delegation Instagram",
       DiscordDeii:"Icon to access the Student Delegation Discord",
       YoutubeDeii:"Icon to access que Student Delegation Youtube",
-      TwitterDeii:"Icon to access que School Delegation Twitter"
+      TwitterDeii:"Icon to access que School Delegation Twitter",
+      PromocionHeritage: "Promotion of Heritage"
     },
     "/heritage_admin_login": {
       paginaPrincipal: "Homepage",
@@ -88,7 +89,9 @@ export const en = {
       UsernameNoExiste: "Username does not exist.",
       ContrasenaNoCorrecta: "Password is not correct.",
       LoginCorrecto: "Logged in.",
-      TituloButton: "Menu icon"
+      TituloButton: "Menu icon",
+      InformacionInvalida: "Invalid information: ",
+      HaOcurridoError: "An error has ocurred: "
     },
     "/heritage_admin_register": {
       paginaPrincipal: "Homepage",

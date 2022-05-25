@@ -3,6 +3,7 @@ var crypt = null;
 var jwt = null;
 import getConfig from 'next/config';
 const { serverRuntimeConfig } = getConfig();
+const logger = require('pino')()
 if (typeof window === 'undefined') {
     var fileS = require('fs');
     var crypt = require('bcrypt');
@@ -32,9 +33,11 @@ export default async (req, res) => {
 function isPasswordCorrect(user,result, res){
     if(result){
         const token = jwt.sign({ sub: user.id }, serverRuntimeConfig.secret, { expiresIn: '7d' });
+        logger.info('El usuario '+user.username + ' acaba de iniciar sesion.')
         res.status(200).json({result: "error", message: "LoginCorrecto", id: user.id, username: user.username, name: user.name, token})
     }
     else{
+        logger.warn('Contrasena incorrecta para acceder como usuario '+user.username + '.')
         res.status(400).json({result: "error", message: "ContrasenaNoCorrecta"})
     }
 

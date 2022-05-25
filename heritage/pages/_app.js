@@ -50,7 +50,7 @@ export default function MyApp({ Component, pageProps }) {
 function authCheck(url) {
     const privatePaths = ['/EditorHistoria','/ast/EditorHistoria','/en/EditorHistoria','/es/EditorHistoria','/api/admin/register','/api/card/tempUploadImage'
     ,'/api/card/uploadImage','/api/card/uploadInfo','/api/create','/heritage_admin_register','/ast/heritage_admin_register'
-    ,'/en/heritage_admin_register','/es/heritage_admin_register'];
+    ,'/en/heritage_admin_register','/es/heritage_admin_register','/api/card/delete', '/api/card/update', '/api/handlers', '/api/history/saveInfo' ];
     const path = url.split('?')[0];
     if (!userService.userValue && privatePaths.includes(path)) {
         setAuthorized(false);

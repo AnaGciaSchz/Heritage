@@ -1,4 +1,5 @@
 var esClient = null;
+const logger = require('pino')()
 if (typeof window === 'undefined') {
     const { Client } = require('@elastic/elasticsearch')
 
@@ -17,9 +18,11 @@ export default async (req, res) => {
             body: mapping
         }).then(
             () => {
-                console.log({ result: "ok", message: "Elastic search index created.", status: 200 });
+                logger.info("Se ha creado el indice: student-card en elasticsearch.")
             },
             err => {
+                logger.error("No se ha podido crear el indice: student-card en elasticsearch.")
+                logger.error(err.message)
                 res.status(500).json({ result: "error", message: err.message + " on elastic search"});
             }
         );
@@ -28,9 +31,11 @@ export default async (req, res) => {
             body: mapping
         }).then(
             () => {
-                console.log({ result: "ok", message: "Elastic search index created.", status: 200 });
+                logger.info("Se ha creado el indice: professor-card en elasticsearch.")
             },
             err => {
+                logger.error("No se ha podido crear el indice: professor-card en elasticsearch.")
+                logger.error(err.message)
                 res.status(500).json({ result: "error", message: err.message + " on elastic search"});
             }
         );
@@ -39,14 +44,18 @@ export default async (req, res) => {
             body: mapping
         }).then(
             () => {
-                console.log({ result: "ok", message: "Elastic search index created.", status: 200 });
+                logger.info("Se ha creado el índice: delegate-card en elasticsearch.")
             },
             err => {
+                logger.error("No se ha podido crear el indice: delegate-card en elasticsearch.")
+                logger.error(err.message)
                 res.status(500).json({ result: "error", message: err.message + " on elastic search"});
             }
         );
+        logger.info("Se han creado todos los indices en elasticsearch.")
         res.status(200).json({ result: "ok", message: "Index created"});
     }else {
+        logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
         res.status(500).json({ result: "error", message: "No elasticsearch client"});
     }
 }

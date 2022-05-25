@@ -1,4 +1,5 @@
 var esClient = null;
+const logger = require('pino')()
 if (typeof window === 'undefined') {
     const { Client } = require('@elastic/elasticsearch')
 
@@ -39,14 +40,18 @@ export default async (req, res) => {
               for(i=0;i<set.size;i++){
                 s[i] ={ key: [...set][i]};
               }
+              logger.info("Se ha devuelto una búsqueda correctamente del índice: "+dataMap.get("index")+".")
               res.status(200).json({result: "ok", message: {hits: response.body.hits.hits, promotion: response.body.aggregations.by_promotion.buckets, social: s}})
             },
             err => {
+              logger.error("Ha habido un error en elastic al intentar realizar una búsqueda en el índice: "+dataMap.get("index")+".")
+              logger.error(err.message)
               res.status(404).json({result: "error", message: err.message + " on elastic search"})
             }
         );
 }
 else {
+  logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
     res.status(500).json({ result: "error", message: "No elasticsearch client"});
 }
 }

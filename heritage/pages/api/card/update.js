@@ -1,4 +1,5 @@
 var esClient = null;
+const logger = require('pino')()
 if (typeof window === 'undefined') {
     const { Client } = require('@elastic/elasticsearch')
 
@@ -39,14 +40,20 @@ export default async (req, res) => {
     })
         .then(
             response => {
+                logger.info("Se ha actualizado la carta con id: "+dataMap.get("id")
+                +" correspondiente a: "+dataMap.get("name")+" en el índice: "+dataMap.get("index")+".")
               res.status(200).json({result: "ok", message: "Card updated"})
             },
             err => {
+                logger.error("Ha habido un error en elastic al intentar actualizar la carta con id: "+dataMap.get("id")
+                +" correspondiente a: "+dataMap.get("name")+" en el índice: "+dataMap.get("index")+".")
+              logger.error(err.message)
               res.status(404).json({result: "error", message: err.message + " on elastic search"})
             }
         );
 }
 else {
+    logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
     res.status(500).json({ result: "error", message: "No elasticsearch client"});
 }
 }

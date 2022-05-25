@@ -1,14 +1,15 @@
+const logger = require('pino')()
+
 export default function errorHandler(err, res) {
     if (typeof (err) === 'string') {
-        // custom application error
+        logger.error(err)
         return res.status(400).json({ message: err });
     }
 
     if (err.name === 'UnauthorizedError') {
-        // jwt authentication error
+        logger.error("Error: Invalid token")
         return res.status(401).json({ message: 'Invalid Token' });
     }
-
-    // default to 500 server error
+    logger.error(err.message)
     return res.status(500).json({ message: err.message });
 }

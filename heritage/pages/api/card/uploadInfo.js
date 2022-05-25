@@ -1,4 +1,5 @@
 var esClient = null;
+const logger = require('pino')()
 if (typeof window === 'undefined') {
     const { Client } = require('@elastic/elasticsearch')
 
@@ -17,17 +18,18 @@ function deleteTemporalData (){
       var directory = './public/temporalImages';
     
     fs.readdir(directory, (err, files) => {
-      if (err) throw err;
+      if (err) logger.error("Error intentando borrar la carpeta de imagenes temporales");
     
       for (const file of files) {
         fs.unlink(path.join(directory, file), err => {
-          if (err) throw err;
+          if (err) logger.error("Error intentando borrar la carpeta de imagenes temporales");
         });
       }
     });
 }
 
   export default async (req, res) => {
+    if (esClient != null) {
       var dataMap = new Map(req.body);
     esClient.index({
         index: dataMap.get("index"),
@@ -50,13 +52,20 @@ function deleteTemporalData (){
         }
     }).then(
         () => {
-            console.log({result: "ok", message: "The card was added to elastic search"});
+          logger.info("Se ha añadido la carta con id: "+dataMap.get("id")
+          +" correspondiente a: "+dataMap.get("name")+" en el índice: "+dataMap.get("index")+".")
             deleteTemporalData();
            res.status(200).json({result: "ok", message: "The card was added to elastic search"})
         },
         err => {
-            console.log({result: "error", message: err.message + " on elastic search"});
+          logger.error("Ha habido un error en elastic al intentar añadir la carta con id: "+dataMap.get("id")
+          +" correspondiente a: "+dataMap.get("name")+" en el índice: "+dataMap.get("index")+".")
+        logger.error(err.message)
             res.status(500).json({result: "error", message: err.message + " on elastic search"})
         }
     );
+  }else{
+    logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
+    res.status(500).json({ result: "error", message: "No elasticsearch client"});
   }
+}

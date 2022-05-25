@@ -1,6 +1,7 @@
 
 var fileS = null;
 var crypt = null;
+const logger = require('pino')()
 if (typeof window === 'undefined') {
     var fileS = require('fs');
     var crypt = require('bcrypt');
@@ -35,21 +36,25 @@ export default async (req, res) => {
         var passwordCheck = !validateService.checkSecurePassword(dataMap.get("password"));
 
         if(usernameLength){
+            logger.warn('Intento de registro fallido: No hay username.')
             res.status(400).json({result: "error", message: "EscribeUsername"})
             return true;
         }
 
         if(repeatedUsername){
+            logger.warn('Intento de registro fallido: Nombre de usuario en uso: '+dataMap.get("username"))
             res.status(400).json({result: "error", message: "NombreDeUsuarioEnUso"})
             return true;
         }
 
         if(nameChecks){
+            logger.warn('Intento de registro fallido: No se ha especificado nombre del admin.')
             res.status(400).json({result: "error", message: "EscribeNombre"})
             return true;
         }
         
         if(passwordCheck){
+            logger.warn('Intento de registro fallido: No se ha especificado contrasena.')
             res.status(400).json({result: "error", message: "EscribeContrasena"})
             return true;
         }
@@ -70,7 +75,7 @@ export default async (req, res) => {
             created: dateCreated,
             updated: dateUpdated 
         };
-        
+
         admins.push(newAdmin)
 
         var writeAdmins = JSON.stringify(admins, null, 2);
@@ -78,5 +83,6 @@ export default async (req, res) => {
         fileS.writeFileSync('data/admin.json', writeAdmins, err => {
             if(err) throw err;
             });
+            logger.info('El usuario '+newAdmin.username + ' acaba de ser registrado.')
             res.status(200).json({result: "ok", message: "Everything ok"})
         }

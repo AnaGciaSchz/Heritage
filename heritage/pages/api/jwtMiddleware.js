@@ -41,6 +41,10 @@ function jwtMiddleware(req, res) {
             '/es/heritage_admin_login',
             '/en/heritage_admin_login',
             '/ast/heritage_admin_login',
+            '/500',
+            '/es/500',
+            '/en/500',
+            '/ast/500',
         ]
     });
 

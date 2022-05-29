@@ -166,6 +166,21 @@ p {
 	height: 100px;
 }
 
+.contactDirections{
+	display:flex;
+}
+
+.contactLeft{
+	flex-direction: left;
+	
+}
+
+.contactRight{
+	flex-direction: right;
+	margin-top: -30px;
+
+}
+
 @include tablet {
 	.cardfeed {
 		grid-template-columns: repeat(2, 1fr);

@@ -1,5 +1,6 @@
 var esClient = null;
 const logger = require('pino')()
+import apiHandler from '../handlers/apiHandler';
 if (typeof window === 'undefined') {
     const { Client } = require('@elastic/elasticsearch')
 
@@ -12,7 +13,19 @@ if (typeof window === 'undefined') {
     })
 }
 
-export default async (req, res) => {
+export default apiHandler(handler);
+
+function handler(req, res) {
+    switch (req.method) {
+        case 'POST':
+            return getLast(req, res);
+        default:
+            return res.status(405).end(`Method ${req.method} Not Allowed`)
+    }
+}
+
+
+async function getLast (req, res) {
     if (esClient != null) {
         let dataMap = new Map(req.body);
         let body = {"query": {"match_all": {}},"size": "1","sort": [{"timestamp": {"order": "desc"}}]}
@@ -27,7 +40,7 @@ export default async (req, res) => {
             },
             err => {
               logger.error('Ha habido un error intentando retornar la última carta del index: '+dataMap.get("index")+".")
-              logger.error(err.message)
+              logger.error('Ha habido un error intentando retornar la última carta del index: '+dataMap.get("index")+".")
               res.status(404).json({result: "error", message: err.message + " on elastic search"})
             }
         );

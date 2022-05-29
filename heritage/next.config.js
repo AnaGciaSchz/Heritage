@@ -1,21 +1,16 @@
 const path = require('path')
 
-/**
- * Este codigo facilita el acceder a estas carpetas. De esta forma, no
- * tengo que escribir la ruta completa cada vez que tenga que acceder
- * a ellas. Mirar pages/_app.js para ver un ejemplo
- */
 module.exports = {
     devIndicators: {
         buildActivity: false
     },
     env: {
-        ELASCTIC_PASSWORD: "12345",
-        ELASTICSEARCH_NODE: "http://localhost:9200",
-        ELASTICSEARCH_USERNAME: "elastic"
+        ELASCTIC_PASSWORD: process.env['ELASCTIC_PASSWORD'],
+        ELASTICSEARCH_NODE: process.env['ELASTICSEARCH_NODE'],
+        ELASTICSEARCH_USERNAME: process.env['ELASTICSEARCH_USERNAME']
     },
     serverRuntimeConfig: {
-        secret: 'Petra'
+        secret: process.env['SECRET']
     },
     publicRuntimeConfig: {
         apiUrl: process.env.NODE_ENV === 'development'

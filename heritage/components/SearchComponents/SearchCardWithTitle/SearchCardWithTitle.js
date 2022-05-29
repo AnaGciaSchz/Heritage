@@ -12,7 +12,7 @@ export default function SearchCardWithTitle(props) {
     return (
         <>
             <h3 className={styles.title}>{f(props.title)}</h3>
-            {props.last!=null?
+            {props.last && props.last.hits && props.last.hits[0]?
             <SearchCard
             id= {props.last.hits[0]._id}
             index = {props.last.hits[0]._index}
@@ -34,18 +34,13 @@ export default function SearchCardWithTitle(props) {
       />:<SearchCard  key = "0"
       id= "0"
       index = "SpecialCard"
-      name= "Ana María García Sánchez"
-      img="/AnaGs.jpg"
-      firtsLine="2022-2023"
-      text={f("AnaDescripcion")}
-      date="13/05/2022"
-      description={f("AnaDescripcionLarga")}
-      been={f("AnaLogros")}
-      red1="LinkedIn"
-      red1Link="https://www.linkedin.com/in/anagciaschz/"
-      red2="GitHub"
-      red2Link="https://github.com/AnaGciaSchz"
-      star="true"
+      name= ""
+      img="/cargando.png"
+      firtsLine=""
+      text=""
+      date=""
+      description=""
+      been=""
   />}</>
     )
 }

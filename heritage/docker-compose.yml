@@ -15,9 +15,10 @@ services:
           soft: -1
           hard: -1
       volumes:
-        - data01:/usr/share/elasticsearch/data
+        - ./data/elasticsearch:/usr/share/elasticsearch/data
       ports:
         - 9200:9200
-volumes:
-  data01:
-    driver: local
+  heritage:
+    build: .
+    ports: 
+      - 3000:3000

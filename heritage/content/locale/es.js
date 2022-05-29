@@ -47,7 +47,11 @@ export const es = {
       YoutubeDeii:"Icono para acceder al youtube de la DEII",
       TwitterDeii:"Icono para acceder al twitter de la DEII",
       Logout: "Cerrar sesión",
-      PromocionHeritage: "Promoción de Heritage"
+      PromocionHeritage: "Promoción de Heritage",
+      Borrar: "¿Estás seguro de que quieres eliminar esta carta?",
+      AnaDescripcion: "Estudiante de la EII y autora de este TFG",
+      AnaDescripcionLarga: "Ana es una estudiante del Grado de Ingeniería Informática del Software que espera entregar este TFG en 2022 y conseguir así su título.",
+      AnaLogros: "Dentro de sus logros podemos encontrar el atreverse a diseñar Heritage desde 0, intentar que la página sea responsive o escribir esta carta especial con información de ella.",
     },
     "/heritage_admin_login": {
       paginaPrincipal: "Página Principal",
@@ -234,7 +238,8 @@ export const es = {
       NoResultados: "No hay resultados",
       MensajeNoResultados: "¿No encuentras a la persona que estás buscando? ¡Prueba en otra sección!",
       AlternateSearchIcon:"Icono de una lupa",
-      ClearSearchIcon: "Icono de una X"
+      ClearSearchIcon: "Icono de una X",
+      Borrar: "¿Estás seguro de que quieres eliminar esta carta?"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -275,7 +280,8 @@ export const es = {
       NoResultados: "No hay resultados",
       MensajeNoResultados: "¿No encuentras a la persona que estás buscando? ¡Prueba en otra sección!",
       AlternateSearchIcon:"Icono de una lupa",
-      ClearSearchIcon: "Icono de una X"
+      ClearSearchIcon: "Icono de una X",
+      Borrar: "¿Estás seguro de que quieres eliminar esta carta?"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright Universidad de Oviedo",
@@ -316,7 +322,8 @@ export const es = {
       NoResultados: "No hay resultados",
       MensajeNoResultados: "¿No encuentras a la persona que estás buscando? ¡Prueba en otra sección!",
       AlternateSearchIcon:"Icono de una lupa",
-      ClearSearchIcon: "Icono de una X"
+      ClearSearchIcon: "Icono de una X",
+      Borrar: "¿Estás seguro de que quieres eliminar esta carta?"
     },
     "/about": {
       Copyright: "Copyright Universidad de Oviedo",

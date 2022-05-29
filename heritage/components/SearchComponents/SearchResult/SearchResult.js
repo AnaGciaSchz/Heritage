@@ -33,20 +33,20 @@ export default function SearchResult(props) {
             red3Link={data[i]._source.Red3Link}
             star={data[i]._source.AppearsInAnotherCategory}
         />
-        }
         setResults(r);
     }
     }
+}
 
     useEffect(() => {
         createResults();
       }, []);
     return (
-        <div>
+        <>
             <h2 className={styles.title2Search}>{f("Promocion")+" "+props.promotion}</h2>
         <div className={styles.searchFeed}>
         {results}
             </div>
-        </div>
+        </>
     )
 }

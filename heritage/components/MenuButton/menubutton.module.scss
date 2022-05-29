@@ -2,16 +2,17 @@
 @import "../../styles/sass/mixins";
 
 .menuButton {
+    position: relative;
     margin: 0 0.3em 0 0;
     border-width: 0em;
     border-radius: 3em;
-    height: 5em;
-    width: 10em;
+    height: 10vh;
+    width: 8vw;
     margin-top: 5%;
     margin-bottom: 1%;
     font-family: 'Roboto', sans-serif;
     font-weight: map-get($font-weights, regular);
-    font-size: 15px;
+    font-size: 1vw;
     color: $color-texto;
     background-color: $color-fondo-contenido;
     text-align: center;
@@ -62,26 +63,27 @@
 }
 
 .menuButton {
-    height: 6em;
-    width: 8.5em; 
+    height: 9vh;
+    width: 8vw;
+    font-size: 1vw;
 }
 
 }
 
 @include tablet {
     .menuButton {
-        height: 4.5em;
-        width: 5.5em; 
+        height: 7.5vh;
+        width: 9vw; 
     }
 
     .text{
-        font-size: 10px;
+        font-size: 1vw;
     }
 
     .image1{
         margin-top: 10px;
         margin-bottom: -16px;
-        margin-left: 25px;
+        margin-left: 3vw;
     }
 
     .menuButton:hover{
@@ -98,9 +100,9 @@
 
 @include mobile {
     .menuButton {
-        height: 4em;
-        width: 7.6em;
-        font-size: 9px;
+        height: 5vh;
+        width: 9vw;
+        font-size: 1vh;
     }
 
     .text{
@@ -108,8 +110,8 @@
     }
 
     .image1{
-        margin-top: 10px;
-        margin-left: 18px;
+        margin-top: 1vh;
+        margin-left:2vw;
     }
 
     .menuButton:hover{

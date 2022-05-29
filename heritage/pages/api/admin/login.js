@@ -2,6 +2,7 @@ var fileS = null;
 var crypt = null;
 var jwt = null;
 import getConfig from 'next/config';
+import apiHandler from '../handlers/apiHandler';
 const { serverRuntimeConfig } = getConfig();
 const logger = require('pino')()
 if (typeof window === 'undefined') {
@@ -10,35 +11,45 @@ if (typeof window === 'undefined') {
     jwt = require('jsonwebtoken');
 }
 
-
 var admins = require('/data/admin.json');
+var admin = null;
 
-export default async (req, res) => {
-        if(fileS != null && crypt != null){
-            var dataMap = new Map(req.body);
-            var i = 0;
-            for(i;i<admins.length;i++){
-                if(admins[i].username == dataMap.get("username")){
-                    var password = admins[i].password;
-                    crypt.compare(dataMap.get("password"), password, function(err, result) {
-                        if (err) { throw (err); }
-                        isPasswordCorrect(admins[i],result, res)
-                })
-                return;
-            }
-        }
+export default apiHandler(handler);
+
+function handler(req, res) {
+    switch (req.method) {
+        case 'POST':
+            return authenticate(req, res);
+        default:
+            return res.status(405).end(`Method ${req.method} Not Allowed`)
     }
 }
 
-function isPasswordCorrect(user,result, res){
-    if(result){
-        const token = jwt.sign({ sub: user.id }, serverRuntimeConfig.secret, { expiresIn: '7d' });
-        logger.info('El usuario '+user.username + ' acaba de iniciar sesion.')
-        res.status(200).json({result: "error", message: "LoginCorrecto", id: user.id, username: user.username, name: user.name, token})
-    }
-    else{
-        logger.warn('Contrasena incorrecta para acceder como usuario '+user.username + '.')
-        res.status(400).json({result: "error", message: "ContrasenaNoCorrecta"})
-    }
 
+async function authenticate (req, res) {
+    if (fileS != null && crypt != null) {
+        var dataMap = new Map(req.body);
+        var i = 0;
+        for (i; i < admins.length; i++) {
+            if (admins[i].username == dataMap.get("username")) {
+                var password = admins[i].password;
+                admin = admins[i]
+                var match = await crypt.compare(dataMap.get("password"), password)
+                if(match){
+                    const token = jwt.sign({ sub: admin.id }, serverRuntimeConfig.secret, { expiresIn: '7d' });
+                    logger.info('El usuario ' + admin.username + ' acaba de iniciar sesion.')
+                    return res.status(200).json({
+                        id: admin.id,
+                        username: admin.username,
+                        name: admin.name,
+                        token
+                    });
+                }else{
+                    logger.warn('Contrasena incorrecta para acceder como usuario ' + admin.username + '.')
+                    res.status(400).json({ result: "error", message: "ContrasenaNoCorrecta" })
+                }
+            }
+            return;
+        }
+    }
 }

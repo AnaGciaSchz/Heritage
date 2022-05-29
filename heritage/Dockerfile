@@ -1,9 +1,8 @@
-FROM node:alpine
+FROM node:16-alpine3.12
 
 WORKDIR /usr/app
 COPY ./ /usr/app
 
 RUN npm install python
-RUN npm install --platform=linuxmusl --arch=x64
 
 CMD [ "npm", "run", "dev" ] 

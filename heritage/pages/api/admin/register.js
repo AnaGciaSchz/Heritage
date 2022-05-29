@@ -1,6 +1,7 @@
 
 var fileS = null;
 var crypt = null;
+import apiHandler from "../handlers/apiHandler";
 const logger = require('pino')()
 if (typeof window === 'undefined') {
     var fileS = require('fs');
@@ -11,7 +12,18 @@ import { validateService } from "../../../services/validate.service";
 const saltRounds = process.env['SALT_ROUNDS'];
 var admins = require('/data/admin.json');
 
-export default async (req, res) => {
+export default apiHandler(handler);
+
+function handler(req, res) {
+    switch (req.method) {
+        case 'POST':
+            return registerUser(req, res);
+        default:
+            return res.status(405).end(`Method ${req.method} Not Allowed`)
+    }
+}
+
+async function registerUser(req, res) {
     if(fileS != null && crypt != null){
 
         var dataMap = new Map(req.body);

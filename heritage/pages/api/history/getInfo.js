@@ -1,10 +1,23 @@
 var fileS = null;
+import apiHandler from '../handlers/apiHandler';
 const logger = require('pino')()
 if (typeof window === 'undefined') {
     var fileS = require('fs');
 }
 
-export default async (req, res) => {
+export default apiHandler(handler);
+
+function handler(req, res) {
+    switch (req.method) {
+        case 'POST':
+            return getTheInfo(req, res);
+        default:
+            return res.status(405).end(`Method ${req.method} Not Allowed`)
+    }
+}
+
+
+async function getTheInfo(req, res) {
         if(fileS != null){
             let dataMap = new Map(req.body);
             fileS.readFile('public/history/'+dataMap.get("locale")+'.html', 'utf8', (err, data) => {

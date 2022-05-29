@@ -6,6 +6,7 @@ import Footer from "components/Footer/Footer.js"
 import Internacionalizator from "../components/Internacionalizator/Internacionalizator"
 import Logout from '../components/Logout/Logout'
 import { Alert } from "components/Alert/Alert";
+import cookieCutter from "cookie-cutter"
 
 import NextNProgress from 'nextjs-progressbar';
 
@@ -16,8 +17,6 @@ import { useState, useEffect } from "react";
 
 import { Provider } from 'react-redux';
 import { store } from '../services/redux/store.js';
-
-import { userService } from '../services/userService'
 
 export default function MyApp({ Component, pageProps }) {
 
@@ -30,17 +29,10 @@ export default function MyApp({ Component, pageProps }) {
   const messages = localeCopy[pathname]
 
   useEffect(() => {
-    // run auth check on initial load
     authCheck(router.asPath);
-
-    // set authorized to false to hide page content while changing routes
     const hideContent = () => setAuthorized(false);
     router.events.on('routeChangeStart', hideContent);
-
-    // run auth check on route change
     router.events.on('routeChangeComplete', authCheck)
-
-    // unsubscribe from events in useEffect return function
     return () => {
         router.events.off('routeChangeStart', hideContent);
         router.events.off('routeChangeComplete', authCheck);
@@ -50,9 +42,9 @@ export default function MyApp({ Component, pageProps }) {
 function authCheck(url) {
     const privatePaths = ['/EditorHistoria','/ast/EditorHistoria','/en/EditorHistoria','/es/EditorHistoria','/api/admin/register','/api/card/tempUploadImage'
     ,'/api/card/uploadImage','/api/card/uploadInfo','/api/create','/heritage_admin_register','/ast/heritage_admin_register'
-    ,'/en/heritage_admin_register','/es/heritage_admin_register','/api/card/delete', '/api/card/update', '/api/handlers', '/api/history/saveInfo' ];
+    ,'/en/heritage_admin_register','/es/heritage_admin_register','/api/card/delete', '/api/card/update', '/api/handlers', '/api/history/saveInfo'];
     const path = url.split('?')[0];
-    if (!userService.userValue && privatePaths.includes(path)) {
+    if (cookieCutter.get('userName')==undefined && privatePaths.includes(path)) {
         setAuthorized(false);
         router.push({
             pathname: "/",

@@ -1,6 +1,5 @@
 import getConfig from 'next/config';
-
-import { userService } from '../../../services/userService';
+import cookieCutter from 'cookie-cutter'
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -26,7 +25,8 @@ async function post(url, body) {
         credentials: 'include',
         body: JSON.stringify(body)
     };
-    return await fetch(url, requestOptions);
+     var response = await fetch(url, requestOptions);
+     return response
 }
 
 async function put(url, body) {
@@ -48,11 +48,12 @@ async function _delete(url) {
 
 
 function authHeader(url) {
-    const user = userService.userValue;
-    const isLoggedIn = user && user.token;
+    const user = cookieCutter.get('userName');
+    const token = cookieCutter.get('heritageToken');
+    const isLoggedIn = user!==undefined && token!==undefined;
     const isApiUrl = url.startsWith(publicRuntimeConfig.apiUrl);
     if (isLoggedIn && isApiUrl) {
-        return { Authorization: `Bearer ${user.token}` };
+        return { Authorization: `Bearer ${token}` };
     } else {
         return {};
     }

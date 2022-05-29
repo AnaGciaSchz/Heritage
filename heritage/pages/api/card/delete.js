@@ -1,6 +1,7 @@
 var esClient = null;
 var fileS = null;
 const logger = require('pino')()
+import apiHandler from '../handlers/apiHandler';
 
 if (typeof window === 'undefined') {
     var fileS = require('fs');
@@ -15,7 +16,18 @@ if (typeof window === 'undefined') {
     })
 }
 
-export default async (req, res) => {
+export default apiHandler(handler);
+
+function handler(req, res) {
+    switch (req.method) {
+        case 'POST':
+            return deleteCard(req, res);
+        default:
+            return res.status(405).end(`Method ${req.method} Not Allowed`)
+    }
+}
+
+async function deleteCard (req, res) {
     if (esClient != null) {
         let dataMap = new Map(req.body);
     await esClient.delete({
@@ -24,6 +36,7 @@ export default async (req, res) => {
     })
         .then(
             response => {
+                if(dataMap.get("AppearsInAnotherCategory").toString()=="false"){
                 const path = "public/"+dataMap.get("image");
                 fileS.unlink(path, (err) => {
                 if (err) {
@@ -34,6 +47,10 @@ export default async (req, res) => {
                      res.status(200).json({result: "ok", message: "Card deleted with image"}) 
                     }
                 })
+            }else{
+                logger.info('No se ha eliminado la imagen de la carta de id: '+dataMap.get("id")+'e index: '+dataMap.get("index")+" porque se utiliza en otra carta.")
+                res.status(200).json({result: "ok", message: "Card deleted but not the image"})
+            }
             },
             err => {
                 logger.error('Error en elastic al intentar eliminar la carta de id: '+dataMap.get("id")+'e index: '+dataMap.get("index")+".")

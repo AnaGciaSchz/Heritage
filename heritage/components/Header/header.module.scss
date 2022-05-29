@@ -3,31 +3,24 @@
 
 .header {
   display: flex;
-  margin-left: 20px;
   .logo {
-    margin-top: -3%;
+    margin-top: -2%;
     margin-bottom: -5%;
-    margin-right: 20px;
-    margin-left: 20px;
     height: 15%;
     width: 15%;
     min-width: 15%;
     min-height: 15%;
   }
-
-  .spacer {
-    width: 10px;
-  }
 }
 
 .headerLogged{
   @extend .header;
-  margin-left: 80px;
+  margin-left: 7vw;
 }
 
 .headerNotLogged{
   @extend .header;
-  margin-left: 110px;
+  margin-left: 15vw;
   .logo {
     width: 20%;
     margin-top: -55px;
@@ -40,9 +33,15 @@
 @include desktop{
   .headerNotLogged{
     @extend .header;
-    margin-left: 80px;
+    margin-left: 15vw;
     .logo {
       margin-top: -35px;
+    }
+  }
+  .headerLogged{
+    margin-left: 7vw;
+    .logo {
+      margin-top: -10px;
     }
   }
   
@@ -50,7 +49,7 @@
 
 @include tablet {
   .headerLogged{
-    margin-left: 40px;
+    margin-left: 1vw;
   .logo {
     margin-top: -1% !important;
     margin-left: 2% !important;
@@ -61,9 +60,9 @@
 }
 
 .headerNotLogged{
-  margin-left: 115px;
+  margin-left: 10vw;
   .logo {
-    margin-top: -40px;
+    margin-top: -2vh;
   }
 }
 
@@ -71,13 +70,13 @@
 
 @include mobile {
   .headerLogged{
-    margin-left: 10px;
+    margin-left: 2vw;
   .logo {
-    margin-top: -4% !important;
-    margin-left:2% !important;
-    margin-right: 1% !important;
-    height: 4em;
-    width: 6.4em !important;
+    margin-top: -1.5vh;
+    margin-left:1vh;
+    margin-right: 1vh;
+    height: 2vh;
+    width: 2vw;
   }
 }
 
@@ -92,10 +91,9 @@
 
 @include bigDesktop{
   .headerLogged {
-    display: flex;
-    margin-left: 150px;
+    margin-left: 9vw;
     .logo {
-      margin-top: -3%;
+      margin-top: -1vw;
       margin-bottom: -25px;
       margin-right: 20px;
       margin-left: 20px;

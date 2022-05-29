@@ -1,4 +1,5 @@
 import styles from './logout.module.scss'
+import cookieCutter from "cookie-cutter"
 import { userService } from '../../services/userService'
 import { useIntl } from "react-intl"
 import { useState, useEffect } from "react";
@@ -11,7 +12,7 @@ export default function Logout() {
     const router = useRouter();
 
     useEffect(() => {
-        if(localStorage != null && localStorage.getItem('user') != null){
+        if(cookieCutter.get('userName')  != null){
            setLogout( <button onClick={userService.logout} className={styles.button}>{f("Logout")}</button>)
         }else{
             setLogout(null)

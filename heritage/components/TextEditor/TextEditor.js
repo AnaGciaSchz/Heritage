@@ -100,7 +100,7 @@ const SunEditor = dynamic(() => import("suneditor-react"), {
 
     useEffect(() => {
       createText();
-    }, [router.locale]);
+    }, []);
     return ( 
     <div className={styles.editor}> 
     {sunEditor}

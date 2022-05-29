@@ -163,6 +163,7 @@ export default function UploadCardForm() {
       <SearchCard
         name={document.querySelector("#name").value}
         img={image == null ? "/cardImages/notFound.jpg" : "/temporalImages/" + image.name}
+        index = "SpecialCard"
         firtsLine={document.querySelector("#promotion").value == null ? "" : document.querySelector("#promotion").value}
         text={document.querySelector("#shortDescription").value == null ? "" : document.querySelector("#shortDescription").value}
         date={date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()}

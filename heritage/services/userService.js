@@ -1,16 +1,13 @@
-import { BehaviorSubject } from 'rxjs';
 import getConfig from 'next/config';
 import Router from 'next/router'
+import cookieCutter from 'cookie-cutter'
 
 import { fetchWrapper } from '../pages/api/handlers/fetchWrapper';
 
 const { publicRuntimeConfig } = getConfig();
 const baseUrl = `${publicRuntimeConfig.apiUrl}`;
-const userSubject = new BehaviorSubject(process.browser && JSON.parse(localStorage.getItem('user')));
 
 export const userService = {
-    user: userSubject.asObservable(),
-    get userValue () { return userSubject.value },
     login,
     logout,
     getAll
@@ -18,21 +15,20 @@ export const userService = {
 
 function login(dataMap) {
     return fetchWrapper.post(`${baseUrl}/admin/login`, Array.from(dataMap.entries()))
-        .then(user => {
-            userSubject.next(user);
-            localStorage.setItem('user', JSON.stringify(user));
-            localStorage.setItem('username', "Ña");
-            Router.reload(window.location.pathname)
-            return user;
+        .then(async(response) => {
+            var userPromise = await response.text();
+            var userObject = JSON.parse(userPromise);
+            cookieCutter.set('heritageToken', userObject.token)
+            cookieCutter.set('userName', userObject.username)
+            Router.push('/');
+            return response;
         });
 }
 
 function logout() {
-    localStorage.removeItem('user');
-    localStorage.removeItem('username');
-    userSubject.next(null);
+    cookieCutter.set('heritageToken', '', { expires: new Date(0) })
+    cookieCutter.set('userName', '', { expires: new Date(0) })
     Router.reload(window.location.pathname)
-    Router.push('/');
 }
 
 function getAll() {

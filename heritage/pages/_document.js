@@ -12,10 +12,7 @@ export default class MyDocument extends Document {
         
         <Head>
           <title>Heritage</title>
-          <link rel="icon" href="/favicon.png" />
-          <style>
-            @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1');
-          </style>
+          <link rel="icon" href="/favicon.png" />-
         </Head>
         <body>
           <Main />

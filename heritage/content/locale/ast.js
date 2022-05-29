@@ -47,7 +47,11 @@ export const ast = {
       DiscordDeii:"Iconu para aportaral al discord de la DEII",
       YoutubeDeii:"Iconu para aportaral al youtube de la DEII",
       TwitterDeii:"Iconu para aportaral al twitter de la DEII",
-      PromocionHeritage: "Promoción de Heritage"
+      PromocionHeritage: "Promoción de Heritage",
+      Borrar: "¿Tas seguro de que quies esaniciar esta carta?",
+      AnaDescripcion: "Estudiante de la EII y autora d'esti TFG",
+      AnaDescripcionLarga: "Ana ye xuna estudiante del Grau d'Inxeniería Informática del Software qu'espera apurrir esti TFG en 2022 y consiguir asina'l so títulu.",
+      AnaLogros: "Dientro de los sos llogros podemos atopar l'atrevese a diseñar Heritage dende 0, intentar que la páxina sía responsive o escribir esta carta especial con información d'ella.",
     },
     "/heritage_admin_login": {
       paginaPrincipal: "Páxina principal",
@@ -234,7 +238,8 @@ export const ast = {
       NoResultados: "Nun hai resultancies",
       MensajeNoResultados: "¿Nun atopes a la persona que tas buscando? ¡Prueba n'otra sección!",
       AlternateSearchIcon:"Iconu d'una lente",
-      ClearSearchIcon: "Iconu d'una X"
+      ClearSearchIcon: "Iconu d'una X",
+      Borrar: "¿Tas seguro de que quies esaniciar esta carta?"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -275,7 +280,8 @@ export const ast = {
       NoResultados: "Nun hai resultancies",
       MensajeNoResultados: "¿Nun atopes a la persona que tas buscando? ¡Prueba n'otra sección!",
       AlternateSearchIcon:"Iconu d'una lente",
-      ClearSearchIcon: "Iconu d'una X"
+      ClearSearchIcon: "Iconu d'una X",
+      Borrar: "¿Tas seguro de que quies esaniciar esta carta?"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright Universidá d'Uviéu",
@@ -316,7 +322,8 @@ export const ast = {
       NoResultados: "Nun hai resultancies",
       MensajeNoResultados: "¿Nun atopes a la persona que tas buscando? ¡Prueba n'otra sección!",
       AlternateSearchIcon:"Iconu d'una lente",
-      ClearSearchIcon: "Iconu d'una X"
+      ClearSearchIcon: "Iconu d'una X",
+      Borrar: "¿Tas seguro de que quies esaniciar esta carta?"
     },
     "/about": {
       Copyright: "Copyright Universidá d'Uviéu",

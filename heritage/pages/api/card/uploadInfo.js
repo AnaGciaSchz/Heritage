@@ -1,5 +1,6 @@
 var esClient = null;
 const logger = require('pino')()
+import apiHandler from '../handlers/apiHandler';
 if (typeof window === 'undefined') {
     const { Client } = require('@elastic/elasticsearch')
 
@@ -10,6 +11,17 @@ if (typeof window === 'undefined') {
             password: process.env['ELASCTIC_PASSWORD']
         }
     })
+}
+
+export default apiHandler(handler);
+
+function handler(req, res) {
+    switch (req.method) {
+        case 'POST':
+            return uploadInfo(req, res);
+        default:
+            return res.status(405).end(`Method ${req.method} Not Allowed`)
+    }
 }
 
 function deleteTemporalData (){
@@ -28,7 +40,7 @@ function deleteTemporalData (){
     });
 }
 
-  export default async (req, res) => {
+async function uploadInfo (req, res) {
     if (esClient != null) {
       var dataMap = new Map(req.body);
     esClient.index({

@@ -1,5 +1,6 @@
 import MenuButton from '../MenuButton/MenuButton.js'
 import ImageWithLink from '../ImageWithLink/ImageWithLink.js'
+import cookieCutter from "cookie-cutter"
 import style from './header.module.scss'
 import { useIntl } from "react-intl"
 import { useState, useEffect } from "react";
@@ -15,7 +16,7 @@ const router = useRouter();
 
 
 useEffect(() => {
-    if(localStorage != null && localStorage.getItem('user') != null){
+    if(cookieCutter.get('userName') != null){
         setHeader(<header className={style.headerLogged} >
             <MenuButton nombre={f("historiaEII")} src= "headerIcons/historiaEII.png" referencia="/HistoriaEII" />
             <MenuButton nombre={f("ZExalumnado")} src= "headerIcons/egresados.png" referencia="/ZonaEgresados" />

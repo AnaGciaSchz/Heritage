@@ -1,5 +1,8 @@
+import apiHandler from '../handlers/apiHandler';
+
 var esClient = null;
 const logger = require('pino')()
+apiHandler
 if (typeof window === 'undefined') {
     const { Client } = require('@elastic/elasticsearch')
 
@@ -12,7 +15,18 @@ if (typeof window === 'undefined') {
     })
 }
 
-export default async (req, res) => {
+export default apiHandler(handler);
+
+function handler(req, res) {
+    switch (req.method) {
+        case 'POST':
+            return search(req, res);
+        default:
+            return res.status(405).end(`Method ${req.method} Not Allowed`)
+    }
+}
+
+async function search (req, res) {
     if (esClient != null) {
         let dataMap = new Map(req.body);
         let body = getBody(dataMap.get("query"), dataMap.get("promotions"), dataMap.get("socials"), dataMap.get("sort"));

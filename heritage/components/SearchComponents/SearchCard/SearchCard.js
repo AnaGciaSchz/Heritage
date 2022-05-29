@@ -1,6 +1,8 @@
 import styles from './searchCard.module.scss'
 import Image from 'next/image'
 import React, {useState, useEffect} from 'react'
+import Router from 'next/router'
+import cookieCutter from "cookie-cutter"
 import { useIntl } from "react-intl"
 import { useRouter } from "next/router"
 
@@ -27,7 +29,7 @@ export default function SearchCard(props){
   var dataMap = new Map();
 
   function createDeleteButton(){
-    if(localStorage != null && localStorage.getItem('user') != null && props.index!= "SpecialCard"){
+    if(cookieCutter.get('userName')!= null && props.index!= "SpecialCard"){
       setDeleteButton(<button className= {styles.cardButton} onClick={dialogWindow}>{f("Eliminar")}</button>)
     }else{
       setDeleteButton(null)
@@ -35,8 +37,8 @@ export default function SearchCard(props){
   }
 
   const dialogWindow= async (event) =>{
-    const confirmBox = window.confirm(
-      "Do you really want to delete this Crumb?"
+    const confirmBox = window.confirm(f("Borrar")
+
     )
     if (confirmBox === true) {
       deleteCard()
@@ -48,12 +50,14 @@ export default function SearchCard(props){
       dataMap.set("index", props.index);
       dataMap.set("id", props.id);
       dataMap.set("image", props.img)
+      dataMap.set("AppearsInAnotherCategory", props.star)
       const response = await fetchWrapper.post(`${baseUrl}/card/delete`, Array.from(dataMap.entries()));
       if (response.status < 200 || response.status > 299) {
         setDeletedMessage(<p>{f("NoEliminado")}</p>)
       }
       else{
         setDeletedMessage(<p>{f("Eliminado")}</p>)
+        Router.reload(window.location.pathname)
       }
       }
     catch (error) {
@@ -66,7 +70,7 @@ export default function SearchCard(props){
     return(
       <div>
             <img className={showRotate? styles.flipIcon : styles.flipIconHidden} src="/flip.svg" alt={f("IconoGirarCarta")}/>
-            <img className={props.star=="true"? styles.star : styles.starHidden} src="/star.svg" alt={f("IconoEstrella")}/>
+            <img className={props.star && props.star.toString()=="true" ? styles.star : styles.starHidden} src="/star.svg" alt={f("IconoEstrella")}/>
         {isRotated? null:
       <div
       className={isNotBeenRotated? styles.card : isRotated ? styles.quitCard : styles.showCard} 

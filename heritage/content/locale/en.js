@@ -47,7 +47,11 @@ export const en = {
       DiscordDeii:"Icon to access the Student Delegation Discord",
       YoutubeDeii:"Icon to access que Student Delegation Youtube",
       TwitterDeii:"Icon to access que School Delegation Twitter",
-      PromocionHeritage: "Promotion of Heritage"
+      PromocionHeritage: "Promotion of Heritage",
+      Borrar: "Are you sure you want to delete this card?",
+      AnaDescripcion: "Student of the SCE and author of this TFG",
+      AnaDescripcionLarga: "Ana is a student of the Computer Software Engineering Degree who hopes to deliver this Final Degree Project in 2022 and thus obtain her degree.",
+      AnaLogros: "Among her achievements we can find daring to design Heritage from scratch, trying to make the page responsive or writing this special card with information from her.",
     },
     "/heritage_admin_login": {
       paginaPrincipal: "Homepage",
@@ -234,7 +238,8 @@ export const en = {
       NoResultados: "There are no results",
       MensajeNoResultados: "Can't find what you are looking for? Try another section!",
       AlternateSearchIcon:"Icon of magnifying glasses",
-      ClearSearchIcon: "X icon"
+      ClearSearchIcon: "X icon",
+      Borrar: "Are you sure you want to delete this card?"
     },
     "/ZonaProfesorado": {
       Copyright: "Copyright University of Oviedo",
@@ -275,7 +280,8 @@ export const en = {
       NoResultados: "There are no results",
       MensajeNoResultados: "Can't find what you are looking for? Try another section!",
       AlternateSearchIcon:"Icon of magnifying glasses",
-      ClearSearchIcon: "X icon"
+      ClearSearchIcon: "X icon",
+      Borrar: "Are you sure you want to delete this card?"
     },
     "/ZonaDelegacion": {
       Copyright: "Copyright University of Oviedo",
@@ -316,7 +322,8 @@ export const en = {
       NoResultados: "There are no results",
       MensajeNoResultados: "Can't find what you are looking for? Try another section!",
       AlternateSearchIcon:"Icon of magnifying glasses",
-      ClearSearchIcon: "X icon"
+      ClearSearchIcon: "X icon",
+      Borrar: "Are you sure you want to delete this card?"
     },
     "/about": {
       Copyright: "Copyright University of Oviedo",

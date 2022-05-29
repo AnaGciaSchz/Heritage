@@ -64,7 +64,18 @@ export default function Home() {
       <div className="cardfeed">
       {results!=null ?
           results
-          : null}
+          : <><div key={0}><SearchCardWithTitle 
+          title = "UltimoEgresado"
+          last = {null}
+      /></div>
+        <div key={1}><SearchCardWithTitle 
+          title = "UltimoProfesor"
+          last = {null}
+      /></div>
+       <div key={2}><SearchCardWithTitle 
+          title = "UltimoDelegado"
+          last = {null}
+      /></div></>}
 
       </div>
 

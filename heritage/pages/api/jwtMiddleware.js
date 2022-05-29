@@ -1,56 +1,26 @@
-const expressJwt = require('express-jwt');
+const {expressjwt} = require('express-jwt');
 const util = require('util');
 import getConfig from 'next/config';
 
+
 const { serverRuntimeConfig } = getConfig();
 
-export { jwtMiddleware };
-
-function jwtMiddleware(req, res) {
-    const middleware = expressJwt({ secret: serverRuntimeConfig.secret, algorithms: ['HS256'] }).unless({
+export default function jwtMiddleware(req, res) {
+    if(expressjwt!= null && util!=null){
+    const middleware = expressjwt({ secret: serverRuntimeConfig.secret, algorithms: ['HS256'] }).unless({
         path: [
-            '/',
-            '/es',
-            '/en',
-            '/ast',
-            '/HistoriaEII',
-            '/es/HistoriaEII',
-            '/en/HistoriaEII',
-            '/ast/HistoriaEII',
-            '/ZonaEgresados',
-            '/es/ZonaEgresados',
-            '/en/ZonaEgresados',
-            '/ast/ZonaEgresados',
-            '/ZonaProfesorado',
-            '/es/ZonaProfesorado',
-            '/en/ZonaProfesorado',
-            '/ast/ZonaProfesorado',
-            '/ZonaDelegacion',
-            '/es/ZonaDelegacion',
-            '/en/ZonaDelegacion',
-            '/ast/ZonaDelegacion',
-            '/about',
-            '/es/about',
-            '/en/about',
-            '/ast/about',
-            '/Contacto',
-            '/es/Contacto',
-            '/en/Contacto',
-            '/ast/Contacto',
-            '/heritage_admin_login',
-            '/es/heritage_admin_login',
-            '/en/heritage_admin_login',
-            '/ast/heritage_admin_login',
-            '/500',
-            '/es/500',
-            '/en/500',
-            '/ast/500',
-            '/404',
-            '/es/404',
-            '/en/404',
-            '/ast/404'
+            '/api/admin/login',
+            '/api/card/getCard',
+            '/api/card/lastCard',
+            '/api/card/search',
+            '/api/card/tempUploadImage',
+            '/api/card/uploadImage',
+            '/api/history/getInfo',
+            '/api/create'
+            
         ]
     });
 
     return util.promisify(middleware)(req, res);
+}
 }

@@ -1,5 +1,6 @@
 var esClient = null;
 const logger = require('pino')()
+import apiHandler from '../handlers/apiHandler';
 if (typeof window === 'undefined') {
     const { Client } = require('@elastic/elasticsearch')
 
@@ -12,7 +13,18 @@ if (typeof window === 'undefined') {
     })
 }
 
-export default async (req, res) => {
+export default apiHandler(handler);
+
+function handler(req, res) {
+    switch (req.method) {
+        case 'POST':
+            return update(req, res);
+        default:
+            return res.status(405).end(`Method ${req.method} Not Allowed`)
+    }
+}
+
+async function update (req, res) {
     if (esClient != null) {
         let dataMap = new Map(req.body);
     await esClient.update({

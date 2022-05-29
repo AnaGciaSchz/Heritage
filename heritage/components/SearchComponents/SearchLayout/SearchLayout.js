@@ -1,7 +1,7 @@
 import styles from './searchLayout.module.scss'
 import React, { useState } from 'react';
 import Result from "components/Result/Result.js"
-import MultiSelectFilter from "components/MultiSelectFilter/MultiSelectFilter.js"
+import MultiSelectFilter from "../../MultiselectFilter/MultiSelectFilter"
 import { useIntl } from "react-intl"
 
 import {useDispatch,} from 'react-redux';

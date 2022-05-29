@@ -195,6 +195,9 @@ p {
 	.EII_Image{
 		width: 100%;
 	}
+	.textAbout{
+		max-width: 58%;
+	}
 }
 
 @include mobile {
@@ -218,6 +221,20 @@ p {
 		width: 200px;
 		margin-left: 0px;
 		margin-top: 30px;
+	}
+
+	.textAbout{
+		max-width: 50%;
+	}
+	.specialCard{
+		margin-top: -30px;
+		height: 100px;
+	}
+}
+
+@include desktop{
+	.textAbout{
+		max-width: 68%;
 	}
 }
 

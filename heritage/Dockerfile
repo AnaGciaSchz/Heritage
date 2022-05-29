@@ -5,4 +5,6 @@ COPY ./ /usr/app
 
 RUN npm install python
 
-CMD [ "npm", "run", "dev" ] 
+RUN npm run build
+
+CMD [ "npm", "run", "start" ] 

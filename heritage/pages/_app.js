@@ -13,7 +13,7 @@ import NextNProgress from 'nextjs-progressbar';
 import { IntlProvider } from "react-intl"
 import * as locales from "../content/locale"
 import { useRouter } from "next/router"
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 import { Provider } from 'react-redux';
 import { store } from '../services/redux/store.js';
@@ -22,57 +22,62 @@ export default function MyApp({ Component, pageProps }) {
 
   const router = useRouter()
 
-  const [authorized, setAuthorized] = useState(false);
-
   const { locale, defaultLocale, pathname } = router
   const localeCopy = locales[locale]
   const messages = localeCopy[pathname]
 
   useEffect(() => {
     authCheck(router.asPath);
-    const hideContent = () => setAuthorized(false);
-    router.events.on('routeChangeStart', hideContent);
-    router.events.on('routeChangeComplete', authCheck)
-    return () => {
-        router.events.off('routeChangeStart', hideContent);
-        router.events.off('routeChangeComplete', authCheck);
-    }
-}, []);
+  }, []);
 
-function authCheck(url) {
-    const privatePaths = ['/EditorHistoria','/ast/EditorHistoria','/en/EditorHistoria','/es/EditorHistoria','/api/admin/register','/api/card/tempUploadImage'
-    ,'/api/card/uploadImage','/api/card/uploadInfo','/api/create','/heritage_admin_register','/ast/heritage_admin_register'
-    ,'/en/heritage_admin_register','/es/heritage_admin_register','/api/card/delete', '/api/card/update', '/api/handlers', '/api/history/saveInfo'];
+  function authCheck(url) {
+    const privatePathsNormalUser = ['/EditorHistoria', '/ast/EditorHistoria', '/en/EditorHistoria', '/es/EditorHistoria', '/heritage_admin_register', '/ast/heritage_admin_register'
+      , '/en/heritage_admin_register', '/es/heritage_admin_register'];
+    const notAllowedPathAdmin = ['/heritage_admin_login', '/ast/heritage_admin_login'
+      , '/en/heritage_admin_login', '/es/heritage_admin_login']
+    const publicUrls = ['/','/es','/en','/ast','/HistoriaEII','/es/HistoriaEII','/en/HistoriaEII', '/ast/HistoriaEII','/ZonaEgresados', '/es/ZonaEgresados',
+    '/en/ZonaEgresados','/ast/ZonaEgresados','/ZonaProfesorado','/es/ZonaProfesorado','/en/ZonaProfesorado','/ast/ZonaProfesorado','/ZonaDelegacion',
+    '/es/ZonaDelegacion','/en/ZonaDelegacion','/ast/ZonaDelegacion','/about','/es/about','/en/about','/ast/about','/Contacto','/es/Contacto',
+    '/en/Contacto','/ast/Contacto','/heritage_admin_login','/es/heritage_admin_login','/en/heritage_admin_login','/ast/heritage_admin_login',
+    '/500','/es/500','/en/500','/ast/500','/404','/es/404','/en/404','/ast/404']
     const path = url.split('?')[0];
-    if (cookieCutter.get('userName')==undefined && privatePaths.includes(path)) {
-        setAuthorized(false);
-        router.push({
-            pathname: "/",
-            locale: router.locale
-        });
-    } else {
-        setAuthorized(true);
+    if(!privatePathsNormalUser.includes(path) && !notAllowedPathAdmin.includes(path) && !publicUrls.includes(path)){
+      router.push({
+        pathname: "/404",
+        locale: router.locale
+      });
     }
-}
+    else if (cookieCutter.get('userName') == undefined && privatePathsNormalUser.includes(path)) {
+      router.push({
+        pathname: "/",
+        locale: router.locale
+      });
+    } else if (cookieCutter.get('userName') != undefined && notAllowedPathAdmin.includes(path)) {
+      router.push({
+        pathname: "/",
+        locale: router.locale
+      });
+    }
+  }
 
   return (
     <Provider store={store}>
-    <IntlProvider
-    locale={locale}
-    defaultLocale={defaultLocale}
-    messages={messages}
-    onError={(error) => error}
-    >
-      <Header />
-      <Box>
-      <Internacionalizator/>
-      <Logout/>
-      <Alert />
-      <NextNProgress />
-        <Component {...pageProps} />
-      </Box>
-      <Footer />
-    </IntlProvider>
+      <IntlProvider
+        locale={locale}
+        defaultLocale={defaultLocale}
+        messages={messages}
+        onError={(error) => error}
+      >
+        <Header />
+        <Box>
+          <Internacionalizator />
+          <Logout />
+          <Alert />
+          <NextNProgress />
+          <Component {...pageProps} />
+        </Box>
+        <Footer />
+      </IntlProvider>
     </Provider>
   )
 }

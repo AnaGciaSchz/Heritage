@@ -3,6 +3,7 @@ var crypt = null;
 var jwt = null;
 import getConfig from 'next/config';
 import apiHandler from '../handlers/apiHandler';
+import { validateService } from '../../../services/validate.service';
 const { serverRuntimeConfig } = getConfig();
 const logger = require('pino')()
 if (typeof window === 'undefined') {
@@ -27,6 +28,10 @@ function handler(req, res) {
 
 
 async function authenticate (req, res) {
+    if(!validateService.checkExistsBody(req.body)){
+        res.status(404).json({result: "error", message: "Body not found"})
+        return;
+    }
     if (fileS != null && crypt != null) {
         var dataMap = new Map(req.body);
         var i = 0;

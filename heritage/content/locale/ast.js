@@ -50,6 +50,8 @@ export const ast = {
       PromocionHeritage: "Promoción de Heritage",
       Borrar: "¿Tas seguro de que quies esaniciar esta carta?",
       AnaDescripcion: "Estudiante de la EII y autora d'esti TFG",
+      TooltipEstrella: "¡Esta persona apaez en más d'una sección!",
+      TooltipGirarCarta: "Fai click na carta para ver el so aviesu",
       AnaDescripcionLarga: "Ana ye xuna estudiante del Grau d'Inxeniería Informática del Software qu'espera apurrir esti TFG en 2022 y consiguir asina'l so títulu.",
       AnaLogros: "Dientro de los sos llogros podemos atopar l'atrevese a diseñar Heritage dende 0, intentar que la páxina sía responsive o escribir esta carta especial con información d'ella.",
     },
@@ -239,6 +241,8 @@ export const ast = {
       MensajeNoResultados: "¿Nun atopes a la persona que tas buscando? ¡Prueba n'otra sección!",
       AlternateSearchIcon:"Iconu d'una lente",
       ClearSearchIcon: "Iconu d'una X",
+      TooltipEstrella: "¡Esta persona apaez en más d'una sección!",
+      TooltipGirarCarta: "Fai click na carta para ver el so aviesu",
       Borrar: "¿Tas seguro de que quies esaniciar esta carta?"
     },
     "/ZonaProfesorado": {
@@ -281,6 +285,8 @@ export const ast = {
       MensajeNoResultados: "¿Nun atopes a la persona que tas buscando? ¡Prueba n'otra sección!",
       AlternateSearchIcon:"Iconu d'una lente",
       ClearSearchIcon: "Iconu d'una X",
+      TooltipEstrella: "¡Esta persona apaez en más d'una sección!",
+      TooltipGirarCarta: "Fai click na carta para ver el so aviesu",
       Borrar: "¿Tas seguro de que quies esaniciar esta carta?"
     },
     "/ZonaDelegacion": {
@@ -323,6 +329,8 @@ export const ast = {
       MensajeNoResultados: "¿Nun atopes a la persona que tas buscando? ¡Prueba n'otra sección!",
       AlternateSearchIcon:"Iconu d'una lente",
       ClearSearchIcon: "Iconu d'una X",
+      TooltipEstrella: "¡Esta persona apaez en más d'una sección!",
+      TooltipGirarCarta: "Fai click na carta para ver el so aviesu",
       Borrar: "¿Tas seguro de que quies esaniciar esta carta?"
     },
     "/about": {
@@ -368,6 +376,8 @@ export const ast = {
       CartaDescripcion: "Descripción",
       CartaLogros: "Llogros destacables",
       CartaRegistro: "Rexistru",
+      TooltipEstrella: "¡Esta persona apaez en más d'una sección!",
+      TooltipGirarCarta: "Fai click na carta para ver el so aviesu",
       Promocion: "Promoción",
     },
     "/SubidaDeCartas": {

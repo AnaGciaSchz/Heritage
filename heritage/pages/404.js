@@ -1,7 +1,7 @@
 import { useIntl } from "react-intl"
 import Image from 'next/image'
 
-export default function Custom500() {
+export default function Custom404() {
     const {formatMessage} = useIntl();
     const f = id => formatMessage({ id })
     return (<div className= "Error">

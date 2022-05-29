@@ -11,7 +11,7 @@ if (typeof window === 'undefined') {
         }
     })
 }
- export default function asycn (req, res) {
+ export default async (req, res) => {
     if (esClient != null) {
         await esClient.indices.create({
             index:"student-card",

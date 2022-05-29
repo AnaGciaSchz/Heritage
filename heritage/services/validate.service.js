@@ -4,7 +4,8 @@ export const validateService = {
     checkLength,
     checkValidPasswords,
     checkRepeatedUsername,
-    checkSecurePassword
+    checkSecurePassword,
+    checkExistsBody
 };
 
 function checkEmpty(value) {
@@ -12,6 +13,15 @@ function checkEmpty(value) {
         return true;
     }
     return false;
+}
+
+function checkExistsBody(body){
+    try{
+        new Map(body)
+        return true;
+    }catch(err){
+        return false;
+    }
 }
 
 function checkValidPromotion(promotion) {

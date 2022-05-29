@@ -7,7 +7,7 @@ export const fetchWrapper = {
     get,
     post,
     put,
-    delete: _delete
+    remove
 };
 
 async function get(url) {
@@ -38,10 +38,12 @@ async function put(url, body) {
     return await fetch(url, requestOptions);    
 }
 
-async function _delete(url) {
+async function remove(url, body) {
+
     const requestOptions = {
         method: 'DELETE',
-        headers: authHeader(url)
+        headers: authHeader(url),
+        body: JSON.stringify(body)
     };
     return await fetch(url, requestOptions);
 }

@@ -1,6 +1,7 @@
 var esClient = null;
 const logger = require('pino')()
 import apiHandler from '../handlers/apiHandler';
+import { validateService } from '../../../services/validate.service';
 if (typeof window === 'undefined') {
     const { Client } = require('@elastic/elasticsearch')
 
@@ -26,6 +27,10 @@ function handler(req, res) {
 
 
 async function getLast (req, res) {
+    if(!validateService.checkExistsBody(req.body)){
+        res.status(404).json({result: "error", message: "Body not found"})
+        return;
+    }
     if (esClient != null) {
         let dataMap = new Map(req.body);
         let body = {"query": {"match_all": {}},"size": "1","sort": [{"timestamp": {"order": "desc"}}]}

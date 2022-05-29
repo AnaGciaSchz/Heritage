@@ -1,5 +1,6 @@
 var fileS = null;
 import apiHandler from '../handlers/apiHandler';
+import { validateService } from '../../../services/validate.service';
 const logger = require('pino')()
 if (typeof window === 'undefined') {
     var fileS = require('fs');
@@ -18,6 +19,10 @@ function handler(req, res) {
 
 
 async function getTheInfo(req, res) {
+    if(!validateService.checkExistsBody(req.body)){
+        res.status(404).json({result: "error", message: "Body not found"})
+        return;
+    }
         if(fileS != null){
             let dataMap = new Map(req.body);
             fileS.readFile('public/history/'+dataMap.get("locale")+'.html', 'utf8', (err, data) => {

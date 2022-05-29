@@ -1,6 +1,7 @@
 var esClient = null;
 var fileS = null;
 const logger = require('pino')()
+import { validateService } from '../../../services/validate.service';
 import apiHandler from '../handlers/apiHandler';
 
 if (typeof window === 'undefined') {
@@ -20,7 +21,7 @@ export default apiHandler(handler);
 
 function handler(req, res) {
     switch (req.method) {
-        case 'POST':
+        case 'DELETE':
             return deleteCard(req, res);
         default:
             return res.status(405).end(`Method ${req.method} Not Allowed`)
@@ -28,8 +29,12 @@ function handler(req, res) {
 }
 
 async function deleteCard (req, res) {
+    if(!validateService.checkExistsBody(req.body)){
+        res.status(404).json({result: "error", message: "Body not found"})
+        return;
+    }
     if (esClient != null) {
-        let dataMap = new Map(req.body);
+        let dataMap = new Map(JSON.parse(req.body));
     await esClient.delete({
         index: dataMap.get("index"),
         id: dataMap.get("id")

@@ -49,6 +49,8 @@ export const en = {
       TwitterDeii:"Icon to access que School Delegation Twitter",
       PromocionHeritage: "Promotion of Heritage",
       Borrar: "Are you sure you want to delete this card?",
+      TooltipEstrella: "This person appears in more than one section!",
+      TooltipGirarCarta: "Click on the card to see the back",
       AnaDescripcion: "Student of the SCE and author of this TFG",
       AnaDescripcionLarga: "Ana is a student of the Computer Software Engineering Degree who hopes to deliver this Final Degree Project in 2022 and thus obtain her degree.",
       AnaLogros: "Among her achievements we can find daring to design Heritage from scratch, trying to make the page responsive or writing this special card with information from her.",
@@ -211,6 +213,8 @@ export const en = {
       ZDelegacion: "Former Delegates Area",
       QueEsHeritage: "¿What is Heritage?",
       EditorHistoria: "History Editor",
+      TooltipEstrella: "This person appears in more than one section!",
+      TooltipGirarCarta: "Click on the card to see the back",
       SubidaDeCartas: "Upload Cards",
       Contacto: "Contact",
       IconoGirarCarta: "Icon showing that the card can be rotated.",
@@ -281,6 +285,8 @@ export const en = {
       MensajeNoResultados: "Can't find what you are looking for? Try another section!",
       AlternateSearchIcon:"Icon of magnifying glasses",
       ClearSearchIcon: "X icon",
+      TooltipEstrella: "This person appears in more than one section!",
+      TooltipGirarCarta: "Click on the card to see the back",
       Borrar: "Are you sure you want to delete this card?"
     },
     "/ZonaDelegacion": {
@@ -323,6 +329,8 @@ export const en = {
       MensajeNoResultados: "Can't find what you are looking for? Try another section!",
       AlternateSearchIcon:"Icon of magnifying glasses",
       ClearSearchIcon: "X icon",
+      TooltipEstrella: "This person appears in more than one section!",
+      TooltipGirarCarta: "Click on the card to see the back",
       Borrar: "Are you sure you want to delete this card?"
     },
     "/about": {
@@ -369,6 +377,8 @@ export const en = {
       SolicitarAcceso: "How can I request to appear on this page?",
       RellenaFormulario: "If you are a graduate, teacher, or former student representative and would like to appear on Heritage, please fill out the following form:",
       FormularioHeritage: "Form to appear in Heritage",
+      TooltipEstrella: "This person appears in more than one section!",
+      TooltipGirarCarta: "Click on the card to see the back",
     },
     "/SubidaDeCartas": {
       Copyright: "Copyright University of Oviedo",

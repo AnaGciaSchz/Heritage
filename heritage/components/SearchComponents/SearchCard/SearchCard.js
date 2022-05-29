@@ -51,7 +51,7 @@ export default function SearchCard(props){
       dataMap.set("id", props.id);
       dataMap.set("image", props.img)
       dataMap.set("AppearsInAnotherCategory", props.star)
-      const response = await fetchWrapper.post(`${baseUrl}/card/delete`, Array.from(dataMap.entries()));
+      const response = await fetchWrapper.remove(`${baseUrl}/card/delete`, Array.from(dataMap.entries()));
       if (response.status < 200 || response.status > 299) {
         setDeletedMessage(<p>{f("NoEliminado")}</p>)
       }
@@ -69,8 +69,8 @@ export default function SearchCard(props){
   }, [router.locale]);
     return(
       <div>
-            <img className={showRotate? styles.flipIcon : styles.flipIconHidden} src="/flip.svg" alt={f("IconoGirarCarta")}/>
-            <img className={props.star && props.star.toString()=="true" ? styles.star : styles.starHidden} src="/star.svg" alt={f("IconoEstrella")}/>
+            <img className={showRotate? styles.flipIcon : styles.flipIconHidden} src="/flip.svg" alt={f("IconoGirarCarta")} title={f("TooltipGirarCarta")}/>
+            <img className={props.star && props.star.toString()=="true" ? styles.star : styles.starHidden} src="/star.svg" alt={f("IconoEstrella")} title={f("TooltipEstrella")}/>
         {isRotated? null:
       <div
       className={isNotBeenRotated? styles.card : isRotated ? styles.quitCard : styles.showCard} 

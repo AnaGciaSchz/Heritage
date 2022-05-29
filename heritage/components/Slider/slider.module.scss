@@ -4,12 +4,12 @@
 .embla {
     position: relative;
     background-color: #ffffff;
-    max-width: 80%;
+    max-width: 64%;
     height: 700px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: -50px;
-    margin-top:1%;
+    margin-bottom: -120px;
+    margin-top:-4%;
   }
   .embla__viewport {
     overflow: hidden;
@@ -96,6 +96,52 @@
 
       .embla__button__svg {
         height: 120%;
+        margin-top: 120px;
+      }
+  }
+
+  
+  @include desktop{
+    .embla__slide__img {
+        top: 53%;
+        left: 50%;
+      }
+
+      .embla {
+        margin-bottom: -300px;
+        margin-top: 0px;
+      }
+
+      .embla__slide__inner {
+        height: 400px;
+      }
+
+      .embla__button__svg {
+        position: absolute;
+        height: 100%;
+        margin-top: -150px;
+        margin-left: -30px;
+      }
+  }
+
+  @include tablet{
+    .embla__slide__img {
+        top: 25%;
+        left: 50%;
+      }
+
+      .embla__slide__inner {
+        height: 700px;
+      }
+
+      .embla {
+        height: 450px;
+        margin-bottom: -100px;
+        margin-top: 15px;
+      }
+
+      .embla__button {
+          top:40%;
       }
   }
 
@@ -105,9 +151,14 @@
         left: 50%;
       }
 
-      .embla {
+      .embla__slide__inner {
         height: 500px;
+      }
+
+      .embla {
+        height: 350px;
         margin-bottom: -100px;
+        margin-top: 45px;
       }
 
       .embla__button {

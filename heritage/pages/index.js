@@ -58,7 +58,6 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <h1 className="title1">{f("paginaPrincipal")}</h1>
       <Slider></Slider>
       <h2 className="title1">{f("UltimasCartasSubidas")}</h2>
       <div className="cardfeed">

@@ -57,7 +57,8 @@ export default function SearchCard(props) {
       }
       else {
         setDeletedMessage(<p>{f("Eliminado")}</p>)
-        Router.reload(window.location.pathname)
+        setTimeout(() => { Router.reload(window.location.pathname) }, 1000);
+        
       }
     }
     catch (error) {

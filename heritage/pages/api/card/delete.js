@@ -29,7 +29,7 @@ function handler(req, res) {
 }
 
 async function deleteCard(req, res) {
-    if (!validateService.checkExistsBody(req.body)) {
+    if (!validateService.checkExistsBody(JSON.parse(req.body))) {
         res.status(404).json({ result: "error", message: "Body not found" })
         return;
     }

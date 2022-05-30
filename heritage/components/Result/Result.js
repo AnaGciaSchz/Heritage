@@ -37,6 +37,7 @@ export default function Result(props) {
         var result = await search();
         var results = new Array();
         var i;
+        if(result && result.promotion){
         for(i=0;i<result.promotion.length;i++){
             results[i]= <SearchResult key={i}
             promotion = {result.promotion[i].key}
@@ -48,7 +49,7 @@ export default function Result(props) {
 
         props.setPromotions(result.promotion);
         props.setPromotionsChange(!props.promotionsChange)
-
+        }
         setResults(null);
         if(results.length==0){
           setResults(<NoResult/>);

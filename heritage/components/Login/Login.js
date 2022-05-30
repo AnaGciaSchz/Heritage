@@ -66,7 +66,6 @@ export default function Login() {
             onClick={() => uploadToServer()}>
             {f("Login")}
           </button>
-          <a href="/heritage_admin_register" className={styles.link}>{f("Registro")}</a>
 
         </form>
       </div>

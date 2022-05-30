@@ -53,8 +53,8 @@ async function authenticate(req, res) {
                     logger.warn('Contrasena incorrecta para acceder como usuario ' + admin.username + '.')
                     res.status(400).json({ result: "error", message: "ContrasenaNoCorrecta" })
                 }
+                return;
             }
-            return;
         }
     }
 }

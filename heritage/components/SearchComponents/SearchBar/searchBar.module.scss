@@ -24,6 +24,7 @@
     -webkit-animation: scale-up-hor-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	        animation: scale-up-hor-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     max-width: 50em;
+    z-index: 9;
   }
 
   .searchNoClicked{
@@ -37,19 +38,18 @@
     left: 8px;
     width: 14px;
     margin-top:30px;
+    z-index: 10;
   }
   
   .clearIcon {
-    position: absolute;
-    top: 40px;
-    right: 8px;
-    width: 12px;
-    left: 700px;
+    width: 18px;
+    margin-left: 2px;
     cursor: pointer;
   }
 
   .clearIconVisible {
     @extend .clearIcon;
+    z-index: 10;
     visibility: visible;
   }
 
@@ -61,17 +61,6 @@
   .search:hover, .search:focus {
     border: 1px solid #009688;
     background-color: white;
-  }
-
-  @include desktop {
-    .clearIcon {
-      position: absolute;
-      top: 40px;
-      right: 8px;
-      width: 12px;
-      left: 700px;
-      cursor: pointer;
-    }
   }
   
   /**

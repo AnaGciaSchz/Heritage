@@ -13,7 +13,7 @@ export default function Internacionalizator() {
   '/en/ZonaEgresados','/ast/ZonaEgresados','/ZonaProfesorado','/es/ZonaProfesorado','/en/ZonaProfesorado','/ast/ZonaProfesorado','/ZonaDelegacion',
   '/es/ZonaDelegacion','/en/ZonaDelegacion','/ast/ZonaDelegacion','/about','/es/about','/en/about','/ast/about','/Contacto','/es/Contacto',
   '/en/Contacto','/ast/Contacto','/heritage_admin_login','/es/heritage_admin_login','/en/heritage_admin_login','/ast/heritage_admin_login',
-  '/500','/es/500','/en/500','/ast/500','/404','/es/404','/en/404','/ast/404']
+  '/500','/es/500','/en/500','/ast/500','/404','/es/404','/en/404','/ast/404', '/SubidaDeCartas','/es/SubidaDeCartas','/en/SubidaDeCartas','/ast/SubidaDeCartas' ]
     const onChangeLocale = (locale) => {if(existingUrls.includes(router.asPath.split('?')[0])) router.push(router.asPath, router.asPath, { locale: locale })}
 
     function setLanguage(locale){

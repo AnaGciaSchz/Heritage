@@ -395,6 +395,7 @@ export const es = {
       QueEsHeritage: "¿Qué es Heritage?",
       Logout: "Cerrar sesión",
       SubidaDeCartas: "Subida de cartas",
+      ImagenFormato: "La imagen debe ser de tipo png, jpg, jpeg o webp",
       Contacto: "Contacto",
       CartaImagenAlt: "Foto de la persona en la carta",
       CartaDescripcion: "Descripción",

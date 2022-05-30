@@ -393,6 +393,7 @@ export const en = {
       EditorHistoria: "History Editor",
       QueEsHeritage: "¿What is Heritage?",
       SubidaDeCartas: "Upload Cards",
+      ImagenFormato: "Image should be png, jpg, jpeg or webp",
       Contacto: "Contact",
       CartaImagenAlt: "Photo of the person in the card",
       CartaDescripcion: "Description",

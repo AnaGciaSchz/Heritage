@@ -32,7 +32,7 @@ export default function MyApp({ Component, pageProps }) {
 
   function authCheck(url) {
     const privatePathsNormalUser = ['/EditorHistoria', '/ast/EditorHistoria', '/en/EditorHistoria', '/es/EditorHistoria', '/heritage_admin_register', '/ast/heritage_admin_register'
-      , '/en/heritage_admin_register', '/es/heritage_admin_register'];
+      , '/en/heritage_admin_register', '/es/heritage_admin_register','/SubidaDeCartas','/es/SubidaDeCartas','/en/SubidaDeCartas','/ast/SubidaDeCartas'];
     const notAllowedPathAdmin = ['/heritage_admin_login', '/ast/heritage_admin_login'
       , '/en/heritage_admin_login', '/es/heritage_admin_login']
     const publicUrls = ['/','/es','/en','/ast','/HistoriaEII','/es/HistoriaEII','/en/HistoriaEII', '/ast/HistoriaEII','/ZonaEgresados', '/es/ZonaEgresados',

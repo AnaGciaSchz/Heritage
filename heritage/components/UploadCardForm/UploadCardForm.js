@@ -262,6 +262,14 @@ export default function UploadCardForm() {
           <textarea type="textarea" placeholder={f("LogrosEjemplo")} maxLength="230" rows="5" id="archievements"></textarea>
           <span className={styles.tooltip}>{f("LogrosTooltip")}</span>
         </div>
+        <p className={styles.label}>{f("ImagenFormato")}</p>
+          <label htmlFor="fileUpload" className={styles.fileUploadLabel}>{f("SubirImagenCard")}</label>
+          <input type="file" id="fileUpload" className={styles.fileUpload} multiple={false} onChange={uploadToClient} title={f("SubirImagenCard")} />
+        <div className={styles.section}><span>4</span>{f("InformacionExtra")}</div>
+        <div className={styles.check}>
+          <input type="checkbox" id="check" className={styles.checkBox} />
+          <label> {f("CheckTexto")}</label>
+        </div>
         {socialMedia1 ?
           <div className={styles.mediaField}>
             <div className={styles.lefthalf}>
@@ -306,15 +314,7 @@ export default function UploadCardForm() {
             <button className={styles.buttonSocialMedia} type="button" onClick={deleteSocialMedia}>{f("QuitarRedSocial")}</button>
             : null}
         </div>
-        <div className={styles.section}><span>4</span>{f("InformacionExtra")}</div>
-        <div className={styles.check}>
-          <input type="checkbox" id="check" className={styles.checkBox} />
-          <label> {f("CheckTexto")}</label>
-        </div>
         <div>
-          <p className={styles.label}>La imagen debe ser de tipo png, jpg, jpeg o webp</p>
-          <label htmlFor="fileUpload" className={styles.fileUploadLabel}>{f("SubirImagenCard")}</label>
-          <input type="file" id="fileUpload" className={styles.fileUpload} multiple={false} onChange={uploadToClient} title={f("SubirImagenCard")} />
           <button
             className={styles.send}
             type="submit"

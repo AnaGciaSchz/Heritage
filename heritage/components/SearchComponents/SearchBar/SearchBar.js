@@ -10,7 +10,7 @@ export default function SearchBar(props) {
   const [isClicked, setClick] = React.useState(false);
   const [hasText, setHasText] = React.useState(false);
   const onChange = (event) => { { event.target.value == "" ? setHasText(false) : setHasText(true); }; props.setQuery(event.target.value); props.setChange();}
-  const emptySearch = () => { document.getElementById('searchBar').value = ""; setHasText(false); props.setQuery(""); props.setChange();}
+  const emptySearch = () => { document.getElementById('searchBar').value = ""; setClick(false);setHasText(false); props.setQuery(""); props.setChange();}
 
   return (
     <>
@@ -28,8 +28,9 @@ export default function SearchBar(props) {
           className={isClicked ? styles.searchClicked : styles.searchNoClicked}
           onChange={onChange}
           onClick={() => setClick(true)}
-          onBlur={() => setClick(false)} />
-        <img className={hasText && isClicked? styles.clearIconVisible : styles.clearIconNoVisible} alt={f("ClearSearchIcon")} onClick={emptySearch}
+           />
+
+        <img className={hasText && isClicked?styles.clearIconVisible:styles.clearIconNoVisible} alt={f("ClearSearchIcon")} onClick={emptySearch}
           src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBT
         VkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d
         3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxLjk3NiA1MS45NzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3

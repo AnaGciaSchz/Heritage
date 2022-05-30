@@ -1,159 +1,159 @@
 @import "../../styles/sass/mixins";
 @import "../../styles/sass/variables";
-  
+
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  border-radius: 3em;
+  width: 95%;
+  margin: -4% auto 2%;
+  padding: 20px 20px 10px 20px;
+  color: $darkGreen;
+  background-color: $color-fondo-contenido;
+  font-family: "Roboto", sans-serif;
+}
+
+.favicon {
+  margin-top: 20%;
+}
+
+.nav__title {
+  font-size: 15px;
+  margin-right: 10%;
+}
+
+.footer address {
+  font-style: normal;
+  color: #2f2f2f;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer li {
+  line-height: 1.4em;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer__nav {
+  display: flex;
+  margin-right: 5%;
+  margin-left: 18%;
+}
+.nav__ul a {
+  color: $darkBlue;
+}
+
+.legal {
+  display: flex;
+  color: $darkGreen;
+  margin-right: -5%;
+  width: 300px;
+}
+
+.contact {
+  font-size: 13px;
+}
+
+.bigDiv {
+  width: 15%;
+  margin-top: -3%;
+  margin-left: 3%;
+  margin-right: -3%;
+}
+
+.direction {
+  width: 300px;
+}
+
+@include mobile {
   .footer {
-    display: flex;
-    flex-flow: row wrap;
-    border-radius: 3em;
-    width: 95%;
-    margin: -4% auto 2%;
-    padding: 20px 20px 10px 20px;
-    color: $darkGreen;
-    background-color: $color-fondo-contenido;
-    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    margin-top: -10%;
   }
 
-  .favicon{
-    margin-top: 20%;
+  .direction {
+    font-size: 12px;
   }
-  
+
+  .legal {
+    margin-top: -5%;
+    margin-left: 60%;
+  }
+
   .nav__title {
-    font-size: 15px;
+    font-size: 12px;
     margin-right: 10%;
   }
-  
-  .footer address {
-    font-style: normal;
-    color: #2f2f2f;
-  }
-  
-  .footer ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  .footer li {
-    line-height: 1.4em;
-  }
-  
-  .footer a {
-    text-decoration: none;
-  }
-  
   .footer__nav {
     display: flex;
-    margin-right: 5%;
-    margin-left: 18%;
+    margin-right: -10%;
+    margin-left: 2;
   }
-  .nav__ul a {
-    color: $darkBlue;
+
+  .bigDiv {
+    width: 15%;
+    margin-top: 0%;
+    margin-left: 4%;
   }
-  
+}
+
+@include desktop {
   .legal {
+    margin-top: -5%;
+    margin-left: 66.5%;
+  }
+}
+
+@include tablet {
+  .footer {
+    font-size: 12px;
+    margin-top: -5%;
+    height: 300px;
+  }
+
+  .legal {
+    margin-top: -5%;
+    margin-left: 66.5%;
+  }
+
+  .direction {
+    font-size: 12px;
+  }
+
+  .nav__title {
+    font-size: 12px;
+    margin-right: 10%;
+  }
+  .footer__nav {
     display: flex;
-    color: $darkGreen;
-    margin-right: -5%;
-    width: 300px;
+    margin-right: -10%;
+    margin-left: 2;
   }
 
-  .contact{
-    font-size: 13px;
+  .bigDiv {
+    width: 15%;
+    margin-top: 0%;
+    margin-left: 4%;
+  }
+}
+
+@include bigDesktop {
+  .footer__nav {
+    display: flex;
+    margin-right: 10%;
+    margin-left: 20%;
   }
 
-  .bigDiv{
+  .bigDiv {
     width: 15%;
     margin-top: -3%;
-    margin-left: 3%;
+    margin-left: 8%;
     margin-right: -3%;
   }
-
-  .direction{
-    width: 300px;
-  }
-
-  @include mobile{
-    .footer {
-      font-size: 12px;
-      margin-top: -10%;
-    }
-  
-    .direction{
-      font-size: 12px;
-    }
-
-    .legal{
-      margin-top:-5%;
-      margin-left: 60%;
-    }
-
-    .nav__title {
-      font-size: 12px;
-      margin-right: 10%;
-    }
-    .footer__nav {
-      display: flex;
-      margin-right: -10%;
-      margin-left: 2;
-    }
-
-    .bigDiv{
-      width: 15%;
-      margin-top: 0%;
-      margin-left: 4%;
-    }
-  }
-
-  @include desktop{
-    .legal {
-      margin-top: -5%;
-      margin-left: 66.5%;
-    }
-  }
-
-  @include tablet{
-    .footer {
-      font-size: 12px;
-      margin-top: -5%;
-      height: 300px;
-    }
-
-    .legal {
-      margin-top: -5%;
-      margin-left: 66.5%;
-    }
-  
-    .direction{
-      font-size: 12px;
-    }
-
-    .nav__title {
-      font-size: 12px;
-      margin-right: 10%;
-    }
-    .footer__nav {
-      display: flex;
-      margin-right: -10%;
-      margin-left: 2;
-    }
-
-    .bigDiv{
-      width: 15%;
-      margin-top: 0%;
-      margin-left: 4%;
-    }
-  }
-
-  @include bigDesktop{
-    .footer__nav {
-      display: flex;
-      margin-right: 10%;
-      margin-left: 20%;
-    }
-
-    .bigDiv{
-      width: 15%;
-      margin-top: -3%;
-      margin-left: 8%;
-      margin-right: -3%;
-    }
-  }
+}

@@ -35,7 +35,7 @@ export default function Contacto() {
             <p><b>{f("CorreoElectronico")}:</b> eii@uniovi.es</p>
             <p><b>{f("Telefono")}:</b> +34.985.10.27.96</p>
         </div>
-        <div className= 'contactDirections'>
+        <div className='contactDirections'>
             <div className="contactLeft">
                 <h2 className='contactTitle2'>{f("NumerosTelefonoYFax")}</h2>
                 <h3 className="title3">{f("Administration")}</h3>

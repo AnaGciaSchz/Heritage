@@ -27,9 +27,9 @@ function handler(req, res) {
 }
 
 
-async function authenticate (req, res) {
-    if(!validateService.checkExistsBody(req.body)){
-        res.status(404).json({result: "error", message: "Body not found"})
+async function authenticate(req, res) {
+    if (!validateService.checkExistsBody(req.body)) {
+        res.status(404).json({ result: "error", message: "Body not found" })
         return;
     }
     if (fileS != null && crypt != null) {
@@ -40,7 +40,7 @@ async function authenticate (req, res) {
                 var password = admins[i].password;
                 admin = admins[i]
                 var match = await crypt.compare(dataMap.get("password"), password)
-                if(match){
+                if (match) {
                     const token = jwt.sign({ sub: admin.id }, serverRuntimeConfig.secret, { expiresIn: '7d' });
                     logger.info('El usuario ' + admin.username + ' acaba de iniciar sesion.')
                     return res.status(200).json({
@@ -49,7 +49,7 @@ async function authenticate (req, res) {
                         name: admin.name,
                         token
                     });
-                }else{
+                } else {
                     logger.warn('Contrasena incorrecta para acceder como usuario ' + admin.username + '.')
                     res.status(400).json({ result: "error", message: "ContrasenaNoCorrecta" })
                 }

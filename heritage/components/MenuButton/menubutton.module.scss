@@ -10,7 +10,7 @@
     width: 8vw;
     margin-top: 5%;
     margin-bottom: 1%;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: map-get($font-weights, regular);
     font-size: 1vw;
     color: $color-texto;
@@ -19,83 +19,81 @@
     transition: all 0.2s;
     cursor: pointer;
 }
-.image1{
+.image1 {
     width: 20px;
     height: 20px;
     display: block;
     margin-left: 45%;
-    margin-bottom:-10%;
+    margin-bottom: -10%;
 }
 
-.text{
+.text {
     margin-top: -495px;
 }
 
-.image2{
+.image2 {
     visibility: hidden;
 }
 
 .menuButton:hover {
     width: 8em;
     background-color: $color-menuBoton-hover;
-    .image1{
+    .image1 {
         visibility: hidden;
     }
-    .image2{
-        visibility:visible;
+    .image2 {
+        visibility: visible;
         width: 30px;
         height: 30px;
     }
-    .text{
+    .text {
         margin-top: -10px;
-        -webkit-animation: scale-out-ver-bottom 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-	        animation: scale-out-ver-bottom 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        -webkit-animation: scale-out-ver-bottom 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+        animation: scale-out-ver-bottom 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
     }
 }
 
 @include desktop {
-
-    .menuButton:hover{
-        .image2{
-        -webkit-animation: slide-in-top 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-top 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    .menuButton:hover {
+        .image2 {
+            -webkit-animation: slide-in-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+            animation: slide-in-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
     }
-}
 
-.menuButton {
-    height: 9vh;
-    width: 8vw;
-    font-size: 1vw;
-}
-
+    .menuButton {
+        height: 9vh;
+        width: 8vw;
+        font-size: 1vw;
+    }
 }
 
 @include tablet {
     .menuButton {
         height: 7.5vh;
-        width: 9vw; 
+        width: 9vw;
     }
 
-    .text{
+    .text {
         font-size: 1vw;
     }
 
-    .image1{
+    .image1 {
         margin-top: 10px;
         margin-bottom: -16px;
         margin-left: 3vw;
     }
 
-    .menuButton:hover{
+    .menuButton:hover {
         width: 6.5em;
-        .image2{
-        width: 25px;
-        height: 25px;
+        .image2 {
+            width: 25px;
+            height: 25px;
 
-        -webkit-animation: slide-in-top-tablet 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-top-tablet 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            -webkit-animation: slide-in-top-tablet 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+            animation: slide-in-top-tablet 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
     }
-}
 }
 
 @include mobile {
@@ -105,25 +103,25 @@
         font-size: 1vh;
     }
 
-    .text{
+    .text {
         visibility: hidden;
     }
 
-    .image1{
+    .image1 {
         margin-top: 1vh;
-        margin-left:2vw;
+        margin-left: 2vw;
     }
 
-    .menuButton:hover{
+    .menuButton:hover {
         width: 6em;
-        .image1{
+        .image1 {
             visibility: visible;
             margin-left: 12px;
         }
-        .image2{
-            visibility:hidden;
+        .image2 {
+            visibility: hidden;
+        }
     }
-}
 }
 
 /**
@@ -131,55 +129,45 @@
  * animation scale-out-ver-bottom
  * ----------------------------------------
  */
- @-webkit-keyframes scale-out-ver-bottom {
+@-webkit-keyframes scale-out-ver-bottom {
     0% {
-      -webkit-transform: scaleY(1);
-              transform: scaleY(1);
-      -webkit-transform-origin: 0% 100%;
-              transform-origin: 0% 100%;
-      opacity: 1;
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        opacity: 1;
     }
     100% {
-      -webkit-transform: scaleY(0);
-              transform: scaleY(0);
-      -webkit-transform-origin: 0% 100%;
-              transform-origin: 0% 100%;
-      opacity: 1;
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        opacity: 1;
     }
-  }
-  @keyframes scale-out-ver-bottom {
+}
+@keyframes scale-out-ver-bottom {
     0% {
-      -webkit-transform: scaleY(1);
-              transform: scaleY(1);
-      -webkit-transform-origin: 0% 100%;
-              transform-origin: 0% 100%;
-      opacity: 1;
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        opacity: 1;
     }
     100% {
-      -webkit-transform: scaleY(0);
-              transform: scaleY(0);
-      -webkit-transform-origin: 0% 100%;
-              transform-origin: 0% 100%;
-      opacity: 1;
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        opacity: 1;
     }
-  }
+}
 
-  /**
+/**
  * ----------------------------------------
  * animation slide-in-top
  * ----------------------------------------
  */
 @-webkit-keyframes slide-in-top {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    100% {
-      -webkit-transform: translateY(10px);
-              transform: translateY(10px);
-    }
-  }
-  @keyframes slide-in-top {
     0% {
         -webkit-transform: translateY(0);
         transform: translateY(0);
@@ -188,19 +176,19 @@
         -webkit-transform: translateY(10px);
         transform: translateY(10px);
     }
-  }
-
-  @-webkit-keyframes slide-in-top-tablet {
+}
+@keyframes slide-in-top {
     0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
     100% {
-      -webkit-transform: translateY(1px);
-              transform: translateY(1px);
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
     }
-  }
-  @keyframes slide-in-top-tablet {
+}
+
+@-webkit-keyframes slide-in-top-tablet {
     0% {
         -webkit-transform: translateY(0);
         transform: translateY(0);
@@ -209,8 +197,14 @@
         -webkit-transform: translateY(1px);
         transform: translateY(1px);
     }
-  }
-  
-  
-  
-
+}
+@keyframes slide-in-top-tablet {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(1px);
+        transform: translateY(1px);
+    }
+}

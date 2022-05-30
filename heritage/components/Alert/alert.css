@@ -1,23 +1,21 @@
-.alert.alert-dismissable.alert-success{
+.alert.alert-dismissable.alert-success {
     border-radius: 1em;
-	padding: 8px;
+    padding: 8px;
     width: 80%;
-	background-repeat: no-repeat;
-	background-position: 10px center;
+    background-repeat: no-repeat;
+    background-position: 10px center;
     color: #387a1a;
-	background-color: #baffc3;
+    background-color: #baffc3;
     cursor: pointer;
-
 }
 
-.alert.alert-dismissable.alert-danger{
+.alert.alert-dismissable.alert-danger {
     border-radius: 1em;
-	padding: 8px;
+    padding: 8px;
     width: 80%;
-	background-repeat: no-repeat;
-	background-position: 10px center;
-    color: #D8000C;
-	background-color: #FFBABA;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    color: #d8000c;
+    background-color: #ffbaba;
     cursor: pointer;
-
 }

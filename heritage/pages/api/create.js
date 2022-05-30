@@ -11,10 +11,10 @@ if (typeof window === 'undefined') {
         }
     })
 }
- export default async (req, res) => {
+export default async (req, res) => {
     if (esClient != null) {
         await esClient.indices.create({
-            index:"student-card",
+            index: "student-card",
             body: mapping
         }).then(
             () => {
@@ -23,7 +23,7 @@ if (typeof window === 'undefined') {
             err => {
                 logger.error("No se ha podido crear el indice: student-card en elasticsearch.")
                 logger.error(err.message)
-                res.status(500).json({ result: "error", message: err.message + " on elastic search"});
+                res.status(500).json({ result: "error", message: err.message + " on elastic search" });
             }
         );
         await esClient.indices.create({
@@ -36,7 +36,7 @@ if (typeof window === 'undefined') {
             err => {
                 logger.error("No se ha podido crear el indice: professor-card en elasticsearch.")
                 logger.error(err.message)
-                res.status(500).json({ result: "error", message: err.message + " on elastic search"});
+                res.status(500).json({ result: "error", message: err.message + " on elastic search" });
             }
         );
         await esClient.indices.create({
@@ -49,14 +49,14 @@ if (typeof window === 'undefined') {
             err => {
                 logger.error("No se ha podido crear el indice: delegate-card en elasticsearch.")
                 logger.error(err.message)
-                res.status(500).json({ result: "error", message: err.message + " on elastic search"});
+                res.status(500).json({ result: "error", message: err.message + " on elastic search" });
             }
         );
         logger.info("Se han creado todos los indices en elasticsearch.")
-        res.status(200).json({ result: "ok", message: "Index created"});
-    }else {
+        res.status(200).json({ result: "ok", message: "Index created" });
+    } else {
         logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
-        res.status(500).json({ result: "error", message: "No elasticsearch client"});
+        res.status(500).json({ result: "error", message: "No elasticsearch client" });
     }
 }
 

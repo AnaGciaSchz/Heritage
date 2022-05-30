@@ -2,7 +2,7 @@ import TextDisplay from "components/TextDisplay/TextDisplay.js"
 import { useIntl } from "react-intl"
 
 export default function HistoriaEII() {
-  const {formatMessage} = useIntl();
+  const { formatMessage } = useIntl();
   const f = id => formatMessage({ id })
 
   return (

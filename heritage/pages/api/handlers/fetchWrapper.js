@@ -25,8 +25,8 @@ async function post(url, body) {
         credentials: 'include',
         body: JSON.stringify(body)
     };
-     var response = await fetch(url, requestOptions);
-     return response
+    var response = await fetch(url, requestOptions);
+    return response
 }
 
 async function put(url, body) {
@@ -35,7 +35,7 @@ async function put(url, body) {
         headers: { 'Content-Type': 'application/json', ...authHeader(url) },
         body: JSON.stringify(body)
     };
-    return await fetch(url, requestOptions);    
+    return await fetch(url, requestOptions);
 }
 
 async function remove(url, body) {
@@ -52,7 +52,7 @@ async function remove(url, body) {
 function authHeader(url) {
     const user = cookieCutter.get('userName');
     const token = cookieCutter.get('heritageToken');
-    const isLoggedIn = user!==undefined && token!==undefined;
+    const isLoggedIn = user !== undefined && token !== undefined;
     const isApiUrl = url.startsWith(publicRuntimeConfig.apiUrl);
     if (isLoggedIn && isApiUrl) {
         return { Authorization: `Bearer ${token}` };

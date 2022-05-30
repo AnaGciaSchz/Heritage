@@ -1,9 +1,10 @@
 @import "./_variables";
 @import "./mixins";
 
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+html,
+body {
+	max-width: 100%;
+	overflow-x: hidden;
 }
 
 body {
@@ -20,17 +21,17 @@ body {
 }
 p {
 	z-index: 10;
-	font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 	width: 96%;
 	margin-left: 3px;
 	font-size: 14px;
 }
 .title1 {
-	font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 	position: relative;
 	display: inline-block;
 	font-size: 2rem;
-	color:  $blue;
+	color: $blue;
 	margin-bottom: -5px;
 }
 
@@ -43,11 +44,11 @@ p {
 	color: transparent;
 	transition: 0.2s ease-out;
 	text-align: center;
-	font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 	font-size: 16px;
 }
 
-.title3{
+.title3 {
 	position: relative;
 	display: inline-block;
 	background: $darkBlue;
@@ -57,12 +58,11 @@ p {
 	transition: 0.2s ease-out;
 	text-align: left;
 	margin-left: 0px;
-	font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 	font-size: 16px;
-
 }
 
-.title4{
+.title4 {
 	position: relative;
 	display: inline-block;
 	background: $darkGreen;
@@ -72,9 +72,8 @@ p {
 	transition: 0.2s ease-out;
 	text-align: left;
 	margin-left: 0px;
-	font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 	font-size: 14px;
-
 }
 
 .cardfeed {
@@ -86,13 +85,13 @@ p {
 	grid-gap: 5%;
 }
 
-.Error{
+.Error {
 	margin: auto;
 	width: 50%;
 	padding: 10px;
 }
 
-.ImagenError{
+.ImagenError {
 	position: relative;
 	width: 500px;
 	margin-left: 0px;
@@ -103,13 +102,13 @@ p {
 	display: flex;
 }
 
-.contactTitle{
+.contactTitle {
 	@extend .title1;
 	display: block;
 	margin-bottom: 100px;
 }
 
-.contactTitle2{
+.contactTitle2 {
 	@extend .title2;
 	display: block;
 	margin-top: -80px;
@@ -118,67 +117,64 @@ p {
 	font-size: 1.4rem;
 }
 
-.map{
+.map {
 	display: block;
 	width: 50%;
 	margin-top: -90px;
 	min-width: 400px !important;
 	min-height: 200px;
-	
 }
 
-.pTry{
+.pTry {
 	margin-bottom: 26px;
 }
 
-.localization{
+.localization {
 	display: block;
 	margin-left: 100px;
 	margin-top: 10px;
 }
 
-.direccion{
+.direccion {
 	display: flex;
 }
 
-.directionBlock{
+.directionBlock {
 	display: block;
 	margin-bottom: 100px;
 }
 
-.EII_Image{
+.EII_Image {
 	display: block;
 	margin-top: -35px;
 	width: 120%;
 }
 
-.flexAbout{
+.flexAbout {
 	display: flex;
 	max-width: 98%;
 }
 
-.textAbout{
+.textAbout {
 	max-width: 77%;
 }
 
-.specialCard{
+.specialCard {
 	margin-top: -100px;
 	height: 100px;
 }
 
-.contactDirections{
-	display:flex;
+.contactDirections {
+	display: flex;
 }
 
-.contactLeft{
+.contactLeft {
 	flex-direction: left;
-	
 }
 
-.contactRight{
+.contactRight {
 	flex-direction: right;
 	margin-top: -30px;
-
 }
 
 @include tablet {
@@ -187,74 +183,72 @@ p {
 		margin-bottom: 40px;
 	}
 
-	.localization{
+	.localization {
 		margin-top: -85px;
 		margin-left: 30px;
 	}
 
-	.EII_Image{
+	.EII_Image {
 		width: 100%;
 	}
-	.textAbout{
+	.textAbout {
 		max-width: 58%;
 	}
 }
 
 @include mobile {
-
 	.cardfeed {
 		grid-template-columns: repeat(2, 1fr);
 		margin-bottom: 40px;
 	}
 
-	.localization{
+	.localization {
 		margin-top: -95px;
 		margin-left: 50px;
 	}
 
-	.map{
+	.map {
 		margin-bottom: 20px;
 	}
-	
-	.ImagenError{
+
+	.ImagenError {
 		position: relative;
 		width: 200px;
 		margin-left: 0px;
 		margin-top: 30px;
 	}
 
-	.textAbout{
+	.textAbout {
 		max-width: 50%;
 	}
-	.specialCard{
+	.specialCard {
 		margin-top: -30px;
 		height: 100px;
 	}
 }
 
-@include desktop{
-	.textAbout{
+@include desktop {
+	.textAbout {
 		max-width: 68%;
 	}
 }
 
 @include bigDesktop {
-
-	.localization{
+	.localization {
 		margin-top: 80px;
 		margin-left: 60px;
 	}
 
-	.pTry{
+	.pTry {
 		margin-bottom: -25px;
 	}
 
-	.EII_Image{
+	.EII_Image {
 		width: 170%;
 		margin-top: -60px;
 	}
 
-	.Error{
+	.Error {
 		margin: auto;
 		width: 30%;
 		padding: 10px;

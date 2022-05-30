@@ -12,7 +12,7 @@ import getConfig from 'next/config';
 import { fetchWrapper } from "../../pages/api/handlers/fetchWrapper";
 
 export default function UploadCardForm() {
-  const {formatMessage} = useIntl();
+  const { formatMessage } = useIntl();
   const f = id => formatMessage({ id })
   const [image, setImage] = useState(null);
   const [createObjectURL, setCreateObjectURL] = useState(null);
@@ -20,10 +20,10 @@ export default function UploadCardForm() {
   const [socialMedia1, setSocialMedia1] = useState(false);
   const [socialMedia2, setSocialMedia2] = useState(false);
   const [socialMedia3, setSocialMedia3] = useState(false);
-  
+
   const { publicRuntimeConfig } = getConfig();
   const baseUrl = `${publicRuntimeConfig.apiUrl}`;
-  
+
   var dataMap = new Map();
 
   const [options, setOptions] = useState({
@@ -62,7 +62,7 @@ export default function UploadCardForm() {
     }
     dataMap.set("shortDescription", shortDescription);
     dataMap.set("registry", date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear())
-    dataMap.set("timestamp", date.getFullYear()+ "-" +(date.getMonth() + 1)+ "-" +date.getDate() + "T" + date.getHours()+ ":" + date.getMinutes()+ ":" + date.getSeconds()+ "Z")
+    dataMap.set("timestamp", date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "T" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "Z")
     var longDescription = document.querySelector("#longDescription").value;
     if (!validateService.checkLength(longDescription, 230)) {
       throw f("DescripcionLarga")
@@ -163,7 +163,7 @@ export default function UploadCardForm() {
       <SearchCard
         name={document.querySelector("#name").value}
         img={image == null ? "/cardImages/notFound.jpg" : "/temporalImages/" + image.name}
-        index = "SpecialCard"
+        index="SpecialCard"
         firtsLine={document.querySelector("#promotion").value == null ? "" : document.querySelector("#promotion").value}
         text={document.querySelector("#shortDescription").value == null ? "" : document.querySelector("#shortDescription").value}
         date={date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()}
@@ -196,7 +196,7 @@ export default function UploadCardForm() {
         const response2 = await fetchWrapper.post(`${baseUrl}/card/uploadInfo`, Array.from(dataMap.entries()));
         if (response2.status < 200 || response2.status > 299) {
           alertService.error(f("NoSePudoSubirCarta") + response2.text, options)
-        }else{
+        } else {
           alertService.success(f("SubidaCorrecta"), options)
         }
       }
@@ -263,8 +263,8 @@ export default function UploadCardForm() {
           <span className={styles.tooltip}>{f("LogrosTooltip")}</span>
         </div>
         <p className={styles.label}>{f("ImagenFormato")}</p>
-          <label htmlFor="fileUpload" className={styles.fileUploadLabel}>{f("SubirImagenCard")}</label>
-          <input type="file" id="fileUpload" className={styles.fileUpload} multiple={false} onChange={uploadToClient} title={f("SubirImagenCard")} />
+        <label htmlFor="fileUpload" className={styles.fileUploadLabel}>{f("SubirImagenCard")}</label>
+        <input type="file" id="fileUpload" className={styles.fileUpload} multiple={false} onChange={uploadToClient} title={f("SubirImagenCard")} />
         <div className={styles.section}><span>4</span>{f("InformacionExtra")}</div>
         <div className={styles.check}>
           <input type="checkbox" id="check" className={styles.checkBox} />
@@ -273,36 +273,36 @@ export default function UploadCardForm() {
         {socialMedia1 ?
           <div className={styles.mediaField}>
             <div className={styles.lefthalf}>
-            <label className={styles.label}>{f("NombreRedSocial")} 1*</label>
-            <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxLength="20" id="social1Text" />
+              <label className={styles.label}>{f("NombreRedSocial")} 1*</label>
+              <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxLength="20" id="social1Text" />
             </div>
             <div className={styles.righthalf}>
-            <label className={styles.label}>{f("RedSocialLink")} 1* </label>
-            <input type="url" placeholder={f("RedSocialLinkPlaceholder1")} id="social1" />
+              <label className={styles.label}>{f("RedSocialLink")} 1* </label>
+              <input type="url" placeholder={f("RedSocialLinkPlaceholder1")} id="social1" />
             </div>
           </div>
           : null}
         {socialMedia2 ?
           <div className={styles.mediaField}>
             <div className={styles.lefthalf}>
-            <label className={styles.label}>{f("NombreRedSocial")} 2*</label>
-            <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxLength="20" id="social2Text" />
+              <label className={styles.label}>{f("NombreRedSocial")} 2*</label>
+              <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxLength="20" id="social2Text" />
             </div>
             <div className={styles.righthalf}>
-            <label className={styles.label}>{f("RedSocialLink")} 2*</label>
-            <input type="url" placeholder={f("RedSocialLinkPlaceholder2")} id="social2" />
+              <label className={styles.label}>{f("RedSocialLink")} 2*</label>
+              <input type="url" placeholder={f("RedSocialLinkPlaceholder2")} id="social2" />
             </div>
           </div>
           : null}
         {socialMedia3 ?
           <div className={styles.mediaField}>
             <div className={styles.lefthalf}>
-            <label className={styles.label}>{f("NombreRedSocial")} 3*</label>
-            <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxLength="20" id="social3Text" />
+              <label className={styles.label}>{f("NombreRedSocial")} 3*</label>
+              <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxLength="20" id="social3Text" />
             </div>
             <div className={styles.righthalf}>
-            <label className={styles.label}>{f("RedSocialLink")} 3*</label>
-            <input type="url" placeholder={f("RedSocialLinkPlaceholder3")} id="social3" />
+              <label className={styles.label}>{f("RedSocialLink")} 3*</label>
+              <input type="url" placeholder={f("RedSocialLinkPlaceholder3")} id="social3" />
             </div>
           </div>
           : null}
@@ -318,13 +318,13 @@ export default function UploadCardForm() {
           <button
             className={styles.send}
             type="submit"
-            onClick = {() => {uploadToServer(); scroll(0,0);}}
+            onClick={() => { uploadToServer(); scroll(0, 0); }}
           >
             {f("SubirCarta")}
           </button>
         </div>
         <div>
-          <button type="button" className={styles.preview} onClick={createCard}>{card == null ?f("VistaPrevia") : f("RecargaCarta")}</button>
+          <button type="button" className={styles.preview} onClick={createCard}>{card == null ? f("VistaPrevia") : f("RecargaCarta")}</button>
           <div className={styles.card}>
             {card}
           </div>

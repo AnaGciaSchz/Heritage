@@ -6,7 +6,7 @@ import { useState } from "react";
 import { userService } from '../../services/userService';
 
 export default function Login() {
-  const {formatMessage} = useIntl();
+  const { formatMessage } = useIntl();
   const f = id => formatMessage({ id })
 
   const [options] = useState({
@@ -19,14 +19,14 @@ export default function Login() {
   const fillDataMap = () => {
     var username = document.querySelector("#username").value;
     if (validateService.checkEmpty(username)) {
-        throw f("EscribeUsername")
-      }
-      dataMap.set("username", username);
+      throw f("EscribeUsername")
+    }
+    dataMap.set("username", username);
 
     var password = document.querySelector("#password").value;
     if (validateService.checkEmpty(password)) {
-        throw f("EscribeContrasena")
-      }
+      throw f("EscribeContrasena")
+    }
     dataMap.set("password", password);
   }
 
@@ -34,11 +34,11 @@ export default function Login() {
   const uploadToServer = async (event) => {
     try {
       fillDataMap();
-      const response= userService.login(dataMap);
+      const response = userService.login(dataMap);
       if (response.status < 200 || response.status > 299) {
         var json = await response.json();
-        alertService.error(f("InformacionInvalida")+f(json.message), options)
-    }else{
+        alertService.error(f("InformacionInvalida") + f(json.message), options)
+      } else {
         alertService.success(f("LoginCorrecto"), options)
       }
     }
@@ -47,31 +47,31 @@ export default function Login() {
     }
   };
 
-    return (<>
-        <h1 className="title1">{f("FormularioLogin")}</h1>
-        <p>{f("DescripcionLogin")}</p>
-        <div className={styles.formLogin}>
-    <h1>{f("Login")}</h1>
-    <div>
+  return (<>
+    <h1 className="title1">{f("FormularioLogin")}</h1>
+    <p>{f("DescripcionLogin")}</p>
+    <div className={styles.formLogin}>
+      <h1>{f("Login")}</h1>
+      <div>
         <form>
-            <div>
-                <label className={styles.label}>{f("Usuario")}</label>
-                <input id="username" name="username" type="text" />
-            </div>
-            <div>
-                <label className={styles.label}>{f("Contraseña")}</label>
-                <input id="password" name="password" type="password" />
-            </div>
-            <button type="button" className={styles.buttonLogin}
-            onClick = {() => uploadToServer()}>
+          <div>
+            <label className={styles.label}>{f("Usuario")}</label>
+            <input id="username" name="username" type="text" />
+          </div>
+          <div>
+            <label className={styles.label}>{f("Contraseña")}</label>
+            <input id="password" name="password" type="password" />
+          </div>
+          <button type="button" className={styles.buttonLogin}
+            onClick={() => uploadToServer()}>
             {f("Login")}
-            </button>
-            <a href="/heritage_admin_register"  className={styles.link}>{f("Registro")}</a>
-            
-        </form>
-    </div>
-</div>
-</>
+          </button>
+          <a href="/heritage_admin_register" className={styles.link}>{f("Registro")}</a>
 
-    )
+        </form>
+      </div>
+    </div>
+  </>
+
+  )
 }

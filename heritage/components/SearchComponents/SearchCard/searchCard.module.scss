@@ -15,7 +15,7 @@
   margin: 0.5em;
 }
 
-.cardButton{
+.cardButton {
   color: $darkGreen;
   background-color: white;
   border-radius: 2em;
@@ -44,7 +44,7 @@
 
 .name {
   margin-top: -5%;
-  font-family:'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.25;
   margin: 0 0 10px;
   font-size: 16px;
@@ -53,27 +53,27 @@
 }
 
 .firtsLine {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.25;
   font-size: 14px;
   font-weight: bold;
 }
 
 .text {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.25;
   font-size: 14px;
 }
 
 .date {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 0.8;
   font-size: 12px;
 }
 
 .social {
   position: relative;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 0.8;
   font-size: 13px;
   font-weight: 700;
@@ -191,28 +191,27 @@
  * animation scale-in-center
  * ----------------------------------------
  */
- @-webkit-keyframes scale-in-center {
+@-webkit-keyframes scale-in-center {
   0% {
     -webkit-transform: scale(0);
-            transform: scale(0);
+    transform: scale(0);
     opacity: 1;
   }
   100% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     opacity: 1;
   }
 }
 @keyframes scale-in-center {
   0% {
     -webkit-transform: scale(0);
-            transform: scale(0);
+    transform: scale(0);
     opacity: 1;
   }
   100% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     opacity: 1;
   }
 }
-

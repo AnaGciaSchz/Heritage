@@ -11,18 +11,18 @@ const whitelist = [
 ]
 
 const upload = multer({
-    storage: multer.diskStorage({
-      destination: './public/cardImages',
-      filename: (req, file, cb) => cb(null, file.originalname),
-    }),
-    fileFilter: (req, file, cb) => {
-      if (!whitelist.includes(file.mimetype)) {
-        logger.error("Error: La imagen elegida para la card no tiene formato correcto: png, jpeg, jpg o webp.")
-        return cb(new Error('file is not allowed'))
-      }
-      cb(null, true)
+  storage: multer.diskStorage({
+    destination: './public/cardImages',
+    filename: (req, file, cb) => cb(null, file.originalname),
+  }),
+  fileFilter: (req, file, cb) => {
+    if (!whitelist.includes(file.mimetype)) {
+      logger.error("Error: La imagen elegida para la card no tiene formato correcto: png, jpeg, jpg o webp.")
+      return cb(new Error('file is not allowed'))
     }
-  });
+    cb(null, true)
+  }
+});
 
 const uploadMiddleware = upload.single('image');
 
@@ -39,13 +39,13 @@ apiRoute.use(uploadMiddleware);
 
 apiRoute.post((req, res) => {
   logger.info("Se ha almacenado una imagen para una carta.")
-  res.status(200).json({ result: "ok", message: "Image uploaded to server"});
+  res.status(200).json({ result: "ok", message: "Image uploaded to server" });
 });
 
 export default apiRoute;
 
 export const config = {
   api: {
-    bodyParser: false, 
+    bodyParser: false,
   },
 };

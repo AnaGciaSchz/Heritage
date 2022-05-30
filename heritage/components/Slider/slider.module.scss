@@ -2,169 +2,165 @@
 @import "../../styles/sass/variables";
 
 .embla {
-    position: relative;
-    background-color: #ffffff;
-    max-width: 64%;
-    height: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: -120px;
-    margin-top:-4%;
-  }
-  .embla__viewport {
-    overflow: hidden;
-    width: 100%;
-    border-radius: 3em;
-  }
-  .embla__container {
-    display: flex;
-    -webkit-touch-callout: none;
-    -khtml-user-select: none;
-    user-select: none;
-    margin-left: -10px;
-  }
-  .embla__slide {
-    position: relative;
-    min-width: 100%;
-    min-height: 100%;
-    padding-left: 10px;
-  }
+  position: relative;
+  background-color: #ffffff;
+  max-width: 64%;
+  height: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -120px;
+  margin-top: -4%;
+}
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 3em;
+}
+.embla__container {
+  display: flex;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  user-select: none;
+  margin-left: -10px;
+}
+.embla__slide {
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+  padding-left: 10px;
+}
 
-  .embla__slide__inner {
-    position: relative;
-    overflow: hidden;
-    height: 800px;
-  }
+.embla__slide__inner {
+  position: relative;
+  overflow: hidden;
+  height: 800px;
+}
 
+.embla__slide__img {
+  position: absolute;
+  display: block;
+  top: 38%;
+  left: 50%;
+  max-width: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 3em;
+}
+
+.embla__button {
+  outline: 0;
+  cursor: pointer;
+  background-color: transparent;
+  touch-action: manipulation;
+  position: absolute;
+  -webkit-box-pack: center;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  fill: $darkBlue;
+  border-color: #ffffff;
+  padding: 0;
+  -webkit-box-align: center;
+}
+
+.embla__buttonprev {
+  @extend .embla__button;
+  left: 27px;
+}
+
+.embla__buttonnext {
+  @extend .embla__button;
+  right: 27px;
+}
+
+.embla__button__svg {
+  width: 150%;
+  height: 90%;
+  background-color: rgba(255, 255, 255, 0.575);
+  border-radius: 50px;
+}
+
+@include bigDesktop {
   .embla__slide__img {
-    position: absolute;
-    display: block;
-    top: 38%;
+    top: 53%;
     left: 50%;
-    max-width: 100%;
-    transform: translate(-50%, -50%);
-    border-radius: 3em;
   }
 
-  .embla__button {
-    outline: 0;
-    cursor: pointer;
-    background-color: transparent;
-    touch-action: manipulation;
-    position: absolute;
-    -webkit-box-pack: center;
-    z-index: 1;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 0;
-    width: 30px;
-    height: 30px;
-    justify-content: center;
-    align-items: center;
-    fill: $darkBlue;
-    border-color: #ffffff;
-    padding: 0;
-    -webkit-box-align: center;
-  }
-
-  .embla__buttonprev {
-    @extend .embla__button;
-    left: 27px;
-  }
-
-  .embla__buttonnext {
-    @extend .embla__button;
-    right: 27px;
+  .embla {
+    margin-bottom: 100px;
   }
 
   .embla__button__svg {
-    width: 150%;
-    height: 90%;
-    background-color: rgba(255, 255, 255, 0.575);
-    border-radius: 50px;
+    height: 120%;
+    margin-top: 120px;
+  }
+}
+
+@include desktop {
+  .embla__slide__img {
+    top: 53%;
+    left: 50%;
   }
 
-  @include bigDesktop{
-    .embla__slide__img {
-        top: 53%;
-        left: 50%;
-      }
-
-      .embla {
-        margin-bottom: 100px
-      }
-
-      .embla__button__svg {
-        height: 120%;
-        margin-top: 120px;
-      }
+  .embla {
+    margin-bottom: -300px;
+    margin-top: 0px;
   }
 
-  
-  @include desktop{
-    .embla__slide__img {
-        top: 53%;
-        left: 50%;
-      }
-
-      .embla {
-        margin-bottom: -300px;
-        margin-top: 0px;
-      }
-
-      .embla__slide__inner {
-        height: 400px;
-      }
-
-      .embla__button__svg {
-        position: absolute;
-        height: 100%;
-        margin-top: -150px;
-        margin-left: -30px;
-      }
+  .embla__slide__inner {
+    height: 400px;
   }
 
-  @include tablet{
-    .embla__slide__img {
-        top: 25%;
-        left: 50%;
-      }
+  .embla__button__svg {
+    position: absolute;
+    height: 100%;
+    margin-top: -150px;
+    margin-left: -30px;
+  }
+}
 
-      .embla__slide__inner {
-        height: 700px;
-      }
-
-      .embla {
-        height: 450px;
-        margin-bottom: -100px;
-        margin-top: 15px;
-      }
-
-      .embla__button {
-          top:40%;
-      }
+@include tablet {
+  .embla__slide__img {
+    top: 25%;
+    left: 50%;
   }
 
-  @include mobile{
-    .embla__slide__img {
-        top: 25%;
-        left: 50%;
-      }
-
-      .embla__slide__inner {
-        height: 500px;
-      }
-
-      .embla {
-        height: 350px;
-        margin-bottom: -100px;
-        margin-top: 45px;
-      }
-
-      .embla__button {
-          top:40%;
-      }
+  .embla__slide__inner {
+    height: 700px;
   }
-  
-  
-  
+
+  .embla {
+    height: 450px;
+    margin-bottom: -100px;
+    margin-top: 15px;
+  }
+
+  .embla__button {
+    top: 40%;
+  }
+}
+
+@include mobile {
+  .embla__slide__img {
+    top: 25%;
+    left: 50%;
+  }
+
+  .embla__slide__inner {
+    height: 500px;
+  }
+
+  .embla {
+    height: 350px;
+    margin-bottom: -100px;
+    margin-top: 45px;
+  }
+
+  .embla__button {
+    top: 40%;
+  }
+}

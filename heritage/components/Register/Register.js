@@ -9,9 +9,9 @@ import getConfig from 'next/config';
 
 
 export default function Register() {
-  const {formatMessage} = useIntl();
+  const { formatMessage } = useIntl();
   const f = id => formatMessage({ id })
-  
+
   const { publicRuntimeConfig } = getConfig();
   const baseUrl = `${publicRuntimeConfig.apiUrl}`;
 
@@ -31,19 +31,19 @@ export default function Register() {
 
     var username = document.querySelector("#username").value;
     if (!validateService.checkLength(username, 20)) {
-        throw f("EscribeUsername")
-      }
-      dataMap.set("username", username);
+      throw f("EscribeUsername")
+    }
+    dataMap.set("username", username);
 
     var password = document.querySelector("#password").value;
     var repeatPassword = document.querySelector("#repeatPassword").value;
-    if (!validateService.checkValidPasswords(password,repeatPassword)) {
+    if (!validateService.checkValidPasswords(password, repeatPassword)) {
       throw f("ContrasenaNoCoincide")
     }
-    if(!validateService.checkSecurePassword(password)){
+    if (!validateService.checkSecurePassword(password)) {
       throw f("EscribeContrasena")
     }
-        dataMap.set("password", password);
+    dataMap.set("password", password);
   }
 
   const uploadToServer = async (event) => {
@@ -52,8 +52,8 @@ export default function Register() {
       const response = await fetchWrapper.post(`${baseUrl}/admin/register`, Array.from(dataMap.entries()));
       if (response.status < 200 || response.status > 299) {
         var json = await response.json();
-        alertService.error(f("InformacionInvalida")+f(json.message), options)
-    }else{
+        alertService.error(f("InformacionInvalida") + f(json.message), options)
+      } else {
         alertService.success(f("RegistroCorrecto"), options)
       }
     }
@@ -63,40 +63,40 @@ export default function Register() {
   };
 
 
-    return (<>
-        <h1 className="title1">{f("FormularioRegistro")}</h1>
-        <p>{f("DescripcionRegistro")}</p>
-        <div className={styles.formLogin}>
-    <h1>{f("Registro")}</h1>
-    <div>
+  return (<>
+    <h1 className="title1">{f("FormularioRegistro")}</h1>
+    <p>{f("DescripcionRegistro")}</p>
+    <div className={styles.formLogin}>
+      <h1>{f("Registro")}</h1>
+      <div>
         <form>
-            <div>
-                <label className={styles.label}>{f("Nombre")}</label>
-                <input id= "name" name="name" type="text" />
-            </div>
-            <div>
-                <label className={styles.label}>{f("Usuario")}</label>
-                <input id= "username" name="username" type="text" />
-            </div>
-            <div>
-                <label className={styles.label}>{f("Contraseña")}</label>
-                <input id="password" name="password" type="password" />
-            </div>
-            <div>
-                <label className={styles.label}>{f("RepetirContraseña")}</label>
-                <input id="repeatPassword" name="repeatPassword" type="password" />
-            </div>
-            <button className={styles.buttonLogin}
+          <div>
+            <label className={styles.label}>{f("Nombre")}</label>
+            <input id="name" name="name" type="text" />
+          </div>
+          <div>
+            <label className={styles.label}>{f("Usuario")}</label>
+            <input id="username" name="username" type="text" />
+          </div>
+          <div>
+            <label className={styles.label}>{f("Contraseña")}</label>
+            <input id="password" name="password" type="password" />
+          </div>
+          <div>
+            <label className={styles.label}>{f("RepetirContraseña")}</label>
+            <input id="repeatPassword" name="repeatPassword" type="password" />
+          </div>
+          <button className={styles.buttonLogin}
             type="button"
-            onClick = {() => uploadToServer()}>
+            onClick={() => uploadToServer()}>
             {f("Registrar")}
-            </button>
-            <a href="/" className={styles.link}>{f("Cancelar")}</a>
-            
-        </form>
-    </div>
-</div>
-</>
+          </button>
+          <a href="/" className={styles.link}>{f("Cancelar")}</a>
 
-    )
+        </form>
+      </div>
+    </div>
+  </>
+
+  )
 }

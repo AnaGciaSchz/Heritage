@@ -2,13 +2,13 @@
 @import "../../styles/sass/mixins";
 @import "../Logout//logout.module.scss";
 
-.editor{
+.editor {
     caret-color: black;
 }
 
-.buttonSave{
+.buttonSave {
     @extend .button;
-    position: relative; 
+    position: relative;
     top: 8px;
-    left: 10px; 
+    left: 10px;
 }

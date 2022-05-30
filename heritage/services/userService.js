@@ -15,7 +15,7 @@ export const userService = {
 
 function login(dataMap) {
     return fetchWrapper.post(`${baseUrl}/admin/login`, Array.from(dataMap.entries()))
-        .then(async(response) => {
+        .then(async (response) => {
             var userPromise = await response.text();
             var userObject = JSON.parse(userPromise);
             cookieCutter.set('heritageToken', userObject.token)

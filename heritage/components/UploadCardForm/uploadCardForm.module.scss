@@ -201,19 +201,19 @@
 .field:hover > .tooltip {
     opacity: 1;
 }
-.tooltip{
+.tooltip {
     position: absolute;
     opacity: 0;
     padding: 10px;
     background: #f1f1f1;
     border-radius: 5px;
 
--webkit-transition:all 0.2s ease-in;
-  -moz-transition:all 0.2s ease-in;
-        transition:all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
-.mediaField{
+.mediaField {
     display: grid;
     position: relative;
 }
@@ -226,7 +226,6 @@
     width: 50em;
     margin-left: 10px;
 }
-
 
 @include tablet {
     .send {

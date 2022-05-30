@@ -2,7 +2,7 @@
 @import "../../styles/sass/variables";
 @import "../../styles/sass/mixins";
 
-.buttonLogin{
+.buttonLogin {
     @extend .fileUploadLabel;
     width: 20%;
     margin-top: 10%;
@@ -13,21 +13,19 @@
 @include mobile {
     .form {
         width: 70%;
-        }
+    }
 
-    .buttonLogin{
+    .buttonLogin {
         width: 30%;
     }
-    
 }
 
 @include tablet {
     .form {
         width: 60%;
-        }
+    }
 
-    .buttonLogin{
+    .buttonLogin {
         width: 15%;
     }
-    
 }

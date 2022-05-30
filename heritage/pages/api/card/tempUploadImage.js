@@ -4,11 +4,11 @@ import multer from 'multer';
 const logger = require('pino')()
 
 const upload = multer({
-    storage: multer.diskStorage({
-      destination: './public/temporalImages',
-      filename: (req, file, cb) => cb(null, file.originalname),
-    }),
-  });
+  storage: multer.diskStorage({
+    destination: './public/temporalImages',
+    filename: (req, file, cb) => cb(null, file.originalname),
+  }),
+});
 
 const uploadMiddleware = upload.single('image');
 
@@ -25,7 +25,7 @@ apiRoute.use(uploadMiddleware);
 
 apiRoute.post((req, res) => {
   logger.info("Se ha almacenado una imagen temporalmente.")
-  res.status(200).json({ result: "ok", message: "Image uploaded to temp"});
+  res.status(200).json({ result: "ok", message: "Image uploaded to temp" });
 });
 
 export default apiRoute;

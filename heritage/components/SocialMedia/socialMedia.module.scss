@@ -1,7 +1,7 @@
 @import "../../styles/sass/mixins";
 @import "../../styles/sass/variables";
 
-.container{
+.container {
     flex-basis: 100px;
     height: 100px;
     margin-left: 380px;
@@ -10,18 +10,18 @@
 }
 
 .icono {
-	width: 300%;
+    width: 300%;
     margin-right: 10px;
     margin-left: -25px;
-	border-radius: 100%;
+    border-radius: 100%;
 }
 
 .socialFeed {
-	display: grid;
-	grid-auto-flow: column;
-	grid-gap: 50%;
-	align-self: center;
-	grid-auto-columns: 10%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 50%;
+    align-self: center;
+    grid-auto-columns: 10%;
 }
 
 .socialTitle {
@@ -29,28 +29,25 @@
 }
 
 @include tablet {
-    .container{
+    .container {
         margin-left: 200px;
     }
 }
 
 @include mobile {
-    .container{
+    .container {
         margin-left: 135px;
     }
 }
 
 @include desktop {
-
-    .container{
+    .container {
         margin-left: 250px;
     }
 }
 
 @include bigDesktop {
-
-    .container{
+    .container {
         margin-left: 480px;
     }
 }
-  

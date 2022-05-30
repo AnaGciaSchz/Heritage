@@ -2,41 +2,40 @@
 @import "../../../styles/sass/mixins";
 
 .layout {
-    display: flex;
-    gap: 16px;
-  }
-  .layoutFilter { 
-    grid-area: filter; 
-    margin-top: 10px; 
-  }
-  .layoutResult { 
-    grid-area: result;
-   }
+  display: flex;
+  gap: 16px;
+}
+.layoutFilter {
+  grid-area: filter;
+  margin-top: 10px;
+}
+.layoutResult {
+  grid-area: result;
+}
 
-  .expandable {
-    box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
-    width: 100%;
-    background: #ffffff;
-    border-radius: 8px;
-    position: relative;
-      width: 200px;
-      margin-bottom: 20px;
-      color:$darkGreen;
-      cursor: pointer;
-      font-size: 15px;
-      font-family: "Roboto", sans-serif;
-  }
+.expandable {
+  box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  position: relative;
+  width: 200px;
+  margin-bottom: 20px;
+  color: $darkGreen;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+}
 
-  .titleSideFirst{
-	position: relative;
-	display: inline-block;
-	font-size: 1.2rem;
-	background: $green;
-	background-clip: text;
-	color: transparent;
-	text-align: center;
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-  margin-top:10px;
-    
-  }
+.titleSideFirst {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2rem;
+  background: $green;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+}

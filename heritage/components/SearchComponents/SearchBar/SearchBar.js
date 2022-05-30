@@ -9,13 +9,13 @@ export default function SearchBar(props) {
   const f = id => formatMessage({ id })
   const [isClicked, setClick] = React.useState(false);
   const [hasText, setHasText] = React.useState(false);
-  const onChange = (event) => { { event.target.value == "" ? setHasText(false) : setHasText(true); }; props.setQuery(event.target.value); props.setChange();}
-  const emptySearch = () => { document.getElementById('searchBar').value = ""; setClick(false);setHasText(false); props.setQuery(""); props.setChange();}
+  const onChange = (event) => { { event.target.value == "" ? setHasText(false) : setHasText(true); }; props.setQuery(event.target.value); props.setChange(); }
+  const emptySearch = () => { document.getElementById('searchBar').value = ""; setClick(false); setHasText(false); props.setQuery(""); props.setChange(); }
 
   return (
     <>
       <div className={styles.searchZone}>
-        <img className={styles.searchIcon} alt= {f("AlternateSearchIcon")} src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjog
+        <img className={styles.searchIcon} alt={f("AlternateSearchIcon")} src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjog
         QWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzI
         wMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk
         2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHB
@@ -28,9 +28,9 @@ export default function SearchBar(props) {
           className={isClicked ? styles.searchClicked : styles.searchNoClicked}
           onChange={onChange}
           onClick={() => setClick(true)}
-           />
+        />
 
-        <img className={hasText && isClicked?styles.clearIconVisible:styles.clearIconNoVisible} alt={f("ClearSearchIcon")} onClick={emptySearch}
+        <img className={hasText && isClicked ? styles.clearIconVisible : styles.clearIconNoVisible} alt={f("ClearSearchIcon")} onClick={emptySearch}
           src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBT
         VkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d
         3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxLjk3NiA1MS45NzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3
@@ -43,8 +43,8 @@ export default function SearchBar(props) {
         xnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
       </div>
       <Sort
-      setSort = {props.setSort}
-      change = {props.setChange}/>
+        setSort={props.setSort}
+        change={props.setChange} />
     </>
   )
 }

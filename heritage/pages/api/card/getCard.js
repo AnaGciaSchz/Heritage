@@ -27,31 +27,31 @@ function handler(req, res) {
 
 
 async function getTheCard(req, res) {
-    if(!validateService.checkExistsBody(req.body)){
-        res.status(404).json({result: "error", message: "Body not found"})
+    if (!validateService.checkExistsBody(req.body)) {
+        res.status(404).json({ result: "error", message: "Body not found" })
         return;
     }
     if (esClient != null) {
         let dataMap = new Map(req.body);
-        let body = {"query": { "bool": {"filter": {"term": {"_id": dataMap.get("id")}}}}}
-    await esClient.search({
-        index: dataMap.get("index"),
-        body: body
-    })
-        .then(
-            response => {
-                logger.info('Se ha retornado la carta de id: '+dataMap.get("id")+'e index: '+dataMap.get("index")+".")
-              res.status(200).json({result: "ok", message: {hits: response.body.hits.hits}})
-            },
-            err => {
-                logger.error('Ha habido un error intentando retornar la carta de id: '+dataMap.get("id")+'e index: '+dataMap.get("index")+".")
-                logger.error(err.message)
-              res.status(404).json({result: "error", message: err.message + " on elastic search"})
-            }
-        );
-}
-else {
-    logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
-    res.status(500).json({ result: "error", message: "No elasticsearch client"});
-}
+        let body = { "query": { "bool": { "filter": { "term": { "_id": dataMap.get("id") } } } } }
+        await esClient.search({
+            index: dataMap.get("index"),
+            body: body
+        })
+            .then(
+                response => {
+                    logger.info('Se ha retornado la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + ".")
+                    res.status(200).json({ result: "ok", message: { hits: response.body.hits.hits } })
+                },
+                err => {
+                    logger.error('Ha habido un error intentando retornar la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + ".")
+                    logger.error(err.message)
+                    res.status(404).json({ result: "error", message: err.message + " on elastic search" })
+                }
+            );
+    }
+    else {
+        logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
+        res.status(500).json({ result: "error", message: "No elasticsearch client" });
+    }
 }

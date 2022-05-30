@@ -32,16 +32,16 @@ export default function MyApp({ Component, pageProps }) {
 
   function authCheck(url) {
     const privatePathsNormalUser = ['/EditorHistoria', '/ast/EditorHistoria', '/en/EditorHistoria', '/es/EditorHistoria', '/heritage_admin_register', '/ast/heritage_admin_register'
-      , '/en/heritage_admin_register', '/es/heritage_admin_register','/SubidaDeCartas','/es/SubidaDeCartas','/en/SubidaDeCartas','/ast/SubidaDeCartas'];
+      , '/en/heritage_admin_register', '/es/heritage_admin_register', '/SubidaDeCartas', '/es/SubidaDeCartas', '/en/SubidaDeCartas', '/ast/SubidaDeCartas'];
     const notAllowedPathAdmin = ['/heritage_admin_login', '/ast/heritage_admin_login'
       , '/en/heritage_admin_login', '/es/heritage_admin_login']
-    const publicUrls = ['/','/es','/en','/ast','/HistoriaEII','/es/HistoriaEII','/en/HistoriaEII', '/ast/HistoriaEII','/ZonaEgresados', '/es/ZonaEgresados',
-    '/en/ZonaEgresados','/ast/ZonaEgresados','/ZonaProfesorado','/es/ZonaProfesorado','/en/ZonaProfesorado','/ast/ZonaProfesorado','/ZonaDelegacion',
-    '/es/ZonaDelegacion','/en/ZonaDelegacion','/ast/ZonaDelegacion','/about','/es/about','/en/about','/ast/about','/Contacto','/es/Contacto',
-    '/en/Contacto','/ast/Contacto','/heritage_admin_login','/es/heritage_admin_login','/en/heritage_admin_login','/ast/heritage_admin_login',
-    '/500','/es/500','/en/500','/ast/500','/404','/es/404','/en/404','/ast/404']
+    const publicUrls = ['/', '/es', '/en', '/ast', '/HistoriaEII', '/es/HistoriaEII', '/en/HistoriaEII', '/ast/HistoriaEII', '/ZonaEgresados', '/es/ZonaEgresados',
+      '/en/ZonaEgresados', '/ast/ZonaEgresados', '/ZonaProfesorado', '/es/ZonaProfesorado', '/en/ZonaProfesorado', '/ast/ZonaProfesorado', '/ZonaDelegacion',
+      '/es/ZonaDelegacion', '/en/ZonaDelegacion', '/ast/ZonaDelegacion', '/about', '/es/about', '/en/about', '/ast/about', '/Contacto', '/es/Contacto',
+      '/en/Contacto', '/ast/Contacto', '/heritage_admin_login', '/es/heritage_admin_login', '/en/heritage_admin_login', '/ast/heritage_admin_login',
+      '/500', '/es/500', '/en/500', '/ast/500', '/404', '/es/404', '/en/404', '/ast/404']
     const path = url.split('?')[0];
-    if(!privatePathsNormalUser.includes(path) && !notAllowedPathAdmin.includes(path) && !publicUrls.includes(path)){
+    if (!privatePathsNormalUser.includes(path) && !notAllowedPathAdmin.includes(path) && !publicUrls.includes(path)) {
       router.push({
         pathname: "/404",
         locale: router.locale

@@ -1,39 +1,39 @@
 @import "../../styles/sass/mixins";
 @import "../../styles/sass/variables";
 
-	.s {
-    box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
-    width: 100%;
-    background: $color-fondo-contenido;
-    border-radius: 8px;
-    position: relative;
-      width: 200px;
-      margin-bottom: 20px;
-      margin-top: 20px;
-      color:$darkGreen;
-      cursor: pointer;
-      font-size: 15px;
-      font-family: "Roboto", sans-serif;
-		padding: 1em;
-	}
+.s {
+  box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
+  background: $color-fondo-contenido;
+  border-radius: 8px;
+  position: relative;
+  width: 200px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: $darkGreen;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  padding: 1em;
+}
 
-  .selector{
-    display: grid;
-    grid-template-columns: auto;
-    position: relative;
-    padding: 30px 45px;
-    font-family: "Roboto", sans-serif;
-    font-size: 13px;
-    margin-top: -15px;
-    margin-bottom: -30px;
-  }
+.selector {
+  display: grid;
+  grid-template-columns: auto;
+  position: relative;
+  padding: 30px 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  margin-top: -15px;
+  margin-bottom: -30px;
+}
 
-    .label {
-      color: #636569;
-      cursor: pointer;
-    }
-    .input {
-      height: 15px;
-      width: 15px;
-      cursor: pointer;
-    }
+.label {
+  color: #636569;
+  cursor: pointer;
+}
+.input {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}

@@ -3,28 +3,28 @@ import { useState } from "react";
 import { useIntl } from "react-intl"
 import SearchBar from "components/SearchComponents/SearchBar/SearchBar.js"
 
-import {useDispatch,} from 'react-redux';
-import {changeInSearchBarByUser} from '../services/redux/features/search/searchSlice.js';
+import { useDispatch, } from 'react-redux';
+import { changeInSearchBarByUser } from '../services/redux/features/search/searchSlice.js';
 
 export default function ZonaProfesorado() {
     const { formatMessage } = useIntl();
     const f = id => formatMessage({ id })
 
     const [query, setQuery] = useState("");
-    const [sort,setSort] = useState("asc");
+    const [sort, setSort] = useState("asc");
 
-    const dispatch = useDispatch() 
+    const dispatch = useDispatch()
     return (
         <>
             <h1 className="title1">{f("ZProfesorado")}</h1>
             <SearchBar
                 setQuery={setQuery}
-                setSort = {setSort}
+                setSort={setSort}
                 setChange={() => dispatch(changeInSearchBarByUser())}
             />
             <SearchLayout
                 query={query}
-                sort = {sort}
+                sort={sort}
                 index="professor-card"
             />
         </>

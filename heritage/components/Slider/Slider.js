@@ -5,22 +5,22 @@ import styles from './slider.module.scss'
 import { useIntl } from "react-intl"
 
 export default function Slider() {
-    const [viewportRef, embla] = useEmblaCarousel({ loop: false });
-    const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-    const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+  const [viewportRef, embla] = useEmblaCarousel({ loop: false });
+  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
-    const {formatMessage} = useIntl();
-    const f = id => formatMessage({ id })
-  
-    const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
-    const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
+  const { formatMessage } = useIntl();
+  const f = id => formatMessage({ id })
 
-    const slides = [
-         '/slider/1.png' ,
-        '/slider/2.png' ,
-        '/slider/3.png' ,
-         '/slider/4.png' ]
-    
+  const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
+  const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
+
+  const slides = [
+    '/slider/1.png',
+    '/slider/2.png',
+    '/slider/3.png',
+    '/slider/4.png']
+
   const onSelect = useCallback(() => {
     if (!embla) return;
     setPrevBtnEnabled(embla.canScrollPrev());
@@ -42,7 +42,7 @@ export default function Slider() {
             <div className={styles.embla__slide} key={index}>
               <div className={styles.embla__slide__inner}>
                 <img
-                  className={styles.embla__slide__img }
+                  className={styles.embla__slide__img}
                   src={index}
                   alt={f("PromocionHeritage")}
                 />

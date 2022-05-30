@@ -1,42 +1,41 @@
 @import "../../styles/sass/variables";
 @import "../../styles/sass/mixins";
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 .option {
-    text-decoration: none;
-    line-height: 1;
-    font-family: 'Roboto', sans-serif;
-    font-size: 13px;
-    
-    position: relative;
-    z-index: 0;
-    display: inline-block;
-    padding: 5px 5px;
-    overflow: hidden;
-    color: #333;
-    vertical-align: bottom;
-    transition: color .3s ease-out;
+   text-decoration: none;
+   line-height: 1;
+   font-family: "Roboto", sans-serif;
+   font-size: 13px;
+
+   position: relative;
+   z-index: 0;
+   display: inline-block;
+   padding: 5px 5px;
+   overflow: hidden;
+   color: #333;
+   vertical-align: bottom;
+   transition: color 0.3s ease-out;
 }
 
 .option::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    transform: translateY(calc(100% - 2px));
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(60deg, $green 0%, #c2e59c 100%);
-    transition: transform .25s ease-out;
- }
- 
- .option:hover { 
-    color: #fff; 
-    cursor: pointer;
- }
- .option:hover::before {
-    transform: translateY(0);
-    transition: transform .25s ease-out;
- }
- 
+   content: "";
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   transform: translateY(calc(100% - 2px));
+   width: 100%;
+   height: 100%;
+   background-image: linear-gradient(60deg, $green 0%, #c2e59c 100%);
+   transition: transform 0.25s ease-out;
+}
+
+.option:hover {
+   color: #fff;
+   cursor: pointer;
+}
+.option:hover::before {
+   transform: translateY(0);
+   transition: transform 0.25s ease-out;
+}

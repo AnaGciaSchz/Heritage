@@ -6,19 +6,19 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router"
 
 export default function Logout() {
-    const {formatMessage} = useIntl();
+    const { formatMessage } = useIntl();
     const f = id => formatMessage({ id })
     const [logout, setLogout] = useState(null);
     const router = useRouter();
 
     useEffect(() => {
-        if(cookieCutter.get('userName')  != null){
-           setLogout( <button onClick={userService.logout} className={styles.button}>{f("Logout")}</button>)
-        }else{
+        if (cookieCutter.get('userName') != null) {
+            setLogout(<button onClick={userService.logout} className={styles.button}>{f("Logout")}</button>)
+        } else {
             setLogout(null)
         }
-        
+
     }, [router.locale, router.asPath]);
-        return (logout)
-    
+    return (logout)
+
 }

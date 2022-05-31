@@ -30,6 +30,22 @@
   font-weight: 600;
 }
 
+.imageContainer{
+  height: 13em;
+  width: 13em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image{
+  max-height: 13em;
+  max-width: 13em;
+  align-items: center;
+  justify-content: center;
+}
+
 .quitCard {
   @extend .card;
   -webkit-animation: flip-out-ver-left 0.45s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;

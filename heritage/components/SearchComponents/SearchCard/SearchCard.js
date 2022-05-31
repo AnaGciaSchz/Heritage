@@ -29,7 +29,6 @@ export default function SearchCard(props) {
   var dataMap = new Map();
 
   function createDeleteButton() {
-    console.log(props.img)
     if (cookieCutter.get('userName') != null && props.index != "SpecialCard") {
       setDeleteButton(<button className={styles.cardButton} onClick={dialogWindow}>{f("Eliminar")}</button>)
     } else {
@@ -80,10 +79,12 @@ export default function SearchCard(props) {
           {deletedMessage}
           <p className={styles.name}>{props.name}</p>
           <p className={styles.date}>{f("CartaRegistro") + ": " + props.date}</p>
+          <div className={styles.imageContainer}>
           <img className={styles.image}
             src={props.img}
             alt={f("CartaImagenAlt")}
           />
+          </div>
           <p className={styles.firtsLine}>{f("Promocion") + ": " + props.firtsLine}</p>
           <p className={styles.text}>{props.text}</p>
         </div>}

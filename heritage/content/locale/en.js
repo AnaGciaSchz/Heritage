@@ -96,7 +96,7 @@ export const en = {
     ContrasenaNoCorrecta: "Password is not correct.",
     LoginCorrecto: "Logged in.",
     TituloButton: "Menu icon",
-    InformacionInvalida: "Invalid information: ",
+    InformacionInvalida: "Invalid information, check user and password ",
     HaOcurridoError: "An error has ocurred: "
   },
   "/heritage_admin_register": {
@@ -141,7 +141,7 @@ export const en = {
     EscribeUsername: "Write a username with, at least, 20 characters",
     EscribeContrasena: " The password must have a lengh of 8, a number, an uppercase and a lowercase letter and a special character.",
     ContrasenaNoCoincide: "Write a password and repeat it correctly.",
-    InformacionInvalida: "Invalid information: ",
+    InformacionInvalida: "Invalid information, check user and password ",
     RegistroCorrecto: "User was registered correctly.",
     HaOcurridoUnError: "An error has ocurred: ",
     NombreDeUsuarioEnUso: "That username already exists.",

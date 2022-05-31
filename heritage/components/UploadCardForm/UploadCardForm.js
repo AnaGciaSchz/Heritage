@@ -61,7 +61,7 @@ export default function UploadCardForm() {
     }
     dataMap.set("shortDescription", shortDescription);
     dataMap.set("registry", date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear())
-    dataMap.set("timestamp", date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "T" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "Z")
+    dataMap.set("timestamp", Date.parse(date))
     var longDescription = document.querySelector("#longDescription").value;
     if (!validateService.checkLength(longDescription, 230)) {
       throw f("DescripcionLarga")
@@ -167,7 +167,7 @@ export default function UploadCardForm() {
     setCard(
       <SearchCard
         name={document.querySelector("#name").value}
-        img={image == null ? "/cardImages/notFound.jpg" : image}
+        img={image == null ? "/notFound.jpg" : image}
         index="SpecialCard"
         firtsLine={document.querySelector("#promotion").value == null ? "" : document.querySelector("#promotion").value}
         text={document.querySelector("#shortDescription").value == null ? "" : document.querySelector("#shortDescription").value}

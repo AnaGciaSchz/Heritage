@@ -96,7 +96,7 @@ export const ast = {
     ContrasenaNoCorrecta: "La contraseña nun ye correcta.",
     LoginCorrecto: "Logueado correchamente",
     TituloButton: "Iconu del menú",
-    InformacionInvalida: "Información Inválida: ",
+    InformacionInvalida: "Información Inválida, revisa usuariu y contraseña ",
     HaOcurridoError: "Asocedió un erru: "
   },
   "/heritage_admin_register": {
@@ -141,7 +141,7 @@ export const ast = {
     EscribeUsername: "Escribe un usuariu con menos de 20 calteres.",
     EscribeContrasena: "La contraseña tien de tener un tamañu de mínimu 8 calteres y contener siquier un númberu, una lletra minúscula, una lletra mayúscula y un caracter especial.",
     ContrasenaNoCoincide: "Escribe una contraseña y repitir correchamente.",
-    InformacionInvalida: "Información inválida: ",
+    InformacionInvalida: "Información Inválida, revisa usuariu y contraseña ",
     RegistroCorrecto: "Usuariu rexistráu correchamente.",
     HaOcurridoUnError: "Asocedió un erru: ",
     NombreDeUsuarioEnUso: "Ese nome d'usuariu yá esiste.",

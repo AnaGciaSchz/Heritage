@@ -81,7 +81,8 @@ const mapping = {
                 "type": "text"
             },
             "timestamp": {
-                "type": "keyword"
+                "type": "date",
+                "format":"epoch_millis"
             },
             "shortDescription": {
                 "type": "text",

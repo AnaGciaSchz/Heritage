@@ -96,7 +96,7 @@ export const es = {
     LoginCorrecto: "Logueado correctamente.",
     TituloButton: "Icono del menú",
     Logout: "Cerrar sesión",
-    InformacionInvalida: "Información Inválida: ",
+    InformacionInvalida: "Información Inválida, revisa usuario y contraseña ",
     HaOcurridoError: "Ha ocurrido un error: "
   },
   "/heritage_admin_register": {
@@ -140,7 +140,7 @@ export const es = {
     EscribeUsername: "Escribe un username con menos de 20 caracteres.",
     EscribeContrasena: "La contraseña debe tener un tamaño de mínimo 8 caracteres y contener al menos un número, una letra minúscula, una letra mayúscula y un caracter especial.",
     ContrasenaNoCoincide: "Escribe una contraseña y repítela correctamente.",
-    InformacionInvalida: "Información inválida: ",
+    InformacionInvalida: "Información Inválida, revisa usuario y contraseña ",
     RegistroCorrecto: "Usuario registrado correctamente.",
     HaOcurridoUnError: "Ha ocurrido un error: ",
     NombreDeUsuarioEnUso: "Ese nombre de usuario ya existe.",

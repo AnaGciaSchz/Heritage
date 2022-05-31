@@ -37,8 +37,6 @@ export default function Login() {
       const status = await userService.login(dataMap);
       if (status < 200 || status > 299) {
         alertService.error(f("InformacionInvalida"), options)
-      } else {
-        alertService.success(f("LoginCorrecto"), options)
       }
     }
     catch (error) {

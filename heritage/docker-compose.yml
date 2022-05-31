@@ -23,6 +23,5 @@ services:
     ports: 
       - 3000:3000
     volumes: 
-      - ./public/cardImages:/usr/app/public/cardImages
       - ./data/admin.json:/usr/app/data/admin.json
       - ./public/history:/usr/app/public/history

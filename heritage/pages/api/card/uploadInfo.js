@@ -32,8 +32,6 @@ async function uploadInfo(req, res) {
   }
   if (esClient != null) {
     var dataMap = new Map(req.body);
-    console.log("uploadInfo")
-    console.log(dataMap.get("image"))
     esClient.index({
       index: dataMap.get("index"),
       body: {

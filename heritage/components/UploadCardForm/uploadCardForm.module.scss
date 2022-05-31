@@ -50,9 +50,25 @@
     margin-top: 10px;
 }
 
-.form input[type="text"],
+.form input[type="url"]{
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 40vw;
+    padding: 8px;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 1em;
+    border: 0.3px solid rgba(145, 141, 141, 0.548);
+    -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    caret-color: black;
+
+}
 .form input[type="password"],
-.form input[type="url"],
+.form input[type="text"],
 .form textarea,
 .form select {
     display: block;

@@ -233,6 +233,9 @@ export default function UploadCardForm() {
           <textarea type="textarea" placeholder={f("DescripcionCortaEjemplo")} maxLength="120" rows="3" id="shortDescription"></textarea>
           <span className={styles.tooltip}>{f("DescripcionCortaTooltip")}</span>
         </div>
+        <p className={styles.label}>{f("ImagenFormato")}</p>
+        <label htmlFor="fileUpload" className={styles.fileUploadLabel}>{f("SubirImagenCard")}</label>
+        <input type="file" id="fileUpload" className={styles.fileUpload} multiple={false} onChange={uploadToClient} title={f("SubirImagenCard")} />
         <div className={styles.section}><span>3</span>{f("ReversoCartaInformacion")}</div>
         <div className={styles.field}>
           <label className={styles.label}>{f("DescripcionLarga")}*</label>
@@ -244,9 +247,6 @@ export default function UploadCardForm() {
           <textarea type="textarea" placeholder={f("LogrosEjemplo")} maxLength="230" rows="5" id="archievements"></textarea>
           <span className={styles.tooltip}>{f("LogrosTooltip")}</span>
         </div>
-        <p className={styles.label}>{f("ImagenFormato")}</p>
-        <label htmlFor="fileUpload" className={styles.fileUploadLabel}>{f("SubirImagenCard")}</label>
-        <input type="file" id="fileUpload" className={styles.fileUpload} multiple={false} onChange={uploadToClient} title={f("SubirImagenCard")} />
         <div className={styles.section}><span>4</span>{f("InformacionExtra")}</div>
         <div className={styles.check}>
           <input type="checkbox" id="check" className={styles.checkBox} />

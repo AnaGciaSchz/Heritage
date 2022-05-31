@@ -51,7 +51,7 @@ async function update(req, res) {
                     Red3: dataMap.has("social3Text") ? dataMap.get("social3Text") : "",
                     Red3Link: dataMap.has("social3") ? dataMap.get("social3") : "",
                     AppearsInAnotherCategory: dataMap.get("check"),
-                    image: "/cardImages/" + dataMap.get("image")
+                    image: dataMap.get("image")
                 }
             }
         })

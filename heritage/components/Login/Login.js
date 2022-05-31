@@ -34,10 +34,9 @@ export default function Login() {
   const uploadToServer = async (event) => {
     try {
       fillDataMap();
-      const response = userService.login(dataMap);
-      if (response.status < 200 || response.status > 299) {
-        var json = await response.json();
-        alertService.error(f("InformacionInvalida") + f(json.message), options)
+      const status = await userService.login(dataMap);
+      if (status < 200 || status > 299) {
+        alertService.error(f("InformacionInvalida"), options)
       } else {
         alertService.success(f("LoginCorrecto"), options)
       }

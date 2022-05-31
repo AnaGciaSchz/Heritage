@@ -36,6 +36,8 @@ async function authenticate(req, res) {
         var dataMap = new Map(req.body);
         var i = 0;
         for (i; i < admins.length; i++) {
+            console.log(admins[i].username)
+            console.log(admins[i].username == dataMap.get("username"))
             if (admins[i].username == dataMap.get("username")) {
                 var password = admins[i].password;
                 admin = admins[i]
@@ -56,5 +58,7 @@ async function authenticate(req, res) {
                 return;
             }
         }
+        logger.warn('Usuario: ' + admin.username + 'no existe.')
+        res.status(400).json({ result: "error", message: "ContrasenaNoCorrecta" })
     }
 }

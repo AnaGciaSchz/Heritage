@@ -16,12 +16,14 @@ export const userService = {
 function login(dataMap) {
     return fetchWrapper.post(`${baseUrl}/admin/login`, Array.from(dataMap.entries()))
         .then(async (response) => {
+            if(response.status >= 200 && response.status <= 299) {
             var userPromise = await response.text();
             var userObject = JSON.parse(userPromise);
             cookieCutter.set('heritageToken', userObject.token)
             cookieCutter.set('userName', userObject.username)
             Router.push('/');
-            return response;
+            }
+            return response.status;
         });
 }
 

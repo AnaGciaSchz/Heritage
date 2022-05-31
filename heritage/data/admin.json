@@ -14,5 +14,21 @@
     "password": "$2b$11$/nU8W51l5btYafv6vECDN.NSeIOHX3y/q.uh6kD.AfvRuPPZx8jky",
     "created": "2022-5-31T0:33:58Z",
     "updated": "2022-5-31T0:33:58Z"
+  },
+  {
+    "id": 3,
+    "username": "Angel",
+    "name": "Angel",
+    "password": "$2b$11$9i85FBIwnHqpyrE5hIZScumvPvrj9YI6QlhZrXF6iKxFkZMaFg2gO",
+    "created": "2022-5-30T23:40:46Z",
+    "updated": "2022-5-30T23:40:46Z"
+  },
+  {
+    "id": 4,
+    "username": "ANAA",
+    "name": "ANAA",
+    "password": "$2b$11$OJyNPHZgBNE/66ON4.uEoug946Vek1iCRSTGA1Ze4xA3znKOztVt2",
+    "created": "2022-5-30T23:59:30Z",
+    "updated": "2022-5-30T23:59:30Z"
   }
 ]

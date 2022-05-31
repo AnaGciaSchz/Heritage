@@ -13,8 +13,6 @@ export default function jwtMiddleware(req, res) {
                 '/api/card/getCard',
                 '/api/card/lastCard',
                 '/api/card/search',
-                '/api/card/tempUploadImage',
-                '/api/card/uploadImage',
                 '/api/history/getInfo',
                 '/api/create'
 

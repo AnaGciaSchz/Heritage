@@ -29,6 +29,7 @@ export default function SearchCard(props) {
   var dataMap = new Map();
 
   function createDeleteButton() {
+    console.log(props.img)
     if (cookieCutter.get('userName') != null && props.index != "SpecialCard") {
       setDeleteButton(<button className={styles.cardButton} onClick={dialogWindow}>{f("Eliminar")}</button>)
     } else {
@@ -49,8 +50,6 @@ export default function SearchCard(props) {
     try {
       dataMap.set("index", props.index);
       dataMap.set("id", props.id);
-      dataMap.set("image", props.img)
-      dataMap.set("AppearsInAnotherCategory", props.star)
       const response = await fetchWrapper.remove(`${baseUrl}/card/delete`, Array.from(dataMap.entries()));
       if (response.status < 200 || response.status > 299) {
         setDeletedMessage(<p>{f("NoEliminado")}</p>)
@@ -81,13 +80,9 @@ export default function SearchCard(props) {
           {deletedMessage}
           <p className={styles.name}>{props.name}</p>
           <p className={styles.date}>{f("CartaRegistro") + ": " + props.date}</p>
-          <Image className={styles.image}
+          <img className={styles.image}
             src={props.img}
             alt={f("CartaImagenAlt")}
-            layout='responsive'
-            width="0"
-            height="0"
-            objectFit="contain"
           />
           <p className={styles.firtsLine}>{f("Promocion") + ": " + props.firtsLine}</p>
           <p className={styles.text}>{props.text}</p>

@@ -25,22 +25,6 @@ function handler(req, res) {
   }
 }
 
-function deleteTemporalData() {
-  var fs = require('fs');
-  var path = require('path');
-  var directory = './public/temporalImages';
-
-  fs.readdir(directory, (err, files) => {
-    if (err) logger.error("Error intentando borrar la carpeta de imagenes temporales");
-
-    for (const file of files) {
-      fs.unlink(path.join(directory, file), err => {
-        if (err) logger.error("Error intentando borrar la carpeta de imagenes temporales");
-      });
-    }
-  });
-}
-
 async function uploadInfo(req, res) {
   if (!validateService.checkExistsBody(req.body)) {
     res.status(404).json({ result: "error", message: "Body not found" })
@@ -48,6 +32,8 @@ async function uploadInfo(req, res) {
   }
   if (esClient != null) {
     var dataMap = new Map(req.body);
+    console.log("uploadInfo")
+    console.log(dataMap.get("image"))
     esClient.index({
       index: dataMap.get("index"),
       body: {
@@ -65,13 +51,12 @@ async function uploadInfo(req, res) {
         "Red3": dataMap.has("social3Text") ? dataMap.get("social3Text") : "",
         "Red3Link": dataMap.has("social3") ? dataMap.get("social3") : "",
         "AppearsInAnotherCategory": dataMap.get("check"),
-        "image": "/cardImages/" + dataMap.get("image")
+        "image": dataMap.get("image")
       }
     }).then(
       () => {
         logger.info("Se ha añadido la carta con id: " + dataMap.get("id")
           + " correspondiente a: " + dataMap.get("name") + " en el índice: " + dataMap.get("index") + ".")
-        deleteTemporalData();
         res.status(200).json({ result: "ok", message: "The card was added to elastic search" })
       },
       err => {

@@ -15,7 +15,6 @@ export default function UploadCardForm() {
   const { formatMessage } = useIntl();
   const f = id => formatMessage({ id })
   const [image, setImage] = useState(null);
-  const [createObjectURL, setCreateObjectURL] = useState(null);
   const [card, setCard] = useState(null);
   const [socialMedia1, setSocialMedia1] = useState(false);
   const [socialMedia2, setSocialMedia2] = useState(false);
@@ -76,7 +75,7 @@ export default function UploadCardForm() {
     var check = document.querySelector("#check").checked;
     dataMap.set("check", check);
     if (image !== null) {
-      dataMap.set("image", image.name);
+      dataMap.set("image", image);
     }
     else {
       throw f("ImagenNecesaria")
@@ -119,13 +118,20 @@ export default function UploadCardForm() {
     }
   }
 
-  const uploadToClient = (event) => {
+  const toBase64 = image => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(image);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+});
+
+  const uploadToClient = async (event) => {
     if (event.target.files && event.target.files[0]) {
       const i = event.target.files[0];
 
-      setImage(i);
-      setCreateObjectURL(URL.createObjectURL(i));
-      uploadTemporalImage();
+      var image64= await toBase64(i)
+
+      setImage(image64);
     }
   };
 
@@ -157,12 +163,11 @@ export default function UploadCardForm() {
     }
   };
   const createCard = () => {
-    uploadTemporalImage();
     var date = new Date();
     setCard(
       <SearchCard
         name={document.querySelector("#name").value}
-        img={image == null ? "/cardImages/notFound.jpg" : "/temporalImages/" + image.name}
+        img={image == null ? "/cardImages/notFound.jpg" : image}
         index="SpecialCard"
         firtsLine={document.querySelector("#promotion").value == null ? "" : document.querySelector("#promotion").value}
         text={document.querySelector("#shortDescription").value == null ? "" : document.querySelector("#shortDescription").value}
@@ -183,38 +188,15 @@ export default function UploadCardForm() {
   const uploadToServer = async (event) => {
     try {
       fillDataMap();
-      const body = new FormData();
-      body.append("image", image);
-      const response = await fetch(`${baseUrl}/card/uploadImage`, {
-        method: "POST",
-        body
-      });
-      if (response.status < 200 || response.status > 299) {
-        alertService.error(f("NoSePudoSubirImagen") + response.text + ", the card hasn't been created, check data.", options)
-      }
-      else {
-        const response2 = await fetchWrapper.post(`${baseUrl}/card/uploadInfo`, Array.from(dataMap.entries()));
-        if (response2.status < 200 || response2.status > 299) {
-          alertService.error(f("NoSePudoSubirCarta") + response2.text, options)
+        const response = await fetchWrapper.post(`${baseUrl}/card/uploadInfo`, Array.from(dataMap.entries()));
+        if (response.status < 200 || response.status > 299) {
+          alertService.error(f("NoSePudoSubirCarta") + response.text, options)
         } else {
           alertService.success(f("SubidaCorrecta"), options)
         }
-      }
     }
     catch (error) {
       alertService.error(f("NoSePudoSubirCarta") + error, options)
-    }
-  };
-
-  const uploadTemporalImage = async () => {
-    const body = new FormData();
-    body.append("image", image);
-    const response = await fetch(`${baseUrl}/card/tempUploadImage`, {
-      method: "POST",
-      body
-    });
-    if (response.status < 200 || response.status > 299) {
-      alertService.error(response.text, options)
     }
   };
 

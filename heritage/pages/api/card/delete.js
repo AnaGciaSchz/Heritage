@@ -41,21 +41,8 @@ async function deleteCard(req, res) {
         })
             .then(
                 response => {
-                    if (dataMap.get("AppearsInAnotherCategory").toString() == "false") {
-                        const path = "public/" + dataMap.get("image");
-                        fileS.unlink(path, (err) => {
-                            if (err) {
-                                logger.error('Se ha eliminado la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + " pero no la imagen del usuario del sistema.")
-                                res.status(200).json({ result: "ok", message: "Card deleted but not the image" })
-                            } else {
-                                logger.info('Se ha eliminado la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + ".")
-                                res.status(200).json({ result: "ok", message: "Card deleted with image" })
-                            }
-                        })
-                    } else {
-                        logger.info('No se ha eliminado la imagen de la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + " porque se utiliza en otra carta.")
-                        res.status(200).json({ result: "ok", message: "Card deleted but not the image" })
-                    }
+                    logger.info('Se ha eliminado la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + ".")
+                    res.status(200).json({ result: "ok", message: "Card deleted with image" })
                 },
                 err => {
                     logger.error('Error en elastic al intentar eliminar la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + ".")

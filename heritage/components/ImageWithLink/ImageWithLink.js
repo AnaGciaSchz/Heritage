@@ -10,7 +10,7 @@ export default class ImageWithLink extends React.Component {
 
   render() {
     return (
-      <a href={this.props.referencia}>
+      <a href={this.props.referencia} target="_blank">
         <Image className={styles.image}
           src={this.props.img}
           alt={this.props.alt}

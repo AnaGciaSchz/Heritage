@@ -150,6 +150,7 @@ export const es = {
   "/EditorHistoria": {
     Copyright: "Copyright Universidad de Oviedo",
     AvisoLegal: "Aviso Legal",
+    SubidaCorrecta: "El texto se ha subido correctamente",
     PoliticaCookies: "Política de cookies",
     PoliticaPrivacidad: "Política de privacidad",
     logo: 'Logo de Heritage, representa la palabra algo curvada, de color verde, con un remarcado que pone "EII" encima, en azul. Sobre las letras está la silueta de un oso mirando hacia abajo.',
@@ -395,7 +396,7 @@ export const es = {
     QueEsHeritage: "¿Qué es Heritage?",
     Logout: "Cerrar sesión",
     SubidaDeCartas: "Subida de cartas",
-    ImagenFormato: "La imagen debe ser de tipo png, jpg, jpeg o webp",
+    ImagenFormato: "La imagen debe ser de tipo png, jpg, jpeg o webp*",
     Contacto: "Contacto",
     CartaImagenAlt: "Foto de la persona en la carta",
     CartaDescripcion: "Descripción",

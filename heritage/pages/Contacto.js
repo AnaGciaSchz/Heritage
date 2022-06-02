@@ -54,7 +54,7 @@ export default function Contacto() {
                 <p><b>{f("Telefono")}: </b>+34.985.10.28.94</p>
                 <h3 className="title3">{f("MasInfo")}</h3>
                 <br></br>
-                <a href="https://sies.uniovi.es/paginasblancas/web/busqueda-anonima/personal.faces" >{f("PaginasBlancas")}</a>
+                <a href="https://sies.uniovi.es/paginasblancas/web/busqueda-anonima/personal.faces" target="_blank">{f("PaginasBlancas")}</a>
             </div>
         </div>
     </>

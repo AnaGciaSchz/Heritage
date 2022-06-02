@@ -41,7 +41,7 @@ export default function About() {
         </p>
         <h2 className="title2">{f("SolicitarAcceso")}</h2>
         <p>{f("RellenaFormulario")}</p>
-        <p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=o3TqBcWSMUyXipJcPHmc0DH90oggaAhBn7dVtUeoY2RURUhFOVg3UE1ENjRaUlNPWjgzVTU3MDdRNS4u" >{f("FormularioHeritage")}</a></p>
+        <p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=o3TqBcWSMUyXipJcPHmc0DH90oggaAhBn7dVtUeoY2RURUhFOVg3UE1ENjRaUlNPWjgzVTU3MDdRNS4u" target="_blank">{f("FormularioHeritage")}</a></p>
 
     </>
 

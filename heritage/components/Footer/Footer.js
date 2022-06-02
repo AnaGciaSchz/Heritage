@@ -36,15 +36,15 @@ export default function Footer() {
 
           <ul className={styles.nav__ul}>
             <li>
-              <a href="https://ingenieriainformatica.uniovi.es/">{f("PaginaWeb")}</a>
+              <a href="https://ingenieriainformatica.uniovi.es/" target="_blank">{f("PaginaWeb")}</a>
             </li>
 
             <li>
-              <a href="https://ingenieriainformatica.uniovi.es/contacto">{f("Contacto")}</a>
+              <a href="https://ingenieriainformatica.uniovi.es/contacto" target="_blank">{f("Contacto")}</a>
             </li>
 
             <li>
-              <a href="https://ingenieriainformatica.uniovi.es/infoacademica/grado">{f("InformacionAcademica")}</a>
+              <a href="https://ingenieriainformatica.uniovi.es/infoacademica/grado" target="_blank">{f("InformacionAcademica")}</a>
             </li>
           </ul>
         </li>
@@ -54,15 +54,15 @@ export default function Footer() {
 
           <ul className={styles.nav__ul}>
             <li>
-              <a href="https://www.uniovi.es/">{f("PaginaWeb")}</a>
+              <a href="https://www.uniovi.es/" target="_blank">{f("PaginaWeb")}</a>
             </li>
 
             <li>
-              <a href="https://www.uniovi.es/contacto">{f("Contacto")}</a>
+              <a href="https://www.uniovi.es/contacto" target="_blank">{f("Contacto")}</a>
             </li>
 
             <li>
-              <a href="https://www.uniovi.es/estudios/grados/-/asset_publisher/X5CYKURHdF1e/content/grado-en-ingenieria-informatica-del-software-2014;jsessionid=ABC9088952D25CE298F0251CCAC43688?redirect=%2Festudios%2Fgrados">Nuestro Grado</a>
+              <a href="https://www.uniovi.es/estudios/grados/-/asset_publisher/X5CYKURHdF1e/content/grado-en-ingenieria-informatica-del-software-2014;jsessionid=ABC9088952D25CE298F0251CCAC43688?redirect=%2Festudios%2Fgrados" target="_blank">Nuestro Grado</a>
             </li>
           </ul>
         </li>
@@ -72,15 +72,15 @@ export default function Footer() {
 
           <ul className={styles.nav__ul}>
             <li>
-              <a href="https://www.uniovi.es/privacidad">{f("PoliticaPrivacidad")}</a>
+              <a href="https://www.uniovi.es/privacidad" target="_blank">{f("PoliticaPrivacidad")}</a>
             </li>
 
             <li>
-              <a href="https://www.uniovi.es/politicacookies">{f("PoliticaCookies")}</a>
+              <a href="https://www.uniovi.es/politicacookies" target="_blank">{f("PoliticaCookies")}</a>
             </li>
 
             <li>
-              <a href="https://ingenieriainformatica.uniovi.es/avisolegal">{f("AvisoLegal")}</a>
+              <a href="https://ingenieriainformatica.uniovi.es/avisolegal" target="_blank">{f("AvisoLegal")}</a>
             </li>
           </ul>
         </li>

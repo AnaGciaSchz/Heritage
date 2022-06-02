@@ -9,10 +9,9 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-
         <Head>
           <title>Heritage</title>
-          <link rel="icon" href="/favicon.png" />-
+          <link rel="icon" href="/favicon.png" />
         </Head>
         <body>
           <Main />

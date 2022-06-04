@@ -7,7 +7,7 @@ export default function SubidaDeCartas() {
 
     return (
         <>
-            <h1 className="title1">{f("FormularioSubida")}</h1>
+            <h1>{f("FormularioSubida")}</h1>
             <p>{f("FormularioTexto")}</p>
             <UploadCardForm />
         </>

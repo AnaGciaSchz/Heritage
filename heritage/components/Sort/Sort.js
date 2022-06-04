@@ -26,7 +26,7 @@ export default function Sort(props) {
   return (
     <>
       <div className={styles.dropdown}>
-        <input type="checkbox" id="dropdown" />
+      <input type="checkbox" id="dropdown" />
 
         <label className={styles.dropdown__face} htmlFor="dropdown">
           <div className={styles.dropdown__text}>{f("Ordenar")}</div>
@@ -34,13 +34,13 @@ export default function Sort(props) {
           <div className={styles.dropdown__arrow}></div>
         </label>
 
-        <ul className={styles.dropdown__items}>
+        <div className={styles.dropdown__items}>
           <button className={ascSort ? styles.buttonSelected : styles.button} onClick={() => selectButton("asc")}>↑ {f("Promocion")}</button>
           <button className={descSort ? styles.buttonSelected : styles.button} onClick={() => selectButton("desc")}>↓ {f("Promocion")}</button>
-        </ul>
+        </div>
       </div>
 
-      <svg className={styles.svg}>
+      <svg>
         <filter id="goo">
           <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
           <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />

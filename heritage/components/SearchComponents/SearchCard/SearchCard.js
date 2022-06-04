@@ -67,7 +67,8 @@ export default function SearchCard(props) {
     createDeleteButton();
   }, [router.locale]);
   return (
-    <div>
+    <article>
+      <h3 className="hidden">{props.name}</h3>
       <img className={showRotate ? styles.flipIcon : styles.flipIconHidden} src="/flip.svg" alt={f("IconoGirarCarta")} title={f("TooltipGirarCarta")} />
       <img className={props.star && props.star.toString() == "true" ? styles.star : styles.starHidden} src="/star.svg" alt={f("IconoEstrella")} title={f("TooltipEstrella")} />
       {isRotated ? null :
@@ -77,7 +78,8 @@ export default function SearchCard(props) {
           onMouseEnter={() => setShowRotate(true)}
           onMouseLeave={() => setShowRotate(false)}>
           {deletedMessage}
-          <p className={styles.name}>{props.name}</p>
+          <section>
+          <h4 className={styles.name}>{props.name}</h4>
           <p className={styles.date}>{f("CartaRegistro") + ": " + props.date}</p>
           <div className={styles.imageContainer}>
           <img className={styles.image}
@@ -86,7 +88,8 @@ export default function SearchCard(props) {
           />
           </div>
           <p className={styles.firtsLine}>{f("Promocion") + ": " + props.firtsLine}</p>
-          <p className={styles.text}>{props.text}</p>
+          <p className={styles.descriptionText}>{props.text}</p>
+          </section>
         </div>}
       {!isRotated ? null :
         <div
@@ -94,12 +97,17 @@ export default function SearchCard(props) {
           onClick={() => onRotate(!isRotated)}
           onMouseEnter={() => setShowRotate(true)}
           onMouseLeave={() => setShowRotate(false)}>
-          <p className={styles.name}>{props.name}</p>
+            <section>
+          <h4 className={styles.name}>{props.name}</h4>
           <p className={styles.date}>{f("CartaRegistro") + ": " + props.date}</p>
-          <p className={styles.firtsLine}>{f("CartaDescripcion")}</p>
+          <section>
+          <h5 className={styles.firtsLine}>{f("CartaDescripcion")}</h5>
           <p className={styles.text}>{props.description}</p>
-          <p className={styles.firtsLine}>{f("CartaLogros")}</p>
+          </section>
+          <section>
+          <h5 className={styles.firtsLine}>{f("CartaLogros")}</h5>
           <p className={styles.text}>{props.been}</p>
+          </section>
           <p className={styles.social}>
             <a href={props.red1Link} target="_blank">{props.red1}</a>
             &nbsp;
@@ -108,8 +116,9 @@ export default function SearchCard(props) {
             <a href={props.red3Link} target="_blank">{props.red3}</a>
           </p>
           {deleteButton}
+          </section>
         </div>}
-    </div>
+    </article>
   )
 
 }

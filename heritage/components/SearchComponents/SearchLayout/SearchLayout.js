@@ -26,8 +26,8 @@ export default function SearchLayout(props) {
   const dispatch = useDispatch()
 
   return (
-    <section className={styles.layout}>
-      <section className={styles.layoutFilter}>
+    <div className={styles.layout}>
+      <aside className={styles.layoutFilter}>
         <h2 className={styles.titleSideFirst}>{f("Filtros")}</h2>
         <MultiSelectFilter className={styles.expandable}
           name={f("Promocion")}
@@ -44,7 +44,7 @@ export default function SearchLayout(props) {
           setContentChangeBecauseOfUser={() => dispatch(changeByUserSocials())}
         />
 
-      </section>
+      </aside>
       <Result className={styles.layoutResult}
         query={props.query}
         index={props.index}
@@ -58,7 +58,7 @@ export default function SearchLayout(props) {
         socialsChange={socialsChange}
         setSocialsChange={setSocialsChange}
       />
-    </section>
+    </div>
   )
 }
 

@@ -64,7 +64,7 @@ export default function Register() {
 
 
   return (<>
-    <h1 className="title1">{f("FormularioRegistro")}</h1>
+    <h1>{f("FormularioRegistro")}</h1>
     <p>{f("DescripcionRegistro")}</p>
     <div className={styles.formLogin}>
       <h1>{f("Registro")}</h1>

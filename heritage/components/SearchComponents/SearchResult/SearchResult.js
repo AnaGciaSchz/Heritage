@@ -42,11 +42,11 @@ export default function SearchResult(props) {
         createResults();
     }, []);
     return (
-        <>
+        <section>
             <h2 className={styles.title2Search}>{f("Promocion") + " " + props.promotion}</h2>
             <div className={styles.searchFeed}>
                 {results}
             </div>
-        </>
+        </section>
     )
 }

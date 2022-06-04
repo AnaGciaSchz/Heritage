@@ -18,7 +18,7 @@ export default function ZonaEgresados() {
 
   return (
     <>
-      <h1 className="title1">{f("ZExalumnado")}</h1>
+      <h1>{f("ZExalumnado")}</h1>
       <SearchBar
         setQuery={setQuery}
         setSort={setSort}

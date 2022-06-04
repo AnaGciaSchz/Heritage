@@ -4,8 +4,8 @@ import Image from 'next/image'
 export default function Custom500() {
   const { formatMessage } = useIntl();
   const f = id => formatMessage({ id })
-  return (<div className="Error">
-    <h1 className="title1">{f("Error500")}</h1>
+  return (<section className="Error">
+    <h1>{f("Error500")}</h1>
     <div className="ImagenError">
       <Image
         src="/Error500.png"
@@ -16,5 +16,5 @@ export default function Custom500() {
         objectFit="contain"
       />
     </div>
-  </div>)
+  </section>)
 }

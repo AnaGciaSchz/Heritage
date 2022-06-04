@@ -45,7 +45,7 @@ export default function Login() {
   };
 
   return (<>
-    <h1 className="title1">{f("FormularioLogin")}</h1>
+    <h1>{f("FormularioLogin")}</h1>
     <p>{f("DescripcionLogin")}</p>
     <div className={styles.formLogin}>
       <h1>{f("Login")}</h1>

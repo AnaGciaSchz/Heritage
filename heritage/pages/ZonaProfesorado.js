@@ -16,7 +16,7 @@ export default function ZonaProfesorado() {
     const dispatch = useDispatch()
     return (
         <>
-            <h1 className="title1">{f("ZProfesorado")}</h1>
+            <h1>{f("ZProfesorado")}</h1>
             <SearchBar
                 setQuery={setQuery}
                 setSort={setSort}

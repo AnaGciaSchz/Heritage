@@ -6,9 +6,11 @@ export default function EditorHistoria() {
     const f = id => formatMessage({ id })
 
     return (<>
-        <h1 className="title1">{f("EditorHistoriaTitulo")}</h1>
-        <p>{f("EditorHistoriaTexto")}</p>
-        <TextEditor />
+        <section>
+            <h1>{f("EditorHistoriaTitulo")}</h1>
+            <p>{f("EditorHistoriaTexto")}</p>
+            <TextEditor />
+        </section>
     </>);
 
 }

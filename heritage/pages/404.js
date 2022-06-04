@@ -4,8 +4,8 @@ import Image from 'next/image'
 export default function Custom404() {
   const { formatMessage } = useIntl();
   const f = id => formatMessage({ id })
-  return (<div className="Error">
-    <h1 className="title1">{f("Error404")}</h1>
+  return (<section className="Error">
+    <h1>{f("Error404")}</h1>
     <div className="ImagenError">
       <Image
         src="/Error404.png"
@@ -16,5 +16,5 @@ export default function Custom404() {
         objectFit="contain"
       />
     </div>
-  </div>)
+  </section>)
 }

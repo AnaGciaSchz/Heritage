@@ -5,38 +5,39 @@ import { useIntl } from "react-intl"
 export default function SocialMedia(props) {
   const { formatMessage } = useIntl();
   const f = id => formatMessage({ id })
-  return (<div className={styles.container}>
+  return (<>
 
-    <div className={styles.socialTitle}>
-      <h3 className="title2">{f(props.socialMediaTitle)}</h3>
-    </div>
+    <section className={styles.container}>
+      <h3>{f(props.socialMediaTitle)}</h3>
 
-    <div className={styles.socialFeed}>
-      <span className={styles.icono}>
-        <ImageWithLink className={styles.icono}
-          referencia={props.firstLink}
-          img={props.firstImage}
-          alt={props.firstAlt} />
-      </span>
+      <div className={styles.iconos}>
+        <span className={styles.icon}>
+          <ImageWithLink
+            referencia={props.firstLink}
+            img={props.firstImage}
+            alt={props.firstAlt} />
+        </span>
 
-      <span className={styles.icono}>
-        <ImageWithLink className={styles.icono}
-          referencia={props.secondLink}
-          img={props.secondImage}
-          alt={props.secondAlt} />
-      </span>
+        <span className={styles.icon}>
+          <ImageWithLink
+            referencia={props.secondLink}
+            img={props.secondImage}
+            alt={props.secondAlt} />
+        </span>
 
-      <span className={styles.icono}>
-        <ImageWithLink className={styles.icono}
-          referencia={props.thirdLink}
-          img={props.thirdImage}
-          alt={props.thirdAlt} />
-      </span>
+        <span className={styles.icon}>
+          <ImageWithLink
+            referencia={props.thirdLink}
+            img={props.thirdImage}
+            alt={props.thirdAlt} />
+        </span>
 
-      <span className={styles.icono}>
-        <ImageWithLink className={styles.icono}
-          referencia={props.fourthLink}
-          img={props.fourthImage}
-          alt={props.fourthAlt} />
-      </span></div></div>)
+        <span className={styles.icon}>
+          <ImageWithLink
+            referencia={props.fourthLink}
+            img={props.fourthImage}
+            alt={props.fourthAlt} />
+        </span></div>
+    </section>
+  </>)
 }

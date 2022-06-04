@@ -1,8 +1,8 @@
-import style from './box.module.scss'
+import styles from './box.module.scss'
 
 export default function Box(props) {
     return (
-        <main className={style.caja} >
+        <main className={styles.caja} >
             {props.children}
         </main>
     )

@@ -56,10 +56,11 @@ export default function Home() {
   useEffect(() => {
     createResults();
   }, []);
-  return (
-    <div>
-      <Slider></Slider>
-      <h2 className="title1">{f("UltimasCartasSubidas")}</h2>
+  return (<section>
+    <h1 className="hidden">{f("paginaPrincipal")}</h1>
+    <Slider></Slider>
+    <section>
+      <h2>{f("UltimasCartasSubidas")}</h2>
       <div className="cardfeed">
         {results != null ?
           results
@@ -77,8 +78,9 @@ export default function Home() {
             /></div></>}
 
       </div>
-
-      <h2 className="title1">{f("RedesSociales")}</h2>
+    </section>
+    <section>
+      <h2>{f("RedesSociales")}</h2>
 
       <div className="socialFeed">
         <SocialMedia
@@ -113,6 +115,6 @@ export default function Home() {
           fourthAlt={f("TwitterDeii")}
         />
       </div>
-    </div>
-  )
+    </section>
+  </section>)
 }

@@ -1,4 +1,3 @@
-import ImageWithLink from '../components/ImageWithLink/ImageWithLink'
 import { useIntl } from "react-intl"
 
 export default function Contacto() {

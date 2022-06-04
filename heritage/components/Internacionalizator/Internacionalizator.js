@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import InternacionalizationOption from "../InternacionalizationOption/InternacionalizationOption"
 import { useRouter } from "next/router"
-import styles from './internacionalizador.module.scss'
 
 export default function Internacionalizator() {
     const router = useRouter()
@@ -43,7 +42,7 @@ export default function Internacionalizator() {
     }, [router.locale]);
     return (<>
         <section>
-            <h2 className={styles.hidden}>Internacionalización</h2>
+            <h2 className="hidden">Internacionalización</h2>
             <p>
                 <strong>|</strong>
                 <InternacionalizationOption

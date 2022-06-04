@@ -16,8 +16,8 @@ export default function ZonaDelegacion() {
 
     const dispatch = useDispatch()
     return (
-        <>
-            <h1 className="title1">{f("ZDelegacion")}</h1>
+        <section>
+            <h1>{f("ZDelegacion")}</h1>
             <SearchBar
                 setQuery={setQuery}
                 setSort={setSort}
@@ -28,7 +28,7 @@ export default function ZonaDelegacion() {
                 sort={sort}
                 index="delegate-card"
             />
-        </>
+        </section>
     );
 
 }

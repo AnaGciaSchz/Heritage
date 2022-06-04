@@ -7,7 +7,7 @@ export default function HistoriaEII() {
 
   return (
     <section>
-      <h1 className="title1">{f("historiaEII")}</h1>
+      <h1>{f("historiaEII")}</h1>
       <TextDisplay />
     </section>
   )

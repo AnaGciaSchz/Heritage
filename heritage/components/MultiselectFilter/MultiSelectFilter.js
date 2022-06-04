@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styles from './multiselectFilter.module.scss'
 
+import Loading from '../Loading/Loading';
+
 export default function MultiSelectFilter(props) {
   const [content, setContent] = useState(null);
   const [lastFilter, setLastFilter] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const showFilter = async () => {
     if (props.content != null) {
@@ -17,12 +20,13 @@ export default function MultiSelectFilter(props) {
         }
 
       }
+      setIsLoading(false);
       setContent(null);
       setContent(inputsAndLabels);
     }
   }
 
-  const sendChangesByUser = async () => {
+  const sendChangesByUser = async (event) => {
     if (content != null) {
       var filter = "";
       var element;
@@ -46,10 +50,10 @@ export default function MultiSelectFilter(props) {
   useEffect(() => {
     showFilter();
   }, [props.contentChangeBecauseOfSearch]);
-  return (<details onClick={sendChangesByUser} open>
+  return (<>{isLoading? <div className={styles.loading}><Loading/></div>:null}<details onClick={() =>{setIsLoading(true);sendChangesByUser();}} open>
     <summary className={styles.s}>{props.name}</summary>
     <div className={styles.selector}>
       {content}</div>
-  </details>);
+  </details></>);
 }
 

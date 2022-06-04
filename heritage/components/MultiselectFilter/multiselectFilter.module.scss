@@ -17,6 +17,12 @@
   padding: 1em;
 }
 
+.loading{
+  z-index: 10;
+position: absolute;
+left: 26vw;
+}
+
 .selector {
   display: grid;
   grid-template-columns: auto;

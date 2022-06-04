@@ -205,6 +205,7 @@ export const ast = {
   "/ZonaEgresados": {
     Copyright: "Copyright Universidá d'Uviéu",
     AvisoLegal: "Avisu Llegal",
+    LoadingGif: "Iconu de carga",
     PoliticaCookies: "Política de cookies",
     PoliticaPrivacidad: "Política de privacidá",
     logo: "Logo de Heritage, representa la palabra daqué curvada, de color verde, con un remarcáu que pon 'EII' enriba, n'azul. Sobro les lletres ta la figura d'un osu mirando escontra baxo.",
@@ -249,6 +250,7 @@ export const ast = {
   "/ZonaProfesorado": {
     Copyright: "Copyright Universidá d'Uviéu",
     AvisoLegal: "Avisu Llegal",
+    LoadingGif: "Iconu de carga",
     PoliticaCookies: "Política de cookies",
     PoliticaPrivacidad: "Política de privacidá",
     logo: "Logo de Heritage, representa la palabra daqué curvada, de color verde, con un remarcáu que pon 'EII' enriba, n'azul. Sobro les lletres ta la figura d'un osu mirando escontra baxo.",
@@ -293,6 +295,7 @@ export const ast = {
   "/ZonaDelegacion": {
     Copyright: "Copyright Universidá d'Uviéu",
     Logout: "Cerrar sesión",
+    LoadingGif: "Iconu de carga",
     AvisoLegal: "Avisu Llegal",
     PoliticaCookies: "Política de cookies",
     PoliticaPrivacidad: "Política de privacidá",

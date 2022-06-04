@@ -205,6 +205,7 @@ export const en = {
   "/ZonaEgresados": {
     Copyright: "Copyright University of Oviedo",
     AvisoLegal: "Legal notice",
+    LoadingGif: "Loading icon",
     PoliticaCookies: "Cookie Policy",
     PoliticaPrivacidad: "Privacy Policy",
     logo: "Heritage's logo, represents the curved word in green, with a highlight that says 'EII' above it, in blue. Above the letters there is the silhouette of a bear looking down.",
@@ -249,6 +250,7 @@ export const en = {
   "/ZonaProfesorado": {
     Copyright: "Copyright University of Oviedo",
     AvisoLegal: "Legal notice",
+    LoadingGif: "Loading icon",
     PoliticaCookies: "Cookie Policy",
     PoliticaPrivacidad: "Privacy Policy",
     logo: "Heritage's logo, represents the curved word in green, with a highlight that says 'EII' above it, in blue. Above the letters there is the silhouette of a bear looking down.",
@@ -293,6 +295,7 @@ export const en = {
   "/ZonaDelegacion": {
     Copyright: "Copyright University of Oviedo",
     AvisoLegal: "Legal notice",
+    LoadingGif: "Loading icon",
     PoliticaCookies: "Cookie Policy",
     PoliticaPrivacidad: "Privacy Policy",
     logo: "Heritage's logo, represents the curved word in green, with a highlight that says 'EII' above it, in blue. Above the letters there is the silhouette of a bear looking down.",

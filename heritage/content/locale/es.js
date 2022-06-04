@@ -205,6 +205,7 @@ export const es = {
   "/ZonaEgresados": {
     Copyright: "Copyright Universidad de Oviedo",
     AvisoLegal: "Aviso Legal",
+    LoadingGif: "Icono de carga",
     PoliticaCookies: "Política de cookies",
     PoliticaPrivacidad: "Política de privacidad",
     logo: 'Logo de Heritage, representa la palabra algo curvada, de color verde, con un remarcado que pone "EII" encima, en azul. Sobre las letras está la silueta de un oso mirando hacia abajo.',
@@ -249,6 +250,7 @@ export const es = {
   "/ZonaProfesorado": {
     Copyright: "Copyright Universidad de Oviedo",
     AvisoLegal: "Aviso Legal",
+    LoadingGif: "Icono de carga",
     PoliticaCookies: "Política de cookies",
     PoliticaPrivacidad: "Política de privacidad",
     logo: 'Logo de Heritage, representa la palabra algo curvada, de color verde, con un remarcado que pone "EII" encima, en azul. Sobre las letras está la silueta de un oso mirando hacia abajo.',
@@ -293,6 +295,7 @@ export const es = {
   "/ZonaDelegacion": {
     Copyright: "Copyright Universidad de Oviedo",
     AvisoLegal: "Aviso Legal",
+    LoadingGif: "Icono de carga",
     PoliticaCookies: "Política de cookies",
     PoliticaPrivacidad: "Política de privacidad",
     logo: 'Logo de Heritage, representa la palabra algo curvada, de color verde, con un remarcado que pone "EII" encima, en azul. Sobre las letras está la silueta de un oso mirando hacia abajo.',

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SearchResult from "components/SearchComponents/SearchResult/SearchResult.js"
 import styles from './result.module.scss'
 import NoResult from '../NoResult/NoResult';
+import Loading from '../Loading/Loading';
 
 import { useSelector, } from 'react-redux';
 import { selectPromotionsUserSlice } from '../../services/redux/features/promotions/promotionsSlice.js';
@@ -15,7 +16,7 @@ import getConfig from 'next/config';
 
 
 export default function Result(props) {
-  const [results, setResults] = useState(null);
+  const [results, setResults] = useState(<Loading />);
 
   const { publicRuntimeConfig } = getConfig();
   const baseUrl = `${publicRuntimeConfig.apiUrl}`;
@@ -50,6 +51,12 @@ export default function Result(props) {
       props.setPromotions(result.promotion);
       props.setPromotionsChange(!props.promotionsChange)
     }
+
+    showResults(results)
+
+  }
+
+  function showResults(results){
     setResults(null);
     if (results.length == 0) {
       setResults(<NoResult />);

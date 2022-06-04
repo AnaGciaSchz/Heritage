@@ -26,7 +26,7 @@ p {
 	margin-left: 3px;
 	font-size: 14px;
 }
-.title1 {
+h1 {
 	font-family: "Roboto", sans-serif;
 	position: relative;
 	display: inline-block;
@@ -35,7 +35,7 @@ p {
 	margin-bottom: -5px;
 }
 
-.title2 {
+h2 {
 	position: relative;
 	display: inline-block;
 	background: $green;
@@ -48,7 +48,7 @@ p {
 	font-size: 16px;
 }
 
-.title3 {
+h3 {
 	position: relative;
 	display: inline-block;
 	background: $darkBlue;
@@ -62,7 +62,7 @@ p {
 	font-size: 16px;
 }
 
-.title4 {
+h4 {
 	position: relative;
 	display: inline-block;
 	background: $darkGreen;
@@ -102,54 +102,17 @@ p {
 	display: flex;
 }
 
-.contactTitle {
-	@extend .title1;
-	display: block;
-	margin-bottom: 100px;
-}
-
-.contactTitle2 {
-	@extend .title2;
-	display: block;
-	margin-top: -80px;
-	margin-left: 0px;
-	text-align: left;
-	font-size: 1.4rem;
-}
-
 .map {
+	width: 100%;
+	height: 30em;
+	margin: auto;
 	display: block;
-	width: 50%;
-	margin-top: -90px;
-	min-width: 400px !important;
-	min-height: 200px;
 }
 
-.pTry {
-	margin-bottom: 26px;
-}
-
-.localization {
-	display: block;
-	margin-left: 100px;
-	margin-top: 10px;
-}
-
-.direccion {
+.telefonos {
 	display: flex;
+	flex-wrap: wrap;
 }
-
-.directionBlock {
-	display: block;
-	margin-bottom: 100px;
-}
-
-.EII_Image {
-	display: block;
-	margin-top: -35px;
-	width: 120%;
-}
-
 .flexAbout {
 	display: flex;
 	max-width: 98%;
@@ -164,32 +127,10 @@ p {
 	height: 100px;
 }
 
-.contactDirections {
-	display: flex;
-}
-
-.contactLeft {
-	flex-direction: left;
-}
-
-.contactRight {
-	flex-direction: right;
-	margin-top: -30px;
-}
-
 @include tablet {
 	.cardfeed {
 		grid-template-columns: repeat(2, 1fr);
 		margin-bottom: 40px;
-	}
-
-	.localization {
-		margin-top: -85px;
-		margin-left: 30px;
-	}
-
-	.EII_Image {
-		width: 100%;
 	}
 	.textAbout {
 		max-width: 58%;
@@ -200,11 +141,6 @@ p {
 	.cardfeed {
 		grid-template-columns: repeat(2, 1fr);
 		margin-bottom: 40px;
-	}
-
-	.localization {
-		margin-top: -95px;
-		margin-left: 50px;
 	}
 
 	.map {
@@ -234,23 +170,15 @@ p {
 }
 
 @include bigDesktop {
-	.localization {
-		margin-top: 80px;
-		margin-left: 60px;
-	}
-
-	.pTry {
-		margin-bottom: -25px;
-	}
-
-	.EII_Image {
-		width: 170%;
-		margin-top: -60px;
-	}
 
 	.Error {
 		margin: auto;
 		width: 30%;
 		padding: 10px;
 	}
+}
+
+.contacto {
+	margin-left: 20%;
+	margin-right: 20%;
 }

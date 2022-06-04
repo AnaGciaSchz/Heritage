@@ -26,7 +26,7 @@ export default function MultiSelectFilter(props) {
     }
   }
 
-  const sendChangesByUser = async (event) => {
+  const sendChangesByUser = async () => {
     if (content != null) {
       var filter = "";
       var element;
@@ -39,6 +39,7 @@ export default function MultiSelectFilter(props) {
         filter = filter.slice(0, -1);
       }
       if (filter != lastFilter) {
+        setIsLoading(true)
         setLastFilter(filter);
         props.setFilterWithUserValues(filter);
         props.setContentChangeBecauseOfUser();
@@ -50,7 +51,7 @@ export default function MultiSelectFilter(props) {
   useEffect(() => {
     showFilter();
   }, [props.contentChangeBecauseOfSearch]);
-  return (<>{isLoading? <div className={styles.loading}><Loading/></div>:null}<details onClick={() =>{setIsLoading(true);sendChangesByUser();}} open>
+  return (<>{isLoading? <div className={styles.loading}><Loading/></div>:null}<details onClick={() =>{sendChangesByUser();}} open>
     <summary className={styles.s}>{props.name}</summary>
     <div className={styles.selector}>
       {content}</div>

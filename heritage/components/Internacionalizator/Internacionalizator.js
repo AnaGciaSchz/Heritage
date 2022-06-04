@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import InternacionalizationOption from "../InternacionalizationOption/InternacionalizationOption"
 import { useRouter } from "next/router"
+import styles from './internacionalizador.module.scss'
 
 export default function Internacionalizator() {
     const router = useRouter()
@@ -41,26 +42,29 @@ export default function Internacionalizator() {
         setLanguage(router.locale)
     }, [router.locale]);
     return (<>
-        <p>
-            <b>|</b>
-            <InternacionalizationOption
-                selected={es}
-                language={() => setLanguage("es")}
-                option="Español"
-            />
-            <b>|</b>
-            <InternacionalizationOption
-                selected={ast}
-                language={() => setLanguage("ast")}
-                option="Asturianu"
-            />
-            <b>|</b>
-            <InternacionalizationOption
-                selected={en}
-                language={() => setLanguage("en")}
-                option="English"
-            />
-            <b>|</b>
-        </p>
+        <section>
+            <h2 className={styles.hidden}>Internacionalización</h2>
+            <p>
+                <strong>|</strong>
+                <InternacionalizationOption
+                    selected={es}
+                    language={() => setLanguage("es")}
+                    option="Español"
+                />
+                <strong>|</strong>
+                <InternacionalizationOption
+                    selected={ast}
+                    language={() => setLanguage("ast")}
+                    option="Asturianu"
+                />
+                <strong>|</strong>
+                <InternacionalizationOption
+                    selected={en}
+                    language={() => setLanguage("en")}
+                    option="English"
+                />
+                <strong>|</strong>
+            </p>
+        </section>
     </>);
 }

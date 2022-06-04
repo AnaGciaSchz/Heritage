@@ -99,7 +99,7 @@ h4 {
 }
 
 .socialFeed {
-	display: flex;
+	margin: auto;
 }
 
 .map {
@@ -113,14 +113,6 @@ h4 {
 	display: flex;
 	flex-wrap: wrap;
 }
-.flexAbout {
-	display: flex;
-	max-width: 98%;
-}
-
-.textAbout {
-	max-width: 77%;
-}
 
 .specialCard {
 	margin-top: -100px;
@@ -131,9 +123,6 @@ h4 {
 	.cardfeed {
 		grid-template-columns: repeat(2, 1fr);
 		margin-bottom: 40px;
-	}
-	.textAbout {
-		max-width: 58%;
 	}
 }
 
@@ -153,19 +142,9 @@ h4 {
 		margin-left: 0px;
 		margin-top: 30px;
 	}
-
-	.textAbout {
-		max-width: 50%;
-	}
 	.specialCard {
 		margin-top: -30px;
 		height: 100px;
-	}
-}
-
-@include desktop {
-	.textAbout {
-		max-width: 68%;
 	}
 }
 

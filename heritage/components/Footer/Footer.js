@@ -7,32 +7,27 @@ export default function Footer() {
   const f = id => formatMessage({ id })
   return (
     <footer className={styles.footer}>
-      <div className={styles.bigDiv}>
-        <div className={styles.favicon}>
-          <Image
-            src="/favicon.png"
-            alt={f("logo")}
-            layout='responsive'
-            width="0"
-            height="0"
-            objectFit="contain"
-          />
+      <section>
+
+        <div className={styles.legal}>
+          <p>&copy; {f("Copyright")}</p>
         </div>
+      </section>
 
+      <div className={styles.contenido}>
+      <img className={styles.petra} src='/favicon.png' />
+        <section>
+          <h2><a href="/Contacto">{f("Contacto")}</a></h2>
 
-        <div className={styles.contact}>
-          <a href="/Contacto"> <h2 className={styles.nav__title}>{f("Contacto")}</h2> </a>
-
-          <address className={styles.direction}>
+          <address>
             {f("Direccion")}<br />
 
           </address>
-        </div>
-      </div>
+        </section>
 
-      <ul className={styles.footer__nav}>
-        <li className={styles.nav__item}>
-          <h2 className={styles.nav__title}>{f("EscuelaIngenieria")}</h2>
+
+        <section>
+          <h2>{f("EscuelaIngenieria")}</h2>
 
           <ul className={styles.nav__ul}>
             <li>
@@ -47,10 +42,10 @@ export default function Footer() {
               <a href="https://ingenieriainformatica.uniovi.es/infoacademica/grado" target="_blank">{f("InformacionAcademica")}</a>
             </li>
           </ul>
-        </li>
+        </section>
 
-        <li className={styles.nav__item}>
-          <h2 className={styles.nav__title}>{f("UniversidadOviedo")}</h2>
+        <section>
+          <h2>{f("UniversidadOviedo")}</h2>
 
           <ul className={styles.nav__ul}>
             <li>
@@ -65,9 +60,9 @@ export default function Footer() {
               <a href="https://www.uniovi.es/estudios/grados/-/asset_publisher/X5CYKURHdF1e/content/grado-en-ingenieria-informatica-del-software-2014;jsessionid=ABC9088952D25CE298F0251CCAC43688?redirect=%2Festudios%2Fgrados" target="_blank">Nuestro Grado</a>
             </li>
           </ul>
-        </li>
+        </section>
 
-        <li className={styles.nav__item}>
+        <section className={styles.nav__item}>
           <h2 className={styles.nav__title}>{f("Legal")}</h2>
 
           <ul className={styles.nav__ul}>
@@ -83,11 +78,7 @@ export default function Footer() {
               <a href="https://ingenieriainformatica.uniovi.es/avisolegal" target="_blank">{f("AvisoLegal")}</a>
             </li>
           </ul>
-        </li>
-      </ul>
-
-      <div className={styles.legal}>
-        <p>&copy;{f("Copyright")}</p>
+        </section>
       </div>
     </footer>
 

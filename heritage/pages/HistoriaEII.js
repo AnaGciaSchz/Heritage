@@ -6,10 +6,10 @@ export default function HistoriaEII() {
   const f = id => formatMessage({ id })
 
   return (
-    <div>
+    <section>
       <h1 className="title1">{f("historiaEII")}</h1>
       <TextDisplay />
-    </div>
+    </section>
   )
 
 }

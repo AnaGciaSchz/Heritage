@@ -30,11 +30,27 @@ async function search(req, res) {
     res.status(404).json({ result: "error", message: "Body not found" })
     return;
   }
-  if (esClient != null) {
+  if(esClient == null){
+    logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
+    res.status(500).json({ result: "error", message: "No elasticsearch client" });
+  }
     let dataMap = new Map(req.body);
     let body = getBody(dataMap.get("query"), dataMap.get("promotions"), dataMap.get("socials"), dataMap.get("sort"));
-    await esClient.search({
-      index: dataMap.get("index"),
+    var searchResponse = await searchInElastic(dataMap.get("index"), body);
+    if(searchResponse.result == "ok"){
+    logger.info("Se ha devuelto una búsqueda correctamente del índice: " + dataMap.get("index") + ".")
+    res.status(200).json({ hits: searchResponse.message.hits, promotion: searchResponse.message.promotion, social: searchResponse.message.social})
+    }
+    else{
+      logger.error("Ha habido un error en elastic al intentar realizar una búsqueda en el índice: " + dataMap.get("index") + ".")
+          logger.error(searchResponse.message)
+          res.status(404).json({message: searchResponse.message + " on elastic search"})
+    }
+}
+
+async function searchInElastic(index, body){
+    return await esClient.search({
+      index: index,
       body: body
     })
       .then(
@@ -57,20 +73,13 @@ async function search(req, res) {
           for (i = 0; i < set.size; i++) {
             s[i] = { key: [...set][i] };
           }
-          logger.info("Se ha devuelto una búsqueda correctamente del índice: " + dataMap.get("index") + ".")
-          res.status(200).json({ result: "ok", message: { hits: response.body.hits.hits, promotion: response.body.aggregations.by_promotion.buckets, social: s } })
+          return { result: "ok", message: { hits: response.body.hits.hits, promotion: response.body.aggregations.by_promotion.buckets, social: s }}
         },
         err => {
-          logger.error("Ha habido un error en elastic al intentar realizar una búsqueda en el índice: " + dataMap.get("index") + ".")
-          logger.error(err.message)
-          res.status(404).json({ result: "error", message: err.message + " on elastic search" })
+          return { result: "error", message: err.message}
         }
       );
-  }
-  else {
-    logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
-    res.status(500).json({ result: "error", message: "No elasticsearch client" });
-  }
+
 }
 
 function getBody(query, promotions, socials, sort) {

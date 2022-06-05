@@ -35,8 +35,7 @@ async function search(req, res) {
     res.status(500).json({ result: "error", message: "No elasticsearch client" });
   }
     let dataMap = new Map(req.body);
-    let body = getBody(dataMap.get("query"), dataMap.get("promotions"), dataMap.get("socials"), dataMap.get("sort"));
-    var searchResponse = await searchInElastic(dataMap.get("index"), body);
+    var searchResponse = await searchInElastic(dataMap);
     if(searchResponse.result == "ok"){
     logger.info("Se ha devuelto una búsqueda correctamente del índice: " + dataMap.get("index") + ".")
     res.status(200).json({ hits: searchResponse.message.hits, promotion: searchResponse.message.promotion, social: searchResponse.message.social})
@@ -48,9 +47,13 @@ async function search(req, res) {
     }
 }
 
-async function searchInElastic(index, body){
+export async function searchInElastic(dataMap){
+  if(validateService.checkEmpty(dataMap.get("index"))){
+    return { result: "error", message: "Index of cards must not be empty"}
+  }
+  let body = getBody(dataMap.get("query"), dataMap.get("promotions"), dataMap.get("socials"), dataMap.get("sort"));
     return await esClient.search({
-      index: index,
+      index: dataMap.get("index"),
       body: body
     })
       .then(

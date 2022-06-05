@@ -44,30 +44,27 @@ export default function Login() {
     }
   };
 
-  return (<>
+  return (<section>
     <h1>{f("FormularioLogin")}</h1>
     <p>{f("DescripcionLogin")}</p>
-    <div className={styles.formLogin}>
-      <h1>{f("Login")}</h1>
-      <div>
-        <form>
-          <div>
-            <label className={styles.label}>{f("Usuario")}</label>
-            <input id="username" name="username" type="text" />
-          </div>
-          <div>
-            <label className={styles.label}>{f("Contraseña")}</label>
-            <input id="password" name="password" type="password" />
-          </div>
-          <button type="button" className={styles.buttonLogin}
-            onClick={() => uploadToServer()}>
-            {f("Login")}
-          </button>
-
-        </form>
-      </div>
-    </div>
-  </>
+    <section className={styles.formLogin}>
+      <h2>{f("Login")}</h2>
+      <form>
+        <div>
+          <label className={styles.label}>{f("Usuario")}</label>
+          <input id="username" name="username" type="text" />
+        </div>
+        <div>
+          <label className={styles.label}>{f("Contraseña")}</label>
+          <input id="password" name="password" type="password" />
+        </div>
+        <button type="button" className={styles.buttonLogin}
+          onClick={() => uploadToServer()}>
+          {f("Login")}
+        </button>
+      </form>
+    </section>
+  </section>
 
   )
 }

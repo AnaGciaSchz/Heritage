@@ -21,7 +21,7 @@ export default function Header() {
 
                 <a className={styles.go2main} href="#main" tabindex="1">Saltar al contenido principal</a>
 
-                <div className={styles.logoArriba}>
+                <div className={styles.logoArriba} tabIndex='2'>
                     <a href={"/" + router.locale}>
 
                         <img src='/HeritageLogo.png' alt='logo' />
@@ -30,22 +30,22 @@ export default function Header() {
 
 
                 <nav className={styles.menu}>
-                    <MenuButton nombre={f("historiaEII")} src="headerIcons/historiaEII.png" referencia="/HistoriaEII" />
-                    <MenuButton nombre={f("ZExalumnado")} src="headerIcons/egresados.png" referencia="/ZonaEgresados" />
-                    <MenuButton nombre={f("ZProfesorado")} src="headerIcons/profesorado.png" referencia="/ZonaProfesorado" />
-                    <MenuButton nombre={f("ZDelegacion")} src="headerIcons/delegados.png" referencia="/ZonaDelegacion" />
+                    <MenuButton nombre={f("historiaEII")} src="headerIcons/historiaEII.png" referencia="/HistoriaEII" tabIndex='3' />
+                    <MenuButton nombre={f("ZExalumnado")} src="headerIcons/egresados.png" referencia="/ZonaEgresados" tabIndex='4' />
+                    <MenuButton nombre={f("ZProfesorado")} src="headerIcons/profesorado.png" referencia="/ZonaProfesorado" tabIndex='5' />
+                    <MenuButton nombre={f("ZDelegacion")} src="headerIcons/delegados.png" referencia="/ZonaDelegacion" tabIndex='6' />
 
-                    <div className={styles.logoAbajo}>
+                    <div className={styles.logoAbajo} tabIndex='2'>
                         <a href={"/" + router.locale}>
 
                             <img src='/HeritageLogo.png' alt='logo' className={styles.logo} />
                         </a>
                     </div>
 
-                    <MenuButton nombre={f("EditorHistoria")} src="headerIcons/admin.png" referencia="/EditorHistoria" />
-                    <MenuButton nombre={f("SubidaDeCartas")} src="headerIcons/subidaCartas.png" referencia="/SubidaDeCartas" />
-                    <MenuButton nombre={f("QueEsHeritage")} src="headerIcons/queEsHeritage.png" referencia="/about" />
-                    <MenuButton nombre={f("Contacto")} src="headerIcons/contacto.png" referencia="/Contacto" />
+                    <MenuButton nombre={f("EditorHistoria")} src="headerIcons/admin.png" referencia="/EditorHistoria" tabIndex='7' />
+                    <MenuButton nombre={f("SubidaDeCartas")} src="headerIcons/subidaCartas.png" referencia="/SubidaDeCartas" tabIndex='8' />
+                    <MenuButton nombre={f("QueEsHeritage")} src="headerIcons/queEsHeritage.png" referencia="/about" tabIndex='9' />
+                    <MenuButton nombre={f("Contacto")} src="headerIcons/contacto.png" referencia="/Contacto" tabIndex='10' />
                 </nav>
 
 
@@ -56,7 +56,7 @@ export default function Header() {
                 
                  <a className={styles.go2main} href="#main" tabindex="1">Saltar al contenido principal</a>
 
-                <div className={styles.logoArriba}>
+                <div className={styles.logoArriba} tabIndex='2'>
                     <a href={"/" + router.locale}>
 
                         <img src='/HeritageLogo.png' alt='logo' />
@@ -64,20 +64,20 @@ export default function Header() {
                 </div>
 
                 <nav className={styles.menu}>
-                    <MenuButton nombre={f("ZExalumnado")} src="headerIcons/egresados.png" referencia="/ZonaEgresados" />
-                    <MenuButton nombre={f("ZProfesorado")} src="headerIcons/profesorado.png" referencia="/ZonaProfesorado" />
-                    <MenuButton nombre={f("ZDelegacion")} src="headerIcons/delegados.png" referencia="/ZonaDelegacion" />
+                    <MenuButton nombre={f("ZExalumnado")} src="headerIcons/egresados.png" referencia="/ZonaEgresados"  tabIndex='3'/>
+                    <MenuButton nombre={f("ZProfesorado")} src="headerIcons/profesorado.png" referencia="/ZonaProfesorado" tabIndex='4' />
+                    <MenuButton nombre={f("ZDelegacion")} src="headerIcons/delegados.png" referencia="/ZonaDelegacion" tabIndex='5' />
 
-                    <div className={styles.logoAbajo}>
+                    <div className={styles.logoAbajo} tabIndex='2'>
                         <a href={"/" + router.locale}>
 
                             <img src='/HeritageLogo.png' alt='logo' className={styles.logo} />
                         </a>
                     </div>
 
-                    <MenuButton nombre={f("historiaEII")} src="headerIcons/historiaEII.png" referencia="/HistoriaEII" />
-                    <MenuButton nombre={f("QueEsHeritage")} src="headerIcons/queEsHeritage.png" referencia="/about" />
-                    <MenuButton nombre={f("Contacto")} src="headerIcons/contacto.png" referencia="/Contacto" />
+                    <MenuButton nombre={f("historiaEII")} src="headerIcons/historiaEII.png" referencia="/HistoriaEII" tabIndex='6' />
+                    <MenuButton nombre={f("QueEsHeritage")} src="headerIcons/queEsHeritage.png" referencia="/about" tabIndex='7' />
+                    <MenuButton nombre={f("Contacto")} src="headerIcons/contacto.png" referencia="/Contacto" tabIndex='8' />
 
                 </nav>
             </header>)

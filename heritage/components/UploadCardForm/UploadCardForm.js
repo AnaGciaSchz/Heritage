@@ -201,9 +201,9 @@ export default function UploadCardForm() {
   };
 
   return (
-    <>
-      <div className={styles.form}>
-        <h1>{f("TituloFormulario")}<span>{f("SpanFormulario")}</span></h1>
+    <section className={styles.form}>
+        <h2>{f("TituloFormulario")}<span>{f("SpanFormulario")}</span></h2>
+        <form>
         <div className={styles.section}><span>1</span>{f("TipoCartaSeccion")}</div>
         <div className={styles.field}>
           <label className={styles.label}>{f("TipoCarta")}*</label>
@@ -311,7 +311,7 @@ export default function UploadCardForm() {
             {card}
           </div>
         </div>
-      </div>
-    </>
+        </form>
+    </section>
   )
 }

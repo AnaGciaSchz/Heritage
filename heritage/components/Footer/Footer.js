@@ -26,7 +26,7 @@ export default function Footer() {
         </section>
 
 
-        <section className={styles.apartado}>
+        <section>
           <h2>{f("EscuelaIngenieria")}</h2>
 
           <ul className={styles.nav__ul}>
@@ -44,7 +44,7 @@ export default function Footer() {
           </ul>
         </section>
 
-        <section className={styles.apartado}>
+        <section>
           <h2>{f("UniversidadOviedo")}</h2>
 
           <ul className={styles.nav__ul}>
@@ -62,7 +62,7 @@ export default function Footer() {
           </ul>
         </section>
 
-        <section className={styles.apartado}>
+        <section>
           <h2 className={styles.nav__title}>{f("Legal")}</h2>
 
           <ul className={styles.nav__ul}>

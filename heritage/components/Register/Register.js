@@ -63,12 +63,11 @@ export default function Register() {
   };
 
 
-  return (<>
+  return (<section>
     <h1>{f("FormularioRegistro")}</h1>
     <p>{f("DescripcionRegistro")}</p>
-    <div className={styles.formLogin}>
-      <h1>{f("Registro")}</h1>
-      <div>
+    <section className={styles.formLogin}>
+      <h2>{f("Registro")}</h2>
         <form>
           <div>
             <label className={styles.label}>{f("Nombre")}</label>
@@ -92,11 +91,9 @@ export default function Register() {
             {f("Registrar")}
           </button>
           <a href="/" className={styles.link}>{f("Cancelar")}</a>
-
         </form>
-      </div>
-    </div>
-  </>
+    </section>
+  </section>
 
   )
 }

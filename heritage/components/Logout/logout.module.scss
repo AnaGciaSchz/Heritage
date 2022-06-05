@@ -2,9 +2,7 @@
 @import "../../styles/sass/mixins";
 
 .button {
-    position: Absolute;
-    top: 50px;
-    right: 80px;
+   float: right;
     border-width: 0em;
     border-radius: 3em;
     width: 80px;

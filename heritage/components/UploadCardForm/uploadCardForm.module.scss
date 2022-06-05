@@ -5,7 +5,7 @@
     width: 90%;
     padding: 30px;
     margin: 40px auto;
-    background: #fff;
+    background: $color-fondo-contenido;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -21,7 +21,9 @@
     margin-bottom: 15px;
 }
 
-.form h1 {
+.form h2 {
+    width: 100%;
+    text-align: left;
     background: $blue;
     padding: 20px 30px 15px 30px;
     margin: -30px -30px 30px -30px;
@@ -37,7 +39,7 @@
     border: 1px solid $blue;
     margin-top: -50px;
 }
-.form h1 > span {
+.form h2 > span {
     display: block;
     margin-top: 2px;
     font: 13px "Roboto", sans-serif;

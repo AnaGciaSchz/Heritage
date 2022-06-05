@@ -5,8 +5,8 @@ button.menuButton {
     position: relative;
     border: none;
     border-radius: 3em;
-    height: 10vh;
-    width: 8vw;
+    height: 5.5em;
+    width: 8.5vw;
     transition: all 0.2s;
     cursor: pointer;
     margin-left: 0.2em;
@@ -45,4 +45,37 @@ header nav button.menuButton:hover {
     }
 }
 
+@include tablet {
 
+    .image1 {
+        display: none;
+    }
+
+    span.text {
+        display: none;
+    }
+    
+    .image2 {
+        display: block;
+    }
+
+}
+
+@include mobile {
+    button.menuButton {
+         height: 3em; 
+    }
+
+    .image1 {
+        display: none;
+    }
+
+    span.text {
+        display: none;
+    }
+    
+    .image2 {
+        display: block;
+    }
+
+}

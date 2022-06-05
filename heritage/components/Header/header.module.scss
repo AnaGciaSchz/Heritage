@@ -1,7 +1,7 @@
 @import "../../styles/sass/mixins";
 @import "../../styles/sass/variables";
 
-header.tuputamadre {
+header.container {
   img {
     display: block;
     margin: auto;
@@ -9,7 +9,11 @@ header.tuputamadre {
   }
 }
 
-nav.tuweamadre {
+.logo {
+  display: block;
+}
+
+nav.menu {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -20,3 +24,25 @@ nav.tuweamadre {
   margin: auto;
 }
 
+.logoArriba {
+  @extend .logo;
+  display: none;
+}
+
+.logoAbajo {
+  @extend .logo;
+}
+
+@include mobile {
+  .logoArriba {
+    display: block;
+    border-color: red;
+  }
+  .logoAbajo {
+    display: none;
+  }
+
+  nav.menu {
+    margin-bottom: 0.2em;
+  }
+}

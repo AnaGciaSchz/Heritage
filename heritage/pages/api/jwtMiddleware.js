@@ -10,7 +10,6 @@ export default function jwtMiddleware(req, res) {
         const middleware = expressjwt({ secret: serverRuntimeConfig.secret, algorithms: ['HS256'] }).unless({
             path: [
                 '/api/admin/login',
-                '/api/card/getCard',
                 '/api/card/lastCard',
                 '/api/card/search',
                 '/api/history/getInfo',

@@ -9,6 +9,23 @@ header.container {
   }
 }
 
+a.go2main {
+  color: $green;
+  position: absolute;
+  left: -1000em;
+  top: auto;
+  width: 0.1em;
+  height: 0.1em;
+  overflow: hidden;
+}
+
+a.go2main:focus,  a.go2main:active{
+  height: auto;
+  position: static;
+  width: auto;
+}
+
+
 .logo {
   display: block;
 }

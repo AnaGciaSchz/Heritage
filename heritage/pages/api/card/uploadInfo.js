@@ -21,7 +21,6 @@ export const config = {
       }
   }
 }
-
 export default apiHandler(handler);
 
 function handler(req, res) {
@@ -34,47 +33,71 @@ function handler(req, res) {
 }
 
 async function uploadInfo(req, res) {
-  console.log("HOLAAA")
   if (!validateService.checkExistsBody(req.body)) {
     res.status(404).json({ result: "error", message: "Body not found" })
     return;
   }
-  if (esClient != null) {
-    var dataMap = new Map(req.body);
-    esClient.index({
-      index: dataMap.get("index"),
-      body: {
-        "name": dataMap.get("name"),
-        "promotion": dataMap.get("promotion"),
-        "registry": dataMap.get("registry"),
-        "timestamp": dataMap.get("timestamp"),
-        "shortDescription": dataMap.get("shortDescription"),
-        "longDescription": dataMap.get("longDescription"),
-        "professionalArchievements": dataMap.get("archievements"),
-        "Red1": dataMap.has("social1Text") ? dataMap.get("social1Text") : "",
-        "Red1Link": dataMap.has("social1") ? dataMap.get("social1") : "",
-        "Red2": dataMap.has("social2Text") ? dataMap.get("social2Text") : "",
-        "Red2Link": dataMap.has("social2") ? dataMap.get("social2") : "",
-        "Red3": dataMap.has("social3Text") ? dataMap.get("social3Text") : "",
-        "Red3Link": dataMap.has("social3") ? dataMap.get("social3") : "",
-        "AppearsInAnotherCategory": dataMap.get("check"),
-        "image": dataMap.get("image")
-      }
-    }).then(
-      () => {
-        logger.info("Se ha añadido la carta con id: " + dataMap.get("id")
-          + " correspondiente a: " + dataMap.get("name") + " en el índice: " + dataMap.get("index") + ".")
-        res.status(200).json({ result: "ok", message: "The card was added to elastic search" })
-      },
-      err => {
-        logger.error("Ha habido un error en elastic al intentar añadir la carta con id: " + dataMap.get("id")
-          + " correspondiente a: " + dataMap.get("name") + " en el índice: " + dataMap.get("index") + ".")
-        logger.error(err.message)
-        res.status(500).json({ result: "error", message: err.message + " on elastic search" })
-      }
-    );
-  } else {
+
+  if(esClient == null){
     logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
     res.status(500).json({ result: "error", message: "No elasticsearch client" });
   }
+
+    var dataMap = new Map(req.body);
+
+    var uploadResponse = await uploadToElastic(dataMap)
+
+    if(uploadResponse.result == "ok"){
+      logger.info("Se ha añadido la carta con id: " + dataMap.get("id")
+        + " correspondiente a: " + dataMap.get("name") + " en el índice: " + dataMap.get("index") + ".")
+        res.status(200).json({ result: "ok", message: uploadResponse.message })
+      }
+      else{
+        logger.error("Ha habido un error en elastic al intentar añadir la carta con id: " + dataMap.get("id")
+        + " correspondiente a: " + dataMap.get("name") + " en el índice: " + dataMap.get("index") + ".")
+      logger.error(uploadResponse.message)
+            res.status(400).json({message: searchResponse.message + " on elastic search"})
+      }
+    
+}
+
+export async function uploadToElastic(dataMap){
+  if(!validateService.checkIsValidUploadDataMap(dataMap) || !dataMap.has("index")){
+    logger.error("Error: Faltan datos para crear una carta.")
+    return { result: "error", message: "The card lacks important data: Name, Promotion, short description, long sescription, archievements or image." };
+  } 
+ return esClient.index({
+    index: dataMap.get("index"),
+    body: getBody(dataMap)
+  }).then(
+    () => { 
+      return { result: "ok", message: "The card was added to elastic search" }
+    },
+    err => {
+      return { result: "error", message: err.message}
+    }
+  );
+
+}
+
+function getBody(dataMap){
+
+  return ({
+    "name": dataMap.get("name"),
+  "promotion": dataMap.get("promotion"),
+  "registry": dataMap.get("registry"),
+  "timestamp": dataMap.get("timestamp"),
+  "shortDescription": dataMap.get("shortDescription"),
+  "longDescription": dataMap.get("longDescription"),
+  "professionalArchievements": dataMap.get("archievements"),
+  "Red1": dataMap.has("social1Text") ? dataMap.get("social1Text") : "",
+  "Red1Link": dataMap.has("social1") ? dataMap.get("social1") : "",
+  "Red2": dataMap.has("social2Text") ? dataMap.get("social2Text") : "",
+  "Red2Link": dataMap.has("social2") ? dataMap.get("social2") : "",
+  "Red3": dataMap.has("social3Text") ? dataMap.get("social3Text") : "",
+  "Red3Link": dataMap.has("social3") ? dataMap.get("social3") : "",
+  "AppearsInAnotherCategory": dataMap.get("check"),
+  "image": dataMap.get("image")
+  })
+
 }

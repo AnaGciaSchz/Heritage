@@ -1,11 +1,25 @@
 {
     "version": "0.2.0",
     "configurations": [
+
       {
         "name": "Next.js: debug server-side",
         "type": "node-terminal",
         "request": "launch",
         "command": "npm run dev"
+      },
+      {
+        "name": "Next.js: debug tests",
+        "type": "node",
+        "request": "launch",
+        "runtimeArgs": [
+          "--inspect-brk",
+          "./node_modules/.bin/jest.cmd",
+          "--runInBand"
+        ],
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen",
+        "port": 9229
       },
       {
         "name": "Next.js: debug client-side",

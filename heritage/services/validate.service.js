@@ -5,7 +5,8 @@ export const validateService = {
     checkValidPasswords,
     checkRepeatedUsername,
     checkSecurePassword,
-    checkExistsBody
+    checkExistsBody,
+    checkIsValidUploadDataMap
 };
 
 function checkEmpty(value) {
@@ -56,4 +57,10 @@ function checkRepeatedUsername(admins, username) {
 
 function checkSecurePassword(password) {
     return /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/.test(password)
+}
+
+function checkIsValidUploadDataMap(dataMap) {
+
+    return dataMap.has("name") && dataMap.has("promotion") && dataMap.has("registry") && dataMap.has("timestamp") && dataMap.has("shortDescription")
+    && dataMap.has("longDescription") && dataMap.has("archievements") && dataMap.has("check") && dataMap.has("image")
 }

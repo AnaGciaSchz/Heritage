@@ -36,11 +36,11 @@ export default function Header() {
                     <div className={styles.logoAbajo}>
                         <a href={"/" + router.locale}>
 
-                            <img src='/HeritageLogo.png' alt='logo'  className={styles.logo}/>
+                            <img src='/HeritageLogo.png' alt='logo' className={styles.logo} />
                         </a>
                     </div>
 
-                    <MenuButton nombre={f("EditorHistoria")} src="headerIcons/admin.png" referencia="/EditorHistoria"/>
+                    <MenuButton nombre={f("EditorHistoria")} src="headerIcons/admin.png" referencia="/EditorHistoria" />
                     <MenuButton nombre={f("SubidaDeCartas")} src="headerIcons/subidaCartas.png" referencia="/SubidaDeCartas" />
                     <MenuButton nombre={f("QueEsHeritage")} src="headerIcons/queEsHeritage.png" referencia="/about" />
                     <MenuButton nombre={f("Contacto")} src="headerIcons/contacto.png" referencia="/Contacto" />
@@ -50,28 +50,31 @@ export default function Header() {
 
             </header>)
         } else {
-            setHeader(<header className={styles.headerNotLogged} >
-                <MenuButton nombre={f("ZExalumnado")} src="headerIcons/egresados.png" referencia="/ZonaEgresados" />
-                <MenuButton nombre={f("ZProfesorado")} src="headerIcons/profesorado.png" referencia="/ZonaProfesorado" />
-                <MenuButton nombre={f("ZDelegacion")} src="headerIcons/delegados.png" referencia="/ZonaDelegacion" />
+            setHeader(<header className={styles.container} >
+                <div className={styles.logoArriba}>
+                    <a href={"/" + router.locale}>
 
-                <span className={styles.logo}>
-                    <a href={"/" + router.locale} target="_blank">
-                        <Image className={styles.image}
-                            src="/HeritageLogo.png"
-                            alt={f("logo")}
-                            layout='responsive'
-                            width="0"
-                            height="0"
-                            objectFit="contain"
-                        />
+                        <img src='/HeritageLogo.png' alt='logo' />
                     </a>
-                </span>
-                <MenuButton nombre={f("historiaEII")} src="headerIcons/historiaEII.png" referencia="/HistoriaEII" />
-                <MenuButton nombre={f("QueEsHeritage")} src="headerIcons/queEsHeritage.png" referencia="/about" />
-                <MenuButton nombre={f("Contacto")} src="headerIcons/contacto.png" referencia="/Contacto" />
+                </div>
 
+                <nav className={styles.menu}>
+                    <MenuButton nombre={f("ZExalumnado")} src="headerIcons/egresados.png" referencia="/ZonaEgresados" />
+                    <MenuButton nombre={f("ZProfesorado")} src="headerIcons/profesorado.png" referencia="/ZonaProfesorado" />
+                    <MenuButton nombre={f("ZDelegacion")} src="headerIcons/delegados.png" referencia="/ZonaDelegacion" />
 
+                    <div className={styles.logoAbajo}>
+                        <a href={"/" + router.locale}>
+
+                            <img src='/HeritageLogo.png' alt='logo' className={styles.logo} />
+                        </a>
+                    </div>
+
+                    <MenuButton nombre={f("historiaEII")} src="headerIcons/historiaEII.png" referencia="/HistoriaEII" />
+                    <MenuButton nombre={f("QueEsHeritage")} src="headerIcons/queEsHeritage.png" referencia="/about" />
+                    <MenuButton nombre={f("Contacto")} src="headerIcons/contacto.png" referencia="/Contacto" />
+
+                </nav>
             </header>)
         }
 

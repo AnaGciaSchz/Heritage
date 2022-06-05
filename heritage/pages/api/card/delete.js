@@ -1,11 +1,9 @@
 var esClient = null;
-var fileS = null;
 const logger = require('pino')()
 import { validateService } from '../../../services/validate.service';
 import apiHandler from '../handlers/apiHandler';
 
 if (typeof window === 'undefined') {
-    var fileS = require('fs');
     const { Client } = require('@elastic/elasticsearch')
 
     var esClient = new Client({
@@ -33,27 +31,39 @@ async function deleteCard(req, res) {
         res.status(404).json({ result: "error", message: "Body not found" })
         return;
     }
-    if (esClient != null) {
-        let dataMap = new Map(JSON.parse(req.body));
-        await esClient.delete({
-            index: dataMap.get("index"),
-            id: dataMap.get("id")
-        })
-            .then(
-                response => {
-                    logger.info('Se ha eliminado la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + ".")
-                    res.status(200).json({ result: "ok", message: "Card deleted with image" })
-                },
-                err => {
-                    logger.error('Error en elastic al intentar eliminar la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + ".")
-                    logger.error(err.message)
-                    res.status(404).json({ result: "error", message: err.message + " on elastic search" })
-                }
-            );
-    }
-    else {
+    if (esClient == null) {
         logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
         res.status(500).json({ result: "error", message: "No elasticsearch client" });
     }
+        let dataMap = new Map(JSON.parse(req.body));
+        var deleteResponse = await deleteCardFromElastic(dataMap.get("index"), dataMap.get("id"));
+
+        if(deleteResponse.result == "ok"){
+            logger.info('Se ha eliminado la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + ".")
+            res.status(200).json({ result: "ok", message: deleteResponse.message })
+        }else{
+            logger.error('Error en elastic al intentar eliminar la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + ".")
+                logger.error(deleteResponse.message)
+                res.status(404).json({ result: "error", message: deleteResponse.message})
+        }
+
+}
+
+export async function deleteCardFromElastic(index, id){
+    if(validateService.checkEmpty(index) || validateService.checkEmpty(id)){
+        return { result: "error", message: "Index and id of cards must not be empty"}
+    }
+    return await esClient.delete({
+        index: index,
+        id: id
+    })
+        .then(
+            response => {
+                return { result: "ok", message: "Card deleted" }
+            },
+            err => {
+                return { result: "error", message: err.message}
+            }
+        );
 }
 

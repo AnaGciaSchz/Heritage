@@ -13,8 +13,8 @@ export default function MenuButton(props) {
 
         <Link href={props.referencia}>
             <button className={styles.menuButton} title={props.nombre}>
-                <span><img className={styles.image1} src={props.src} /></span>
-                <span><img className={styles.image2} src={props.src} /></span>
+                <span><img className={styles.image1} alt={props.nombre} src={props.src} /></span>
+                <span><img className={styles.image2} alt={props.nombre} src={props.src} /></span>
                 <span className={styles.text}>{props.nombre}</span></button>
         </Link>
     )

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import SearchCard from "components/SearchComponents/SearchCard/SearchCard.js"
+import { alertService } from "../../services/alert.service";
 import { validateService } from "../../services/validate.service";
 import styles from './uploadCardForm.module.scss'
 import { useIntl } from "react-intl"
@@ -23,6 +24,11 @@ export default function UploadCardForm() {
   const baseUrl = `${publicRuntimeConfig.apiUrl}`;
 
   var dataMap = new Map();
+
+  const [options, setOptions] = useState({
+    autoClose: false,
+    keepAfterRouteChange: false
+  });
 
   const fillDataMap = () => {
     var date = new Date();
@@ -184,27 +190,21 @@ export default function UploadCardForm() {
       fillDataMap();
         const response = await fetchWrapper.post(`${baseUrl}/card/uploadInfo`, Array.from(dataMap.entries()));
         if (response.status < 200 || response.status > 299) {
-          dialogWindow(f("NoSePudoSubirCarta") + response.text)
+          alertService.error(f("NoSePudoSubirCarta") + response.text, options)
         } else {
-          dialogWindow(f("SubidaCorrecta"));
+          alertService.success(f("SubidaCorrecta"), options)
         }
     }
     catch (error) {
-      dialogWindow(f("NoSePudoSubirCarta"))
+      alertService.error(f("NoSePudoSubirCarta") + error, options)
     }
   };
-
-  const dialogWindow = async (message) => {
-    const confirmBox = window.confirm(message
-
-    )
-  }
   
 
   return (
     <section className={styles.form}>
         <h2>{f("TituloFormulario")}<span>{f("SpanFormulario")}</span></h2>
-        <form>
+        <section>
         <div className={styles.section}><span>1</span>{f("TipoCartaSeccion")}</div>
         <div className={styles.field}>
           <label className={styles.label}>{f("TipoCarta")}*</label>
@@ -312,7 +312,7 @@ export default function UploadCardForm() {
             {card}
           </div>
         </div>
-        </form>
+        </section>
     </section>
   )
 }

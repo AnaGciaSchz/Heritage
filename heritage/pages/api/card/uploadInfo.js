@@ -67,7 +67,7 @@ export async function uploadToElastic(dataMap){
     return { result: "error", message: "The card lacks important data: Name, Promotion, short description, long sescription, archievements or image." };
   } 
   var body = getBody(dataMap);
- return esClient.index({
+ return await esClient.index({
     index: dataMap.get("index"),
     body: body
   }).then(

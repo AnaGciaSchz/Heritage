@@ -1,6 +1,7 @@
 export const es = {
   "/": {
     paginaPrincipal: "Página Principal",
+    Internacionalizacion: "Internacionalización",
     UltimasCartasSubidas: "Últimas cartas subidas",
     RedesSociales: "Redes Sociales",
     RedesSocialesEII: "Redes Sociales EII",
@@ -57,6 +58,7 @@ export const es = {
   },
   "/heritage_admin_login": {
     paginaPrincipal: "Página Principal",
+    Internacionalizacion: "Internacionalización",
     UltimasCartasSubidas: "Últimas cartas subidas",
     RedesSociales: "Redes Sociales",
     RedesSocialesEII: "Redes Sociales EII",
@@ -101,6 +103,7 @@ export const es = {
   },
   "/heritage_admin_register": {
     paginaPrincipal: "Página Principal",
+    Internacionalizacion: "Internacionalización",
     UltimasCartasSubidas: "Últimas cartas subidas",
     RedesSociales: "Redes Sociales",
     RedesSocialesEII: "Redes Sociales EII",
@@ -149,6 +152,7 @@ export const es = {
   },
   "/EditorHistoria": {
     Copyright: "Copyright Universidad de Oviedo",
+    Internacionalizacion: "Internacionalización",
     AvisoLegal: "Aviso Legal",
     SubidaCorrecta: "El texto se ha subido correctamente",
     PoliticaCookies: "Política de cookies",
@@ -180,6 +184,7 @@ export const es = {
   },
   "/HistoriaEII": {
     Copyright: "Copyright Universidad de Oviedo",
+    Internacionalizacion: "Internacionalización",
     AvisoLegal: "Aviso Legal",
     PoliticaCookies: "Política de cookies",
     PoliticaPrivacidad: "Política de privacidad",
@@ -204,6 +209,7 @@ export const es = {
   },
   "/ZonaEgresados": {
     Copyright: "Copyright Universidad de Oviedo",
+    Internacionalizacion: "Internacionalización",
     AvisoLegal: "Aviso Legal",
     LoadingGif: "Icono de carga",
     PoliticaCookies: "Política de cookies",
@@ -249,6 +255,7 @@ export const es = {
   },
   "/ZonaProfesorado": {
     Copyright: "Copyright Universidad de Oviedo",
+    Internacionalizacion: "Internacionalización",
     AvisoLegal: "Aviso Legal",
     LoadingGif: "Icono de carga",
     PoliticaCookies: "Política de cookies",
@@ -294,6 +301,7 @@ export const es = {
   },
   "/ZonaDelegacion": {
     Copyright: "Copyright Universidad de Oviedo",
+    Internacionalizacion: "Internacionalización",
     AvisoLegal: "Aviso Legal",
     LoadingGif: "Icono de carga",
     PoliticaCookies: "Política de cookies",
@@ -339,6 +347,7 @@ export const es = {
   },
   "/about": {
     Copyright: "Copyright Universidad de Oviedo",
+    Internacionalizacion: "Internacionalización",
     AvisoLegal: "Aviso Legal",
     PoliticaCookies: "Política de cookies",
     PoliticaPrivacidad: "Política de privacidad",
@@ -388,6 +397,7 @@ export const es = {
   },
   "/SubidaDeCartas": {
     Copyright: "Copyright Universidad de Oviedo",
+    Internacionalizacion: "Internacionalización",
     AvisoLegal: "Aviso Legal",
     PoliticaCookies: "Política de cookies",
     PoliticaPrivacidad: "Política de privacidad",
@@ -472,6 +482,7 @@ export const es = {
   },
   "/Contacto": {
     Copyright: "Copyright Universidad de Oviedo",
+    Internacionalizacion: "Internacionalización",
     AvisoLegal: "Aviso Legal",
     PoliticaCookies: "Política de cookies",
     PoliticaPrivacidad: "Política de privacidad",
@@ -515,6 +526,7 @@ export const es = {
   },
   "/500": {
     Error500: "Ha ocurrido un error de servidor",
+    Internacionalizacion: "Internacionalización",
     Copyright: "Copyright Universidad de Oviedo",
     AvisoLegal: "Aviso Legal",
     PoliticaCookies: "Política de cookies",
@@ -539,6 +551,7 @@ export const es = {
   },
   "/404": {
     Error404: "No se ha podido encontrar un recurso",
+    Internacionalizacion: "Internacionalización",
     Copyright: "Copyright Universidad de Oviedo",
     AvisoLegal: "Aviso Legal",
     PoliticaCookies: "Política de cookies",

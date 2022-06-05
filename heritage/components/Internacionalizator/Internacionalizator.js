@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import InternacionalizationOption from "../InternacionalizationOption/InternacionalizationOption"
 import { useRouter } from "next/router"
+import { useIntl } from "react-intl"
 
 export default function Internacionalizator() {
     const router = useRouter()
+    const { formatMessage } = useIntl();
+    const f = id => formatMessage({ id })
     const [es, setEs] = React.useState(true);
     const [en, setEn] = React.useState(false);
     const [ast, setAst] = React.useState(false);
@@ -42,7 +45,7 @@ export default function Internacionalizator() {
     }, [router.locale]);
     return (<>
         <section>
-            <h2 className="hidden">Internacionalización</h2>
+            <h2 className="hidden">{f("Internacionalizacion")}</h2>
             <p>
                 <strong>|</strong>
                 <InternacionalizationOption

@@ -1,17 +1,18 @@
 @import "../../styles/sass/mixins";
 @import "../../styles/sass/variables";
 
-.header {
-  display: flex;
-  margin-top: -1%;
-  .logo {
-    margin-top: -2%;
-    margin-bottom: -5%;
-    height: 15%;
-    width: 15%;
-    min-width: 15%;
-    min-height: 15%;
+header.tuputamadre {
+  img {
+    display: block;
+    margin: auto;
+    max-width: 13em;
   }
+}
+
+nav.tuweamadre {
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 .image {
@@ -19,98 +20,3 @@
   margin: auto;
 }
 
-.headerLogged {
-  @extend .header;
-  margin-left: 7vw;
-}
-
-.headerNotLogged {
-  @extend .header;
-  margin-left: 15vw;
-  .logo {
-    width: 20%;
-    margin-top: -55px;
-    margin-bottom: -50px;
-    min-width: 20%;
-    min-height: 15%;
-  }
-}
-
-@include desktop {
-  .headerNotLogged {
-    @extend .header;
-    margin-left: 15vw;
-    .logo {
-      margin-top: -35px;
-    }
-  }
-  .headerLogged {
-    margin-left: 7vw;
-    .logo {
-      margin-top: -10px;
-    }
-  }
-}
-
-@include tablet {
-  .headerLogged {
-    margin-left: 1vw;
-    .logo {
-      margin-top: -1% !important;
-      margin-left: 2% !important;
-      margin-right: 2% !important;
-      height: 4.5em;
-      width: 5.4em;
-    }
-  }
-
-  .headerNotLogged {
-    margin-left: 10vw;
-    .logo {
-      margin-top: -2vh;
-    }
-  }
-}
-
-@include mobile {
-  .headerLogged {
-    margin-left: 2vw;
-    .logo {
-      margin-top: -1.5vh;
-      margin-left: 1vh;
-      margin-right: 1vh;
-      height: 2vh;
-      width: 2vw;
-    }
-  }
-
-  .headerNotLogged {
-    margin-left: 50px;
-    .logo {
-      margin-top: -30px;
-      margin-bottom: -20px;
-    }
-  }
-}
-
-@include bigDesktop {
-  .headerLogged {
-    margin-left: 9vw;
-    .logo {
-      margin-top: -1vw;
-      margin-bottom: -25px;
-      margin-right: 20px;
-      margin-left: 20px;
-      height: 15%;
-      width: 15%;
-    }
-  }
-
-  .headerNotLogged {
-    margin-left: 300px;
-    .logo {
-      margin-top: -4%;
-      margin-bottom: -55px;
-    }
-  }
-}

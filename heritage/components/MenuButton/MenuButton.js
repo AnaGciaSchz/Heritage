@@ -15,7 +15,7 @@ export default function MenuButton(props) {
             <button className={styles.menuButton}>
                 <span><img className={styles.image1} title={f("TituloButton")} src={props.src} /></span>
                 <span><img className={styles.image2} title={f("TituloButton")} src={props.src} /></span>
-                <div className={styles.text}>{props.nombre}</div></button>
+                <span className={styles.text}>{props.nombre}</span></button>
         </Link>
     )
 }

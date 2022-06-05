@@ -24,7 +24,6 @@ describe("Test the upload card functionality", () => {
         dataMap.get("image", "");
 
         const response = await uploadToElastic(dataMap);
-        console.log(response)
         expect(response.result == 'error').toBeTruthy();
         expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
     });

@@ -1,210 +1,48 @@
 @import "../../styles/sass/_variables";
 @import "../../styles/sass/mixins";
 
-.menuButton {
+button.menuButton {
     position: relative;
-    margin: 0 0.3em 0 0;
-    border-width: 0em;
+    border: none;
     border-radius: 3em;
     height: 10vh;
     width: 8vw;
-    margin-top: 5%;
-    margin-bottom: 1%;
-    font-family: "Roboto", sans-serif;
-    font-weight: map-get($font-weights, regular);
-    font-size: 1vw;
-    color: $color-texto;
-    background-color: $color-fondo-contenido;
-    text-align: center;
     transition: all 0.2s;
     cursor: pointer;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    margin-bottom: auto;
+    margin-top: auto;
 }
-.image1 {
+
+span.text {
+    font-size: 1vw;
+}
+
+header nav img.image1 {
     width: 20px;
     height: 20px;
     display: block;
-    margin-left: 45%;
-    margin-bottom: -10%;
 }
 
-.text {
-    margin-top: -495px;
+header nav img.image2 {
+    display: none;
 }
 
-.image2 {
-    visibility: hidden;
-}
-
-.menuButton:hover {
+header nav button.menuButton:hover {
     width: 8em;
     background-color: $color-menuBoton-hover;
     .image1 {
-        visibility: hidden;
+        display: none;
     }
     .image2 {
-        visibility: visible;
+        display: block;
         width: 30px;
         height: 30px;
     }
     .text {
-        margin-top: -10px;
-        -webkit-animation: scale-out-ver-bottom 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-        animation: scale-out-ver-bottom 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+        display: none;
     }
 }
 
-@include desktop {
-    .menuButton:hover {
-        .image2 {
-            -webkit-animation: slide-in-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-            animation: slide-in-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-        }
-    }
 
-    .menuButton {
-        height: 9vh;
-        width: 8vw;
-        font-size: 1vw;
-    }
-}
-
-@include tablet {
-    .menuButton {
-        height: 7.5vh;
-        width: 9vw;
-    }
-
-    .text {
-        font-size: 1vw;
-    }
-
-    .image1 {
-        margin-top: 10px;
-        margin-bottom: -16px;
-        margin-left: 3vw;
-    }
-
-    .menuButton:hover {
-        width: 6.5em;
-        .image2 {
-            width: 25px;
-            height: 25px;
-
-            -webkit-animation: slide-in-top-tablet 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-            animation: slide-in-top-tablet 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-        }
-    }
-}
-
-@include mobile {
-    .menuButton {
-        height: 5vh;
-        width: 9vw;
-        font-size: 1vh;
-    }
-
-    .text {
-        visibility: hidden;
-    }
-
-    .image1 {
-        margin-top: 1vh;
-        margin-left: 2vw;
-    }
-
-    .menuButton:hover {
-        width: 6em;
-        .image1 {
-            visibility: visible;
-            margin-left: 12px;
-        }
-        .image2 {
-            visibility: hidden;
-        }
-    }
-}
-
-/**
- * ----------------------------------------
- * animation scale-out-ver-bottom
- * ----------------------------------------
- */
-@-webkit-keyframes scale-out-ver-bottom {
-    0% {
-        -webkit-transform: scaleY(1);
-        transform: scaleY(1);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-        opacity: 1;
-    }
-    100% {
-        -webkit-transform: scaleY(0);
-        transform: scaleY(0);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-        opacity: 1;
-    }
-}
-@keyframes scale-out-ver-bottom {
-    0% {
-        -webkit-transform: scaleY(1);
-        transform: scaleY(1);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-        opacity: 1;
-    }
-    100% {
-        -webkit-transform: scaleY(0);
-        transform: scaleY(0);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-        opacity: 1;
-    }
-}
-
-/**
- * ----------------------------------------
- * animation slide-in-top
- * ----------------------------------------
- */
-@-webkit-keyframes slide-in-top {
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-    100% {
-        -webkit-transform: translateY(10px);
-        transform: translateY(10px);
-    }
-}
-@keyframes slide-in-top {
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-    100% {
-        -webkit-transform: translateY(10px);
-        transform: translateY(10px);
-    }
-}
-
-@-webkit-keyframes slide-in-top-tablet {
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-    100% {
-        -webkit-transform: translateY(1px);
-        transform: translateY(1px);
-    }
-}
-@keyframes slide-in-top-tablet {
-    0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-    100% {
-        -webkit-transform: translateY(1px);
-        transform: translateY(1px);
-    }
-}

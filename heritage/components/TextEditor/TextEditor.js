@@ -43,7 +43,6 @@ export default function TextEditor() {
   const getText = async (event) => {
     try {
       dataMap.set("locale", router.locale);
-      console.log(router.locale)
       const response = await fetchWrapper.post(`${baseUrl}/history/getInfo`, Array.from(dataMap.entries()));
       var json = await response.json();
       if (response.status < 200 || response.status > 299) {
@@ -58,7 +57,6 @@ export default function TextEditor() {
   };
 
   const createText = async () => {
-    console.log(router.locale)
     var content = await getText();
     setSunEditor(null);
     setSunEditor(<SunEditor getSunEditorInstance={getSunEditorInstance} defaultValue={content} lang={f("local")}

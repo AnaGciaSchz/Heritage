@@ -7,31 +7,31 @@ export default function About() {
     return (<>
         <section>
             <h1>{f("SobreHeritage")}</h1>
-<div className="somier">
-                    <SearchCard key="0"
-                        id="0"
-                        index="SpecialCard"
-                        name="Ana María García Sánchez"
-                        img="/AnaGs.jpg"
-                        firtsLine="2022-2023"
-                        text={f("AnaDescripcion")}
-                        date="13/05/2022"
-                        description={f("AnaDescripcionLarga")}
-                        been={f("AnaLogros")}
-                        red1="LinkedIn"
-                        red1Link="https://www.linkedin.com/in/anagciaschz/"
-                        red2="GitHub"
-                        red2Link="https://github.com/AnaGciaSchz"
-                        star="true"
-                    />
-                </div>
-        <section>
-            <h2>{f("QueEsHeritage")}</h2>
+            <div className="about">
+                <SearchCard key="0"
+                    id="0"
+                    index="SpecialCard"
+                    name="Ana María García Sánchez"
+                    img="/AnaGs.jpg"
+                    firtsLine="2022-2023"
+                    text={f("AnaDescripcion")}
+                    date="13/05/2022"
+                    description={f("AnaDescripcionLarga")}
+                    been={f("AnaLogros")}
+                    red1="LinkedIn"
+                    red1Link="https://www.linkedin.com/in/anagciaschz/"
+                    red2="GitHub"
+                    red2Link="https://github.com/AnaGciaSchz"
+                    star="true"
+                />
+            </div>
+            <section>
+                <h2>{f("QueEsHeritage")}</h2>
                 <p >{f("QueEsHeritagePrimerParrafo")}
                     {f("QueEsHeritageSegundoParrafo")}
                 </p>
-        </section>
-                
+            </section>
+
             <section>
                 <h2>{f("PorqueHeritage")}</h2>
                 <p>{f("PorqueHeritageRespuesta")}</p>

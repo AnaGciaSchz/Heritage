@@ -10,7 +10,7 @@ export default function SearchCardWithTitle(props) {
     const { formatMessage } = useIntl()
     const f = id => formatMessage({ id })
     return (
-        <article>
+        <article className={styles.card}>
             <h3 className={styles.title}>{f(props.title)}</h3>
             {props.last && props.last.hits && props.last.hits[0] ?
                 <SearchCard

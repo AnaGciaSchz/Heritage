@@ -77,12 +77,9 @@ h4 {
 }
 
 .cardfeed {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	margin-top: -5%;
-	margin-left: 10%;
-	margin-right: 10%;
-	grid-gap: 5%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .Error {
@@ -112,7 +109,7 @@ h4 {
 }
 
 .hidden {
-    display: none;
+	display: none;
 }
 
 .telefonos {
@@ -125,19 +122,7 @@ h4 {
 	height: 100px;
 }
 
-@include tablet {
-	.cardfeed {
-		grid-template-columns: repeat(2, 1fr);
-		margin-bottom: 40px;
-	}
-}
-
 @include mobile {
-	.cardfeed {
-		grid-template-columns: repeat(2, 1fr);
-		margin-bottom: 40px;
-	}
-
 	.map {
 		margin-bottom: 20px;
 	}
@@ -167,6 +152,6 @@ h4 {
 	margin-right: 20%;
 }
 
-.somier {
+.about {
 	float: right;
 }

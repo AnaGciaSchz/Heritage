@@ -1,9 +1,12 @@
 @import "../../../styles/sass/variables";
 @import "../../../styles/sass/mixins";
 
+article.card {
+    margin-left: 2em;
+    margin-right: 2em;
+}
 .title {
     margin-bottom: -5%;
-    margin-top: 30%;
     color: $darkGreen;
     font-family: "Roboto", sans-serif;
 }

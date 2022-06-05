@@ -30,8 +30,7 @@ export default function Result(props) {
     dataMap.set("index", props.index);
     dataMap.set("sort", props.sort)
     const response = await fetchWrapper.post(`${baseUrl}/card/search`, Array.from(dataMap.entries()));
-    var r = await response.json();
-    return r;
+    return await response.json();
   }
 
   const createResults = async () => {

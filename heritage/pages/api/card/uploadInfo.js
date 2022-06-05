@@ -34,13 +34,13 @@ function handler(req, res) {
 
 async function uploadInfo(req, res) {
   if (!validateService.checkExistsBody(req.body)) {
-    res.status(404).json({ result: "error", message: "Body not found" })
+    res.status(404).json({ message: "Body not found" })
     return;
   }
 
   if(esClient == null){
     logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
-    res.status(500).json({ result: "error", message: "No elasticsearch client" });
+    res.status(500).json({ message: "No elasticsearch client" });
   }
 
     var dataMap = new Map(req.body);
@@ -50,7 +50,7 @@ async function uploadInfo(req, res) {
     if(uploadResponse.result == "ok"){
       logger.info("Se ha añadido la carta con id: " + dataMap.get("id")
         + " correspondiente a: " + dataMap.get("name") + " en el índice: " + dataMap.get("index") + ".")
-        res.status(200).json({ result: "ok", message: uploadResponse.message })
+        res.status(200).json({message: uploadResponse.message })
       }
       else{
         logger.error("Ha habido un error en elastic al intentar añadir la carta con id: " + dataMap.get("id")

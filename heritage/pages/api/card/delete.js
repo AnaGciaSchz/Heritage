@@ -33,18 +33,18 @@ async function deleteCard(req, res) {
     }
     if (esClient == null) {
         logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
-        res.status(500).json({ result: "error", message: "No elasticsearch client" });
+        res.status(500).json({ message: "No elasticsearch client" });
     }
         let dataMap = new Map(JSON.parse(req.body));
         var deleteResponse = await deleteCardFromElastic(dataMap.get("index"), dataMap.get("id"));
 
         if(deleteResponse.result == "ok"){
             logger.info('Se ha eliminado la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + ".")
-            res.status(200).json({ result: "ok", message: deleteResponse.message })
+            res.status(200).json({ message: deleteResponse.message })
         }else{
             logger.error('Error en elastic al intentar eliminar la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + ".")
                 logger.error(deleteResponse.message)
-                res.status(404).json({ result: "error", message: deleteResponse.message})
+                res.status(404).json({message: deleteResponse.message})
         }
 
 }

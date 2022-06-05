@@ -22,8 +22,7 @@ export default function Home() {
     var dataMap = new Map();
     dataMap.set("index", index);
     const response = await fetchWrapper.post(`${baseUrl}/card/lastCard`, Array.from(dataMap.entries()));
-    var r = await response.json();
-    return r.message;
+    return await response.json();
   }
 
   const createResults = async () => {
@@ -32,6 +31,8 @@ export default function Home() {
     var lastDelegate = await lastCard("delegate-card");
 
     var results = new Array();
+    console.log("lastStudent")
+    console.log(lastStudent)
 
     results[0] = <div key={0}><SearchCardWithTitle
       title="UltimoEgresado"

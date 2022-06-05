@@ -66,12 +66,13 @@ export async function uploadToElastic(dataMap){
     logger.error("Error: Faltan datos para crear una carta.")
     return { result: "error", message: "The card lacks important data: Name, Promotion, short description, long sescription, archievements or image." };
   } 
+  var body = getBody(dataMap);
  return esClient.index({
     index: dataMap.get("index"),
-    body: getBody(dataMap)
+    body: body
   }).then(
     () => { 
-      return { result: "ok", message: "The card was added to elastic search" }
+      return { result: "ok", message: "The card was added to elastic search", cardInformation: body }
     },
     err => {
       return { result: "error", message: err.message}
@@ -80,22 +81,22 @@ export async function uploadToElastic(dataMap){
 
 }
 
-function getBody(dataMap){
+export function getBody(dataMap){
 
   return ({
-    "name": dataMap.get("name"),
+  "name": dataMap.get("name"),
   "promotion": dataMap.get("promotion"),
   "registry": dataMap.get("registry"),
   "timestamp": dataMap.get("timestamp"),
   "shortDescription": dataMap.get("shortDescription"),
   "longDescription": dataMap.get("longDescription"),
   "professionalArchievements": dataMap.get("archievements"),
-  "Red1": dataMap.has("social1Text") ? dataMap.get("social1Text") : "",
-  "Red1Link": dataMap.has("social1") ? dataMap.get("social1") : "",
-  "Red2": dataMap.has("social2Text") ? dataMap.get("social2Text") : "",
-  "Red2Link": dataMap.has("social2") ? dataMap.get("social2") : "",
-  "Red3": dataMap.has("social3Text") ? dataMap.get("social3Text") : "",
-  "Red3Link": dataMap.has("social3") ? dataMap.get("social3") : "",
+  "Red1": dataMap.has("social1Text") &&  dataMap.has("social1")? dataMap.get("social1Text") : "",
+  "Red1Link": dataMap.has("social1Text") &&  dataMap.has("social1")? dataMap.get("social1") : "",
+  "Red2": dataMap.has("social2Text") &&  dataMap.has("social2")? dataMap.get("social2Text") : "",
+  "Red2Link": dataMap.has("social2Text") &&  dataMap.has("social2")? dataMap.get("social2") : "",
+  "Red3": dataMap.has("social3Text") &&  dataMap.has("social3")? dataMap.get("social3Text") : "",
+  "Red3Link": dataMap.has("social3Text") &&  dataMap.has("social3")? dataMap.get("social3") : "",
   "AppearsInAnotherCategory": dataMap.get("check"),
   "image": dataMap.get("image")
   })

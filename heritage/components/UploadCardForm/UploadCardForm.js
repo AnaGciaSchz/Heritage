@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import SearchCard from "components/SearchComponents/SearchCard/SearchCard.js"
-import { alertService } from "../../services/alert.service";
 import { validateService } from "../../services/validate.service";
 import styles from './uploadCardForm.module.scss'
 import { useIntl } from "react-intl"
@@ -24,11 +23,6 @@ export default function UploadCardForm() {
   const baseUrl = `${publicRuntimeConfig.apiUrl}`;
 
   var dataMap = new Map();
-
-  const [options, setOptions] = useState({
-    autoClose: false,
-    keepAfterRouteChange: false
-  });
 
   const fillDataMap = () => {
     var date = new Date();
@@ -190,15 +184,22 @@ export default function UploadCardForm() {
       fillDataMap();
         const response = await fetchWrapper.post(`${baseUrl}/card/uploadInfo`, Array.from(dataMap.entries()));
         if (response.status < 200 || response.status > 299) {
-          alertService.error(f("NoSePudoSubirCarta") + response.text, options)
+          dialogWindow(f("NoSePudoSubirCarta") + response.text)
         } else {
-          alertService.success(f("SubidaCorrecta"), options)
+          dialogWindow(f("SubidaCorrecta"));
         }
     }
     catch (error) {
-      alertService.error(f("NoSePudoSubirCarta") + error, options)
+      dialogWindow(f("NoSePudoSubirCarta"))
     }
   };
+
+  const dialogWindow = async (message) => {
+    const confirmBox = window.confirm(message
+
+    )
+  }
+  
 
   return (
     <section className={styles.form}>

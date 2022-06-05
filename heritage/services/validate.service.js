@@ -6,7 +6,8 @@ export const validateService = {
     checkRepeatedUsername,
     checkSecurePassword,
     checkExistsBody,
-    checkIsValidUploadDataMap
+    checkIsValidUploadDataMap,
+    checkIsValidlocale
 };
 
 function checkEmpty(value) {
@@ -72,4 +73,8 @@ function checkIsValidUploadDataMap(dataMap) {
         return false;
     }
     return false;
+}
+
+function checkIsValidlocale(locale) {
+    return !checkEmpty(locale) && (locale == "es" || locale == "en" || locale == "ast")
 }

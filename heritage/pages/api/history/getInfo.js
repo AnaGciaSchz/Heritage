@@ -25,6 +25,11 @@ async function getTheInfo(req, res) {
     }
     if (fileS != null) {
         let dataMap = new Map(req.body);
+        var localeCorrect = isLocaleCorrect(dataMap.get("locale"));
+        if(!localeCorrect){
+            logger.error("Error intentando leer la historia de la EII, idioma incorrecto.")
+            res.status(404).json({ result: "error", message: localeCorrect.message })
+        }
         fileS.readFile('public/history/' + dataMap.get("locale") + '.html', 'utf8', (err, data) => {
             if (err) {
                 logger.error("Error intentando leer la historia de la EII del idioma: " + dataMap.get("locale") + ".")
@@ -36,4 +41,8 @@ async function getTheInfo(req, res) {
             }
         });
     }
+}
+
+export function isLocaleCorrect(locale){
+    return validateService.checkIsValidlocale(locale)
 }

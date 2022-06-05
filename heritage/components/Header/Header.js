@@ -19,7 +19,7 @@ export default function Header() {
         if (cookieCutter.get('userName') != null) {
             setHeader(<header className={styles.container}>
 
-                <a className={styles.go2main} href="#main" tabindex="1">Saltar al contenido principal</a>
+                <a className={styles.go2main} href="#main" tabindex="1">{f("SaltarContenido")}</a>
 
                 <div className={styles.logoArriba} tabIndex='2'>
                     <a href={"/" + router.locale}>
@@ -54,7 +54,7 @@ export default function Header() {
         } else {
             setHeader(<header className={styles.container} >
                 
-                 <a className={styles.go2main} href="#main" tabindex="1">Saltar al contenido principal</a>
+                 <a className={styles.go2main} href="#main" tabindex="1">{f("SaltarContenido")}</a>
 
                 <div className={styles.logoArriba} tabIndex='2'>
                     <a href={"/" + router.locale}>

@@ -39,7 +39,7 @@ export default function MyApp({ Component, pageProps }) {
       '/en/ZonaEgresados', '/ast/ZonaEgresados', '/ZonaProfesorado', '/es/ZonaProfesorado', '/en/ZonaProfesorado', '/ast/ZonaProfesorado', '/ZonaDelegacion',
       '/es/ZonaDelegacion', '/en/ZonaDelegacion', '/ast/ZonaDelegacion', '/about', '/es/about', '/en/about', '/ast/about', '/Contacto', '/es/Contacto',
       '/en/Contacto', '/ast/Contacto', '/heritage_admin_login', '/es/heritage_admin_login', '/en/heritage_admin_login', '/ast/heritage_admin_login',
-      '/500', '/es/500', '/en/500', '/ast/500', '/404', '/es/404', '/en/404', '/ast/404']
+      '/500', '/es/500', '/en/500', '/ast/500', '/404', '/es/404', '/en/404', '/ast/404', '/siteMap','/es/siteMap','/en/siteMap','/ast/siteMap']
     const path = url.split('?')[0];
     if (!privatePathsNormalUser.includes(path) && !notAllowedPathAdmin.includes(path) && !publicUrls.includes(path)) {
       router.push({

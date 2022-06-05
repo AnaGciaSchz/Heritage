@@ -1,10 +1,13 @@
 import styles from './footer.module.scss'
 import { useIntl } from "react-intl"
-import Image from 'next/image'
+import { useRouter } from "next/router"
 
 export default function Footer() {
   const { formatMessage } = useIntl();
   const f = id => formatMessage({ id })
+
+  const router = useRouter()
+
   return (
     <footer className={styles.footer}>
       <section>
@@ -17,7 +20,7 @@ export default function Footer() {
       <div className={styles.contenido}>
       <img className={styles.petra} src='/favicon.png' />
         <section>
-          <h2><a href="/Contacto">{f("Contacto")}</a></h2>
+          <h2><a href={'/'+router.locale+'/Contacto'}>{f("Contacto")}</a> | <a href={'/'+router.locale+'/siteMap'}>{f("MapaSitioWeb")}</a> </h2>
 
           <address>
             {f("Direccion")}<br />

@@ -25,7 +25,18 @@ header nav img.image1 {
     display: block;
 }
 
+section div img.image1 {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: auto;
+}
+
 header nav img.image2 {
+    display: none;
+}
+
+section div img.image2 {
     display: none;
 }
 
@@ -39,6 +50,23 @@ header nav button.menuButton:hover {
         display: block;
         width: 30px;
         height: 30px;
+    }
+    .text {
+        display: none;
+    }
+}
+
+section div button.menuButton:hover {
+    width: 8em;
+    background-color: $color-menuBoton-hover;
+    .image1 {
+        display: none;
+    }
+    .image2 {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: auto;
     }
     .text {
         display: none;

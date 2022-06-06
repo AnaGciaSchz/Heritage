@@ -9,7 +9,7 @@ export default function NoResult() {
 
     const router = useRouter();
 
-    return (<>
+    return (<section>
         <h2>{f("NoResultados")}</h2>
         <p className={styles.text}>{f("MensajeNoResultados")}</p>
         <div className={styles.buttons}>
@@ -17,7 +17,7 @@ export default function NoResult() {
             {router.pathname.includes('ZonaProfesorado') ? null : <MenuButton nombre={f("ZProfesorado")} src="headerIcons/profesorado.png" referencia="/ZonaProfesorado" />}
             {router.pathname.includes('ZonaDelegacion') ? null : <MenuButton nombre={f("ZDelegacion")} src="headerIcons/delegados.png" referencia="/ZonaDelegacion" />}
         </div>
-    </>
+    </section>
 
     )
 }

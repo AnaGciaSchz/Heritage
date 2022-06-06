@@ -12,9 +12,6 @@ if (typeof window === 'undefined') {
     jwt = require('jsonwebtoken');
 }
 
-var admins = require('/data/admin.json');
-var admin = null;
-
 export default apiHandler(handler);
 
 function handler(req, res) {
@@ -32,8 +29,15 @@ async function authenticate(req, res) {
         res.status(404).json({ result: "error", message: "Body not found" })
         return;
     }
+    var admins = require('/data/admin.json');
+    var admin = null;
     if (fileS != null && crypt != null) {
         var dataMap = new Map(req.body);
+        var dataCorrect = isDataCorrect(dataMap.get("username"), dataMap.get("password"));
+        if(!dataCorrect){
+            logger.error("Error intentando loguearse, nombre de usuario o password vacios.")
+            res.status(404).json({ result: "error", message: dataCorrect.message })
+        }
         var i = 0;
         for (i; i < admins.length; i++) {
             if (admins[i].username == dataMap.get("username")) {
@@ -59,4 +63,8 @@ async function authenticate(req, res) {
         logger.warn('Usuario: ' + admin.username + 'no existe.')
         res.status(400).json({ result: "error", message: "ContrasenaNoCorrecta" })
     }
+}
+
+export function isDataCorrect(username, password){
+    return !validateService.checkEmpty(username) && !validateService.checkEmpty(password)
 }

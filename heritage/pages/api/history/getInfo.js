@@ -28,7 +28,7 @@ async function getTheInfo(req, res) {
         var localeCorrect = isLocaleCorrect(dataMap.get("locale"));
         if(!localeCorrect){
             logger.error("Error intentando leer la historia de la EII, idioma incorrecto.")
-            res.status(404).json({ result: "error", message: localeCorrect.message })
+            res.status(404).json({ result: "error", message: "Error intentando leer la historia de la EII, idioma incorrecto."})
         }
         fileS.readFile('public/history/' + dataMap.get("locale") + '.html', 'utf8', (err, data) => {
             if (err) {

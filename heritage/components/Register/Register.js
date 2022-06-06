@@ -44,6 +44,7 @@ export default function Register() {
       throw f("EscribeContrasena")
     }
     dataMap.set("password", password);
+    dataMap.set("repeatPassword", repeatPassword);
   }
 
   const uploadToServer = async (event) => {

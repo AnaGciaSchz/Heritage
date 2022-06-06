@@ -33,11 +33,19 @@ async function authenticate(req, res) {
     var admin = null;
     if (fileS != null && crypt != null) {
         var dataMap = new Map(req.body);
+
         var dataCorrect = isDataCorrect(dataMap.get("username"), dataMap.get("password"));
         if(!dataCorrect){
             logger.error("Error intentando loguearse, nombre de usuario o password vacios.")
-            res.status(404).json({ result: "error", message: dataCorrect.message })
+            res.status(404).json({ result: "error", message: "Error intentando loguearse, nombre de usuario o password vacios." })
         }
+
+        var usernameInList = isUsernameInList(admins, dataMap.get("username"))
+        if(!usernameInList){
+            logger.error("Username no existe.")
+            res.status(404).json({ result: "error", message: "Username no existe." })
+        }
+
         var i = 0;
         for (i; i < admins.length; i++) {
             if (admins[i].username == dataMap.get("username")) {
@@ -67,4 +75,8 @@ async function authenticate(req, res) {
 
 export function isDataCorrect(username, password){
     return !validateService.checkEmpty(username) && !validateService.checkEmpty(password)
+}
+
+export function isUsernameInList(admins, username){
+    return validateService.checkRepeatedUsername(admins, username)
 }

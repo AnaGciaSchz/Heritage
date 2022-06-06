@@ -9,9 +9,6 @@ if (typeof window === 'undefined') {
 }
 import { validateService } from "../../../services/validate.service";
 
-const saltRounds = process.env['SALT_ROUNDS'];
-var admins = require('/data/admin.json');
-
 export default apiHandler(handler);
 
 function handler(req, res) {
@@ -30,9 +27,16 @@ async function registerUser(req, res) {
     }
     if (fileS != null && crypt != null) {
 
+        const saltRounds = process.env['SALT_ROUNDS'];
+        var admins = require('/data/admin.json');
+
         var dataMap = new Map(req.body);
 
-        if (checkInformation(admins, dataMap, res)) return;
+        var isCorrect = checkInformation(admins, dataMap, res);
+
+        if (isCorrect.result == "error"){
+            res.status(400).json({message: isCorrect.message })
+        }
 
         crypt.genSalt(parseInt(saltRounds), function (err, salt) {
             crypt.hash(dataMap.get("password"), salt, function (err, hash) {
@@ -45,34 +49,31 @@ async function registerUser(req, res) {
 
 }
 
-function checkInformation(admins, dataMap, res) {
-    var usernameLength = !validateService.checkLength(dataMap.get("username"), 20) && !validateService.checkEmpty(dataMap.get("username"))
+export function checkInformation(admins, dataMap) {
+    var usernameLength = validateService.checkLength(dataMap.get("username"), 20)
     var repeatedUsername = validateService.checkRepeatedUsername(admins, dataMap.get("username"));
-    var nameChecks = !validateService.checkLength(dataMap.get("name"), 35) && !validateService.checkEmpty(dataMap.get("name"));
+    var nameChecks = validateService.checkLength(dataMap.get("name"), 35);
     var passwordCheck = !validateService.checkSecurePassword(dataMap.get("password"));
+    var passwordsAreTheSame = validateService.checkValidPasswords(dataMap.get("password"), dataMap.get("repeatPassword"))
 
-    if (usernameLength) {
+    if (!usernameLength) {
         logger.warn('Intento de registro fallido: No hay username.')
-        res.status(400).json({ result: "error", message: "EscribeUsername" })
-        return true;
+        return { result: "error", message: "EscribeUsername" }
     }
 
     if (repeatedUsername) {
         logger.warn('Intento de registro fallido: Nombre de usuario en uso: ' + dataMap.get("username"))
-        res.status(400).json({ result: "error", message: "NombreDeUsuarioEnUso" })
-        return true;
+        return { result: "error", message: "NombreDeUsuarioEnUso" }
     }
 
-    if (nameChecks) {
+    if (!nameChecks) {
         logger.warn('Intento de registro fallido: No se ha especificado nombre del admin.')
-        res.status(400).json({ result: "error", message: "EscribeNombre" })
-        return true;
+        return { result: "error", message: "EscribeNombre" }
     }
 
-    if (passwordCheck) {
-        logger.warn('Intento de registro fallido: No se ha especificado contrasena.')
-        res.status(400).json({ result: "error", message: "EscribeContrasena" })
-        return true;
+    if (passwordCheck || !passwordsAreTheSame) {
+        logger.warn('Intento de registro fallido: No se ha especificado contrasena o es insegura.')
+        return { result: "error", message: "EscribeContrasena" }
     }
 }
 

@@ -27,7 +27,7 @@ async function saveTheInfo(req, res) {
         var dataCorrect = isDataCorrect(dataMap.get("locale"), dataMap.get("data"));
         if(!dataCorrect){
             logger.error("Error intentando guardar la historia de la EII, idioma incorrecto o datos vacíos.")
-            res.status(404).json({ result: "error", message: dataCorrect.message })
+            res.status(404).json({ result: "error", message: "Error intentando guardar la historia de la EII, idioma incorrecto o datos vacíos." })
         }
         fileS.writeFile('public/history/' + dataMap.get("locale") + '.html', dataMap.get("data"), 'utf8', (err, data) => {
             if (err) {

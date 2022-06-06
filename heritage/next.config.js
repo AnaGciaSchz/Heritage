@@ -1,5 +1,24 @@
 const path = require('path')
 
+const securityHeaders = [
+    {
+        key: 'X-DNS-Prefetch-Control',
+        value: 'on'
+      },
+      {
+        key: 'X-XSS-Protection',
+        value: '1; mode=block'
+      },
+      {
+        key: 'X-Content-Type-Options',
+        value: 'nosniff'
+      },
+      {
+        key: 'Referrer-Policy',
+        value: 'no-referrer'
+      }
+]
+
 module.exports = {
     devIndicators: {
         buildActivity: false
@@ -9,6 +28,14 @@ module.exports = {
         ELASTICSEARCH_NODE: process.env['ELASTICSEARCH_NODE'],
         ELASTICSEARCH_USERNAME: process.env['ELASTICSEARCH_USERNAME']
     },
+    async headers() {
+        return [
+          {
+            source: '/:path*',
+            headers: securityHeaders,
+          },
+        ]
+      },
     serverRuntimeConfig: {
         secret: process.env['SECRET']
     },

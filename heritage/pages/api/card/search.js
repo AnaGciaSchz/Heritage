@@ -14,6 +14,14 @@ if (typeof window === 'undefined') {
   })
 }
 
+export const config = {
+  api: {
+      bodyParser: {
+          sizeLimit: '10MB' 
+      }
+  }
+}
+
 export default apiHandler(handler);
 
 function handler(req, res) {
@@ -38,7 +46,7 @@ async function search(req, res) {
     var searchResponse = await searchInElastic(dataMap);
     if(searchResponse.result == "ok"){
     logger.info("Se ha devuelto una búsqueda correctamente del índice: " + dataMap.get("index") + ".")
-    res.status(200).json({ hits: searchResponse.message.hits, promotion: searchResponse.message.promotion, social: searchResponse.message.social})
+    res.status(200).json({total: searchResponse.message.total, hits: searchResponse.message.hits, promotion: searchResponse.message.promotion, social: searchResponse.message.social})
     }
     else{
       logger.error("Ha habido un error en elastic al intentar realizar una búsqueda en el índice: " + dataMap.get("index") + ".")
@@ -76,7 +84,7 @@ export async function searchInElastic(dataMap){
           for (i = 0; i < set.size; i++) {
             s[i] = { key: [...set][i] };
           }
-          return { result: "ok", message: { hits: response.body.hits.hits, promotion: response.body.aggregations.by_promotion.buckets, social: s }}
+          return { result: "ok", message: { total: response.body.hits.total.value, hits: response.body.hits.hits, promotion: response.body.aggregations.by_promotion.buckets, social: s }}
         },
         err => {
           return { result: "error", message: err.message}
@@ -260,7 +268,7 @@ function getQuery(query) {
         "Red2^0.5",
         "Red3^0.5"
       ],
-      "tie_breaker": 0.01
+      "tie_breaker": 1.00
     }
   }
 }

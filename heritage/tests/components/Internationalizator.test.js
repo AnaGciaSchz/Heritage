@@ -20,10 +20,7 @@ jest.mock("next/router", () => ({
 describe('Internationalizator tests', () => {
     it('whenTheElementIsDisplayed_ItHasATile', () => {
         const component = ReactTestUtils.renderIntoDocument(<IntlProvider locale="es" messages={translations}><Internationalizator/></IntlProvider>);
-        var h2 = ReactTestUtils.findRenderedDOMComponentWithTag(component, 'h2');
+        ReactTestUtils.findRenderedDOMComponentWithTag(component, 'h2');
         ReactTestUtils.findRenderedDOMComponentWithClass(component, 'hidden');
-
-      
     })
-
   })

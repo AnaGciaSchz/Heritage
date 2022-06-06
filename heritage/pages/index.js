@@ -31,8 +31,6 @@ export default function Home() {
     var lastDelegate = await lastCard("delegate-card");
 
     var results = new Array();
-    console.log("lastStudent")
-    console.log(lastStudent)
 
     results[0] = <div key={0}><SearchCardWithTitle
       title="UltimoEgresado"

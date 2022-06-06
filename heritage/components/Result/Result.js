@@ -16,7 +16,7 @@ import getConfig from 'next/config';
 
 
 export default function Result(props) {
-  const [results, setResults] = useState(<Loading />);
+  const [results, setResults] = useState(null);
 
   const { publicRuntimeConfig } = getConfig();
   const baseUrl = `${publicRuntimeConfig.apiUrl}`;
@@ -34,6 +34,7 @@ export default function Result(props) {
   }
 
   const createResults = async () => {
+    setResults(<Loading />)
     var result = await search();
     var results = new Array();
     var i;
@@ -56,7 +57,6 @@ export default function Result(props) {
   }
 
   function showResults(results){
-    setResults(null);
     if (results.length == 0) {
       setResults(<NoResult />);
     } else {
@@ -68,7 +68,5 @@ export default function Result(props) {
     createResults();
   }, [useSelector(selectSearchUserSlice), useSelector(selectPromotionsUserSlice), useSelector(selectSocialsSlice)]);
   return (<section className={styles.layout}>
-    {results != null ?
-      results
-      : null}</section>);
+    {results}</section>);
 }

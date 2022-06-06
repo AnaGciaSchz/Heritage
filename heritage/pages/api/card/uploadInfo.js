@@ -17,7 +17,7 @@ if (typeof window === 'undefined') {
 export const config = {
   api: {
       bodyParser: {
-          sizeLimit: '4mb' 
+          sizeLimit: '10mb' 
       }
   }
 }

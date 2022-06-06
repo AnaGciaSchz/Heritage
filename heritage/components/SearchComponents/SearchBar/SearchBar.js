@@ -9,8 +9,21 @@ export default function SearchBar(props) {
   const f = id => formatMessage({ id })
   const [isClicked, setClick] = React.useState(false);
   const [hasText, setHasText] = React.useState(false);
-  const onChange = (event) => { { event.target.value == "" ? setHasText(false) : setHasText(true); }; props.setQuery(event.target.value); props.setChange(); }
   const emptySearch = () => { document.getElementById('searchBar').value = ""; setClick(false); setHasText(false); props.setQuery(""); props.setChange(); }
+
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+  async function onChange(event){
+    if(event.target.value == "" ){
+     setHasText(false)
+    }  
+    else{
+      setHasText(true) 
+    }
+    props.setQuery(event.target.value)
+    await sleep(500);
+    props.setChange();
+  }
 
   return (
     <>

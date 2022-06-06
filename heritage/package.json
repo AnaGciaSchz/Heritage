@@ -28,6 +28,7 @@
     "react-dom": "17.0.1",
     "react-intl": "^5.20.12",
     "react-redux": "^7.2.6",
+    "react-test-renderer": "^18.1.0",
     "rxjs": "^7.4.0",
     "sass": "^1.41.1",
     "sharp": "^0.29.1",
@@ -37,6 +38,12 @@
   },
   "devDependencies": {
     "babel-jest": "^26",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^26"
+  },
+  "jest" : {
+    "moduleNameMapper": {
+      "^.+\\.(css|less|scss)$": "identity-obj-proxy"
+    }
   }
 }

@@ -12,6 +12,16 @@ jest.mock('next/config', () => () => ({
 
 
 describe("Test the validation of the information for search cards", () => {
+    test("whenTheRequesthasNotLocale_ItReturnsFalse", async () => {
+        const response = isLocaleCorrect(undefined);
+        expect(response == false).toBeTruthy();
+    });
+
+    test("whenTheRequesthasEmptyLocale_ItReturnsFalse", async () => {
+        const response = isLocaleCorrect("");
+        expect(response == false).toBeTruthy();
+    });
+    
     test("whenTheRequesthasInvalidLocale_ItReturnsFalse", async () => {
         const response = isLocaleCorrect("ar");
         expect(response == false).toBeTruthy();

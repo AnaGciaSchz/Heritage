@@ -4,11 +4,11 @@
 
 .editor {
     caret-color: black;
+    margin-bottom: 4em;
 }
 
 .buttonSave {
     @extend .button;
-    position: relative;
-    top: 8px;
-    left: 10px;
+    float:left;
+    margin-top: 1em;
 }

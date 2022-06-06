@@ -24,6 +24,11 @@ async function saveTheInfo(req, res) {
     }
     if (fileS != null) {
         let dataMap = new Map(req.body);
+        var dataCorrect = isDataCorrect(dataMap.get("locale"), dataMap.get("data"));
+        if(!dataCorrect){
+            logger.error("Error intentando guardar la historia de la EII, idioma incorrecto o datos vacíos.")
+            res.status(404).json({ result: "error", message: localeCorrect.message })
+        }
         fileS.writeFile('public/history/' + dataMap.get("locale") + '.html', dataMap.get("data"), 'utf8', (err, data) => {
             if (err) {
                 logger.error("Error intentando actualizar la historia de la EII del idioma: " + dataMap.get("locale") + ".")
@@ -35,4 +40,8 @@ async function saveTheInfo(req, res) {
             }
         });
     }
+}
+
+export function isDataCorrect(locale, data){
+    return validateService.checkIsValidlocale(locale) && !validateService.checkEmpty(data)
 }

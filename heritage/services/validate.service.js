@@ -27,6 +27,7 @@ function checkExistsBody(body) {
 }
 
 function checkValidPromotion(promotion) {
+    console.log(promotion)
     if (!checkEmpty(promotion) && /[0-9]+-[0-9]+/.test(promotion)) {
         return true;
     }
@@ -64,11 +65,11 @@ function checkIsValidUploadDataMap(dataMap) {
     var has = dataMap.has("name") && dataMap.has("promotion") && dataMap.has("registry") && dataMap.has("timestamp") && dataMap.has("shortDescription")
     && dataMap.has("longDescription") && dataMap.has("achievements") && dataMap.has("check") && dataMap.has("image")
     if(has){
-        var notEmpty = !checkEmpty(dataMap.has("name")) && !checkEmpty(dataMap.has("promotion")) && !checkEmpty(dataMap.has("registry")) && !checkEmpty(dataMap.has("timestamp")) 
-        && !checkEmpty(dataMap.has("shortDescription")) && !checkEmpty(dataMap.has("longDescription")) && !checkEmpty(dataMap.has("achievements")) && !checkEmpty(dataMap.has("check"))
-        && !checkEmpty(dataMap.has("image"))
+        var notEmpty = !checkEmpty(dataMap.get("name")) && !checkEmpty(dataMap.get("promotion")) && !checkEmpty(dataMap.get("registry")) && !checkEmpty(dataMap.get("timestamp")) 
+        && !checkEmpty(dataMap.get("shortDescription")) && !checkEmpty(dataMap.get("longDescription")) && !checkEmpty(dataMap.get("achievements")) && !checkEmpty(dataMap.get("check"))
+        && !checkEmpty(dataMap.get("image"))
         if(notEmpty){
-            return checkValidPromotion(dataMap.has("promotion"))
+            return checkValidPromotion(dataMap.get("promotion"))
         }
         return false;
     }

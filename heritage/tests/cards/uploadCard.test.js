@@ -21,18 +21,18 @@ describe("Test the validation of the information for creating cards", () => {
         dataMap.set("timestamp", "1654017183000");
         dataMap.set("shortDescription", "Descripcion corta");
         dataMap.set("longDescription", "Descripcion larga");
-        dataMap.set("archievements", "Logros");
+        dataMap.set("achievements", "Logros");
         dataMap.set("check", false);
         dataMap.get("image", "");
 
         const response = await uploadToElastic(dataMap);
         expect(response.result == 'error').toBeTruthy();
-        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
         
         dataMap.set("name", "");
         const response2 = await uploadToElastic(dataMap);
         expect(response2.result == 'error').toBeTruthy();
-        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     });
 
     test("whenTheCardDoesNotHaveIndex_ItReturnsError", async () => {
@@ -44,18 +44,18 @@ describe("Test the validation of the information for creating cards", () => {
         dataMap.set("timestamp", "1654017183000");
         dataMap.set("shortDescription", "Descripcion corta");
         dataMap.set("longDescription", "Descripcion larga");
-        dataMap.set("archievements", "Logros");
+        dataMap.set("achievements", "Logros");
         dataMap.set("check", false);
         dataMap.get("image", "");
 
         const response = await uploadToElastic(dataMap);
         expect(response.result == 'error').toBeTruthy();
-        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     
         dataMap.set("index", "");
         const response2 = await uploadToElastic(dataMap);
         expect(response2.result == 'error').toBeTruthy();
-        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     });
     test("whenTheCardDoesNotHaveValidPromotion_ItReturnsError", async () => {
         var dataMap = new Map();
@@ -66,23 +66,23 @@ describe("Test the validation of the information for creating cards", () => {
         dataMap.set("timestamp", "1654017183000");
         dataMap.set("shortDescription", "Descripcion corta");
         dataMap.set("longDescription", "Descripcion larga");
-        dataMap.set("archievements", "Logros");
+        dataMap.set("achievements", "Logros");
         dataMap.set("check", false);
         dataMap.get("image", "");
 
         const response = await uploadToElastic(dataMap);
         expect(response.result == 'error').toBeTruthy();
-        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     
         dataMap.set("promotion", "");
         const response2 = await uploadToElastic(dataMap);
         expect(response2.result == 'error').toBeTruthy();
-        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     
         dataMap.set("promotion", "2021/2022");
         const response3 = await uploadToElastic(dataMap);
         expect(response3.result == 'error').toBeTruthy();
-        expect(response3.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response3.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     });
     test("whenTheCardDoesNotHaveRegistry_ItReturnsError", async () => {
         var dataMap = new Map();
@@ -93,18 +93,18 @@ describe("Test the validation of the information for creating cards", () => {
         dataMap.set("timestamp", "1654017183000");
         dataMap.set("shortDescription", "Descripcion corta");
         dataMap.set("longDescription", "Descripcion larga");
-        dataMap.set("archievements", "Logros");
+        dataMap.set("achievements", "Logros");
         dataMap.set("check", false);
         dataMap.get("image", "");
 
         const response = await uploadToElastic(dataMap);
         expect(response.result == 'error').toBeTruthy();
-        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
    
         dataMap.set("registry", "");
         const response2 = await uploadToElastic(dataMap);
         expect(response2.result == 'error').toBeTruthy();
-        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     });
     test("whenTheCardDoesNotHaveTimestamp_ItReturnsError", async () => {
         var dataMap = new Map();
@@ -115,18 +115,18 @@ describe("Test the validation of the information for creating cards", () => {
         dataMap.set("name", "Ana");
         dataMap.set("shortDescription", "Descripcion corta");
         dataMap.set("longDescription", "Descripcion larga");
-        dataMap.set("archievements", "Logros");
+        dataMap.set("achievements", "Logros");
         dataMap.set("check", false);
         dataMap.get("image", "");
 
         const response = await uploadToElastic(dataMap);
         expect(response.result == 'error').toBeTruthy();
-        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     
         dataMap.set("timestamp", "");
         const response2 = await uploadToElastic(dataMap);
         expect(response2.result == 'error').toBeTruthy();
-        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     });
 
     test("whenTheCardDoesNotHaveShortDescription_ItReturnsError", async () => {
@@ -138,18 +138,18 @@ describe("Test the validation of the information for creating cards", () => {
         dataMap.set("timestamp", "1654017183000");
         dataMap.set("name", "Ana");
         dataMap.set("longDescription", "Descripcion larga");
-        dataMap.set("archievements", "Logros");
+        dataMap.set("achievements", "Logros");
         dataMap.set("check", false);
         dataMap.get("image", "");
 
         const response = await uploadToElastic(dataMap);
         expect(response.result == 'error').toBeTruthy();
-        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     
         dataMap.set("shortDescription", "");
         const response2 = await uploadToElastic(dataMap);
         expect(response2.result == 'error').toBeTruthy();
-        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     });
     test("whenTheCardDoesNotHavelongDescription_ItReturnsError", async () => {
         var dataMap = new Map();
@@ -160,20 +160,20 @@ describe("Test the validation of the information for creating cards", () => {
         dataMap.set("timestamp", "1654017183000");
         dataMap.set("shortDescription", "Descripcion corta");
         dataMap.set("name", "Ana");
-        dataMap.set("archievements", "Logros");
+        dataMap.set("achievements", "Logros");
         dataMap.set("check", false);
         dataMap.get("image", "");
 
         const response = await uploadToElastic(dataMap);
         expect(response.result == 'error').toBeTruthy();
-        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     
         dataMap.set("longDescription", "");
         const response2 = await uploadToElastic(dataMap);
         expect(response2.result == 'error').toBeTruthy();
-        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     });
-    test("whenTheCardDoesNotHaveArchievements_ItReturnsError", async () => {
+    test("whenTheCardDoesNotHaveAchievements_ItReturnsError", async () => {
         var dataMap = new Map();
 
         dataMap.set("index", "student");
@@ -188,12 +188,12 @@ describe("Test the validation of the information for creating cards", () => {
 
         const response = await uploadToElastic(dataMap);
         expect(response.result == 'error').toBeTruthy();
-        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
    
-        dataMap.set("archievements", "");
+        dataMap.set("achievements", "");
         const response2 = await uploadToElastic(dataMap);
         expect(response2.result == 'error').toBeTruthy();
-        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     });
     test("whenTheCardDoesNotHaveCheck_ItReturnsError", async () => {
         var dataMap = new Map();
@@ -204,18 +204,18 @@ describe("Test the validation of the information for creating cards", () => {
         dataMap.set("timestamp", "1654017183000");
         dataMap.set("shortDescription", "Descripcion corta");
         dataMap.set("longDescription", "Descripcion larga");
-        dataMap.set("archievements", "Logros");
+        dataMap.set("achievements", "Logros");
         dataMap.set("name", "Ana");
         dataMap.get("image", "");
 
         const response = await uploadToElastic(dataMap);
         expect(response.result == 'error').toBeTruthy();
-        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     
         dataMap.set("check", "");
         const response2 = await uploadToElastic(dataMap);
         expect(response2.result == 'error').toBeTruthy();
-        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     });
 
     test("whenTheCardDoesNotHaveImage_ItReturnsError", async () => {
@@ -227,18 +227,18 @@ describe("Test the validation of the information for creating cards", () => {
         dataMap.set("timestamp", "1654017183000");
         dataMap.set("shortDescription", "Descripcion corta");
         dataMap.set("longDescription", "Descripcion larga");
-        dataMap.set("archievements", "Logros");
+        dataMap.set("achievements", "Logros");
         dataMap.set("check", false);
         dataMap.set("name", "Ana");
 
         const response = await uploadToElastic(dataMap);
         expect(response.result == 'error').toBeTruthy();
-        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     
         dataMap.set("image", "");
         const response2 = await uploadToElastic(dataMap);
         expect(response2.result == 'error').toBeTruthy();
-        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, archievements or image.').toBeTruthy();
+        expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long sescription, achievements or image.').toBeTruthy();
     });
 
 });
@@ -253,7 +253,7 @@ describe("Test the upload card functionality when data is correct", () => {
         dataMap.set("timestamp", "1654017183000");
         dataMap.set("shortDescription", "Descripcion corta");
         dataMap.set("longDescription", "Descripcion larga");
-        dataMap.set("archievements", "Logros");
+        dataMap.set("achievements", "Logros");
         dataMap.set("check", false);
         dataMap.set("social1Text", "twitter")
         dataMap.set("image", "Image");
@@ -271,7 +271,7 @@ describe("Test the upload card functionality when data is correct", () => {
         dataMap.set("timestamp", "1654017183000");
         dataMap.set("shortDescription", "Descripcion corta");
         dataMap.set("longDescription", "Descripcion larga");
-        dataMap.set("archievements", "Logros");
+        dataMap.set("achievements", "Logros");
         dataMap.set("check", false);
         dataMap.set("social1", "https://twitter.com/computingoviedo")
         dataMap.set("image", "Image");
@@ -290,7 +290,7 @@ describe("Test the upload card functionality when data is correct", () => {
         dataMap.set("timestamp", "1654017183000");
         dataMap.set("shortDescription", "Descripcion corta");
         dataMap.set("longDescription", "Descripcion larga");
-        dataMap.set("archievements", "Logros");
+        dataMap.set("achievements", "Logros");
         dataMap.set("check", false);
         dataMap.set("social1Text", "twitter")
         dataMap.set("social1", "https://twitter.com/computingoviedo")
@@ -308,7 +308,7 @@ describe("Test the upload card functionality when data is correct", () => {
         expect(body.timestamp == "1654017183000").toBeTruthy();
         expect(body.shortDescription == "Descripcion corta").toBeTruthy();
         expect(body.longDescription == "Descripcion larga").toBeTruthy();
-        expect(body.professionalArchievements == "Logros").toBeTruthy();
+        expect(body.professionalAchievements == "Logros").toBeTruthy();
         expect(body.AppearsInAnotherCategory == false).toBeTruthy();
         expect(body.Red1Link == "https://twitter.com/computingoviedo").toBeTruthy();
         expect(body.Red1 == "twitter").toBeTruthy();

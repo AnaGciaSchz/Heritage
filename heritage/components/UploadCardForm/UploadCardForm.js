@@ -67,11 +67,11 @@ export default function UploadCardForm() {
       throw f("DescripcionLarga")
     }
     dataMap.set("longDescription", longDescription);
-    var archievements = document.querySelector("#archievements").value;
-    if (!validateService.checkLength(archievements, 230)) {
+    var achievements = document.querySelector("#achievements").value;
+    if (!validateService.checkLength(achievements, 230)) {
       throw f("EscribeLogros")
     }
-    dataMap.set("archievements", archievements);
+    dataMap.set("achievements", achievements);
     var check = document.querySelector("#check").checked;
     dataMap.set("check", check);
     if (image !== null) {
@@ -173,7 +173,7 @@ export default function UploadCardForm() {
         text={document.querySelector("#shortDescription").value == null ? "" : document.querySelector("#shortDescription").value}
         date={date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()}
         description={document.querySelector("#longDescription").value == null ? "" : document.querySelector("#longDescription").value}
-        been={document.querySelector("#archievements").value == null ? "" : document.querySelector("#archievements").value}
+        been={document.querySelector("#achievements").value == null ? "" : document.querySelector("#achievements").value}
         red1={socialMedia1 ? document.querySelector("#social1Text").value : ""}
         red1Link={socialMedia1 ? document.querySelector("#social1").value : ""}
         red2={socialMedia2 ? document.querySelector("#social2Text").value : ""}
@@ -245,7 +245,7 @@ export default function UploadCardForm() {
         </div>
         <div className={styles.field}>
           <label className={styles.label}>{f("CartaLogros")}</label>
-          <textarea type="textarea" placeholder={f("LogrosEjemplo")} maxLength="230" rows="5" id="archievements"></textarea>
+          <textarea type="textarea" placeholder={f("LogrosEjemplo")} maxLength="230" rows="5" id="achievements"></textarea>
           <span className={styles.tooltip}>{f("LogrosTooltip")}</span>
         </div>
         <div className={styles.section}><span>4</span>{f("InformacionExtra")}</div>

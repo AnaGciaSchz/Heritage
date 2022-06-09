@@ -62,10 +62,10 @@ function checkSecurePassword(password) {
 
 function checkIsValidUploadDataMap(dataMap) {
     var has = dataMap.has("name") && dataMap.has("promotion") && dataMap.has("registry") && dataMap.has("timestamp") && dataMap.has("shortDescription")
-    && dataMap.has("longDescription") && dataMap.has("archievements") && dataMap.has("check") && dataMap.has("image")
+    && dataMap.has("longDescription") && dataMap.has("achievements") && dataMap.has("check") && dataMap.has("image")
     if(has){
         var notEmpty = !checkEmpty(dataMap.has("name")) && !checkEmpty(dataMap.has("promotion")) && !checkEmpty(dataMap.has("registry")) && !checkEmpty(dataMap.has("timestamp")) 
-        && !checkEmpty(dataMap.has("shortDescription")) && !checkEmpty(dataMap.has("longDescription")) && !checkEmpty(dataMap.has("archievements")) && !checkEmpty(dataMap.has("check"))
+        && !checkEmpty(dataMap.has("shortDescription")) && !checkEmpty(dataMap.has("longDescription")) && !checkEmpty(dataMap.has("achievements")) && !checkEmpty(dataMap.has("check"))
         && !checkEmpty(dataMap.has("image"))
         if(notEmpty){
             return checkValidPromotion(dataMap.has("promotion"))

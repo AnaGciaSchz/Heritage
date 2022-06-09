@@ -6,7 +6,6 @@ import Loading from '../Loading/Loading';
 export default function MultiSelectFilter(props) {
   const [content, setContent] = useState(null);
   const [lastFilter, setLastFilter] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
 
   const showFilter = async () => {
     if (props.content != null) {
@@ -20,7 +19,6 @@ export default function MultiSelectFilter(props) {
         }
 
       }
-      setIsLoading(false);
       setContent(null);
       setContent(inputsAndLabels);
     }
@@ -39,7 +37,6 @@ export default function MultiSelectFilter(props) {
         filter = filter.slice(0, -1);
       }
       if (filter != lastFilter) {
-        setIsLoading(true)
         setLastFilter(filter);
         props.setFilterWithUserValues(filter);
         props.setContentChangeBecauseOfUser();
@@ -51,7 +48,7 @@ export default function MultiSelectFilter(props) {
   useEffect(() => {
     showFilter();
   }, [props.contentChangeBecauseOfSearch]);
-  return (<>{isLoading? <div className={styles.loading}><Loading/></div>:null}<details onClick={() =>{sendChangesByUser();}} open>
+  return (<><details onClick={() =>{sendChangesByUser();}} open>
     <summary className={styles.s}>{props.name}</summary>
     <div className={styles.selector}>
       {content}</div>

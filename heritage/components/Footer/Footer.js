@@ -18,7 +18,7 @@ export default function Footer() {
       </section>
 
       <div className={styles.contenido}>
-      <img className={styles.petra} src='/favicon.png' />
+      <img className={styles.petra} src='/favicon.png' alt='Logo'/>
         <section>
           <h2><a href={'/'+router.locale+'/Contacto'}>{f("Contacto")}</a> | <a href={'/'+router.locale+'/siteMap'}>{f("MapaSitioWeb")}</a> </h2>
 

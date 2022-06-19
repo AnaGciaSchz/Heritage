@@ -15,7 +15,7 @@ describe("Test the validation of the information for search cards", () => {
         var dataMap = new Map();
         const response = await searchInElastic(dataMap);
         expect(response.result == 'error').toBeTruthy();
-        expect(response.message == "Index of cards must not be empty").toBeTruthy();
+        expect(response.message == "El índice no debe ser vacío").toBeTruthy();
     });
 
     test("whenTheRequestHasEmptyId_ItReturnsError", async () => {
@@ -23,7 +23,7 @@ describe("Test the validation of the information for search cards", () => {
         dataMap.set("index", "")
         const response = await searchInElastic(dataMap);
         expect(response.result == 'error').toBeTruthy();
-        expect(response.message == "Index of cards must not be empty").toBeTruthy();
+        expect(response.message == "El índice no debe ser vacío").toBeTruthy();
     });
 
 });

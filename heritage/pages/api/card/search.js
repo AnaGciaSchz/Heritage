@@ -49,7 +49,7 @@ async function search(req, res) {
     res.status(200).json({total: searchResponse.message.total, hits: searchResponse.message.hits, promotion: searchResponse.message.promotion, social: searchResponse.message.social})
     }
     else{
-      logger.error("Ha habido un error en elastic al intentar realizar una búsqueda en el índice: " + dataMap.get("index") + ".")
+      logger.error("Ha habido un error en ElasticSearch al intentar realizar una búsqueda en el índice : " + dataMap.get("index") + ".")
           logger.error(searchResponse.message)
           res.status(404).json({message: searchResponse.message + " on elastic search"})
     }
@@ -57,7 +57,7 @@ async function search(req, res) {
 
 export async function searchInElastic(dataMap){
   if(validateService.checkEmpty(dataMap.get("index"))){
-    return { result: "error", message: "Index of cards must not be empty"}
+    return { result: "error", message: "El índice no debe ser vacío"}
   }
   let body = getBody(dataMap.get("query"), dataMap.get("promotions"), dataMap.get("socials"), dataMap.get("sort"));
     return await esClient.search({

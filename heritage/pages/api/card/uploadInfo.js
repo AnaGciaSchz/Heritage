@@ -53,7 +53,7 @@ async function uploadInfo(req, res) {
         res.status(200).json({message: uploadResponse.message })
       }
       else{
-        logger.error("Ha habido un error en elastic al intentar añadir la carta con id: " + dataMap.get("id")
+        logger.error("Ha habido un error en ElasticSearch al intentar añadir la carta con id: " + dataMap.get("id")
         + " correspondiente a: " + dataMap.get("name") + " en el índice: " + dataMap.get("index") + ".")
       logger.error(uploadResponse.message)
             res.status(400).json({message: uploadResponse.message + " on elastic search"})

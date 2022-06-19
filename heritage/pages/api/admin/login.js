@@ -36,14 +36,14 @@ async function authenticate(req, res) {
 
         var dataCorrect = isDataCorrect(dataMap.get("username"), dataMap.get("password"));
         if(!dataCorrect){
-            logger.error("Error intentando loguearse, nombre de usuario o password vacios.")
-            res.status(404).json({ result: "error", message: "Error intentando loguearse, nombre de usuario o password vacios." })
+            logger.error("Error intentando iniciar sesión, nombre de usuario o contraseña vacíos.")
+            res.status(404).json({ result: "error", message: "Error intentando iniciar sesión, nombre de usuario o contraseña vacíos." })
         }
 
         var usernameInList = isUsernameInList(admins, dataMap.get("username"))
         if(!usernameInList){
             logger.error("Username no existe.")
-            res.status(404).json({ result: "error", message: "Username no existe." })
+            res.status(404).json({ result: "error", message: "Datos incorrectos." })
         }
 
         var i = 0;
@@ -63,13 +63,13 @@ async function authenticate(req, res) {
                     });
                 } else {
                     logger.warn('Contrasena incorrecta para acceder como usuario ' + admin.username + '.')
-                    res.status(400).json({ result: "error", message: "ContrasenaNoCorrecta" })
+                    res.status(400).json({ result: "error", message: "Datos incorrectos." })
                 }
                 return;
             }
         }
         logger.warn('Usuario: ' + admin.username + 'no existe.')
-        res.status(400).json({ result: "error", message: "ContrasenaNoCorrecta" })
+        res.status(400).json({ result: "error", message: "Datos incorrectos." })
     }
 }
 

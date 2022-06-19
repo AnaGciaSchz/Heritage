@@ -42,7 +42,7 @@ async function deleteCard(req, res) {
             logger.info('Se ha eliminado la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + ".")
             res.status(200).json({ message: deleteResponse.message })
         }else{
-            logger.error('Error en elastic al intentar eliminar la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + ".")
+            logger.error('Error en ElasticSearch al intentar eliminar la carta de id: ' + dataMap.get("id") + 'e index: ' + dataMap.get("index") + ".")
                 logger.error(deleteResponse.message)
                 res.status(404).json({message: deleteResponse.message})
         }
@@ -51,7 +51,7 @@ async function deleteCard(req, res) {
 
 export async function deleteCardFromElastic(index, id){
     if(validateService.checkEmpty(index) || validateService.checkEmpty(id)){
-        return { result: "error", message: "Index and id of cards must not be empty"}
+        return { result: "error", message: "Error: El id y el índice de la carta no pueden ser vacíos"}
     }
     return await esClient.delete({
         index: index,

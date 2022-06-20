@@ -27,7 +27,6 @@ function checkExistsBody(body) {
 }
 
 function checkValidPromotion(promotion) {
-    console.log(promotion)
     if (!checkEmpty(promotion) && /[0-9]+-[0-9]+/.test(promotion)) {
         return true;
     }
@@ -49,11 +48,10 @@ function checkRepeatedUsername(admins, username) {
     var i = 0;
     for (i; i < admins.length; i++) {
         var adminUsername = admins[i].username;
-        if (adminUsername == username) {
+        if (adminUsername === username) {
             return true;
         }
     }
-
     return false;
 }
 

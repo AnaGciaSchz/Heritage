@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest"
+    "test": "jest",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^7.15.0",
@@ -38,10 +39,12 @@
   },
   "devDependencies": {
     "babel-jest": "^26",
+    "cypress": "^10.1.0",
+    "cypress-file-upload": "^5.0.8",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26"
   },
-  "jest" : {
+  "jest": {
     "moduleNameMapper": {
       "^.+\\.(css|less|scss)$": "identity-obj-proxy"
     }

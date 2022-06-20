@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import styles from './multiselectFilter.module.scss'
 
-import Loading from '../Loading/Loading';
-
 export default function MultiSelectFilter(props) {
   const [content, setContent] = useState(null);
   const [lastFilter, setLastFilter] = useState("");
+
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
 
   const showFilter = async () => {
     if (props.content != null) {
@@ -13,12 +13,13 @@ export default function MultiSelectFilter(props) {
       var i;
       for (i = 0; i < props.content.length; i++) {
         if (lastFilter !== "" && lastFilter.split(",").includes(props.content[i].key)) {
-          inputsAndLabels[i] = <div key={i}><input className={styles.input} id={props.name.replace(" ", "") + i} type="checkbox" value={props.content[i].key} checked /> <label className={styles.label} htmlFor={i}>{props.content[i].key}</label></div>;
+          inputsAndLabels[i] = <div key={i}><input className={styles.input} id={props.name.replace(" ", "") + i} type="checkbox" value={props.content[i].key} defaultChecked /> <label className={styles.label} htmlFor={i}>{props.content[i].key}</label></div>;
         } else {
           inputsAndLabels[i] = <div key={i}><input className={styles.input} id={props.name.replace(" ", "") + i} type="checkbox" value={props.content[i].key} /> <label className={styles.label} htmlFor={i}>{props.content[i].key}</label></div>;
         }
 
       }
+      await sleep(50);
       setContent(null);
       setContent(inputsAndLabels);
     }

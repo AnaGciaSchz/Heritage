@@ -36,6 +36,7 @@ async function registerUser(req, res) {
 
         if (isCorrect.result == "error"){
             res.status(400).json({message: isCorrect.message })
+            return;
         }
 
         crypt.genSalt(parseInt(saltRounds), function (err, salt) {
@@ -75,9 +76,11 @@ export function checkInformation(admins, dataMap) {
         logger.warn('Intento de registro fallido: No se ha especificado contrasena o es insegura.')
         return { result: "error", message: "EscribeContrasena" }
     }
+    return {result: "ok"}
 }
 
 function addNewAdmin(dataMap, hash, res) {
+    var admins = require('/data/admin.json');
     var adminId = admins.length + 1;
     var date = new Date();
     var dateCreated = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "T" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "Z"

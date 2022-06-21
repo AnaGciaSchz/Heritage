@@ -7,7 +7,8 @@ export const validateService = {
     checkSecurePassword,
     checkExistsBody,
     checkIsValidUploadDataMap,
-    checkIsValidlocale
+    checkIsValidlocale,
+    checkNotValidIndex
 };
 
 function checkEmpty(value) {
@@ -76,4 +77,8 @@ function checkIsValidUploadDataMap(dataMap) {
 
 function checkIsValidlocale(locale) {
     return !checkEmpty(locale) && (locale == "es" || locale == "en" || locale == "ast")
+}
+
+function checkNotValidIndex(index){
+    return !(index=== "delegate-card" || index=== "professor-card" || index=== "student-card")
 }

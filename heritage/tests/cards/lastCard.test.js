@@ -22,5 +22,10 @@ describe("Test the validation of the information for search cards", () => {
         expect(response.result == 'error').toBeTruthy();
         expect(response.message == "Index of cards must not be empty").toBeTruthy();
     });
+    test("whenTheRequestHasnotExistingId_ItReturnsError", async () => {
+        const response = await searchLastCard("NoExiste");
+        expect(response.result == 'error').toBeTruthy();
+        expect(response.message == "Index of cards must not be empty").toBeTruthy();
+    });
 
 });

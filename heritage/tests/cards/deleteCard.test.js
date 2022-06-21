@@ -34,4 +34,10 @@ describe("Test the validation of the information for delete cards", () => {
         expect(response.result == 'error').toBeTruthy();
         expect(response.message == "Error: El id y el índice de la carta no pueden ser vacíos").toBeTruthy();
     });
+
+    test("whenTheRequestHasNotExistingIndex_ItReturnsError", async () => {
+        const response = await deleteCardFromElastic("NoExiste", "id");
+        expect(response.result == 'error').toBeTruthy();
+        expect(response.message == "Error: El id y el índice de la carta no pueden ser vacíos").toBeTruthy();
+    });
 });

@@ -45,5 +45,4 @@ describe("Test the validation of the login params", () => {
         expect(response == true).toBeTruthy();
     });
 
-
 });

@@ -56,6 +56,11 @@ describe("Test the validation of the information for creating cards", () => {
         const response2 = await uploadToElastic(dataMap);
         expect(response2.result == 'error').toBeTruthy();
         expect(response2.message == 'The card lacks important data: Name, Promotion, short description, long description, achievements or image.').toBeTruthy();
+
+        dataMap.set("index", "NoExiste");
+        const response3 = await uploadToElastic(dataMap);
+        expect(response3.result == 'error').toBeTruthy();
+        expect(response3.message == 'The card lacks important data: Name, Promotion, short description, long description, achievements or image.').toBeTruthy();
     });
     test("whenTheCardDoesNotHaveValidPromotion_ItReturnsError", async () => {
         var dataMap = new Map();

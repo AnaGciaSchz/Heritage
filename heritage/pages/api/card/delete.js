@@ -50,7 +50,7 @@ async function deleteCard(req, res) {
 }
 
 export async function deleteCardFromElastic(index, id){
-    if(validateService.checkEmpty(index) || validateService.checkEmpty(id)){
+    if(validateService.checkEmpty(index) || validateService.checkEmpty(id) || validateService.checkNotValidIndex(index)){
         return { result: "error", message: "Error: El id y el índice de la carta no pueden ser vacíos"}
     }
     return await esClient.delete({

@@ -56,7 +56,7 @@ async function search(req, res) {
 }
 
 export async function searchInElastic(dataMap){
-  if(validateService.checkEmpty(dataMap.get("index"))){
+  if(validateService.checkEmpty(dataMap.get("index")) || validateService.checkNotValidIndex(dataMap.get("index"))){
     return { result: "error", message: "El índice no debe ser vacío"}
   }
   let body = getBody(dataMap.get("query"), dataMap.get("promotions"), dataMap.get("socials"), dataMap.get("sort"));

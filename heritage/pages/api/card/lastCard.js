@@ -50,7 +50,7 @@ async function getLast(req, res) {
 }
 
 export async function searchLastCard(index){
-    if(validateService.checkEmpty(index)){
+    if(validateService.checkEmpty(index) || validateService.checkNotValidIndex(index)){
         return { result: "error", message: "Index of cards must not be empty"}
       }
     return await esClient.search({

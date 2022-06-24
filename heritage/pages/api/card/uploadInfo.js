@@ -64,7 +64,7 @@ async function uploadInfo(req, res) {
 export async function uploadToElastic(dataMap){
   if(!validateService.checkIsValidUploadDataMap(dataMap) || !dataMap.has("index") || validateService.checkNotValidIndex(dataMap.get("index"))){
     logger.error("Error: Faltan datos para crear una carta.")
-    return { result: "error", message: "The card lacks important data: Name, Promotion, short description, long description, achievements or image." };
+    return { result: "error", message: "A la carta le falta información importante: Nombre, promoción, descripción corta, descripción larga, logros o imagen." };
   } 
   var body = getBody(dataMap);
  return await esClient.index({

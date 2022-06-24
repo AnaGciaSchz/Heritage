@@ -14,18 +14,18 @@ describe("Test the validation of the information for search cards", () => {
     test("whenTheRequestDoesNotHaveIndex_ItReturnsError", async () => {
         const response = await searchLastCard(undefined);
         expect(response.result == 'error').toBeTruthy();
-        expect(response.message == "Index of cards must not be empty").toBeTruthy();
+        expect(response.message == "El índice no debe ser vacío").toBeTruthy();
     });
 
     test("whenTheRequestHasEmptyId_ItReturnsError", async () => {
         const response = await searchLastCard("");
         expect(response.result == 'error').toBeTruthy();
-        expect(response.message == "Index of cards must not be empty").toBeTruthy();
+        expect(response.message == "El índice no debe ser vacío").toBeTruthy();
     });
     test("whenTheRequestHasnotExistingId_ItReturnsError", async () => {
         const response = await searchLastCard("NoExiste");
         expect(response.result == 'error').toBeTruthy();
-        expect(response.message == "Index of cards must not be empty").toBeTruthy();
+        expect(response.message == "El índice no debe ser vacío").toBeTruthy();
     });
 
 });

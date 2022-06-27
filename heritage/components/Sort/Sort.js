@@ -29,19 +29,19 @@ export default function Sort(props) {
       <input type="checkbox" id="dropdown" />
 
         <label className={styles.dropdown__face} htmlFor="dropdown">
-          <div className={styles.dropdown__text}>{f("Ordenar")}</div>
+          <div className={styles.dropdown__text} tabIndex='0'>{f("Ordenar")}</div>
 
           <div className={styles.dropdown__arrow}></div>
         </label>
 
-        <div className={styles.dropdown__items}>
-          <button className={ascSort ? styles.buttonSelected : styles.button} onClick={() => selectButton("asc")}>↑ {f("Promocion")}</button>
-          <button className={descSort ? styles.buttonSelected : styles.button} onClick={() => selectButton("desc")}>↓ {f("Promocion")}</button>
+        <div  className={styles.dropdown__items}>
+          <button className={ascSort ? styles.buttonSelected : styles.button} tabIndex='0' onClick={() => selectButton("asc")}>↑ {f("Promocion")}</button>
+          <button className={descSort ? styles.buttonSelected : styles.button} tabIndex='0' onClick={() => selectButton("desc")}>↓ {f("Promocion")}</button>
         </div>
       </div>
 
       <svg>
-        <filter id="goo">
+        <filter  id="goo">
           <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
           <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
           <feBlend in="SourceGraphic" in2="goo" />

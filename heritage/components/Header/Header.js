@@ -4,7 +4,6 @@ import styles from './header.module.scss'
 import { useIntl } from "react-intl"
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router"
-import Image from 'next/image'
 
 export default function Header() {
     const { formatMessage } = useIntl();

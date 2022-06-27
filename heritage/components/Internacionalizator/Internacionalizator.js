@@ -64,8 +64,7 @@ export default function Internacionalizator() {
                 <InternacionalizationOption
                     selected={en}
                     language={() => setLanguage("en")}
-                    option="English"
-                />
+                    option="English"             />
                 <strong>|</strong>
             </p>
         </section>

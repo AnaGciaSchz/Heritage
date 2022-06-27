@@ -207,8 +207,8 @@ export default function UploadCardForm() {
         <section>
         <div className={styles.section}><span>1</span>{f("TipoCartaSeccion")}</div>
         <div className={styles.field}>
-          <label className={styles.label}>{f("TipoCarta")}*</label>
-          <select aria-label={f("TipoCartaSeccion")} className="form-control" defaultValue={"null"} id="type" required="required" aria-required="true">
+          <label className={styles.label} htmlFor="type">{f("TipoCarta")}*</label>
+          <select aria-label={f("TipoCartaSeccion")} name="type" className="form-control" defaultValue={"null"} id="type" required="required" aria-required="true">
             <option disabled="null" value="null">{f("TipoCartaSeccion")}</option>
             <option value="egresado">{f("Egresado")}</option>
             <option value="profesor">{f("Profesor")}</option>
@@ -218,20 +218,20 @@ export default function UploadCardForm() {
         </div>
         <div className={styles.section}><span>2</span>{f("CaraCartaInformacion")}</div>
         <div className={styles.field}>
-          <label className={styles.label}>{f("Nombre")}*</label>
-          <input type="text" placeholder="Ana María García Sánchez" maxLength="25" id="name" />
+          <label className={styles.label} htmlFor="name">{f("Nombre")}*</label>
+          <input type="text" placeholder="Ana María García Sánchez" maxLength="25" id="name" name="name"/>
           <div>
           </div>
           <span className={styles.tooltip}>{f("NombreTooltip")}</span>
         </div>
         <div className={styles.field}>
-          <label className={styles.label}>{f("Promocion")}*</label>
-          <input type="text" placeholder="2021-2022" id="promotion" />
+          <label className={styles.label} htmlFor="promotion">{f("Promocion")}*</label>
+          <input type="text" placeholder="2021-2022" id="promotion" name="promotion" />
           <span className={styles.tooltip}>{f("PromocionTooltip")}</span>
         </div>
         <div className={styles.field}>
-          <label className={styles.label}>{f("DescripcionCorta")}*</label>
-          <textarea type="textarea" placeholder={f("DescripcionCortaEjemplo")} maxLength="120" rows="3" id="shortDescription"></textarea>
+          <label className={styles.label} htmlFor="shortDescription">{f("DescripcionCorta")}*</label>
+          <textarea type="textarea" placeholder={f("DescripcionCortaEjemplo")} maxLength="120" rows="3" id="shortDescription" name="shortDescription"></textarea>
           <span className={styles.tooltip}>{f("DescripcionCortaTooltip")}</span>
         </div>
         <p className={styles.label}>{f("ImagenFormato")}</p>
@@ -239,53 +239,53 @@ export default function UploadCardForm() {
         <input type="file" id="fileUpload" className={styles.fileUpload} multiple={false} onChange={uploadToClient} title={f("SubirImagenCard")} />
         <div className={styles.section}><span>3</span>{f("ReversoCartaInformacion")}</div>
         <div className={styles.field}>
-          <label className={styles.label}>{f("DescripcionLarga")}*</label>
-          <textarea type="textarea" placeholder={f("DescripcionLargaEjemplo")} maxLength="230" rows="5" id="longDescription"></textarea>
+          <label className={styles.label} htmlFor="longDescription">{f("DescripcionLarga")}*</label>
+          <textarea type="textarea" placeholder={f("DescripcionLargaEjemplo")} maxLength="230" rows="5" id="longDescription" name="longDescription"></textarea>
           <span className={styles.tooltip}>{f("DescripcionLargaTooltip")}</span>
         </div>
         <div className={styles.field}>
-          <label className={styles.label}>{f("CartaLogros")}</label>
-          <textarea type="textarea" placeholder={f("LogrosEjemplo")} maxLength="230" rows="5" id="achievements"></textarea>
+          <label className={styles.label} htmlFor="achievements">{f("CartaLogros")}</label>
+          <textarea type="textarea" placeholder={f("LogrosEjemplo")} maxLength="230" rows="5" id="achievements" name="achievements"></textarea>
           <span className={styles.tooltip}>{f("LogrosTooltip")}</span>
         </div>
         <div className={styles.section}><span>4</span>{f("InformacionExtra")}</div>
         <div className={styles.check}>
-          <input type="checkbox" id="check" className={styles.checkBox} />
-          <label> {f("CheckTexto")}</label>
+          <input type="checkbox" id="check" name="check" className={styles.checkBox} />
+          <label htmlFor="check"> {f("CheckTexto")}</label>
         </div>
         {socialMedia1 ?
           <div className={styles.mediaField}>
             <div className={styles.lefthalf}>
-              <label className={styles.label}>{f("NombreRedSocial")} 1*</label>
-              <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxLength="20" id="social1Text" />
+              <label className={styles.label} htmlFor="social1Text">{f("NombreRedSocial")} 1*</label>
+              <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxLength="20" id="social1Text" name="social1Text"/>
             </div>
             <div className={styles.righthalf}>
-              <label className={styles.label}>{f("RedSocialLink")} 1* </label>
-              <input type="url" placeholder={f("RedSocialLinkPlaceholder1")} id="social1" />
+              <label className={styles.label} htmlFor="social1">{f("RedSocialLink")} 1* </label>
+              <input type="url" placeholder={f("RedSocialLinkPlaceholder1")} id="social1" name="social1"/>
             </div>
           </div>
           : null}
         {socialMedia2 ?
           <div className={styles.mediaField}>
             <div className={styles.lefthalf}>
-              <label className={styles.label}>{f("NombreRedSocial")} 2*</label>
-              <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxLength="20" id="social2Text" />
+              <label className={styles.label} htmlFor="social2Text">{f("NombreRedSocial")} 2*</label>
+              <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxLength="20" id="social2Text" name="social2Text"/>
             </div>
             <div className={styles.righthalf}>
-              <label className={styles.label}>{f("RedSocialLink")} 2*</label>
-              <input type="url" placeholder={f("RedSocialLinkPlaceholder2")} id="social2" />
+              <label className={styles.label} htmlFor="social2">{f("RedSocialLink")} 2*</label>
+              <input type="url" placeholder={f("RedSocialLinkPlaceholder2")} id="social2" name="social2" />
             </div>
           </div>
           : null}
         {socialMedia3 ?
           <div className={styles.mediaField}>
             <div className={styles.lefthalf}>
-              <label className={styles.label}>{f("NombreRedSocial")} 3*</label>
-              <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxLength="20" id="social3Text" />
+              <label className={styles.label} htmlFor="social3Text">{f("NombreRedSocial")} 3*</label>
+              <input type="text" placeholder={f("NombreRedSocialPlaceholder")} maxLength="20" id="social3Text" name="social3Text"/>
             </div>
             <div className={styles.righthalf}>
-              <label className={styles.label}>{f("RedSocialLink")} 3*</label>
-              <input type="url" placeholder={f("RedSocialLinkPlaceholder3")} id="social3" />
+              <label className={styles.label} htmlFor="social3">{f("RedSocialLink")} 3*</label>
+              <input type="url" placeholder={f("RedSocialLinkPlaceholder3")} id="social3" name="social3" />
             </div>
           </div>
           : null}

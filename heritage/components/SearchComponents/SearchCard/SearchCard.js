@@ -67,7 +67,7 @@ export default function SearchCard(props) {
     createDeleteButton();
   }, [router.locale]);
   return (
-    <article>
+    <article tabIndex='0'>
       <h3 className="hidden">{props.name}</h3>
       <img className={showRotate ? styles.flipIcon : styles.flipIconHidden} src="/flip.svg" alt={f("IconoGirarCarta")} title={f("TooltipGirarCarta")} />
       <img className={props.star && props.star.toString() == "true" ? styles.star : styles.starHidden} src="/star.svg" alt={f("IconoEstrella")} title={f("TooltipEstrella")} />

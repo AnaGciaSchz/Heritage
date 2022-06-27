@@ -1,13 +1,9 @@
 import Link from 'next/link'
 import React from 'react';
 
-import { useIntl } from "react-intl"
-
 import styles from './menubutton.module.scss'
 
 export default function MenuButton(props) {
-    const { formatMessage } = useIntl();
-    const f = id => formatMessage({ id })
 
     return (
 

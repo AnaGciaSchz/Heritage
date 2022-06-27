@@ -11,14 +11,14 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <section>
-
+        <h2 className="hidden">{f("Copyright")}</h2>
         <div className={styles.legal}>
           <p>&copy; {f("Copyright")}</p>
         </div>
       </section>
 
       <div className={styles.contenido}>
-      <img className={styles.petra} src='/favicon.png' alt='Logo'/>
+      <img className={styles.petra} src='/favicon.png' alt='Heritage Logo'/>
         <section>
           <h2><a href={'/'+router.locale+'/Contacto'}>{f("Contacto")}</a> | <a href={'/'+router.locale+'/siteMap'}>{f("MapaSitioWeb")}</a> </h2>
 

@@ -51,11 +51,11 @@ export default function Login() {
       <h2>{f("Login")}</h2>
       <form>
         <div>
-          <label className={styles.label}>{f("Usuario")}</label>
+          <label className={styles.label} htmlFor="username">{f("Usuario")} </label>
           <input id="username" name="username" type="text" />
         </div>
         <div>
-          <label className={styles.label}>{f("Contraseña")}</label>
+          <label className={styles.label} htmlFor="password">{f("Contraseña")}</label>
           <input id="password" name="password" type="password" />
         </div>
         <button type="button" className={styles.buttonLogin}

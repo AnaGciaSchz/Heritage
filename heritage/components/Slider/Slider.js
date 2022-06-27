@@ -44,7 +44,7 @@ export default function Slider() {
                 <img
                   className={styles.embla__slide__img}
                   src={index}
-                  alt={f("PromocionHeritage")}
+                  alt={f("PromocionHeritage")+index.split("/")[2].split(".")[0]}
                 />
               </div>
             </div>

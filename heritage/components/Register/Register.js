@@ -71,19 +71,19 @@ export default function Register() {
       <h2>{f("Registro")}</h2>
         <form>
           <div>
-            <label className={styles.label}>{f("Nombre")}</label>
+            <label className={styles.label} htmlFor="name">{f("Nombre")}</label>
             <input id="name" name="name" type="text" />
           </div>
           <div>
-            <label className={styles.label}>{f("Usuario")}</label>
+            <label className={styles.label} htmlFor="username">{f("Usuario")}</label>
             <input id="username" name="username" type="text" />
           </div>
           <div>
-            <label className={styles.label}>{f("Contraseña")}</label>
+            <label className={styles.label} htmlFor="password">{f("Contraseña")}</label>
             <input id="password" name="password" type="password" />
           </div>
           <div>
-            <label className={styles.label}>{f("RepetirContraseña")}</label>
+            <label className={styles.label} htmlFor="repeatPassword">{f("RepetirContraseña")}</label>
             <input id="repeatPassword" name="repeatPassword" type="password" />
           </div>
           <button className={styles.buttonLogin}

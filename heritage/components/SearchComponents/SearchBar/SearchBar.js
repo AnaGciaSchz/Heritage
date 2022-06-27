@@ -37,7 +37,8 @@ export default function SearchBar(props) {
         DEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNy
         wxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo
         8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
-        <input id="searchBar" placeholder={f("Buscar")} type="text"
+        <label className="hidden" htmlFor="searchBar">{f("Buscar")}</label>
+        <input id="searchBar" name="searchBar" placeholder={f("Buscar")} type="text"
           className={isClicked ? styles.searchClicked : styles.searchNoClicked}
           onChange={onChange}
           onClick={() => setClick(true)}

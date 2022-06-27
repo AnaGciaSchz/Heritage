@@ -29,9 +29,9 @@ export default function Sort(props) {
       <input type="checkbox" id="dropdown" />
 
         <label className={styles.dropdown__face} htmlFor="dropdown">
-          <div className={styles.dropdown__text} tabIndex='0'>{f("Ordenar")}</div>
+          <span className={styles.dropdown__text} tabIndex='0'>{f("Ordenar")}</span>
 
-          <div className={styles.dropdown__arrow}></div>
+          <span className={styles.dropdown__arrow}></span>
         </label>
 
         <div  className={styles.dropdown__items}>

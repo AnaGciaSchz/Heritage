@@ -14,8 +14,10 @@ export const userService = {
 };
 
 function login(dataMap) {
+    
     return fetchWrapper.post(`${baseUrl}/admin/login`, Array.from(dataMap.entries()))
         .then(async (response) => {
+            try{
             if(response.status >= 200 && response.status <= 299) {
             var userPromise = await response.text();
             var userObject = JSON.parse(userPromise);
@@ -23,7 +25,11 @@ function login(dataMap) {
             cookieCutter.set('userName', userObject.username)
             Router.push('/');
             }
-            return response.status;
+            return response.status;}
+        catch(error){
+            logger.error("Datos incorrectos")
+            return { result: "error", message: "Datos incorrectos." }
+        }
         });
 }
 

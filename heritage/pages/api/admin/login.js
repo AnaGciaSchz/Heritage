@@ -44,6 +44,7 @@ async function authenticate(req, res) {
         if(!usernameInList){
             logger.error("Username no existe.")
             res.status(404).json({ result: "error", message: "Datos incorrectos." })
+            return;
         }
 
         var i = 0;

@@ -44,15 +44,15 @@ export default function MultiSelectFilter(props) {
 
       }
     }
-
   }
+
   useEffect(() => {
     showFilter();
   }, [props.contentChangeBecauseOfSearch]);
-  return (<><details onClick={() =>{sendChangesByUser();}} open>
-    <summary className={styles.s}>{props.name}</summary>
-    <div className={styles.selector}>
-      {content}</div>
-  </details></>);
+  return (<><details onClick={() => { sendChangesByUser(); }}>
+      <summary className={styles.s}>{props.name}</summary>
+      <div className={styles.selector}>
+        {content}</div>
+    </details></>);
 }
 

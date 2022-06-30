@@ -1,7 +1,18 @@
+/**
+ * Archivo que contiene la lógica de la ruta "/api/card/search" de Heritage
+ * @module search
+ * @autor Ana María García Sánchez
+ */
+
+ // Variable que debe ser inicializada a null porque sólo puede ser utilizada cuando estamos en la parte del servidor.
 var esClient = null;
-const logger = require('pino')()
+
 import apiHandler from '../handlers/apiHandler';
 import { validateService } from '../../../services/validate.service';
+
+const logger = require('pino')()
+
+// Comprobación de que estamos en el lado del servidor y podemos inicializar la variable
 if (typeof window === 'undefined') {
   const { Client } = require('@elastic/elasticsearch')
 
@@ -14,6 +25,7 @@ if (typeof window === 'undefined') {
   })
 }
 
+//Configuración para aumentar el límite de lo que puede pesar la respuesta del search
 export const config = {
   api: {
       bodyParser: {
@@ -22,8 +34,15 @@ export const config = {
   }
 }
 
-export default apiHandler(handler);
+export default apiHandler(handler); //se exporta el apiHandler para que se peuda comprobar si se accede a la ruta como administrador o no.
 
+/**
+ * Método que gestiona la petición, comprobando si el método es válido (e, este caso, si es un POST).
+ * @function handler
+ * @param {Objeto} req Petición recibida 
+ * @param {Objeto} res Objeto para devolver una respuesta 
+ * @returns Resultado de la función "search" si es un POST o un error 405 indicando que el método no está permitido.
+ */
 function handler(req, res) {
   switch (req.method) {
     case 'POST':
@@ -33,12 +52,20 @@ function handler(req, res) {
   }
 }
 
+/**
+ * Método asíncrono que recibe una consulta, filtros y ordenaciones y devuelve el resultado de la búsqueda correspondiente en ElasticSearch.
+ * @async
+ * @function search
+ * @param {Objeto} req Petición recibida 
+ * @param {Objeto} res Objeto para devolver una respuesta 
+ * @returns Un mensaje de que se ha devuelto la búsqueda u otro de error según lo que haya ocurrido
+ */
 async function search(req, res) {
   if (!validateService.checkExistsBody(req.body)) {
     res.status(404).json({ result: "error", message: "Body not found" })
     return;
   }
-  if(esClient == null){
+  if(esClient == null){//Si no existe, no estamos en el lado del servidor y no se puede ejecutar el método
     logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
     res.status(500).json({ result: "error", message: "No elasticsearch client" });
   }
@@ -55,6 +82,13 @@ async function search(req, res) {
     }
 }
 
+/**
+ * Método que realiza la búsqueda en ElasticSearch
+ * @async
+ * @function searchInElastic
+ * @param {Map} dataMap Mapa con la información recibida
+ * @returns  Mensaje de que se ha realizado la búsqueda correctamente o de error según lo ocurrido
+ */
 export async function searchInElastic(dataMap){
   if(validateService.checkEmpty(dataMap.get("index")) || validateService.checkNotValidIndex(dataMap.get("index"))){
     return { result: "error", message: "El índice no debe ser vacío"}
@@ -93,6 +127,15 @@ export async function searchInElastic(dataMap){
 
 }
 
+/**
+ * Método que devuelve el cuerpo de la consulta a ElasticSearch
+ * @function getBody
+ * @param {String} query Consulta del usuario
+ * @param {String} promotions Filtro de promoción seleccionado por el usuario
+ * @param {String} socials Filtro de redes sociales seleccionado por el usuario
+ * @param {String} sort Ordenación seleccionada por el usuario
+ * @returns El body generado
+ */
 function getBody(query, promotions, socials, sort) {
   var fixedSort = sort == "" ? "desc" : sort;
   let body = {
@@ -173,6 +216,14 @@ function getBody(query, promotions, socials, sort) {
   return body;
 }
 
+/**
+ * Método que devuelve la consulta booleana que se le debe hacer a ElasticSearch.
+ * @function getBool
+ * @param {String} query Consulta del usuario
+ * @param {String} promotions Filtro de promoción seleccionado por el usuario
+ * @param {String} socials Filtro de redes sociales seleccionado por el usuario
+ * @returns El body generado
+ */
 function getBool(query, promotions, socials) {
   let filterQuery = getFilter(promotions, socials);
   if (filterQuery != null) {
@@ -181,6 +232,12 @@ function getBool(query, promotions, socials) {
   return { "bool": { "must": [getQuery(query)] } }
 }
 
+/**
+ * Método interno para comprobar si un filtro no tiene valor
+ * @function isEmptyFilter
+ * @param {String} filter Filtro a comprobar
+ * @returns True si es vacío, false si no
+ */
 function isEmptyFilter(filter) {
   if (filter != undefined && filter != null && filter != "") {
     return false;
@@ -188,7 +245,13 @@ function isEmptyFilter(filter) {
   return true;
 }
 
-
+/**
+ * Método que devuelve la consulta de filtros a ElasticSearch.
+ * @function getFilter
+ * @param {String} promotions Filtro de promoción seleccionado por el usuario
+ * @param {String} socials Filtro de redes sociales seleccionado por el usuario
+ * @returns El body generado
+ */
 function getFilter(promotions, socials) {
   if (isEmptyFilter(promotions) && isEmptyFilter(socials)) {
     return null;
@@ -224,6 +287,12 @@ function getFilter(promotions, socials) {
 
 }
 
+/**
+ * Método que devuelve el cuerpo de la consulta del filtro de promociones.
+ * @function getPromotionsFilter
+ * @param {String} values Lista de valores seleccionados
+ * @returns el body generado
+ */
 function getPromotionsFilter(values) {
   let array = values.split(",");
   let filterQuery = "";
@@ -236,6 +305,12 @@ function getPromotionsFilter(values) {
   return filterQuery;
 }
 
+/**
+ * Método que devuelve el cuerpo de la consulta del filtro de redes sociales.
+ * @function getSocialsFilter
+ * @param {String} values Lista de valores seleccionados
+ * @returns el body generado
+ */
 function getSocialsFilter(values) {
   let array = values.split(",");
   let filterQuery = "";
@@ -250,6 +325,12 @@ function getSocialsFilter(values) {
   return filterQuery;
 }
 
+/**
+ * Método que devuelve el cuerpo de la consulta escrita por el usuario para ElasticSearch
+ * @function getQuery
+ * @param {String} query Consulta del usuario
+ * @returns El body generado
+ */
 function getQuery(query) {
   if (query == undefined || query == "" || query.replace(" ", "") == "") {
     return { "match_all": {} };

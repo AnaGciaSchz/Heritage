@@ -1,7 +1,18 @@
+/**
+ * Archivo que contiene la lógica de la ruta "/api/card/uploadInfo" de Heritage
+ * @module uploadInfo
+ * @autor Ana María García Sánchez
+ */
+
+ // Variable que debe ser inicializada a null porque sólo puede ser utilizada cuando estamos en la parte del servidor.
 var esClient = null;
-const logger = require('pino')()
+
 import apiHandler from '../handlers/apiHandler';
 import { validateService } from '../../../services/validate.service';
+
+const logger = require('pino')()
+
+// Comprobación de que estamos en el lado del servidor y podemos inicializar la variable
 if (typeof window === 'undefined') {
   const { Client } = require('@elastic/elasticsearch')
 
@@ -14,6 +25,7 @@ if (typeof window === 'undefined') {
   })
 }
 
+//Configuración para aumentar el límite de lo que puede pesar la petición al uploadInfo
 export const config = {
   api: {
       bodyParser: {
@@ -21,8 +33,15 @@ export const config = {
       }
   }
 }
-export default apiHandler(handler);
+export default apiHandler(handler); //se exporta el apiHandler para que se peuda comprobar si se accede a la ruta como administrador o no.
 
+/**
+ * Método que gestiona la petición, comprobando si el método es válido (e, este caso, si es un POST).
+ * @function handler
+ * @param {Objeto} req Petición recibida 
+ * @param {Objeto} res Objeto para devolver una respuesta 
+ * @returns Resultado de la función "uploadInfo" si es un POST o un error 405 indicando que el método no está permitido.
+ */
 function handler(req, res) {
   switch (req.method) {
     case 'POST':
@@ -32,13 +51,21 @@ function handler(req, res) {
   }
 }
 
+/**
+ * Método asíncrono que recibe la información para una carta y la inserta en ElasticSearch si es válida.
+ * @async
+ * @function uploadInfo
+ * @param {Objeto} req Petición recibida 
+ * @param {Objeto} res Objeto para devolver una respuesta 
+ * @returns Un mensaje de que se ha insertado la carta u otro de error según lo que haya ocurrido
+ */
 async function uploadInfo(req, res) {
   if (!validateService.checkExistsBody(req.body)) {
     res.status(404).json({ message: "Body not found" })
     return;
   }
 
-  if(esClient == null){
+  if(esClient == null){ //Si no existe, no estamos en el lado del servidor y no se puede ejecutar el método
     logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
     res.status(500).json({ message: "No elasticsearch client" });
   }
@@ -61,6 +88,12 @@ async function uploadInfo(req, res) {
     
 }
 
+/**
+ * Método que sube la información e ElasticSearch
+ * @function uploadToElastic
+ * @param {Map} dataMap Mapa con la información recibida
+ * @returns Mensaje de que se ha subido la carta o de error según lo ocurrido
+ */
 export async function uploadToElastic(dataMap){
   if(!validateService.checkIsValidUploadDataMap(dataMap) || !dataMap.has("index") || validateService.checkNotValidIndex(dataMap.get("index"))){
     logger.error("Error: Faltan datos para crear una carta.")
@@ -81,6 +114,12 @@ export async function uploadToElastic(dataMap){
 
 }
 
+/**
+ * Método que genera el body para subir la carta a ElasticSearch
+ * @function getBody
+ * @param {Map} dataMap Mapa con la información recibida
+ * @returns El body generado
+ */
 export function getBody(dataMap){
 
   return ({

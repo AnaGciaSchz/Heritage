@@ -3,11 +3,10 @@
 
 .s {
   box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
-  width: 100%;
   background: $color-fondo-contenido;
   border-radius: 8px;
   position: relative;
-  width: 200px;
+  max-width: 200px;
   margin-bottom: 20px;
   margin-top: 20px;
   color: $darkGreen;
@@ -43,4 +42,7 @@ left: 26vw;
   width: 15px;
   margin-bottom:0.4em;
   cursor: pointer;
+}
+@include mobile {
+
 }

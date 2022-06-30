@@ -1,8 +1,17 @@
+/**
+ * Archivo que contiene la lógica de la ruta "/api/card/delete" de Heritage
+ * @module delete
+ * @autor Ana María García Sánchez
+ */
+
+ // Variables que deben ser inicializadas a null porque sólo pueden ser utilizadas cuando estamos en la parte del servidor.
 var esClient = null;
 const logger = require('pino')()
+
 import { validateService } from '../../../services/validate.service';
 import apiHandler from '../handlers/apiHandler';
 
+// Comprobación de que estamos en el lado del servidor y podemos inicializar las variables
 if (typeof window === 'undefined') {
     const { Client } = require('@elastic/elasticsearch')
 
@@ -15,8 +24,15 @@ if (typeof window === 'undefined') {
     })
 }
 
-export default apiHandler(handler);
+export default apiHandler(handler); //se exporta el apiHandler para que se peuda comprobar si se accede a la ruta como administrador o no.
 
+/**
+ * Método que gestiona la petición, comprobando si el método es válido (e, este caso, si es un DELETE).
+ * @function handler
+ * @param {Objeto} req Petición recibida 
+ * @param {Objeto} res Objeto para devolver una respuesta 
+ * @returns Resultado de la función "deleteCard" si es un DELETE o un error 405 indicando que el método no está permitido.
+ */
 function handler(req, res) {
     switch (req.method) {
         case 'DELETE':
@@ -26,12 +42,20 @@ function handler(req, res) {
     }
 }
 
+/**
+ * Método asíncrono que recibe un índice y un id de carta y la elimina de ElasticSearch después de hacer comprobaciones.
+ * @function deleteCard
+ * @param {Objeto} req Petición recibida 
+ * @param {Objeto} res Objeto para devolver una respuesta 
+ * @returns Un mensaje de que se ha eliminado u otro de error según lo que haya ocurrido
+ */
 async function deleteCard(req, res) {
+
     if (!validateService.checkExistsBody(JSON.parse(req.body))) {
         res.status(404).json({ result: "error", message: "Body not found" })
         return;
     }
-    if (esClient == null) {
+    if (esClient == null) { //Si no existen, no estamos en el lado del servidor y no se puede ejecutar el método
         logger.error("Error: No se puede conectar con el indice de elastic, revisa que esta funcionando.")
         res.status(500).json({ message: "No elasticsearch client" });
     }
@@ -49,6 +73,14 @@ async function deleteCard(req, res) {
 
 }
 
+/**
+ * Método que elimina la carta de ElasticSearch directamente con el índice y el id de esta.
+ * @async
+ * @function deleteCardFromElastic
+ * @param {String} index Índice de la carta
+ * @param {String} id Id de la carta
+ * @returns Mensaje de que se ha eliminado la carta, mensaje de error si no.
+ */
 export async function deleteCardFromElastic(index, id){
     if(validateService.checkEmpty(index) || validateService.checkEmpty(id) || validateService.checkNotValidIndex(index)){
         return { result: "error", message: "Error: El id y el índice de la carta no pueden ser vacíos"}

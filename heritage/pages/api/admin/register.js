@@ -1,16 +1,32 @@
-
+/**
+ * Archivo que contiene la lógica de la ruta "/api/admin/register" de Heritage
+ * @module register
+ * @autor Ana María García Sánchez
+ */
+ // Variables que deben ser inicializadas a null porque sólo pueden ser utilizadas cuando estamos en la parte del servidor.
 var fileS = null;
 var crypt = null;
+
 import apiHandler from "../handlers/apiHandler";
+import { validateService } from "../../../services/validate.service";
+
 const logger = require('pino')()
+
+// Comprobación de que estamos en el lado del servidor y podemos inicializar las variables
 if (typeof window === 'undefined') {
     var fileS = require('fs');
     var crypt = require('bcrypt');
 }
-import { validateService } from "../../../services/validate.service";
 
-export default apiHandler(handler);
+export default apiHandler(handler); //se exporta el apiHandler para que se peuda comprobar si se accede a la ruta como administrador o no.
 
+/**
+ * Método que gestiona la petición, comprobando si el método es válido (e, este caso, si es un POST).
+ * @function handler
+ * @param {Objeto} req Petición recibida 
+ * @param {Objeto} res Objeto para devolver una respuesta 
+ * @returns Resultado de la función "registerUser" si es un POST o un error 405 indicando que el método no está permitido.
+ */
 function handler(req, res) {
     switch (req.method) {
         case 'POST':
@@ -20,12 +36,21 @@ function handler(req, res) {
     }
 }
 
+/**
+ * Método asíncrono que recibe un usuario, nombre y contraseñas y los registra si son es válidos.
+ * @async
+ * @function registerUser
+ * @param {Objeto} req Petición recibida 
+ * @param {Objeto} res Objeto para devolver una respuesta 
+ * @returns Un mensaje de que se ha registrado al usuario u otro de error según lo que haya ocurrido
+ */
 async function registerUser(req, res) {
+
     if (!validateService.checkExistsBody(req.body)) {
         res.status(404).json({ result: "error", message: "Body not found" })
         return;
     }
-    if (fileS != null && crypt != null) {
+    if (fileS != null && crypt != null) { //Si no existen, no estamos en el lado del servidor y no se puede ejecutar el método
 
         const saltRounds = process.env['SALT_ROUNDS'];
         var admins = require('/data/admin.json');
@@ -50,6 +75,13 @@ async function registerUser(req, res) {
 
 }
 
+/**
+ * Método para comprobar que la información recibida es válida para que el usuario sea regsitrado.
+ * @function checkInformation
+ * @param {List} admins Lista de administradores registardos
+ * @param {Map} dataMap Mapa con la información recibida
+ * @returns True si la información es válida, False si no
+ */
 export function checkInformation(admins, dataMap) {
     var usernameLength = validateService.checkLength(dataMap.get("username"), 20)
     var repeatedUsername = validateService.checkRepeatedUsername(admins, dataMap.get("username"));
@@ -79,6 +111,14 @@ export function checkInformation(admins, dataMap) {
     return {result: "ok"}
 }
 
+/**
+ * Método para añadir al nuevo administrador a la lista.
+ * @function addNewAdmin
+ * @param {Map} dataMap Mapa con la información recibida
+ * @param {String} hash Hash de la contraseña
+ * @param {Object} res Objeto para devolver una respuesta 
+ * @returns Mensaje indicando que se ha registrado, mensaje de error si no.
+ */
 function addNewAdmin(dataMap, hash, res) {
     var admins = require('/data/admin.json');
     var adminId = admins.length + 1;
@@ -101,7 +141,8 @@ function addNewAdmin(dataMap, hash, res) {
     var writeAdmins = JSON.stringify(admins, null, 2);
 
     fileS.writeFileSync('data/admin.json', writeAdmins, err => {
-        if (err) throw err;
+        if (err) {logger.info('Ha habido un error: '+err.message)
+        res.status(200).json({ result: "error", message: 'Ha habido un error: '+err.message })};
     });
     logger.info('El usuario ' + newAdmin.username + ' acaba de ser registrado.')
     res.status(200).json({ result: "ok", message: "Everything ok" })

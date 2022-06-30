@@ -3,14 +3,12 @@
 
 .layout {
   display: flex;
-  gap: 16px;
+  flex-direction: row;
 }
 .layoutFilter {
-  grid-area: filter;
   margin-top: 10px;
 }
 .layoutResult {
-  grid-area: result;
 }
 
 .expandable {
@@ -38,4 +36,11 @@
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   margin-top: 10px;
+}
+
+@include mobile {
+  .layout {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -1,9 +1,12 @@
 import SearchCard from "../components/SearchComponents/SearchCard/SearchCard";
 import { useIntl } from "react-intl"
+import getConfig from 'next/config';
 
 export default function About() {
     const { formatMessage } = useIntl();
     const f = id => formatMessage({ id })
+    const { publicRuntimeConfig } = getConfig();
+    const resourceUrl = `${publicRuntimeConfig.resourceUrl}`;
     return (<>
         <section>
             <h1>{f("SobreHeritage")}</h1>
@@ -12,7 +15,7 @@ export default function About() {
                     id="0"
                     index="SpecialCard"
                     name="Ana María García Sánchez"
-                    img="/AnaGs.jpg"
+                    img={resourceUrl+"/AnaGs.jpg"}
                     firtsLine="2022-2023"
                     text={f("AnaDescripcion")}
                     date="13/05/2022"

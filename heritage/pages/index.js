@@ -17,6 +17,7 @@ export default function Home() {
 
   const { publicRuntimeConfig } = getConfig();
   const baseUrl = `${publicRuntimeConfig.apiUrl}`;
+    const resourceUrl = `${publicRuntimeConfig.resourceUrl}`;
 
   const lastCard = async (index) => {
     var dataMap = new Map();
@@ -85,32 +86,32 @@ export default function Home() {
         <SocialMedia
           socialMediaTitle="RedesSocialesEII"
           firstLink="https://www.instagram.com/computingoviedo/"
-          firstImage="/social/instaEII.png"
+          firstImage={resourceUrl+"/social/instaEII.png"}
           firstAlt={f("InstaEii")}
           secondLink="https://es-es.facebook.com/computingOviedo/"
-          secondImage="/social/facebook.png"
+          secondImage={resourceUrl+"/social/facebook.png"}
           secondAlt={f("FacebookEii")}
           thirdLink="https://www.youtube.com/channel/UCpv73ltAXuh1LRRJu8NWIvA"
-          thirdImage="/social/youEII.png"
+          thirdImage={resourceUrl+"/social/youEII.png"}
           thirdAlt={f("YoutubeEii")}
           fourthLink="https://twitter.com/computingoviedo"
-          fourthImage="/social/twEII.png"
+          fourthImage={resourceUrl+"/social/twEII.png"}
           fourthAlt={f("TwitterEii")}
         />
 
         <SocialMedia
           socialMediaTitle="RedesSocialesDEII"
           firstLink="https://www.instagram.com/delegacion_eii/"
-          firstImage="/social/instaDEII.png"
+          firstImage={resourceUrl+"/social/instaDEII.png"}
           firstAlt={f("InstaDeii")}
           secondLink="https://discord.gg/bkR5Ye4"
-          secondImage="/social/discord.png"
+          secondImage={resourceUrl+"/social/discord.png"}
           secondAlt={f("DiscordDeii")}
           thirdLink="https://www.youtube.com/channel/UCPGJQuCxNQ5JQtrzTE0NpJg"
-          thirdImage="/social/youDEII.png"
+          thirdImage={resourceUrl+"/social/youDEII.png"}
           thirdAlt={f("YoutubeDeii")}
           fourthLink="https://twitter.com/delegacion_eii"
-          fourthImage="/social/twDEII.png"
+          fourthImage={resourceUrl+"/social/twDEII.png"}
           fourthAlt={f("TwitterDeii")}
         />
       </div>

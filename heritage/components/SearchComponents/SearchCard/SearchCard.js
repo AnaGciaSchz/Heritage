@@ -1,5 +1,4 @@
 import styles from './searchCard.module.scss'
-import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
 import Router from 'next/router'
 import cookieCutter from "cookie-cutter"
@@ -18,6 +17,7 @@ export default function SearchCard(props) {
 
   const { publicRuntimeConfig } = getConfig();
   const baseUrl = `${publicRuntimeConfig.apiUrl}`;
+    const resourceUrl = `${publicRuntimeConfig.resourceUrl}`;
 
   const [isRotated, setIsRotated] = useState(false);
   const [isNotBeenRotated, setIsNotBeenRotated] = useState(true);
@@ -27,6 +27,7 @@ export default function SearchCard(props) {
   const [deletedMessage, setDeletedMessage] = useState(null)
   const router = useRouter();
   var dataMap = new Map();
+
 
   function createDeleteButton() {
     if (cookieCutter.get('userName') != null && props.index != "SpecialCard") {
@@ -69,8 +70,8 @@ export default function SearchCard(props) {
   return (
     <article tabIndex='0'>
       <h3 className="hidden">{props.name}</h3>
-      <img className={showRotate ? styles.flipIcon : styles.flipIconHidden} src="/flip.svg" alt={f("IconoGirarCarta")} title={f("TooltipGirarCarta")} />
-      <img className={props.star && props.star.toString() == "true" ? styles.star : styles.starHidden} src="/star.svg" alt={f("IconoEstrella")} title={f("TooltipEstrella")} />
+      <img className={showRotate ? styles.flipIcon : styles.flipIconHidden} src={resourceUrl+"/flip.svg"} alt={f("IconoGirarCarta")} title={f("TooltipGirarCarta")} />
+      <img className={props.star && props.star.toString() == "true" ? styles.star : styles.starHidden} src={resourceUrl+"/star.svg"} alt={f("IconoEstrella")} title={f("TooltipEstrella")} />
       {isRotated ? null :
         <div
           className={isNotBeenRotated ? styles.card : isRotated ? styles.quitCard : styles.showCard}

@@ -3,12 +3,16 @@
 import styles from './searchCardWithTitle.module.scss'
 import SearchCard from "components/SearchComponents/SearchCard/SearchCard.js"
 import { useIntl } from "react-intl"
+import getConfig from 'next/config';
 
 
 export default function SearchCardWithTitle(props) {
 
     const { formatMessage } = useIntl()
     const f = id => formatMessage({ id })
+
+    const { publicRuntimeConfig } = getConfig();
+    const resourceUrl = `${publicRuntimeConfig.resourceUrl}`;
     return (
         <article className={styles.card}>
             <h3 className={styles.title}>{f(props.title)}</h3>
@@ -35,7 +39,7 @@ export default function SearchCardWithTitle(props) {
                     id="0"
                     index="SpecialCard"
                     name=""
-                    img="/cargando.png"
+                    img={resourceUrl+"/cargando.png"}
                     firtsLine=""
                     text=""
                     date=""

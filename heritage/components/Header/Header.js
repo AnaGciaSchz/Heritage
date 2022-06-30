@@ -4,10 +4,14 @@ import styles from './header.module.scss'
 import { useIntl } from "react-intl"
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router"
+import getConfig from 'next/config';
 
 export default function Header() {
     const { formatMessage } = useIntl();
     const f = id => formatMessage({ id })
+
+    const { publicRuntimeConfig } = getConfig();
+  const resourceUrl = `${publicRuntimeConfig.resourceUrl}`;
 
     const [header, setHeader] = useState(null);
     const router = useRouter();
@@ -23,7 +27,7 @@ export default function Header() {
                 <div className={styles.logoArriba} tabIndex='2'>
                     <a href={"/" + router.locale}>
 
-                        <img src='/HeritageLogo.png' alt='logo' />
+                        <img src={resourceUrl+'/HeritageLogo.png'} alt='logo' />
                     </a>
                 </div>
 
@@ -37,7 +41,7 @@ export default function Header() {
                     <div className={styles.logoAbajo} tabIndex='2'>
                         <a href={"/" + router.locale}>
 
-                            <img src='/HeritageLogo.png' alt='logo' className={styles.logo} />
+                            <img src={resourceUrl+'/HeritageLogo.png'} alt='logo' className={styles.logo} />
                         </a>
                     </div>
 
@@ -58,7 +62,7 @@ export default function Header() {
                 <div className={styles.logoArriba} tabIndex='2'>
                     <a href={"/" + router.locale}>
 
-                        <img src='/HeritageLogo.png' alt='logo' />
+                        <img src={resourceUrl+'/HeritageLogo.png'} alt='logo' />
                     </a>
                 </div>
 
@@ -70,7 +74,7 @@ export default function Header() {
                     <div className={styles.logoAbajo} tabIndex='2'>
                         <a href={"/" + router.locale}>
 
-                            <img src='/HeritageLogo.png' alt='logo' className={styles.logo} />
+                            <img src={resourceUrl+'/HeritageLogo.png'} alt='logo' className={styles.logo} />
                         </a>
                     </div>
 

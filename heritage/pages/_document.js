@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import getConfig from 'next/config';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -6,12 +7,19 @@ export default class MyDocument extends Document {
     return { ...initialProps }
   }
 
+  static getResourceUrl(){
+     const { publicRuntimeConfig } = getConfig();
+    const resourceUrl = `${publicRuntimeConfig.resourceUrl}`;
+    return resourceUrl;
+  }
+ 
+//el favicon es /heritage/favicon.png para que funcione en producción
   render() {
     return (
       <Html>
         <Head>
           <title>Heritage</title>
-          <link rel="icon" href="/favicon.png" />
+          <link rel="icon" href="/heritage/favicon.png" /> 
         </Head>
         <body>
           <Main />

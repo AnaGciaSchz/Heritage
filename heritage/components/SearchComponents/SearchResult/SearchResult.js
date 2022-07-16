@@ -24,7 +24,7 @@ export default function SearchResult(props) {
                     text={data[i]._source.shortDescription}
                     date={data[i]._source.registry}
                     description={data[i]._source.longDescription}
-                    been={data[i]._source.professionalArchievements}
+                    been={data[i]._source.professionalAchievements}
                     red1={data[i]._source.Red1}
                     red1Link={data[i]._source.Red1Link}
                     red2={data[i]._source.Red2}

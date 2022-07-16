@@ -8,7 +8,7 @@ export default function Contacto() {
         <section className='contacto'>
             <h1>{f("Contacto")}</h1>
             <section>
-                <h2>{f("Direccion")}</h2>
+                <h2>{f("DireccionContacto")}</h2>
                 <p>{f("TextoContacto")}</p>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1450.532919353979!2d-5.85167!3d43.3547334!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd368ce0ccbc553d%3A0x6084f78d2a2d083c!2sEscuela%20de%20Ingenier%C3%ADa%20Inform%C3%A1tica!5e0!3m2!1ses!2ses!4v1654368063286!5m2!1ses!2ses" className='map' loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
 

@@ -343,7 +343,7 @@ function getQuery(query) {
         "name^2",
         "shortDescription^1",
         "longDescription^1",
-        "professionalArchievements^1",
+        "professionalAchievements^1",
         "promotion^1",
         "Red1^0.5",
         "Red2^0.5",

@@ -94,7 +94,7 @@ const mapping = {
                 "search_analyzer": "card_search_analyzer",
                 "analyzer": "card_analyzer"
             },
-            "professionalArchievements": {
+            "professionalAchievements": {
                 "type": "text",
                 "search_analyzer": "card_search_analyzer",
                 "analyzer": "card_analyzer"

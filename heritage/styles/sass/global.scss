@@ -124,7 +124,21 @@ h4 {
 	height: 100px;
 }
 
+.contacto {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.about {
+	float: right;
+}
+
 @include mobile {
+	.contacto {
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+
 	.map {
 		margin-bottom: 20px;
 	}
@@ -141,19 +155,17 @@ h4 {
 	}
 }
 
+@include tablet {
+	.contacto {
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+}
+
 @include bigDesktop {
 	.Error {
 		margin: auto;
 		width: 30%;
 		padding: 10px;
 	}
-}
-
-.contacto {
-	margin-left: 20%;
-	margin-right: 20%;
-}
-
-.about {
-	float: right;
 }

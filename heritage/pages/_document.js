@@ -13,13 +13,12 @@ export default class MyDocument extends Document {
     return resourceUrl;
   }
  
-//el favicon es /heritage/favicon.png para que funcione en producción
   render() {
     return (
       <Html>
         <Head>
           <title>Heritage</title>
-          <link rel="icon" href="/heritage/favicon.png" /> 
+          <link rel="icon" href="favicon.png" /> 
         </Head>
         <body>
           <Main />

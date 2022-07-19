@@ -2,12 +2,11 @@
 @import "../../../styles/sass/mixins";
 
 .layout {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns:1fr 8.5fr;
 }
 .layoutFilter {
   margin-top: 5px;
-  width: 26%;
 }
 .layoutResult{
   padding: 35px;
@@ -43,5 +42,8 @@
   .layout {
     display: flex;
     flex-direction: column;
+  }
+  .layoutFilter {
+    width: 50%;
   }
 }

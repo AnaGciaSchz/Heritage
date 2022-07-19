@@ -50,6 +50,7 @@ export default function SearchLayout(props) {
         query={props.query}
         index={props.index}
         sort={props.sort}
+        from = {0}
         promotionsFilter={promotionsFilter}
         socialsFilter={socialsFilter}
         setPromotions={setPromotions}
@@ -59,7 +60,8 @@ export default function SearchLayout(props) {
         socialsChange={socialsChange}
         setSocialsChange={setSocialsChange}
       />
-    </div></div>
+    </div>
+    </div>
   )
 }
 

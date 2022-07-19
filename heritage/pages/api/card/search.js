@@ -93,15 +93,13 @@ export async function searchInElastic(dataMap){
   if(validateService.checkEmpty(dataMap.get("index")) || validateService.checkNotValidIndex(dataMap.get("index"))){
     return { result: "error", message: "El índice no debe ser vacío"}
   }
-  let body = getBody(dataMap.get("query"), dataMap.get("promotions"), dataMap.get("socials"), dataMap.get("sort"));
+  let body = getBody(dataMap.get("query"), dataMap.get("promotions"), dataMap.get("socials"), dataMap.get("sort"), dataMap.get("from"));
     return await esClient.search({
       index: dataMap.get("index"),
-      scroll: '1m',
       body: body
     })
       .then(
         response => {
-          var scrollId = response.body._scroll_id
           var set = new Set();
           var socials1 = response.body.aggregations.by_social1.buckets
           var socials2 = response.body.aggregations.by_social2.buckets
@@ -120,8 +118,7 @@ export async function searchInElastic(dataMap){
           for (i = 0; i < set.size; i++) {
             s[i] = { key: [...set][i] };
           }
-          console.log("scrollId: "+scrollId)
-          return { result: "ok", message: { total: response.body.hits.total.value, scrollId: scrollId, hits: response.body.hits.hits, promotion: response.body.aggregations.by_promotion.buckets, social: s }}
+          return { result: "ok", message: { total: response.body.hits.total.value, hits: response.body.hits.hits, promotion: response.body.aggregations.by_promotion.buckets, social: s }}
         },
         err => {
           return { result: "error", message: err.message}
@@ -139,10 +136,10 @@ export async function searchInElastic(dataMap){
  * @param {String} sort Ordenación seleccionada por el usuario
  * @returns El body generado
  */
-function getBody(query, promotions, socials, sort) {
+function getBody(query, promotions, socials, sort, from) {
   var fixedSort = sort == "" ? "desc" : sort;
   let body = {
-    "from": 0,
+    "from": from,
     "size": 10,
     "query":
       getBool(query, promotions, socials),

@@ -1,0 +1,42 @@
+@import "../../styles/sass/variables";
+@import "../../styles/sass/mixins";
+
+.pagination {
+    display: inline-block;
+    width: 200%;
+}
+
+.pagination button {
+    cursor: pointer;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    border-radius: 2em;
+    border: 2em;
+    box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    width: 6em;
+}
+
+.pagination button:hover {
+    cursor: pointer;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    border-radius: 2em;
+    border: 2em;
+    box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+    background-color: $color-menuBoton-hover;
+}
+
+.pagination button.active {
+    background-color: $darkGreen;
+    color: white;
+    border-radius: 2em;
+}
+
+@include mobile{
+    .pagination button {
+        width: 3em;
+    }
+  }

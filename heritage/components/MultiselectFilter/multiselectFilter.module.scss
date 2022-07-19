@@ -6,7 +6,7 @@
   background: $color-fondo-contenido;
   border-radius: 8px;
   position: relative;
-  max-width: 200px;
+  width: 100%;
   margin-bottom: 20px;
   margin-top: 20px;
   color: $darkGreen;
@@ -14,12 +14,6 @@
   font-size: 15px;
   font-family: "Roboto", sans-serif;
   padding: 1em;
-}
-
-.loading{
-  z-index: 10;
-position: absolute;
-left: 26vw;
 }
 
 .selector {
@@ -31,6 +25,7 @@ left: 26vw;
   font-size: 13px;
   margin-top: -15px;
   margin-bottom: -30px;
+  width: 100%;
 }
 
 .label {
@@ -42,7 +37,4 @@ left: 26vw;
   width: 15px;
   margin-bottom:0.4em;
   cursor: pointer;
-}
-@include mobile {
-
 }

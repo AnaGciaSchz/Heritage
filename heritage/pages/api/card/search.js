@@ -96,10 +96,12 @@ export async function searchInElastic(dataMap){
   let body = getBody(dataMap.get("query"), dataMap.get("promotions"), dataMap.get("socials"), dataMap.get("sort"));
     return await esClient.search({
       index: dataMap.get("index"),
+      scroll: '1m',
       body: body
     })
       .then(
         response => {
+          var scrollId = response.body._scroll_id
           var set = new Set();
           var socials1 = response.body.aggregations.by_social1.buckets
           var socials2 = response.body.aggregations.by_social2.buckets
@@ -118,7 +120,8 @@ export async function searchInElastic(dataMap){
           for (i = 0; i < set.size; i++) {
             s[i] = { key: [...set][i] };
           }
-          return { result: "ok", message: { total: response.body.hits.total.value, hits: response.body.hits.hits, promotion: response.body.aggregations.by_promotion.buckets, social: s }}
+          console.log("scrollId: "+scrollId)
+          return { result: "ok", message: { total: response.body.hits.total.value, scrollId: scrollId, hits: response.body.hits.hits, promotion: response.body.aggregations.by_promotion.buckets, social: s }}
         },
         err => {
           return { result: "error", message: err.message}
@@ -139,7 +142,8 @@ export async function searchInElastic(dataMap){
 function getBody(query, promotions, socials, sort) {
   var fixedSort = sort == "" ? "desc" : sort;
   let body = {
-    "size": 1000,
+    "from": 0,
+    "size": 10,
     "query":
       getBool(query, promotions, socials),
     "aggs": {

@@ -45,7 +45,8 @@ export default function SearchLayout(props) {
         />
 
       </aside>
-      <Result className={styles.layoutResult}
+      <div className={styles.layoutResult}>
+      <Result 
         query={props.query}
         index={props.index}
         sort={props.sort}
@@ -58,7 +59,7 @@ export default function SearchLayout(props) {
         socialsChange={socialsChange}
         setSocialsChange={setSocialsChange}
       />
-    </div>
+    </div></div>
   )
 }
 

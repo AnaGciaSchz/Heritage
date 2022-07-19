@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import SearchResult from "components/SearchComponents/SearchResult/SearchResult.js"
+import SearchCard from "components/SearchComponents/SearchCard/SearchCard.js"
 import styles from './result.module.scss'
 import NoResult from '../NoResult/NoResult';
 import Loading from '../Loading/Loading';
@@ -38,12 +38,27 @@ export default function Result(props) {
     var result = await search();
     var results = new Array();
     var i;
-    if (result && result.promotion) {
-      for (i = 0; i < result.promotion.length; i++) {
-        results[i] = <SearchResult key={i}
-          promotion={result.promotion[i].key}
-          values={result.promotion[i].by_top_hit.hits.hits}
-        />
+    if (result && result.hits) {
+      for (i = 0; i < result.hits.length; i++) {
+        results[i] = <SearchCard key={i}
+        id={result.hits[i]._id}
+        index={result.hits[i]._index}
+        name={result.hits[i]._source.name}
+        img={result.hits[i]._source.image}
+        firtsLine={result.hits[i]._source.promotion}
+        text={result.hits[i]._source.shortDescription}
+        date={result.hits[i]._source.registry}
+        description={result.hits[i]._source.longDescription}
+        been={result.hits[i]._source.professionalAchievements}
+        red1={result.hits[i]._source.Red1}
+        red1Link={result.hits[i]._source.Red1Link}
+        red2={result.hits[i]._source.Red2}
+        red2Link={result.hits[i]._source.Red2Link}
+        red3={result.hits[i]._source.Red3}
+        red3Link={result.hits[i]._source.Red3Link}
+        star={result.hits[i]._source.AppearsInAnotherCategory}
+    />
+        
       }
       props.setSocials(result.social);
       props.setSocialsChange(!props.socialsChange)

@@ -26,7 +26,7 @@ export default function SearchCardWithTitle(props) {
                     text={props.last.hits[0]._source.shortDescription}
                     date={props.last.hits[0]._source.registry}
                     description={props.last.hits[0]._source.longDescription}
-                    been={props.last.hits[0]._source.professionalAchievements}
+                    been={props.last.hits[0]._source.professionalAchievements==""? props.last.hits[0]._source.professionalArchievements: props.last.hits[0]._source.professionalAchievements}
                     red1={props.last.hits[0]._source.Red1}
                     red1Link={props.last.hits[0]._source.Red1Link}
                     red2={props.last.hits[0]._source.Red2}

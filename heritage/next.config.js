@@ -48,7 +48,7 @@ module.exports = {
             : '/heritage' // production
     },
     i18n: {
-        locales: ['en', 'es', 'ast'],
+        locales: ['en', 'es', 'ast', 'fr'],
         defaultLocale: 'es',
 
     },

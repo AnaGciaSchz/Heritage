@@ -76,7 +76,7 @@ function checkIsValidUploadDataMap(dataMap) {
 }
 
 function checkIsValidlocale(locale) {
-    return !checkEmpty(locale) && (locale == "es" || locale == "en" || locale == "ast")
+    return !checkEmpty(locale) && (locale == "es" || locale == "en" || locale == "ast"|| locale == "fr")
 }
 
 function checkNotValidIndex(index){

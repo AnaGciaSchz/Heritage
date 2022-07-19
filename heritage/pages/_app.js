@@ -31,15 +31,15 @@ export default function MyApp({ Component, pageProps }) {
   }, []);
 
   function authCheck(url) {
-    const privatePathsNormalUser = ['/EditorHistoria', '/ast/EditorHistoria', '/en/EditorHistoria', '/es/EditorHistoria', '/heritage_admin_register', '/ast/heritage_admin_register'
-      , '/en/heritage_admin_register', '/es/heritage_admin_register', '/SubidaDeCartas', '/es/SubidaDeCartas', '/en/SubidaDeCartas', '/ast/SubidaDeCartas'];
-    const notAllowedPathAdmin = ['/heritage_admin_login', '/ast/heritage_admin_login'
+    const privatePathsNormalUser = ['/EditorHistoria', '/ast/EditorHistoria', '/fr/EditorHistoria', '/en/EditorHistoria', '/es/EditorHistoria', '/heritage_admin_register', '/ast/heritage_admin_register', '/fr/heritage_admin_register'
+      , '/en/heritage_admin_register', '/es/heritage_admin_register', '/SubidaDeCartas', '/es/SubidaDeCartas', '/en/SubidaDeCartas', '/ast/SubidaDeCartas', '/fr/SubidaDeCartas'];
+    const notAllowedPathAdmin = ['/heritage_admin_login', '/ast/heritage_admin_login', '/fr/heritage_admin_login'
       , '/en/heritage_admin_login', '/es/heritage_admin_login']
-    const publicUrls = ['/', '/es', '/en', '/ast', '/HistoriaEII', '/es/HistoriaEII', '/en/HistoriaEII', '/ast/HistoriaEII', '/ZonaEgresados', '/es/ZonaEgresados',
-      '/en/ZonaEgresados', '/ast/ZonaEgresados', '/ZonaProfesorado', '/es/ZonaProfesorado', '/en/ZonaProfesorado', '/ast/ZonaProfesorado', '/ZonaDelegacion',
-      '/es/ZonaDelegacion', '/en/ZonaDelegacion', '/ast/ZonaDelegacion', '/about', '/es/about', '/en/about', '/ast/about', '/Contacto', '/es/Contacto',
-      '/en/Contacto', '/ast/Contacto', '/heritage_admin_login', '/es/heritage_admin_login', '/en/heritage_admin_login', '/ast/heritage_admin_login',
-      '/500', '/es/500', '/en/500', '/ast/500', '/404', '/es/404', '/en/404', '/ast/404', '/siteMap','/es/siteMap','/en/siteMap','/ast/siteMap']
+    const publicUrls = ['/', '/es', '/en', '/ast','/fr', '/HistoriaEII', '/es/HistoriaEII', '/en/HistoriaEII', '/ast/HistoriaEII', '/fr/HistoriaEII', '/ZonaEgresados', '/es/ZonaEgresados',
+      '/en/ZonaEgresados', '/ast/ZonaEgresados', '/fr/ZonaEgresados', '/ZonaProfesorado', '/es/ZonaProfesorado', '/en/ZonaProfesorado', '/ast/ZonaProfesorado', '/fr/ZonaProfesorado', '/ZonaDelegacion',
+      '/es/ZonaDelegacion', '/en/ZonaDelegacion', '/ast/ZonaDelegacion', '/fr/ZonaDelegacion', '/about', '/es/about', '/en/about', '/ast/about', '/fr/about', '/Contacto', '/es/Contacto',
+      '/en/Contacto', '/ast/Contacto', '/fr/Contacto', '/heritage_admin_login', '/es/heritage_admin_login', '/en/heritage_admin_login', '/ast/heritage_admin_login', '/fr/heritage_admin_login',
+      '/500', '/es/500', '/en/500', '/ast/500', '/fr/500', '/404', '/es/404', '/en/404', '/ast/404', '/fr/404', '/siteMap','/es/siteMap','/en/siteMap','/ast/siteMap', '/fr/siteMap']
     const path = url.split('?')[0];
     if (!privatePathsNormalUser.includes(path) && !notAllowedPathAdmin.includes(path) && !publicUrls.includes(path)) {
       router.push({
